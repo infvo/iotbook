@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Eisen aan de communicatie &#8212; Runestone Interactive Overview</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/presenter_mode.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/clickable.css?v=58C4E18A" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabbedstuff.css?v=424F1CC9" />
+    <link rel="stylesheet" type="text/css" href="../_static/fitb.css?v=3BA0E63E" />
+    <link rel="stylesheet" type="text/css" href="../_static/video.css?v=E5385B3B" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/codemirror.css?v=9CF75563" />
+    <link rel="stylesheet" type="text/css" href="../_static/spreadsheet.css?v=B5F018A" />
+    <link rel="stylesheet" type="text/css" href="../_static/jexcel.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/japp.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/reveal.css?v=4A81D381" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/parsons.css?v=2F3E13EE" />
+    <link rel="stylesheet" type="text/css" href="../_static/js_lib/prettify.css?v=2A364B6B" />
+    <link rel="stylesheet" type="text/css" href="../_static/pytutor.css?v=239FC54E" />
+    <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css?v=8A1A42E4" />
+    <link rel="stylesheet" type="text/css" href="../_static/activecode.css?v=F471F95B" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/datafile.css?v=C184EB8A" />
+    <link rel="stylesheet" type="text/css" href="../_static/showEval.css?v=C6382F3" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="../_static/dragndrop.css?v=1FF7F927" />
+    <link rel="stylesheet" type="text/css" href="../_static/poll.css?v=E220AC33" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css?v=4.2.0" type="text/css" />
+    <link rel="stylesheet" href="../_static/theme-overrides.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/runestonebase.js?v=4.2.0"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script type="text/javascript" src="../_static/clickable.js?v=846DC076"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js?v=93989C23"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js?v=5BE6106"></script>
+    <script type="text/javascript" src="../_static/fitb.js?v=60630F3D"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js?v=2AA17071"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/CLDRPluralRuleParser.js?v=599B42B0"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.js?v=88A1430F"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.messagestore.js?v=AE15A4A1"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.fallbacks.js?v=8ABDFE7F"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.language.js?v=747279FF"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.parser.js?v=7B020E13"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.emitter.js?v=660E85C3"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.emitter.bidi.js?v=54B21948"></script>
+    <script type="text/javascript" src="../_static/fitb-i18n.en.js?v=389ED00C"></script>
+    <script type="text/javascript" src="../_static/runestonevideo.js?v=53E888DE"></script>
+    <script type="text/javascript" src="../_static/codemirror.js?v=25B54D0A"></script>
+    <script type="text/javascript" src="../_static/xml.js?v=236EDFF7"></script>
+    <script type="text/javascript" src="../_static/css.js?v=623153CE"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js?v=4EBE05BF"></script>
+    <script type="text/javascript" src="../_static/javascript.js?v=6F38CA04"></script>
+    <script type="text/javascript" src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script type="text/javascript" src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script type="text/javascript" src="../_static/Blob.js?v=AEC2447"></script>
+    <script type="text/javascript" src="../_static/spreadsheet.js?v=ABDABEC0"></script>
+    <script type="text/javascript" src="../_static/jexcel.js"></script>
+    <script type="text/javascript" src="../_static/japp.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js?v=35AF34F1"></script>
+    <script type="text/javascript" src="../_static/lp.js?v=5E742BDC"></script>
+    <script type="text/javascript" src="../_static/gas.js?v=129CE036"></script>
+    <script type="text/javascript" src="../_static/js_lib/prettify.js?v=CA7E8928"></script>
+    <script type="text/javascript" src="../_static/js_lib/hammer.min.js?v=73056367"></script>
+    <script type="text/javascript" src="../_static/parsons.js?v=CE79120E"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js?v=2EEA9E5A"></script>
+    <script type="text/javascript" src="../_static/parsons-i18n.en.js?v=A9C11155"></script>
+    <script type="text/javascript" src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script type="text/javascript" src="../_static/mchoice.js?v=7B685250"></script>
+    <script type="text/javascript" src="../_static/timedmc.js?v=B010A457"></script>
+    <script type="text/javascript" src="../_static/timed.js?v=FD1C5153"></script>
+    <script type="text/javascript" src="../_static/mchoice-i18n.en.js?v=354E6CD"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js?v=8FCEE330"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js?v=B3A117D7"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js?v=836E01C"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js?v=B64CF0A8"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js?v=42F9EBEA"></script>
+    <script type="text/javascript" src="../_static/pytutor.js?v=82B022B9"></script>
+    <script type="text/javascript" src="../_static/codelens.js?v=CABECD49"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js?v=24766D61"></script>
+    <script type="text/javascript" src="../_static/python.js?v=76B9CFA2"></script>
+    <script type="text/javascript" src="../_static/sql.js?v=49D0BD74"></script>
+    <script type="text/javascript" src="../_static/activecode-i18n.en.js?v=65CA0724"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js?v=BDC8551F"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js?v=5731007D"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js?v=D5DC3460"></script>
+    <script type="text/javascript" src="../_static/clike.js?v=4247C891"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js?v=1FA6F2AF"></script>
+    <script type="text/javascript" src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js?v=156D8707"></script>
+    <script type="text/javascript" src="../_static/showEval.js?v=5B2DD7A6"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js?v=86D99604"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js?v=378F237E"></script>
+    <script type="text/javascript" src="../_static/dragndrop-i18n.en.js?v=40C28531"></script>
+    <script type="text/javascript" src="../_static/poll.js?v=45F04365"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js?v=4.2.0"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/presenter_mode.js?v=4.2.0"></script>
+    <script type="text/javascript" src="../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    eBookConfig.useRunestoneServices = false;
+    eBookConfig.host = 'http://127.0.0.1:8000' || 'http://127.0.0.1:8000';
+    eBookConfig.app = eBookConfig.host+'/runestone';
+    eBookConfig.course = 'iotbook';
+    eBookConfig.basecourse = 'iotbook';
+    eBookConfig.isLoggedIn = false;
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = true;
+  eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
+  eBookConfig.runestone_version = '4.2.0';
+  eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
+  eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
+  eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+          iotbook
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+	  
+			  
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=iot-eisen'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="eisen-aan-de-communicatie">
+<h1>Eisen aan de communicatie<a class="headerlink" href="#eisen-aan-de-communicatie" title="Permalink to this headline">¶</a></h1>
+<p>We hebben hiervoor gezien welke functionele elementen je tegenkomt in een IoT-keten.
+We proberen hier de eisen op te stellen voor de communicatie tussen deze elementen, voor een bepaalde toepassing.
+Aan de hand van deze eisen bepaal je later welke (radio)verbinding je kunt gebruiken voor de rand (“edge”) van de IoT-keten.</p>
+<blockquote>
+<div><p>Zoals we in de volgende hoofdstukken zullen zien,
+verschillen deze radio’s in de grootte van de berichten,
+de snelheid waarmee deze verstuurd worden,
+het bereik van de radio, en de betrouwbaarheid van de communicatie.</p>
+<p>In deze module beperken we ons tot IoT-toepassingen met korte berichten.
+Voor toepassingen met “streaming” beeld of geluid heb je andere middelen nodig.</p>
+</div></blockquote>
+<div class="admonition-over-signalen-en-events admonition">
+<p class="admonition-title">Over signalen en events</p>
+<p>Een analoog signaal is continu: dit heeft op elk moment een waarde.
+Je kunt een analoog signaal bemonsteren (<em>sampling</em>) met vaste tussenpozen:
+als je deze tussenpozen klein genoeg kiest kun je met deze monster-waarden (<em>samples</em>) het oorspronkelijke signaal voldoende goed benaderen.
+Wat “klein genoeg” is hangt af van de snelheid van de veranderingen in het oorspronkelijke signaal.</p>
+<blockquote>
+<div><p>Voor muziek kies je als bemonsteringsfrequentie vaak 44,1kHz (Audio CD) of 48kHz (DVD);
+voor een ECG (electrocardiogram): 0,5-1kHz.</p>
+</div></blockquote>
+<p>Vaak ben je niet in de details van een signaal geïnteresseerd,
+maar alleen in bepaalde karakteristieke patronen of <em>events</em> die je in het signaal kunt herkennen.</p>
+<p><em>Voorbeeld</em>: een cardioloog wil graag een volledig ECG-signal (electrocardiogram);
+een sporter heeft voldoende aan het aantal hartslagen per minuut.</p>
+<p>Een <em>event</em> is in dit verband een gebeurtenis of toestandsverandering die op een bepaald tijdstip plaatsvindt;
+de duur van deze gebeurtenis is niet van belang.
+Als de duur wel relevant is, kun je altijd gebruik maken van begin- en eind-events.</p>
+<p>In onze IoT-toepassingen gaat het vooral om events:
+gebeurtenissen waar je op moet reageren.
+<em>Voorbeeld</em>: je wilt graag weten wanneer de eerste persoon een kamer binnenkomt,
+en wanneer de laatste deze kamer verlaat (<em>events</em>).
+Dat zijn momenten dat de verlichting in- of uitgeschakeld moet worden.
+Het aantal personen in de kamer op een willekeurig moment (<em>signaal</em>) is daarvoor niet van belang.</p>
+<p>Uit de IoT-voorbeelden:</p>
+<ul class="simple">
+<li><p>de bodemvochtigheid is een <em>signaal</em> dat we elke 5 minuten bemonsteren:
+snellere veranderingen komen niet voor of hebben geen betekenis.</p></li>
+<li><p>het indrukken van een knop om een lamp in te schakelen is een <em>event</em>.</p></li>
+</ul>
+<p>Andere voorbeelden, buiten het bestek van deze IoT-module:</p>
+<ul class="simple">
+<li><p>internet-telefonie: signaal</p></li>
+<li><p>streaming video (internet tv, video on demand): signaal</p></li>
+<li><p>streaming audio (internet radio, muziekdienst): signaal</p></li>
+</ul>
+</div>
+<div class="section" id="inputs-en-outputs">
+<h2>Inputs en outputs<a class="headerlink" href="#inputs-en-outputs" title="Permalink to this headline">¶</a></h2>
+<p>Als eerste stap gaan we na wat de <em>inputs</em> (signalen en events) en <em>outputs</em> van de toepassing zijn.
+Een input kan een enkele meetwaarde zijn van een enkele sensor;
+maar een input kan ook het resultaat zijn van patroonherkenning op een reeks meetwaarden,
+mogelijk van meerdere sensoren.
+In dit stadium doen we daarover geen uitspraken.</p>
+<blockquote>
+<div><p>Het heeft voordelen om de patroonherkenning op de meetwaarden dicht bij de bron (sensoren) te doen.
+Door slimme <em>edge computing</em> of <em>fog computing</em> kun je voorkomen dat je grote hoeveelheden data naar de “cloud” moet communiceren.
+Bovendien kun je hierdoor vaker lokaal -en dus sneller en betrouwbaarder- reageren.</p>
+</div></blockquote>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<p>Voor het nadenken over de inputs zijn de volgende vragen van belang:</p>
+<ul class="simple">
+<li><p>wat wil je meten? hoe vaak? wat is het waardenbereik? welke precisie is nodig?</p></li>
+<li><p>welke gebeurtenissen (events) zijn van belang? waar moet het systeem op reageren?</p></li>
+</ul>
+<p>Het waardenbereik en de precisie hebben we nodig voor de grootte van de berichten.</p>
+<p>We maken ons hier nog niet druk over de sensoren en de berekeningen voor deze signalen en events.</p>
+<p>Voorbeelden:</p>
+<ul class="simple">
+<li><p>(event) indrukken van de “aan” knop van de lamp in de woonkamer;</p></li>
+<li><p>(event) uitschakelen van de lamp in de woonkamer op afstand;</p></li>
+<li><p>(signaal) meten van de kamertemperatuur: elke 2 minuten, met een nauwkeurigheid van 0,5 graden.</p></li>
+</ul>
+<p>De temperatuur van de kamer verandert niet sneller, en tijdelijke veranderingen,
+bijvoorbeeld door een deur die even open en dicht gaat, zijn niet van belang.</p>
+</div>
+<div class="section" id="outputs">
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<p>Ook bij outputs hebben we te maken met signalen en events.
+Wij proberen hier vooral met <em>events</em> te werken, zoals het in- of uitschakelen van een lamp of van een pomp.</p>
+<blockquote>
+<div><p>Signalen gebruik je soms voor een <em>proportionele</em> regeling,
+bijvoorbeeld het dimmen van een lamp afhankelijk van het tijdstip en/of het niveau van het omgevingslicht.
+Dit soort regelingen probeer je dicht bij de outputs (actuatoren) te plaatsen,
+om snel te kunnen reageren, en om de hoeveelheid communicatie met de “cloud” te beperken.
+Ook dat is een voorbeeld van “fog” computing.</p>
+</div></blockquote>
+<p>Voorbeelden:</p>
+<ul class="simple">
+<li><p>(event) het in- en uitschakelen van een lamp;</p></li>
+<li><p>(event) het instellen van de kleur en lichtsterkte van een lamp;</p></li>
+<li><p>(event) het in- en uitschakelen van een sproeicyclus.</p></li>
+</ul>
+</div>
+<div class="section" id="opdrachten">
+<h2>Opdrachten<a class="headerlink" href="#opdrachten" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Werk dit uit voor een IoT-voorbeeld; kies hiervoor een eigen voorbeeld, of een voorbeeld uit de lijst (volgende sectie).</p>
+</div></blockquote>
+</div>
+<div class="section" id="communicatie-eisen">
+<h2>Communicatie-eisen<a class="headerlink" href="#communicatie-eisen" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>wat is het bereik en de precisie van de waarden van de inputs en outputs? (Hiermee kunnen we de grootte van de berichten uitrekenen.)</p></li>
+<li><p>wat is de maximale vertraging (latency) van een bericht, de maximale reactietijd op een event?</p></li>
+<li><p>hoe betrouwbaar moet de communicatie van het bericht zijn? (“best effort” vs. “bericht van ontvangst” (ACK) en opnieuw verzenden)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="tijd-vertraging-en-reactietijd">
+<h2>Tijd: vertraging en reactietijd<a class="headerlink" href="#tijd-vertraging-en-reactietijd" title="Permalink to this headline">¶</a></h2>
+<p>Meten, communiceren, rekenen en beslissen kost tijd.
+Elke toepassing heeft zijn eigen tijdseisen:</p>
+<ul class="simple">
+<li><p>wat is de maximale reactietijd op een bepaalde input-event?</p></li>
+<li><p>wat is de maximale vertraging (latency) tussen een meting en de aankomst van het bericht met de meetwaarde bij de controller?</p></li>
+</ul>
+<p><em>Opmerking</em>: de communicatie naar een lokale controller heeft veel minder latency dan naar een controller “in the cloud”.</p>
+<p>Voorbeelden:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>(event) indrukken van de “aan” knop in de woonkamer: lamp moet binnen 0,5 seconde aan gaan.</dt><dd><ul>
+<li><p>als de lamp niet “direct” aangaat denkt de gebruiker dat er iets kapot is; hij drukt dan bijvoorbeeld de schakelaar nog een aantal keren in.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>(event) lamp uitschakelen op afstand (internet-app): lamp moet binnen 15 seconden uitgaan.</dt><dd><ul>
+<li><p>de gebruiker is niet in dezelfde ruimte als de lamp, een directe reactie is dan niet nodig.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>(signaal): de gemeten kamertemperatuur moet binnen 60 seconden bij de lokale controller zijn die ook de verwarming aanstuurt.</dt><dd><ul>
+<li><p>de controller moet voldoende snel <em>feedback</em> hebben op het resultaat van de aansturing van de verwarming.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="betrouwbaarheid">
+<h2>Betrouwbaarheid<a class="headerlink" href="#betrouwbaarheid" title="Permalink to this headline">¶</a></h2>
+<p>Communicatie is niet altijd betrouwbaar.
+Dit geldt in het bijzonder voor radiocommunicatie:
+deze kan op allerlei manieren (tijdelijk) verstoord raken.
+Er zijn (ruwweg) twee manieren om berichten te versturen:</p>
+<ul class="simple">
+<li><p><em>best effort</em>: het bericht wordt verstuurd in de verwachting dat dit <em>meestal</em> aankomt;</p></li>
+<li><p><em>versturen met ontvangstbevestiging</em> (ACK): de ontvanger stuurt een ontvangstbevestiging;
+als de zender deze niet binnen een bepaalde tijd ontvangen heeft, verstuurt deze het bericht opnieuw.</p></li>
+</ul>
+<p>Voor veel IoT-toepassingen is <em>best effort</em> voldoende,
+(i) omdat een enkele meting wel gemist kan worden;
+of (ii) omdat het resultaat van het bericht op andere manieren bevestigd wordt.</p>
+<p>Voorbeeld: als de controller voor de watersproeier nog steeds dezelfde bodemvochtigheid meet,
+kan deze de watersproeier nogmaals inschakelen.</p>
+<div class="admonition-idempotente-opdrachten admonition">
+<p class="admonition-title">Idempotente opdrachten</p>
+<p>Een <em>idempotente</em> opdracht geeft hetzelfde resultaat als je deze eenmaal uitvoert of meerdere keren.
+Bij veel IoT-berichten is het wenselijk dat deze <em>idempotent</em> zijn:
+het maakt dan niet uit of deze eenmaal of vaker verstuurd, ontvangen en uitgevoerd worden.
+Bijvoorbeeld: het in- of uitschakelen van een lamp is een idempotente opdracht.
+Het instellen van het absolute lichtniveau van een lamp is dat ook.
+Maar het halveren van het lichtniveau is geen idempotente operatie.</p>
+<p>Vraag: welke opdrachten (knoppen) op de afstandsbediening van een TV zijn idempotent? Waarom? Welke zijn niet idempotent? Waarom is dat geen probleem?</p>
+<p>Vraag: is het opnieuw opvragen van een webpagina idempotent? Is het opnieuw versturen van een webformulier altijd idempotent?</p>
+<p>Vraag: is een tuimerschakelaar voor een lamp idempotent?</p>
+<p>Vraag: welke knoppen zitten er op een Hue dimmer? Welke zijn daarvan idempotent (en waarom)?</p>
+</div>
+<p>Voorbeelden:</p>
+<ul class="simple">
+<li><p>(signaal) bodemvochtigheid: best effort;</p></li>
+<li><p>(event) indrukken van de “aan”knop van de lamp in de woonkamer: best effort (waarom?);</p></li>
+<li><p>(event) op afstand uitzetten van de lamp in de woonkamer: bevestiging (ACK) vereist (waarom)?</p></li>
+<li><p>(signaal) temperatuur in de woonkamer: best effort.</p></li>
+</ul>
+</div>
+<div class="section" id="grootte-van-berichten">
+<h2>Grootte van berichten<a class="headerlink" href="#grootte-van-berichten" title="Permalink to this headline">¶</a></h2>
+<p>Sommige IoT-radio’s, zoals LoRa, werken met erg kleine berichten: ca. 10-20 bytes.
+Je moet dan wel weten of je berichten daarin passen.
+Om uit te rekenen hoeveel ruimte een waarde voor een sensor of actuator nodig heeft,
+in een binair formaat, kun je de volgende regels gebruiken:</p>
+<ul class="simple">
+<li><p>reken het waardenbereik om naar het geheeltallige (integer) bereik 0..x, waarbij elke stap relevant is.
+Dit doe je door schaling (vermenigvuldigen/delen) en verschuiven (optellen/aftrekken);</p></li>
+<li><p>voor 0..255 is 1 byte voldoende; voor 0..65536 2 bytes. (Je hebt vrijwel nooit meer nodig.)</p></li>
+<li><p>eventueel kun je ook in bits rekenen, als elke bit telt, maar dat laten we voorlopig buiten beschouwing.</p></li>
+</ul>
+<p>Voorbeeld:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>temperatuur 0..50 graden Celsius, in stappen van 0,5 graad:</dt><dd><ul>
+<li><p><em>zender</em>: vermenigvuldig met 2: verstuur waarde 0..100 (1 byte);</p></li>
+<li><p><em>ontvanger</em>: deel ontvangen waarde door 2.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>luchtdruk 950..1050, in 0,5 mbar (hPa) stappen:</dt><dd><ul>
+<li><p><em>zender</em>: trek 950 af, en vermenigvuldig met 2: 0..200 (1 byte);</p></li>
+<li><p>ontvanger: deel door 2, en tel er 950 bij.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Daarnaast heb je nog wat extra gegevens nodig, bijvoorbeeld om aan te geven over welke sensor of actuator het gaat,
+en om welk soort waarde; reken op 2 bytes extra per sensor/actuator.</p>
+<p>In sommige gevallen werken we met berichten in een tekstformaat (JSON):
+de berichten worden dan ca. 10 maal zo groot.</p>
+</div>
+<div class="section" id="bereik-en-vermogen">
+<h2>Bereik en vermogen<a class="headerlink" href="#bereik-en-vermogen" title="Permalink to this headline">¶</a></h2>
+<p>Afhankelijk van het soort toepassing heb je een radio met groter bereik nodig, of is een kleiner bereik voldoende.</p>
+<p>IoT-radio’s hebben in de regel een beperkt zendvermogen.
+De gebruikte radioband eist vaak een (vrij klein) maximum zendvermogen.
+En voor een mobiele IoT-knoop is “low power” van belang voor een grote levensduur van de batterij/accu.
+Vooral voor mobiele IoT-knopen is dit van belang: de batterij is het grootste en zwaarste onderdeel.</p>
+<p>Bij eenzelfde zendvermogen moet je kiezen tussen een groot bereik of een grote bitsnelheid (bitrate).</p>
+<p>De radio’s die wij in dit materiaal gebruiken hebben de volgende eigenschappen:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 40%" />
+<col style="width: 24%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>radio</strong></p></td>
+<td><p><strong>power</strong></p></td>
+<td><p><strong>bereik</strong></p></td>
+<td><p><strong>bitrate</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>WiFi</p></td>
+<td><p>medium</p></td>
+<td><p>lokaal bereik (10-50m)</p></td>
+<td><p>MBytes/s</p></td>
+</tr>
+<tr class="row-odd"><td><p>WiFi</p></td>
+<td><p>medium</p></td>
+<td><p>lokaal bereik (10-50m)</p></td>
+<td><p>Mbytes/s</p></td>
+</tr>
+<tr class="row-even"><td><p>RFM69</p></td>
+<td><p>low</p></td>
+<td><p>lokaal bereik (50-200m)</p></td>
+<td><p>50kbits/s (*)</p></td>
+</tr>
+<tr class="row-odd"><td><p>LoRa</p></td>
+<td><p>low</p></td>
+<td><p>niet-lokaal (enkele km)</p></td>
+<td><p>1 kbit/s (*)</p></td>
+</tr>
+</tbody>
+</table>
+<p>(*) voor LoRa is de bitrate nog lager bij een groot bereik.
+Bovendien mogen RFM69 en Lora-radio’s max. 1% van de tijd zenden.</p>
+</div>
+<div class="section" id="veiligheid-en-privacy">
+<h2>Veiligheid en privacy<a class="headerlink" href="#veiligheid-en-privacy" title="Permalink to this headline">¶</a></h2>
+<p>IoT-toepassingen zijn vaak erg gevoelig:
+je wilt niet dat anderen je sensorgegevens gebruiken,
+of dat anderen je actuatoren kunnen aansturen.
+De veiligheid van de verbindingen is dan van groot belang.
+Deze kun je op verschillende niveaus waarborgen:
+encryptie kan onderdeel zijn van de fysieke (radio)verbinding,
+maar je kunt ook end-to-end encryptie toepassen,
+op het niveau van de toepassing.</p>
+</div>
+<div class="section" id="samenvatting">
+<h2>Samenvatting<a class="headerlink" href="#samenvatting" title="Permalink to this headline">¶</a></h2>
+<p>Je kunt de eisen aan de communicatie voor een toepassing samenvatten in een tabel:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 18%" />
+<col style="width: 11%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 16%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>input/output</strong></p></td>
+<td><p><strong>signaal/ event</strong></p></td>
+<td><p><strong>periode</strong></p></td>
+<td><p><strong>latency</strong></p></td>
+<td><p><strong>bereik</strong></p></td>
+<td><p><strong>precisie</strong></p></td>
+<td><p><strong>best effort?</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>I: temperatuur</p></td>
+<td><p>signaal</p></td>
+<td><p>120 s</p></td>
+<td><p>60 s</p></td>
+<td><p>0..50’C</p></td>
+<td><p>0,5’C</p></td>
+<td><p>best effort</p></td>
+</tr>
+<tr class="row-odd"><td><p>I: aan/uit knop</p></td>
+<td><p>event</p></td>
+<td></td>
+<td><p>0,5 s</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>best effort</p></td>
+</tr>
+<tr class="row-even"><td><p>I: aan/uit (app)</p></td>
+<td><p>event</p></td>
+<td></td>
+<td><p>120 s</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>ACK</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017 eelco.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 4.2.0.
+    </p>
+  </div>
+</footer>
+
+
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>
