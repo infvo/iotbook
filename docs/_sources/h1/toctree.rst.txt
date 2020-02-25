@@ -1,8 +1,28 @@
-***********
-Hoofdstuk 1
-***********
+****************
+IoT-toepassingen
+****************
 
-Inleiding en overzicht hoofdstuk 1
+We beginnen met een aantal voorbeeld-toepassingen van het internet of things.
+Hiermee laten we zien wat de *functionele* bouwstenen zijn van een IoT-toepassing
+en hoe deze verbonden zijn in de *functionele IoT-keten*.
+
+.. figure:: IoT-node-controller-controller.png
+   :width: 500px
+   :align: center
+
+   Functionele IoT-keten
+
+We gaan hierbij nog niet in op de communicatie die hiervoor nodig is:
+deze komt in de volgende hoofdstukken aan bod.
+
+Aan de hand van deze voorbeelden laten we ook zien wat de typische kenmerken zijn van IoT-toepassingen
+en waarop je moet letten als je met het IoT aan de slag gaat.
+
+In de opdrachten ga je praktisch aan de slag:
+
+* met een eenvoudige IoT-keten, met hardware en/of gesimuleerde IoT-knopen en een dashboard-app.
+* met NodeRed, om deze te gebruiken als controller (besturingsprogramma) in de IoT-keten.
+
 
 .. toctree::
    :maxdepth: 2
