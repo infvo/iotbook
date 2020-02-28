@@ -1,5 +1,64 @@
-H2S1
-====
+Communicatie-bouwstenen
+=======================
 
-Subsection 2.1.1
-----------------
+In het vorige hoofdstuk hebben we kennis gemaakt met de *functionele bouwstenen* van de IoT-keten.
+In dit hoofdstuk gaan we in op de bouwstenen voor de communicatie.
+We beschrijven hier de algemene principes.
+In de volgende hoofdstukken werken we deze uit voor een aantal concrete IoT-ketens.
+De nadruk ligt daarbij vooral op de rand (*edge*) van de IoT-keten:
+de verbinding tussen de IoT-knopen en het internet.
+
+
+In de bovenstaande figuur zie je de functionele IoT-keten met een aantal extra apparaten voor de communicatie:
+
+* de IoT-knoop heeft een draadloze (radio-)verbinding met de IoT-gateway;
+* de IoT-gateway zorgt enerzijds voor de (radio-)communicatie met de IoT-knoop,
+  en anderzijds voor de verbinding met lokale netwerk;
+* de lokale gateway zorgt voor de verbinding tussen het lokale netwerk en het internet
+  (via het wide-area netwerk van de internet service provider);
+* de MQTT-broker zorgt voor de MQTT-verbinding tussen de IoT-knopen,
+  de controllers en de apps in het publieke internet;
+
+Zoals we later zullen zien blokkeert de lokale gateway, tussen het lokale netwerk en het internet,
+directe communicatie van buiten naar binnen:
+je kunt wel vanuit het lokale netwerk servers in het publieke internet bereiken,
+maar andersom kun je vanuit het publieke internet de computers in het lokale netwerk niet bereiken.
+Dit betekent bijvoorbeeld dat een app op je smartphone mogelijk wel werkt in het lokale netwerk (als je thuis bent),
+maar niet vanuit het mobiele netwerk (als je onderweg bent).
+Met behulp van de MQTT-broker kunnen we dit laatste wel weer mogelijk maken.
+
+Kleine variaties op dit thema, met alternatieven voor de MQTT-broker:
+
+* voor de Hue-toepassing (slimme verlichting) combineert de Hue-bridge de functies van gateway en lokale controller;
+  de Hue-server in het publieke internet zorgt voor de communicatie met enerzijds deze bridge,
+  en anderzijds de apps en eventueel andere diensten in het publieke internet;
+* in het geval van TheThingsNetwork verzorgt de TTN-server de communicatie met enerzijds de TTN-gateway(s),
+  en anderzijds de apps en andere diensten in het publieke internet.
+
+Vraag: waarom heb je een server in het publieke internet, zoals een MQTT-broker,
+nodig om vanuit een app overal te kunnen communiceren met de IoT-knopen thuis?
+- de lokale gateway (router/firewall) staat geen directe communicatie van buiten naar het lokale netwerk toe;
+- de afstand tussen de app en de IoT-knopen kan te groot zijn om deze zonder een dergelijke tussenstap te overbruggen;
+- het formaat van de berichten van de IoT-knopen is niet geschikt voor de app op je smartphone;
+- (vergroot de snelheid; vergroot de veiligheid?)
+
+Radio
+-----
+
+In veel gevallen willen we gebruik maken van IoT-knopen die mobiel zijn en/of niet gemakkelijk van een netvoeding voorzien kunnen worden.
+We hebben dan een draadloze (radio-)verbinding nodig in combinatie met een batterij.
+Om de batterij niet te groot te maken gebruiken we bij voorkeur een energie-zuinige radio.
+Voor veel Iot-toepassingen werken we bovendien met radio's in licentie-vrije frequentiebanden,
+bijvoorbeeld rond 2.4 Ghz, 5 Ghz, 818MHz, 430 MHz.
+Voorbeelden van dergelijke radio's zijn: WiFi, Bluetooth (in het bijzonder BLE: Bluetooth Low Energy),
+ZigBee, RFM69, LoRa,
+
+Een dergelijke radio heeft meestal de volgende beperkingen:
+
+- het zendvermogen is beperkt (zowel vanwege de beperkte batterij als vanwege de gebruikte frequentieband);
+- het bereik is beperkt, en/of
+- de bitrate (bits/s dat verstuurd kan worden) is beperkt, en/of
+- het bereik (de afstand waarover berichten betrouwbaar ontvangen kunnen worden) is beperkt.
+
+In het algemeen geldt dat bij gelijk zendvermogen, je kunt kiezen tussen een groter bereik of een grotere bitrate.
+Voor het versturen van bits over een grotere afstand heb je meer energie per bit nodig.

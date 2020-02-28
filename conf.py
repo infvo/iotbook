@@ -34,7 +34,8 @@ extensions = ['sphinx.ext.mathjax'] + runestone_extensions()
 
 # This sets up your project to use the defaults.  If you want to create a custom  set of templates
 # for your own project you can over ride them by creating your own _templates folder
-templates_path = [pkg_resources.resource_filename('runestone', 'common/project_template/_templates')]
+# templates_path = ['./_templates', pkg_resources.resource_filename('runestone', 'common/project_template/_templates')]
+templates_path = ['_templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -46,8 +47,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Runestone Interactive Overview'
-copyright = '2017 eelco'
+project = 'IoT-book'
+copyright = '2020 eelco'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -210,10 +211,10 @@ html_theme_path = [pkg_resources.resource_filename('runestone', 'common/project_
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'Runestone Interactive Overview'
+html_title = 'IoT-book'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title ='Runestone Interactive Overview'
+html_short_title ='IoT-book'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.

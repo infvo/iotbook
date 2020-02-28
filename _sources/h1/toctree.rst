@@ -7,7 +7,7 @@ Hiermee laten we zien wat de *functionele* bouwstenen zijn van een IoT-toepassin
 en hoe deze verbonden zijn in de *functionele IoT-keten*.
 
 .. figure:: IoT-node-controller-controller.png
-   :width: 500px
+   :width: 600px
    :align: center
 
    Functionele IoT-keten
@@ -23,6 +23,7 @@ In de opdrachten ga je praktisch aan de slag:
 * met een eenvoudige IoT-keten, met hardware en/of gesimuleerde IoT-knopen en een dashboard-app.
 * met NodeRed, om deze te gebruiken als controller (besturingsprogramma) in de IoT-keten.
 
+.. rubric:: Inhoud
 
 .. toctree::
    :maxdepth: 2

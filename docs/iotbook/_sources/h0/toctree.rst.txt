@@ -1,5 +1,0 @@
-
-
-.. toctree::
-
-   voorbereiding.rst 

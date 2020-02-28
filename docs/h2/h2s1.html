@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>1.1. H2S1 &#8212; Runestone Interactive Overview</title>
+    <title>1.1. Communicatie-bouwstenen &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
     <link rel="stylesheet" type="text/css" href="../_static/parsons.css?v=2F3E13EE" />
     <link rel="stylesheet" type="text/css" href="../_static/js_lib/prettify.css?v=2A364B6B" />
+    <link rel="stylesheet" type="text/css" href="../_static/shortanswer.css?v=7E18C432" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css?v=239FC54E" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css?v=8A1A42E4" />
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css?v=F471F95B" />
@@ -35,10 +36,10 @@
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css?v=4.2.0" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css?v=4.2.1" type="text/css" />
     <link rel="stylesheet" href="../_static/theme-overrides.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/runestonebase.js?v=4.2.0"></script>
+    <script type="text/javascript" src="../_static/runestonebase.js?v=4.2.1"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -83,7 +84,7 @@
     <script type="text/javascript" src="../_static/timedmc.js?v=B010A457"></script>
     <script type="text/javascript" src="../_static/timed.js?v=FD1C5153"></script>
     <script type="text/javascript" src="../_static/mchoice-i18n.en.js?v=354E6CD"></script>
-    <script type="text/javascript" src="../_static/shortanswer.js?v=8FCEE330"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js?v=494C152E"></script>
     <script type="text/javascript" src="../_static/timed_shortanswer.js?v=B3A117D7"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js?v=836E01C"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js?v=B64CF0A8"></script>
@@ -95,8 +96,8 @@
     <script type="text/javascript" src="../_static/python.js?v=76B9CFA2"></script>
     <script type="text/javascript" src="../_static/sql.js?v=49D0BD74"></script>
     <script type="text/javascript" src="../_static/activecode-i18n.en.js?v=65CA0724"></script>
-    <script type="text/javascript" src="../_static/skulpt.min.js?v=BDC8551F"></script>
-    <script type="text/javascript" src="../_static/skulpt-stdlib.js?v=5731007D"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js?v=A901CC2"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js?v=24904821"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
@@ -116,12 +117,12 @@
     <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <script type="text/javascript" src="../_static/waypoints.min.js"></script>
-    <script type="text/javascript" src="../_static/user-highlights.js?v=4.2.0"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js?v=4.2.1"></script>
     <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="../_static/presenter_mode.js?v=4.2.0"></script>
+    <script type="text/javascript" src="../_static/presenter_mode.js?v=4.2.1"></script>
     <script type="text/javascript" src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -143,12 +144,12 @@
     eBookConfig.isLoggedIn = false;
   
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
-  eBookConfig.logLevel = 0;
+  eBookConfig.logLevel = 30;
   eBookConfig.loginRequired = false;
   eBookConfig.build_info = "unknown";
   eBookConfig.python3 = true;
   eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
-  eBookConfig.runestone_version = '4.2.0';
+  eBookConfig.runestone_version = '4.2.1';
   eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
   eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
   eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
@@ -357,10 +358,63 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="h2s1">
-<h1><span class="section-number">1.1. </span>H2S1<a class="headerlink" href="#h2s1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="subsection-2-1-1">
-<h2><span class="section-number">1.1.1. </span>Subsection 2.1.1<a class="headerlink" href="#subsection-2-1-1" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="communicatie-bouwstenen">
+<h1><span class="section-number">1.1. </span>Communicatie-bouwstenen<a class="headerlink" href="#communicatie-bouwstenen" title="Permalink to this headline">¶</a></h1>
+<p>In het vorige hoofdstuk hebben we kennis gemaakt met de <em>functionele bouwstenen</em> van de IoT-keten.
+In dit hoofdstuk gaan we in op de bouwstenen voor de communicatie.
+We beschrijven hier de algemene principes.
+In de volgende hoofdstukken werken we deze uit voor een aantal concrete IoT-ketens.
+De nadruk ligt daarbij vooral op de rand (<em>edge</em>) van de IoT-keten:
+de verbinding tussen de IoT-knopen en het internet.</p>
+<p>In de bovenstaande figuur zie je de functionele IoT-keten met een aantal extra apparaten voor de communicatie:</p>
+<ul class="simple">
+<li><p>de IoT-knoop heeft een draadloze (radio-)verbinding met de IoT-gateway;</p></li>
+<li><p>de IoT-gateway zorgt enerzijds voor de (radio-)communicatie met de IoT-knoop,
+en anderzijds voor de verbinding met lokale netwerk;</p></li>
+<li><p>de lokale gateway zorgt voor de verbinding tussen het lokale netwerk en het internet
+(via het wide-area netwerk van de internet service provider);</p></li>
+<li><p>de MQTT-broker zorgt voor de MQTT-verbinding tussen de IoT-knopen,
+de controllers en de apps in het publieke internet;</p></li>
+</ul>
+<p>Zoals we later zullen zien blokkeert de lokale gateway, tussen het lokale netwerk en het internet,
+directe communicatie van buiten naar binnen:
+je kunt wel vanuit het lokale netwerk servers in het publieke internet bereiken,
+maar andersom kun je vanuit het publieke internet de computers in het lokale netwerk niet bereiken.
+Dit betekent bijvoorbeeld dat een app op je smartphone mogelijk wel werkt in het lokale netwerk (als je thuis bent),
+maar niet vanuit het mobiele netwerk (als je onderweg bent).
+Met behulp van de MQTT-broker kunnen we dit laatste wel weer mogelijk maken.</p>
+<p>Kleine variaties op dit thema, met alternatieven voor de MQTT-broker:</p>
+<ul class="simple">
+<li><p>voor de Hue-toepassing (slimme verlichting) combineert de Hue-bridge de functies van gateway en lokale controller;
+de Hue-server in het publieke internet zorgt voor de communicatie met enerzijds deze bridge,
+en anderzijds de apps en eventueel andere diensten in het publieke internet;</p></li>
+<li><p>in het geval van TheThingsNetwork verzorgt de TTN-server de communicatie met enerzijds de TTN-gateway(s),
+en anderzijds de apps en andere diensten in het publieke internet.</p></li>
+</ul>
+<p>Vraag: waarom heb je een server in het publieke internet, zoals een MQTT-broker,
+nodig om vanuit een app overal te kunnen communiceren met de IoT-knopen thuis?
+- de lokale gateway (router/firewall) staat geen directe communicatie van buiten naar het lokale netwerk toe;
+- de afstand tussen de app en de IoT-knopen kan te groot zijn om deze zonder een dergelijke tussenstap te overbruggen;
+- het formaat van de berichten van de IoT-knopen is niet geschikt voor de app op je smartphone;
+- (vergroot de snelheid; vergroot de veiligheid?)</p>
+<div class="section" id="radio">
+<h2><span class="section-number">1.1.1. </span>Radio<a class="headerlink" href="#radio" title="Permalink to this headline">¶</a></h2>
+<p>In veel gevallen willen we gebruik maken van IoT-knopen die mobiel zijn en/of niet gemakkelijk van een netvoeding voorzien kunnen worden.
+We hebben dan een draadloze (radio-)verbinding nodig in combinatie met een batterij.
+Om de batterij niet te groot te maken gebruiken we bij voorkeur een energie-zuinige radio.
+Voor veel Iot-toepassingen werken we bovendien met radio’s in licentie-vrije frequentiebanden,
+bijvoorbeeld rond 2.4 Ghz, 5 Ghz, 818MHz, 430 MHz.
+Voorbeelden van dergelijke radio’s zijn: WiFi, Bluetooth (in het bijzonder BLE: Bluetooth Low Energy),
+ZigBee, RFM69, LoRa,</p>
+<p>Een dergelijke radio heeft meestal de volgende beperkingen:</p>
+<ul class="simple">
+<li><p>het zendvermogen is beperkt (zowel vanwege de beperkte batterij als vanwege de gebruikte frequentieband);</p></li>
+<li><p>het bereik is beperkt, en/of</p></li>
+<li><p>de bitrate (bits/s dat verstuurd kan worden) is beperkt, en/of</p></li>
+<li><p>het bereik (de afstand waarover berichten betrouwbaar ontvangen kunnen worden) is beperkt.</p></li>
+</ul>
+<p>In het algemeen geldt dat bij gelijk zendvermogen, je kunt kiezen tussen een groter bereik of een grotere bitrate.
+Voor het versturen van bits over een grotere afstand heb je meer energie per bit nodig.</p>
 </div>
 </div>
 
@@ -425,8 +479,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2017 eelco.
-      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 4.2.0.
+        &copy; Copyright 2020 eelco.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 4.2.1.
     </p>
   </div>
 </footer>
