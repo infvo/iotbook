@@ -27,7 +27,6 @@ In de opdrachten ga je praktisch aan de slag:
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
 
    ontwikkeling.rst
    vb-sproeier.rst

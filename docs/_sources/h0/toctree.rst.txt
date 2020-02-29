@@ -1,5 +1,7 @@
 
+Voor de docent
+==============
 
 .. toctree::
 
-   voorbereiding.rst 
+   voorbereiding.rst

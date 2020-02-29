@@ -2,12 +2,7 @@
 Netwerken - Internet of Things
 ##############################
 
-Inleiding...!
-
-.. toctree::
-   :maxdepth: 1
-
-   h0/toctree.rst
+Inleiding...
 
 .. toctree::
    :maxdepth: 3
@@ -17,3 +12,12 @@ Inleiding...!
    h2/toctree.rst
    h3/toctree.rst
    h4/toctree.rst
+
+**************
+Voor de docent
+**************
+
+.. toctree::
+   :maxdepth: 1
+
+   h0/toctree.rst

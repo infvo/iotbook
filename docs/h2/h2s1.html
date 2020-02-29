@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>1.1. Communicatie-bouwstenen &#8212; IoT-book</title>
+    <title>2.1. Verbindingsapparaten &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -126,8 +126,8 @@
     <script type="text/javascript" src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.2. H2S2" href="h2s2.html" />
-    <link rel="prev" title="1. Hoofdstuk 2" href="toctree.html" />
+    <link rel="next" title="2.2. Protocollen" href="h2s2.html" />
+    <link rel="prev" title="2. Communicatie-bouwstenen" href="toctree.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -313,13 +313,13 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">1. </span>Hoofdstuk 2" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">2. </span>Communicatie-bouwstenen" data-toggle="tooltip">
     <a href="toctree.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">1.2. </span>H2S2' data-toggle="tooltip" >              
+  <li id="relations-next" title='Next Chapter - <span class="section-number">2.2. </span>Protocollen' data-toggle="tooltip" >              
     <a href="h2s2.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -358,25 +358,131 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="communicatie-bouwstenen">
-<h1><span class="section-number">1.1. </span>Communicatie-bouwstenen<a class="headerlink" href="#communicatie-bouwstenen" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="verbindingsapparaten">
+<h1><span class="section-number">2.1. </span>Verbindingsapparaten<a class="headerlink" href="#verbindingsapparaten" title="Permalink to this headline">¶</a></h1>
 <p>In het vorige hoofdstuk hebben we kennis gemaakt met de <em>functionele bouwstenen</em> van de IoT-keten.
-In dit hoofdstuk gaan we in op de bouwstenen voor de communicatie.
-We beschrijven hier de algemene principes.
+Vanuit het netwerk bezien zijn dit <em>eindapparaten</em>.
+In dit hoofdstuk gaan we in op de bouwstenen voor de communicatie.</p>
+<p>We beschrijven hier de algemene principes.
 In de volgende hoofdstukken werken we deze uit voor een aantal concrete IoT-ketens.
 De nadruk ligt daarbij vooral op de rand (<em>edge</em>) van de IoT-keten:
 de verbinding tussen de IoT-knopen en het internet.</p>
-<p>In de bovenstaande figuur zie je de functionele IoT-keten met een aantal extra apparaten voor de communicatie:</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/IoT-keten-communicatie.png"><img alt="../_images/IoT-keten-communicatie.png" src="../_images/IoT-keten-communicatie.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">IoT-keten met verbindingsapparaten</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>In de bovenstaande figuur zie je de IoT-keten uitgebreid met apparaten voor de communicatie:</p>
 <ul class="simple">
-<li><p>de IoT-knoop heeft een draadloze (radio-)verbinding met de IoT-gateway;</p></li>
-<li><p>de IoT-gateway zorgt enerzijds voor de (radio-)communicatie met de IoT-knoop,
-en anderzijds voor de verbinding met lokale netwerk;</p></li>
-<li><p>de lokale gateway zorgt voor de verbinding tussen het lokale netwerk en het internet
-(via het wide-area netwerk van de internet service provider);</p></li>
-<li><p>de MQTT-broker zorgt voor de MQTT-verbinding tussen de IoT-knopen,
+<li><p>de IoT-knoop heeft een <em>IoT-radioverbinding</em> met de <em>IoT-gateway</em>;</p></li>
+<li><p>de <em>IoT-gateway</em> zorgt enerzijds voor de radiocommunicatie met de IoT-knoop,
+en anderzijds voor de verbinding met lokale netwerk (LAN);</p></li>
+<li><p>de <em>lokale gateway</em> zorgt voor de verbinding tussen het lokale netwerk (LAN) en het internet
+- via het wide-area netwerk (WAN) van de internet service provider (ISP);</p></li>
+<li><p>de <em>MQTT-broker</em> zorgt voor de MQTT-verbinding tussen de IoT-knopen,
 de controllers en de apps in het publieke internet;</p></li>
 </ul>
-<p>Zoals we later zullen zien blokkeert de lokale gateway, tussen het lokale netwerk en het internet,
+<p>In deze figuur zijn de fysieke communicatieverbindingen getekend:</p>
+<ul class="simple">
+<li><p>de IoT-radioverbinding tussen IoT-knoop en IoT-gateway;</p></li>
+<li><p>het lokale netwerk (LAN), met daarin de lokale controller;</p></li>
+<li><p>het publieke internet - verbonden via het wide area network (WAN) van de internet service provider;</p></li>
+<li><p>met daaraan verbonden de MQTT broker, de globale controller, de app(s) en de diensten (in de “cloud”).</p></li>
+</ul>
+<p>De keten is opgebouwd uit een <em>lokaal deel</em> en een deel op afstand (<em>remote</em>), via het publieke internet.
+De MQTT-broker, de globale controller en de diensten zijn vaak “in the cloud”,
+via grote servercentra (“server farms”) in het internet.</p>
+<div class="section" id="iot-radio">
+<h2><span class="section-number">2.1.1. </span>IoT-radio<a class="headerlink" href="#iot-radio" title="Permalink to this headline">¶</a></h2>
+<p>In veel gevallen willen we gebruik maken van IoT-knopen die mobiel zijn en/of niet gemakkelijk van een netvoeding voorzien kunnen worden.
+We hebben dan een draadloze (radio-)verbinding nodig in combinatie met een batterij.
+Om de batterij niet te groot te maken gebruiken we bij voorkeur een energiezuinige radio.
+Voor veel Iot-toepassingen werken we bovendien met radio’s in licentievrije frequentiebanden,
+bijvoorbeeld rond 2.4 Ghz, 5 Ghz, 818MHz, 430 MHz.
+Voorbeelden van dergelijke radio’s zijn: WiFi, Bluetooth (in het bijzonder BLE: Bluetooth Low Energy),
+ZigBee, RFM69, LoRa, SigFox, e.d.</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/IoT-radio-vergelijking.png"><img alt="../_images/IoT-radio-vergelijking.png" src="../_images/IoT-radio-vergelijking.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Vergelijking tussen verschillende IoT-radio’s</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Een dergelijke IoT-radio heeft meestal de volgende beperkingen:</p>
+<ul class="simple">
+<li><p>het zendvermogen is beperkt (zowel vanwege de beperkte batterij als vanwege de gebruikte frequentieband);</p></li>
+<li><p>het bereik is beperkt, en/of</p></li>
+<li><p>de bitrate (bits/s dat verstuurd kan worden) is beperkt, en/of</p></li>
+<li><p>het bereik (de afstand waarover berichten betrouwbaar ontvangen kunnen worden) is beperkt.</p></li>
+</ul>
+<p>In het algemeen geldt dat bij gelijk zendvermogen, je kunt kiezen tussen een groter bereik of een grotere bitrate.
+Voor het versturen van bits over een grotere afstand heb je meer energie per bit nodig.</p>
+<p>In de volgende hoofdstukken werken we voorbeelden uit voor enkele van deze IoT-radio’s:
+WiFi, RFM69, en LoRa. (Mogelijk dat we in de toekomst daar nog 1 of 2 voorbeelden aan toevoegen.)</p>
+</div>
+<div class="section" id="iot-gateway">
+<h2><span class="section-number">2.1.2. </span>IoT-gateway<a class="headerlink" href="#iot-gateway" title="Permalink to this headline">¶</a></h2>
+<p>Voor de verbinding tussen de IoT-knoop en het lokale netwerk (LAN) hebben we een <em>gateway</em> nodig.
+Deze heeft vaak twee functies:</p>
+<ul class="simple">
+<li><p>fysieke verbinding tussen beide netwerken;</p></li>
+<li><p>zo nodig: conversie tussen de protocollen van beide netwerken.</p></li>
+</ul>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/IoT-gateways-communicatie.png"><img alt="../_images/IoT-gateways-communicatie.png" src="../_images/IoT-gateways-communicatie.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">3 verschillende IoT-gateways met hun verbindingen</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>Als de IoT-knoop over WiFi beschikt, fungeert het WiFi-basestation als gateway.
+Voor de RFM69- en LoRa-radio’s zijn afzonderlijke gateways nodig.
+Je hoeft niet altijd zelf een LoRa-gateway te hebben.
+Als je gebruik maakt van een LoRaWan-netwerk van KPN of TTN (TheThingsNetwork) is het voldoende als er een gateway in de buurt staat.
+net als een mobiele zendmast voor het mobiele netwerk.</p>
+</div>
+<div class="section" id="lan-gateway">
+<h2><span class="section-number">2.1.3. </span>LAN-gateway<a class="headerlink" href="#lan-gateway" title="Permalink to this headline">¶</a></h2>
+<p>De LAN-gateway verzorgt de verbinding tussen het lokale netwerk (LAN) en het internet,
+via het wide-area network (WAN) van de internet service provider (ISP).
+Vaak is deze gateway gecombineerd met andere functies, zoals die van firewall, lokale router en WiFi-basestation.</p>
+<p>Meestal is een LAN-gateway voor thuisgebruik een zogenaamde NAT-router:
+dit staat voor “Network Address Translation”.
+Het lokale netwerk gebruikt dan geen echte (publieke) internetadressen,
+maar lokale (of “private”) adressen van de vorm 192.169.xxx.xxx, 10.xxx.xxx.xxx, 172.xxx.xxx.xxx.
+De LAN-gateway heeft zelf één enkel publiek internetadres.
+“Network Address Translation” betekent dat de LAN-gateway deze lokale adressen omzet naar dit publieke interadres,
+en omgekeerd.</p>
+<p>zie: <a class="reference external" href="https://nl.wikipedia.org/wiki/Network_address_translation">https://nl.wikipedia.org/wiki/Network_address_translation</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Network_address_translation">https://en.wikipedia.org/wiki/Network_address_translation</a></p>
+<p>Een gevolg is dat computers in het lokale netwerk niet direct bereikbaar zijn vanuit het publieke internet.
+Dit betekent dat ook de IoT-knopen en/of de IoT-gateway niet direct bereikbaar is.</p>
+<p>In de voorbeelden die we in de latere hoofdstukken uitwerken gebruiken we een MQTT-broker (server) in het publieke internet.
+Via het MQTT-protocol en deze broker kunnen we zowel “van binnen naar buiten” als “van buiten naar binnen” communiceren.</p>
+</div>
+<div class="section" id="mqtt-broker">
+<h2><span class="section-number">2.1.4. </span>MQTT-broker<a class="headerlink" href="#mqtt-broker" title="Permalink to this headline">¶</a></h2>
+<p>Het internet of things is niet zo gestandaardiseerd als het web:
+er zijn veel verschillende protocollen waar je uit kunt kiezen.</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/MQTT-IoT.png"><img alt="../_images/MQTT-IoT.png" src="../_images/MQTT-IoT.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">MQTT als publish-subscribe protocol</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Een veel-gebruikt IoT-protocol is MQTT (MQ Telemetry Transport): dit biedt beveiligde en (desgewenst) betrouwbare communicatie van berichten.
+Voor veel IoT-toepassingen zijn deze berichten vrij klein: enkele tientallen tot enkele honderden bytes.
+MQTT kan deze efficiënt verwerken.
+MQTT is een zogenaamd <em>publish-subscribe</em> protocol.
+Een client kan zich abonneren op alle berichten van een bepaald topic (of kanaal).
+En een client kan berichten publiceren met een bepaald topic.
+De broker zorgt voor het doorsturen van de berichten tussen de clients.
+Er is daarbij geen verschil tussen een IoT-knoop, een app of een cloud-service als client.</p>
+</div>
+<div class="section" id="routers">
+<h2><span class="section-number">2.1.5. </span>Routers<a class="headerlink" href="#routers" title="Permalink to this headline">¶</a></h2>
+<p>Het internet verbindt computernetwerken tot een wereldwijd netwerk.
+Het internet gebruikt daarvoor een reeks protocollen, vaak aangeduid als de TCP/IP-stack.
+Het basisprotocol van het internet, het IP-protocol,
+zorgt voor de “best effort” communicatie van IP-pakketten tussen computers in het internet.
+Een IP-router verbindt twee of meer netwerken.
+Deze router zorgt ervoor dat de pakketten die geen lokale bestemming hebben,
+een stap dichter bij hun bestemming komen.</p>
+</div>
+<div class="section" id="rest">
+<h2><span class="section-number">2.1.6. </span>Rest<a class="headerlink" href="#rest" title="Permalink to this headline">¶</a></h2>
+<p>Het verschil is niet alleen de afstand tot de IoT-knoop.
+Zoals we later zullen zien blokkeert de lokale gateway, tussen het lokale netwerk en het internet,
 directe communicatie van buiten naar binnen:
 je kunt wel vanuit het lokale netwerk servers in het publieke internet bereiken,
 maar andersom kun je vanuit het publieke internet de computers in het lokale netwerk niet bereiken.
@@ -397,24 +503,6 @@ nodig om vanuit een app overal te kunnen communiceren met de IoT-knopen thuis?
 - de afstand tussen de app en de IoT-knopen kan te groot zijn om deze zonder een dergelijke tussenstap te overbruggen;
 - het formaat van de berichten van de IoT-knopen is niet geschikt voor de app op je smartphone;
 - (vergroot de snelheid; vergroot de veiligheid?)</p>
-<div class="section" id="radio">
-<h2><span class="section-number">1.1.1. </span>Radio<a class="headerlink" href="#radio" title="Permalink to this headline">¶</a></h2>
-<p>In veel gevallen willen we gebruik maken van IoT-knopen die mobiel zijn en/of niet gemakkelijk van een netvoeding voorzien kunnen worden.
-We hebben dan een draadloze (radio-)verbinding nodig in combinatie met een batterij.
-Om de batterij niet te groot te maken gebruiken we bij voorkeur een energie-zuinige radio.
-Voor veel Iot-toepassingen werken we bovendien met radio’s in licentie-vrije frequentiebanden,
-bijvoorbeeld rond 2.4 Ghz, 5 Ghz, 818MHz, 430 MHz.
-Voorbeelden van dergelijke radio’s zijn: WiFi, Bluetooth (in het bijzonder BLE: Bluetooth Low Energy),
-ZigBee, RFM69, LoRa,</p>
-<p>Een dergelijke radio heeft meestal de volgende beperkingen:</p>
-<ul class="simple">
-<li><p>het zendvermogen is beperkt (zowel vanwege de beperkte batterij als vanwege de gebruikte frequentieband);</p></li>
-<li><p>het bereik is beperkt, en/of</p></li>
-<li><p>de bitrate (bits/s dat verstuurd kan worden) is beperkt, en/of</p></li>
-<li><p>het bereik (de afstand waarover berichten betrouwbaar ontvangen kunnen worden) is beperkt.</p></li>
-</ul>
-<p>In het algemeen geldt dat bij gelijk zendvermogen, je kunt kiezen tussen een groter bereik of een grotere bitrate.
-Voor het versturen van bits over een grotere afstand heb je meer energie per bit nodig.</p>
 </div>
 </div>
 
@@ -425,26 +513,26 @@ Voor het versturen van bits over een grotere afstand heb je meer energie per bit
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - <span class="section-number">1. </span>Hoofdstuk 2' data-toggle="tooltip">
-    <a href="toctree.html" aria-label="<span class="section-number">1. </span>Hoofdstuk 2">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - <span class="section-number">2. </span>Communicatie-bouwstenen' data-toggle="tooltip">
+    <a href="toctree.html" aria-label="<span class="section-number">2. </span>Communicatie-bouwstenen">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="toctree.html" aria-label="<span class="section-number">1. </span>Hoofdstuk 2"></a>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="toctree.html" aria-label="<span class="section-number">2. </span>Communicatie-bouwstenen"></a>
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - <span class="section-number">1.2. </span>H2S2' data-toggle="tooltip" >
-    <a href="h2s2.html" aria-label="<span class="section-number">1.2. </span>H2S2">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - <span class="section-number">2.2. </span>Protocollen' data-toggle="tooltip" >
+    <a href="h2s2.html" aria-label="<span class="section-number">2.2. </span>Protocollen">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="h2s2.html" aria-label="<span class="section-number">1.2. </span>H2S2">Next Section - <span class="section-number">1.2. </span>H2S2</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h2s2.html" aria-label="<span class="section-number">2.2. </span>Protocollen">Next Section - <span class="section-number">2.2. </span>Protocollen</a>
 
 <script type="text/javascript">
 

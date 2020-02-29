@@ -80,8 +80,8 @@
       <ul class="nav navbar-nav navbar-right" >
 
         <li class="divider-vertical"></li>
-
-
+	  
+			  
         <!-- social media dropdown -->
         {% if minimal_outside_links != 'True' %}
         <li class="dropdown">
@@ -325,7 +325,7 @@
   {% block body %}
   {% endblock %}
   <div id=scprogresscontainer>
-    You have attempted! <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
   </div>
   {% block nextprevious %}
       {% include "subchapter.html" %}
@@ -360,7 +360,7 @@
       {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}<br/>
     {%- endif %}
     {%- if show_sphinx %}
-      {% trans sphinx_version=sphinx_version|e %}Created! using <a href="http://runestoneinteractive.org/">Runestone</a> {{ runestone_version }}.{% endtrans %}
+      {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://runestoneinteractive.org/">Runestone</a> {{ runestone_version }}.{% endtrans %}
     {%- endif %}
     </p>
   </div>
@@ -389,7 +389,6 @@
   {% endif %}
 {% endif %}
 
-<script> getSwitch!(); </script>
-<p> Hello! </p>
+<script> getSwitch(); </script>
 
 {% endblock %}

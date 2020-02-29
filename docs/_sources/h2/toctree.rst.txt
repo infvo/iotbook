@@ -1,6 +1,6 @@
-***********
-Hoofdstuk 2
-***********
+***********************
+Communicatie-bouwstenen
+***********************
 
 Inleiding en overzicht hoofdstuk 2
 
