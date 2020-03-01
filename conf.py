@@ -34,7 +34,7 @@ extensions = ['sphinx.ext.mathjax'] + runestone_extensions()
 
 # This sets up your project to use the defaults.  If you want to create a custom  set of templates
 # for your own project you can over ride them by creating your own _templates folder
-templates_path = [pkg_resources.resource_filename('runestone', 'common/project_template/_templates')]
+templates_path = ['_templates', pkg_resources.resource_filename('runestone', 'common/project_template/_templates')]
 # templates_path = ['_templates']
 
 # The suffix of source filenames.

@@ -363,9 +363,13 @@
       
 
 <script type="text/javascript">
+  var relations_next = $('#relations-next');
+  var relations_prev = $('#relations-prev');
+  relations_next.attr("title", "Next - " + relations_next.text());
+  relations_prev.attr("title", "Previous - " + relations_prev.text());
 
-  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
-  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  relations_prev.tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  relations_next.tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
 
 </script>
 

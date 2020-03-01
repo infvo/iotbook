@@ -401,7 +401,7 @@
 <li class="toctree-l3"><a class="reference internal" href="h2/h2s3.html#subsection-2-3-1">2.3.1. Subsection 2.3.1</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="h2/h2s4.html">2.4. H2S4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="h2/h2s4.html">2.4. Vragen en opdrachten</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="h2/h2s4.html#subsection-2-4-1">2.4.1. Subsection 2.4.1</a></li>
 </ul>
 </li>
@@ -464,20 +464,25 @@
   
       
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - <span class="section-number">1. </span>IoT-toepassingen' data-toggle="tooltip" >
-    <a href="h1/toctree.html" aria-label="<span class="section-number">1. </span>IoT-toepassingen">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
+    <a href="h1/toctree.html" aria-label="->next">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+          <span style="visibility:hidden;"> <span class="section-number">1. </span>IoT-toepassingen </span>
       </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="h1/toctree.html" aria-label="<span class="section-number">1. </span>IoT-toepassingen">Next Section - <span class="section-number">1. </span>IoT-toepassingen</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h1/toctree.html" aria-label="next">Next Section - <span class="section-number">1. </span>IoT-toepassingen</a>
 
 <script type="text/javascript">
+  var relations_next = $('#relations-next');
+  var relations_prev = $('#relations-prev');
+  relations_next.attr("title", "Next - " + relations_next.text());
+  relations_prev.attr("title", "Previous - " + relations_prev.text());
 
-  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
-  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  relations_prev.tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  relations_next.tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
 
 </script>
 

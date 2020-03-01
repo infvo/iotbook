@@ -372,31 +372,37 @@
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - <span class="section-number">3. </span>Hoofdstuk 3' data-toggle="tooltip">
-    <a href="toctree.html" aria-label="<span class="section-number">3. </span>Hoofdstuk 3">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
+    <a href="toctree.html" aria-label="<-previous">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+            <span style="visibility:hidden;"> <span class="section-number">3. </span>Hoofdstuk 3 </span>
         </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="toctree.html" aria-label="<span class="section-number">3. </span>Hoofdstuk 3"></a>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="toctree.html" aria-label="prev"></a>
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - <span class="section-number">3.2. </span>H3S2' data-toggle="tooltip" >
-    <a href="h3s2.html" aria-label="<span class="section-number">3.2. </span>H3S2">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
+    <a href="h3s2.html" aria-label="->next">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+          <span style="visibility:hidden;"> <span class="section-number">3.2. </span>H3S2 </span>
       </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="h3s2.html" aria-label="<span class="section-number">3.2. </span>H3S2">Next Section - <span class="section-number">3.2. </span>H3S2</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="h3s2.html" aria-label="next">Next Section - <span class="section-number">3.2. </span>H3S2</a>
 
 <script type="text/javascript">
+  var relations_next = $('#relations-next');
+  var relations_prev = $('#relations-prev');
+  relations_next.attr("title", "Next - " + relations_next.text());
+  relations_prev.attr("title", "Previous - " + relations_prev.text());
 
-  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
-  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  relations_prev.tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  relations_next.tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
 
 </script>
 
