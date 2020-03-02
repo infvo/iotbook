@@ -1,5 +1,30 @@
 Protocollen
 ===========
 
-Subsection 2.2.1
-----------------
+Om de communicatie tussen twee of meer deelnemers goed te laten verlopen heb je afspraken nodig.
+Het geheel van afspraken voor een bepaalde communicatie noemen we het *communicatieprotocol*,
+of kortweg *protocol*.
+
+Een communicatieprotocol heeft gewoonlijk afspraken voor de volgende aspecten:
+
+* adressering: bij de communicatie in een netwerk moet je de deelnemers afzonderlijk kunnen adresseren;
+* payload: de eigenlijke inhoud van de communicatie heet de *payload*, je moet het formaat (de vorm) daarvan beschrijven;
+* metadata: naast de eigenlijk inhoud moet je vaak extra gegevens communiceren: de metadata;
+* interactiemodel: op welke manier communiceren de deelnemers, wie kan het initiatief nemen, enz.
+
+Voorbeelden hiervan voor het HTTP-protocol:
+
+* adressering: het URL-gedeelte na de "https://" - bijvoorbeeld "infvo.nl/betapartners";
+* payload: HTML-document, of CSS, JavaScript, image-bestanden;
+* metadata: de HTTP-headers, met bijvoorbeeld cookies, gegevens over de browser, enz.;
+* interactiemodel: client-server, met de browser als client en de webserver als server.
+  De browser stuurt een verzoek (request) naar de webserver, deze stuurt een antwoord (response) terug,
+  met daarin bijvoorbeeld een HTML-document.
+
+De standaarden voor HTML, CSS en JavaScript horen bij de payload-beschrijving van het HTTP-protocol.
+Het is belangrijk dat alle browsers en alle webservers zich aan deze standaarden houden.
+
+Deze standaarden evolueren: het is daarom belangrijk om een recente browser te gebruiken.
+
+Protocol-elementen
+------------------
