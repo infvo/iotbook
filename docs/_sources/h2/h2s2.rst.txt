@@ -12,7 +12,10 @@ Een communicatieprotocol heeft gewoonlijk afspraken voor de volgende aspecten:
 * metadata: naast de eigenlijk inhoud moet je vaak extra gegevens communiceren: de metadata;
 * interactiemodel: op welke manier communiceren de deelnemers, wie kan het initiatief nemen, enz.
 
-Voorbeelden hiervan voor het HTTP-protocol:
+Voorbeeld: HTTP
+---------------
+
+Voorbeelden van de afspraken voor het HTTP-protocol:
 
 * adressering: het URL-gedeelte na de "https://" - bijvoorbeeld "infvo.nl/betapartners";
 * payload: HTML-document, of CSS, JavaScript, image-bestanden;
@@ -26,5 +29,61 @@ Het is belangrijk dat alle browsers en alle webservers zich aan deze standaarden
 
 Deze standaarden evolueren: het is daarom belangrijk om een recente browser te gebruiken.
 
-Protocol-elementen
-------------------
+Stapelen van protocollen
+------------------------
+
+In de praktijk heb je vaak te maken met een stapeling (stacking) van protocollen:
+een protocol wordt dan gebruikt als basis voor een hoger-niveau communicatie.
+
+Ook in het dagelijks leven kom je deze situatie vaak tegen, bijvoorbeeld:
+
+* je gebruikt het protocol van de telefoon om een spraakverbinding te maken.
+  Deze verbinding maakt verder geen aannames over de aard van de spraak,
+  je bent vrij in de keuze van taal of andere geluiden.
+* je gebruikt het protocol van de nederlandse taal voor het gesprek met je gesprekspartner.
+* voor een goede kennis of voor een collega gebruik je allerlei woorden of termen die in
+  het normale nederlands niet gebruikt worden.
+
+In dit geval heb je al een "stack" van tenminste 3 protocollen.
+
+Internet-protocolstack
+----------------------
+
+In de ICT kom je vaak een 3-lagen model tegen:
+
+* de fysieke laag: de hardware;
+* de systeemlaag: de systeemsoftware;
+* de toepassingenlaag: de toepassingen.
+
+Voor het internet kunnen we ook grotendeels dit model gebruiken.
+
+De fysieke laag kan uit allerlei soorten verbindingen bestaan,
+bijvoorbeeld:
+
+* bedrade verbindingen: Ethernet (in een lokaal netwerk), coaxkabel (tv-kabelnetwerk);
+* draadloze verbindingen: WiFi (in een lokaal netwerk), 4G (mobiel netwerk).
+
+In de internet-protocolstack is de systeemlaag ("TCP/IP") gesplitst in 2 lagen,
+de netwerklaag en de transportlaag.
+De netwerklaag (IP) verzorgt de eigenlijke communicatie in het internet-netwerk.
+De transportlaag (TCP, UDP) maakt bij de zender de data klaar voor transport over de netwerklaag,
+en pakt deze weer uit bij de ontvanger.
+
+De toepassingenlaag bevat alle toepassingen, zoals e-mail (SMTP, POP3, IMAP), file transfer (FTP),
+en het web (HTTP).
+Dit zijn voorbeelden van *open standaarden* waar iedereen gebruik van kan maken.
+Daarnaast kan iedereen zijn eigen internet-toepassingen maken,
+met een eigen protocol, zoals WhatsApp, Skype, Spotify, enz.
+Deze protocollen zijn niet open, en zijn alleen te gebruiken met deze toepassingen.
+
+
+
+
+
+
+
+
+
+
+
+De internet-protocolstack bestaat uit de

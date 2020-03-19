@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
     <link rel="stylesheet" type="text/css" href="../_static/parsons.css?v=2F3E13EE" />
     <link rel="stylesheet" type="text/css" href="../_static/js_lib/prettify.css?v=2A364B6B" />
+    <link rel="stylesheet" type="text/css" href="../_static/shortanswer.css?v=7E18C432" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css?v=239FC54E" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css?v=8A1A42E4" />
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css?v=F471F95B" />
@@ -35,10 +36,10 @@
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css?v=4.2.0" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css?v=4.2.1" type="text/css" />
     <link rel="stylesheet" href="../_static/theme-overrides.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/runestonebase.js?v=4.2.0"></script>
+    <script type="text/javascript" src="../_static/runestonebase.js?v=4.2.1"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -83,7 +84,7 @@
     <script type="text/javascript" src="../_static/timedmc.js?v=B010A457"></script>
     <script type="text/javascript" src="../_static/timed.js?v=FD1C5153"></script>
     <script type="text/javascript" src="../_static/mchoice-i18n.en.js?v=354E6CD"></script>
-    <script type="text/javascript" src="../_static/shortanswer.js?v=8FCEE330"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js?v=494C152E"></script>
     <script type="text/javascript" src="../_static/timed_shortanswer.js?v=B3A117D7"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js?v=836E01C"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js?v=B64CF0A8"></script>
@@ -95,8 +96,8 @@
     <script type="text/javascript" src="../_static/python.js?v=76B9CFA2"></script>
     <script type="text/javascript" src="../_static/sql.js?v=49D0BD74"></script>
     <script type="text/javascript" src="../_static/activecode-i18n.en.js?v=65CA0724"></script>
-    <script type="text/javascript" src="../_static/skulpt.min.js?v=BDC8551F"></script>
-    <script type="text/javascript" src="../_static/skulpt-stdlib.js?v=5731007D"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js?v=A901CC2"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js?v=24904821"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
@@ -116,12 +117,12 @@
     <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <script type="text/javascript" src="../_static/waypoints.min.js"></script>
-    <script type="text/javascript" src="../_static/user-highlights.js?v=4.2.0"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js?v=4.2.1"></script>
     <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="../_static/presenter_mode.js?v=4.2.0"></script>
+    <script type="text/javascript" src="../_static/presenter_mode.js?v=4.2.1"></script>
     <script type="text/javascript" src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -148,7 +149,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.python3 = true;
   eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
-  eBookConfig.runestone_version = '4.2.0';
+  eBookConfig.runestone_version = '4.2.1';
   eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
   eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
   eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
@@ -369,7 +370,9 @@ of kortweg <em>protocol</em>.</p>
 <li><p>metadata: naast de eigenlijk inhoud moet je vaak extra gegevens communiceren: de metadata;</p></li>
 <li><p>interactiemodel: op welke manier communiceren de deelnemers, wie kan het initiatief nemen, enz.</p></li>
 </ul>
-<p>Voorbeelden hiervan voor het HTTP-protocol:</p>
+<div class="section" id="voorbeeld-http">
+<h2><span class="section-number">2.2.1. </span>Voorbeeld: HTTP<a class="headerlink" href="#voorbeeld-http" title="Permalink to this headline">¶</a></h2>
+<p>Voorbeelden van de afspraken voor het HTTP-protocol:</p>
 <ul class="simple">
 <li><p>adressering: het URL-gedeelte na de “<a class="reference external" href="https://">https://</a>” - bijvoorbeeld “infvo.nl/betapartners”;</p></li>
 <li><p>payload: HTML-document, of CSS, JavaScript, image-bestanden;</p></li>
@@ -381,8 +384,49 @@ met daarin bijvoorbeeld een HTML-document.</p></li>
 <p>De standaarden voor HTML, CSS en JavaScript horen bij de payload-beschrijving van het HTTP-protocol.
 Het is belangrijk dat alle browsers en alle webservers zich aan deze standaarden houden.</p>
 <p>Deze standaarden evolueren: het is daarom belangrijk om een recente browser te gebruiken.</p>
-<div class="section" id="protocol-elementen">
-<h2><span class="section-number">2.2.1. </span>Protocol-elementen<a class="headerlink" href="#protocol-elementen" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="stapelen-van-protocollen">
+<h2><span class="section-number">2.2.2. </span>Stapelen van protocollen<a class="headerlink" href="#stapelen-van-protocollen" title="Permalink to this headline">¶</a></h2>
+<p>In de praktijk heb je vaak te maken met een stapeling (stacking) van protocollen:
+een protocol wordt dan gebruikt als basis voor een hoger-niveau communicatie.</p>
+<p>Ook in het dagelijks leven kom je deze situatie vaak tegen, bijvoorbeeld:</p>
+<ul class="simple">
+<li><p>je gebruikt het protocol van de telefoon om een spraakverbinding te maken.
+Deze verbinding maakt verder geen aannames over de aard van de spraak,
+je bent vrij in de keuze van taal of andere geluiden.</p></li>
+<li><p>je gebruikt het protocol van de nederlandse taal voor het gesprek met je gesprekspartner.</p></li>
+<li><p>voor een goede kennis of voor een collega gebruik je allerlei woorden of termen die in
+het normale nederlands niet gebruikt worden.</p></li>
+</ul>
+<p>In dit geval heb je al een “stack” van tenminste 3 protocollen.</p>
+</div>
+<div class="section" id="internet-protocolstack">
+<h2><span class="section-number">2.2.3. </span>Internet-protocolstack<a class="headerlink" href="#internet-protocolstack" title="Permalink to this headline">¶</a></h2>
+<p>In de ICT kom je vaak een 3-lagen model tegen:</p>
+<ul class="simple">
+<li><p>de fysieke laag: de hardware;</p></li>
+<li><p>de systeemlaag: de systeemsoftware;</p></li>
+<li><p>de toepassingenlaag: de toepassingen.</p></li>
+</ul>
+<p>Voor het internet kunnen we ook grotendeels dit model gebruiken.</p>
+<p>De fysieke laag kan uit allerlei soorten verbindingen bestaan,
+bijvoorbeeld:</p>
+<ul class="simple">
+<li><p>bedrade verbindingen: Ethernet (in een lokaal netwerk), coaxkabel (tv-kabelnetwerk);</p></li>
+<li><p>draadloze verbindingen: WiFi (in een lokaal netwerk), 4G (mobiel netwerk).</p></li>
+</ul>
+<p>In de internet-protocolstack is de systeemlaag (“TCP/IP”) gesplitst in 2 lagen,
+de netwerklaag en de transportlaag.
+De netwerklaag (IP) verzorgt de eigenlijke communicatie in het internet-netwerk.
+De transportlaag (TCP, UDP) maakt bij de zender de data klaar voor transport over de netwerklaag,
+en pakt deze weer uit bij de ontvanger.</p>
+<p>De toepassingenlaag bevat alle toepassingen, zoals e-mail (SMTP, POP3, IMAP), file transfer (FTP),
+en het web (HTTP).
+Dit zijn voorbeelden van <em>open standaarden</em> waar iedereen gebruik van kan maken.
+Daarnaast kan iedereen zijn eigen internet-toepassingen maken,
+met een eigen protocol, zoals WhatsApp, Skype, Spotify, enz.
+Deze protocollen zijn niet open, en zijn alleen te gebruiken met deze toepassingen.</p>
+<p>De internet-protocolstack bestaat uit de</p>
 </div>
 </div>
 
@@ -454,7 +498,7 @@ Het is belangrijk dat alle browsers en alle webservers zich aan deze standaarden
     </p>
     <p>
         &copy; Copyright 2020 eelco.
-      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 4.2.0.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 4.2.1.
     </p>
   </div>
 </footer>
