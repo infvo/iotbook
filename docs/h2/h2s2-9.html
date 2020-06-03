@@ -357,7 +357,19 @@
   
   <div class="section" id="metadata">
 <h1><span class="section-number">2.2.9. </span>Metadata<a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h1>
-<p>P.M.</p>
+<p>Metadata is “data over data”.
+Metadata in een protocol bevat gegevens over het protocol of over de payload.
+Voorbeelden: adres van bestemming, adres van afzender, lengte van de payload,
+checksum van de payload, protocol van de payload.</p>
+<p>Soms kan een gebruiker naast de payload ook metadata versturen,
+als onderdeel van het toepassingsprotocol.
+Een voorbeeld hiervan zijn de HTTP-headers waarin bijvoorbeeld cookies meegegeven worden,
+of gegevens over de afzender.</p>
+<p>In de huidige versie van MQTT kun je als gebruiker geen metadata meegeven.
+De volgende versie (v5) biedt deze mogelijkheid wel, in de vorm van headers (als bij HTTP).</p>
+<p>De metadata van het LoRaWan-protocol bevat onder andere een frame counter,
+waarmee je kunt controleren of er een bericht gemist is;
+en een poortnummer, waarmee je verschillende soorten payload kunt onderscheiden.</p>
 </div>
 
 
