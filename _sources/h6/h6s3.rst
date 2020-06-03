@@ -1,0 +1,19 @@
+TTN: zelf aan de slag
+=====================
+
+In dit gedeelte beschrijven we het interface (console) van TheThingsNetwork.
+Deze informatie heb je nodig voor het uitvoeren van de praktische opdrachten.
+
+
+.. toctree::
+   :maxdepth: 1
+
+   h6s3-1.rst
+   h6s3-2.rst
+   h6s3-3.rst
+   h6s3-4.rst
+   h6s3-5.rst
+   h6s3-6.rst
+   h6s3-7.rst
+   h6s3-toetsvragen.rst
+   h6s3-opdrachten.rst

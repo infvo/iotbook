@@ -1,6 +1,6 @@
-***********
-Hoofdstuk 3
-***********
+*************************
+Webservers, HTTP en API's
+*************************
 
 Inleiding en overzicht hoofdstuk 3
 

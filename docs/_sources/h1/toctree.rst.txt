@@ -2,11 +2,11 @@
 IoT-toepassingen
 ****************
 
-We beginnen met een aantal voorbeeld-toepassingen van het internet of things.
+We beginnen met een aantal voorbeeldtoepassingen van het internet of things.
 Hiermee laten we zien wat de *functionele* bouwstenen zijn van een IoT-toepassing
 en hoe deze verbonden zijn in de *functionele IoT-keten*.
 
-.. figure:: IoT-node-controller-controller.png
+.. figure:: IoT-keten-functioneel-1.png
    :width: 600px
    :align: center
 
@@ -31,5 +31,5 @@ In de opdrachten ga je praktisch aan de slag:
    ontwikkeling.rst
    vb-sproeier.rst
    h1s2.rst
-   h1s3.rst
+   h1-meervoorbeelden.rst
    h1s4.rst

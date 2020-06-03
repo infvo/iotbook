@@ -2,3 +2,4 @@ __pycache__
 *.pyc
 runestone.log
 .DS_Store
+*.pyc

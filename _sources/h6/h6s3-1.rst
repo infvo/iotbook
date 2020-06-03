@@ -1,0 +1,13 @@
+Payload
+-------
+
+(fig. binair gecodeerd uplink-bericht met temperatuur en luchtdruk.)
+
+De payload van een LoRa-bericht probeer je kort te houden - maximaal enkele tientallen bytes.
+(Zie de opmerkingen hiervoor.)
+Door het gebruik van een binair gecodeeerd formaat kun je de payload klein houden.
+Een tekstbericht zoals in JSON-formaat is al snel veel te groot.
+De codering van de uplink-payload gebeurt in het device.
+In de TTN-application moet je dan een passende decodeerfunctie hebben die deze payload weer omzet in een JavaScript object. (Deze functie kun je definiëren via het console.)
+
+Een veel gebruikt binair formaat is het Cayenne Low Power Payload (Cayenne LPP) formaat.

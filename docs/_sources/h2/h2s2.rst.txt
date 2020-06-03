@@ -1,89 +1,35 @@
 Protocollen
 ===========
 
-Om de communicatie tussen twee of meer deelnemers goed te laten verlopen heb je afspraken nodig.
-Het geheel van afspraken voor een bepaalde communicatie noemen we het *communicatieprotocol*,
-of kortweg *protocol*.
+.. toctree::
+  :maxdepth: 1
 
-Een communicatieprotocol heeft gewoonlijk afspraken voor de volgende aspecten:
-
-* adressering: bij de communicatie in een netwerk moet je de deelnemers afzonderlijk kunnen adresseren;
-* payload: de eigenlijke inhoud van de communicatie heet de *payload*, je moet het formaat (de vorm) daarvan beschrijven;
-* metadata: naast de eigenlijk inhoud moet je vaak extra gegevens communiceren: de metadata;
-* interactiemodel: op welke manier communiceren de deelnemers, wie kan het initiatief nemen, enz.
-
-Voorbeeld: HTTP
----------------
-
-Voorbeelden van de afspraken voor het HTTP-protocol:
-
-* adressering: het URL-gedeelte na de "https://" - bijvoorbeeld "infvo.nl/betapartners";
-* payload: HTML-document, of CSS, JavaScript, image-bestanden;
-* metadata: de HTTP-headers, met bijvoorbeeld cookies, gegevens over de browser, enz.;
-* interactiemodel: client-server, met de browser als client en de webserver als server.
-  De browser stuurt een verzoek (request) naar de webserver, deze stuurt een antwoord (response) terug,
-  met daarin bijvoorbeeld een HTML-document.
-
-De standaarden voor HTML, CSS en JavaScript horen bij de payload-beschrijving van het HTTP-protocol.
-Het is belangrijk dat alle browsers en alle webservers zich aan deze standaarden houden.
-
-Deze standaarden evolueren: het is daarom belangrijk om een recente browser te gebruiken.
-
-Stapelen van protocollen
-------------------------
-
-In de praktijk heb je vaak te maken met een stapeling (stacking) van protocollen:
-een protocol wordt dan gebruikt als basis voor een hoger-niveau communicatie.
-
-Ook in het dagelijks leven kom je deze situatie vaak tegen, bijvoorbeeld:
-
-* je gebruikt het protocol van de telefoon om een spraakverbinding te maken.
-  Deze verbinding maakt verder geen aannames over de aard van de spraak,
-  je bent vrij in de keuze van taal of andere geluiden.
-* je gebruikt het protocol van de nederlandse taal voor het gesprek met je gesprekspartner.
-* voor een goede kennis of voor een collega gebruik je allerlei woorden of termen die in
-  het normale nederlands niet gebruikt worden.
-
-In dit geval heb je al een "stack" van tenminste 3 protocollen.
-
-Internet-protocolstack
-----------------------
-
-In de ICT kom je vaak een 3-lagen model tegen:
-
-* de fysieke laag: de hardware;
-* de systeemlaag: de systeemsoftware;
-* de toepassingenlaag: de toepassingen.
-
-Voor het internet kunnen we ook grotendeels dit model gebruiken.
-
-De fysieke laag kan uit allerlei soorten verbindingen bestaan,
-bijvoorbeeld:
-
-* bedrade verbindingen: Ethernet (in een lokaal netwerk), coaxkabel (tv-kabelnetwerk);
-* draadloze verbindingen: WiFi (in een lokaal netwerk), 4G (mobiel netwerk).
-
-In de internet-protocolstack is de systeemlaag ("TCP/IP") gesplitst in 2 lagen,
-de netwerklaag en de transportlaag.
-De netwerklaag (IP) verzorgt de eigenlijke communicatie in het internet-netwerk.
-De transportlaag (TCP, UDP) maakt bij de zender de data klaar voor transport over de netwerklaag,
-en pakt deze weer uit bij de ontvanger.
-
-De toepassingenlaag bevat alle toepassingen, zoals e-mail (SMTP, POP3, IMAP), file transfer (FTP),
-en het web (HTTP).
-Dit zijn voorbeelden van *open standaarden* waar iedereen gebruik van kan maken.
-Daarnaast kan iedereen zijn eigen internet-toepassingen maken,
-met een eigen protocol, zoals WhatsApp, Skype, Spotify, enz.
-Deze protocollen zijn niet open, en zijn alleen te gebruiken met deze toepassingen.
+  h2s2-1.rst
+  h2s2-2.rst
+  h2s2-3.rst
+  h2s2-4.rst
+  h2s2-5.rst
+  h2s2-6.rst
+  h2s2-7.rst
+  h2s2-8.rst
+  h2s2-9.rst
+  h2s2-toetsvragen.rst
 
 
+Samenvatting
+------------
 
+Wat zijn belangrijke punten?
 
-
-
-
-
-
-
-
-De internet-protocolstack bestaat uit de
+* het end-to-end principe, waarbij uitbreidingen alleen voor de eindpunten gevolgen hebben.
+  Het netwerk zelf is universeel, en werkt voor alle toepassingen, ook de toekomstige.
+* voor het IoT zijn ook alleen aanpassingen aan de rand nodig;
+  hierbij is vooral de radioverbinding met de IoT-knopen niet erg gestandaardiseerd,
+  omdat verschillende "dingen" en hun omgeving verschillende eisen stellen.
+  (Voor mensen is een smartphone een redelijk universeel interface, voor "dingen" is er niet zoiets.)
+* de protocollen voor het IoT zijn nog niet erg gestandaardiseerd,
+  onder andere vanwege de grote verschillen in eisen.
+  (Het web is begonnen als een enkele toepassing; er zijn heel veel verschillende IoT-toepassingen ontwikkeld,
+  waardoor er een zekere wildgroei ontstaan is.
+  Het helpt ook niet dat bedrijven proberen een deel van het IoT voor zichzelf te claimen.)
+* verschil tussen open en gesloten standaarden en protocollen.
