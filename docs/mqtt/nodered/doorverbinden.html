@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>2.3.5. Automatiseren &#8212; IoT-book</title>
+    <title>3.10.7. Doorverbinden &#8212; IoT-book</title>
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -123,8 +123,8 @@
     <script src="../../_static/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.3.6. Doorverbinden" href="doorverbinden.html" />
-    <link rel="prev" title="2.3.4. Een IoT-dashboard" href="iot-dashboard.html" />
+    <link rel="next" title="4. Webservers, HTTP en API’s" href="../../http/toctree.html" />
+    <link rel="prev" title="3.10.6. Automatiseren" href="automatiseren.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -293,7 +293,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/runestone/default/reportabug?course=iotbook&page=automatiseren'>Report A Problem</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=doorverbinden'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -310,14 +310,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">2.3.4. </span>Een IoT-dashboard" data-toggle="tooltip">
-    <a href="iot-dashboard.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3.10.6. </span>Automatiseren" data-toggle="tooltip">
+    <a href="automatiseren.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">2.3.6. </span>Doorverbinden' data-toggle="tooltip" >              
-    <a href="doorverbinden.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">4. </span>Webservers, HTTP en API’s' data-toggle="tooltip" >              
+    <a href="../../http/toctree.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -355,100 +355,17 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="automatiseren">
-<h1><span class="section-number">2.3.5. </span>Automatiseren<a class="headerlink" href="#automatiseren" title="Permalink to this headline">¶</a></h1>
-<p>Via NodeRed kun je allerlei protocollen en toepassingen koppelen.
-Je kunt ook allerlei zaken automatiseren, bijvoorbeeld een lamp inschakelen als je thuiskomt.</p>
-<p>Een eenvoudige automatisering is het laten knipperen van LED-0 op de IoT-knoop.</p>
-<p>Maak een NodeRed-flow waarmee je LED-0 van een (gesimuleerde) IoT-knoop laat knipperen.
-Begin met de eenvoudige flow van Opdracht 1, en breid deze later uit met een MQTT-output-node.
-Vergeet niet aan het eind van elke opdracht de flow te activeren (“Deploy”);
-controleer bij elke stap of het werkt.</p>
-<p class="rubric">Opdracht 3.1</p>
-<p>In de eerste stap maak je een flow die elke 5 seconden een bericht genereert,
-afwisselend “aan” en “uit”.
-Je gebruikt hierbij twee inject-nodes;
-een inject-node genereert een bericht als je op de knop links klikt.
-(Zie de “eerste flow”.)
-Om het bericht zichtbaar te maken gebruik je een debug-node.</p>
-<ol class="arabic simple">
-<li><p>Maak de bovenstaande flow met 2 inject-nodes en 1 debug-node.</p></li>
-<li><p>Configureer de bovenste inject-node:</p>
-<ol class="arabic simple">
-<li><p>Geef deze node de naam “On”;</p></li>
-<li><p>Stel de payload is als “string”, met waarde: “Aan”;</p></li>
-<li><p>zet “Repeat” van “none” naar “interval” (every 10 seconds);</p></li>
-<li><p>Bewaar de configuratie (“Save”);</p></li>
-<li><p>“Deploy”, en controleer de output in het debug-venster.</p></li>
-</ol>
-</li>
-<li><p>Configureer de onderste inject-node:</p>
-<ol class="arabic simple">
-<li><p>Geef deze de naam “Off”;</p></li>
-<li><p>Stel de payload in als “string”, met waarde “Uit”;</p></li>
-<li><p>Selecteer “inject once after” - met als waarde “5 seconds”;</p></li>
-<li><p>Zet “Repeat” naar “interval” (every 10 seconds);</p></li>
-<li><p>Bewaar de configuratie (“Save”);</p></li>
-<li><p>“Deploy”, en controleer de output in het debug-venster.</p></li>
-</ol>
-</li>
-</ol>
-<p>Als het goed is zie je in het debug-venster elke 5 seconden een bericht verschijnen,
-afwisselend “aan” en “uit”.</p>
-<p><em>Tips</em>:</p>
+  <div class="section" id="doorverbinden">
+<h1><span class="section-number">3.10.7. </span>Doorverbinden<a class="headerlink" href="#doorverbinden" title="Permalink to this headline">¶</a></h1>
+<p>In deze opdracht koppel je de drukknoppen van je knoop aan de LED van je knoop:
+je kunt dan de LED met deze knoppen aan- en uitzetten.</p>
+<p>Volgende stappen:</p>
 <ul class="simple">
-<li><p>je kunt in het debug-venster aangeven dat je alleen de “current flow” wilt zien;</p></li>
-<li><p>je kunt het debug-venster leeg maken via het vuilnisbakje (rechts boven).</p></li>
-</ul>
-<p class="rubric">Opdracht 3.2</p>
-<p>De volgende stap is om elke deze waarden te koppelen aan de led van de IoT-knoop.
-Eerst maken we de waarden geschikt voor de LED.
-Vervolgens koppelen we deze aan de IoT-knoop, via MQTT.</p>
-<ol class="arabic simple">
-<li><p>Configureer de bovenste inject-node:</p>
-<ol class="arabic simple">
-<li><p>Stel de payload in als  JSON, met als waarde: <code class="docutils literal notranslate"><span class="pre">{&quot;0&quot;:</span> <span class="pre">{&quot;dOut&quot;:</span> <span class="pre">1}}</span></code>.
-<em>Tip</em>: bij het invoeren van een JSON-waarde kun je de JSON-editor gebruiken,
-via de <code class="docutils literal notranslate"><span class="pre">...</span></code> rechts in het edit-venster.
-Je maakt dan minder fouten.</p></li>
-<li><p>Bewaar de configuratie (“Save”)</p></li>
-<li><p>“Deploy”, en controleer de output in het debug-venster.</p></li>
-</ol>
-</li>
-<li><p>Configureer de onderste inject-node:</p>
-<ol class="arabic simple">
-<li><p>Stel de payload in als  JSON, met als waarde: <code class="docutils literal notranslate"><span class="pre">{&quot;0&quot;:</span> <span class="pre">{&quot;dOut&quot;:</span> <span class="pre">0}}</span></code>.</p></li>
-<li><p>Bewaar de configuratie (“Save”)</p></li>
-<li><p>“Deploy”, en controleer de output in het debug-venster.</p></li>
-</ol>
-</li>
-<li><p>Voeg een MQTT output-node toe, en configureer deze:</p>
-<ol class="arabic simple">
-<li><p>stel de MQTT broker (“server”) in als in bij het dashboard.</p></li>
-<li><p>gebruik als Topic: <code class="docutils literal notranslate"><span class="pre">node/xxxx/actuators</span></code>,
-waarbij je voor <code class="docutils literal notranslate"><span class="pre">xxxx</span></code> de ID van je IoT-knoop invult.</p></li>
-<li><p>Bewaar de configuratie (“Save”)</p></li>
-<li><p>“Deploy”, en controleer de output in het debug-venster.</p></li>
-</ol>
-</li>
-</ol>
-<p>Als het goed is zie je nu de berichten niet alleen in het debug-venster verschijnen,
-maar knippert de LED van je IoT-knoop ook op dezelfde manier mee.</p>
-<blockquote>
-<div><p>De codes voor het in- en uitschakelen van de LED behandelen we later uitgebreider.
-De eerste <cite>“0”`</cite> staat hier voor LED-0.
-Sommige IoT-knopen hebben ook een LED-1: probeer die op dezelfde manier te laten knipperen.</p>
-</div></blockquote>
-<p>Deze manier van werken is typisch voor NodeRed: je bouwt een flow beetje voor beetje op,
-waarbij je in het begin veel gebruik maakt van inject- en debug-nodes.
-Je test hiermee elke stap.
-Deze nodes kun je laten zitten tijdens het gebruik:
-een debug-node kun je eenvoudig uitschakelen als je deze even niet nodig hebt.</p>
-<p>Nog enkele suggesties:</p>
-<ul class="simple">
-<li><p>je kunt meerdere MQTT-output-nodes toevoegen met dezelfde input,
-voor verschillende IoT-knopen: je kunt die LEDs tegelijk laten knipperen.</p></li>
-<li></li>
+<li><p>door het topic van de MQTT-output-node te veranderen kun je ook de LED van een andere IoT-knoop schakelen.</p></li>
+<li><p>je kunt meerdere MQTT-output-nodes gebruiken met dezelfde invoer:
+daarmee kun je de LEDs van meerdere IoT-knopen schakelen.</p></li>
+<li><p>in plaats van de drukknoppen kun je ook het lichtniveau gebruiken om de LED te schakelen,
+zodat deze bijvoorbeeld aangaat als de IoT-knoop in het donker is.</p></li>
 </ul>
 </div>
 
@@ -460,27 +377,27 @@ voor verschillende IoT-knopen: je kunt die LEDs tegelijk laten knipperen.</p></l
       
 <ul>
   <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
-    <a href="iot-dashboard.html" aria-label="<-previous">
+    <a href="automatiseren.html" aria-label="<-previous">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-            <span style="visibility:hidden;"> <span class="section-number">2.3.4. </span>Een IoT-dashboard </span>
+            <span style="visibility:hidden;"> <span class="section-number">3.10.6. </span>Automatiseren </span>
         </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="iot-dashboard.html" aria-label="prev"></a>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="automatiseren.html" aria-label="prev"></a>
   
 <ul>
   <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
-    <a href="doorverbinden.html" aria-label="->next">
+    <a href="../../http/toctree.html" aria-label="->next">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-          <span style="visibility:hidden;"> <span class="section-number">2.3.6. </span>Doorverbinden </span>
+          <span style="visibility:hidden;"> <span class="section-number">4. </span>Webservers, HTTP en API’s </span>
       </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="doorverbinden.html" aria-label="next">Next Section - 2.3.6. Doorverbinden</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="../../http/toctree.html" aria-label="next">Next Section - 4. Webservers, HTTP en API’s</a>
 
 <script type="text/javascript">
   var relations_next = $('#relations-next');

@@ -1,5 +1,5 @@
-Tweede flow
-===========
+Tweede flow: HTTP request
+-------------------------
 
 .. figure:: http-flow-1.png
    :width: 600px

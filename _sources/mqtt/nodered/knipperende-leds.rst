@@ -1,18 +1,23 @@
-
-Automatiseren
--------------
+Knipperende LEDs
+----------------
 
 Via NodeRed kun je allerlei protocollen en toepassingen koppelen.
 Je kunt ook allerlei zaken automatiseren, bijvoorbeeld een lamp inschakelen als je thuiskomt.
 
-Een eenvoudige automatisering is het laten knipperen van LED-0 op de IoT-knoop.
+Een eenvoudige automatisering is het laten knipperen van LED-0 op je IoT-knoop.
 
 Maak een NodeRed-flow waarmee je LED-0 van een (gesimuleerde) IoT-knoop laat knipperen.
 Begin met de eenvoudige flow van Opdracht 1, en breid deze later uit met een MQTT-output-node.
-Vergeet niet aan het eind van elke opdracht de flow te activeren ("Deploy");
+Vergeet niet aan het eind van elke opdracht de flow te activeren (**Deploy**);
 controleer bij elke stap of het werkt.
 
-.. rubric:: Opdracht 3.1
+.. rubric:: Opdracht A
+
+.. figure:: NodeRed-knipperende-leds-A.png
+   :width: 400px
+   :align: center
+
+   Eerste stap: 2 inject-nodes met debug
 
 In de eerste stap maak je een flow die elke 5 seconden een bericht genereert,
 afwisselend "aan" en "uit".
@@ -47,9 +52,15 @@ afwisselend "aan" en "uit".
 * je kunt in het debug-venster aangeven dat je alleen de "current flow" wilt zien;
 * je kunt het debug-venster leeg maken via het vuilnisbakje (rechts boven).
 
-.. rubric:: Opdracht 3.2
+.. rubric:: Opdracht B
 
-De volgende stap is om elke deze waarden te koppelen aan de led van de IoT-knoop.
+.. figure:: NodeRed-knipperende-leds-B.png
+   :width: 600px
+   :align: center
+
+   Stap 2: Aansturen van de LED
+
+De volgende stap is om deze waarden te koppelen aan de led van de IoT-knoop.
 Eerst maken we de waarden geschikt voor de LED.
 Vervolgens koppelen we deze aan de IoT-knoop, via MQTT.
 
@@ -94,3 +105,21 @@ Nog enkele suggesties:
 * je kunt meerdere MQTT-output-nodes toevoegen met dezelfde input,
   voor verschillende IoT-knopen: je kunt die LEDs tegelijk laten knipperen.
 *
+
+.. rubric:: Opdracht C
+
+.. figure:: NodeRed-knipper-5maal-flow.png
+   :width: 800px
+   :align: center
+
+   Leds knipperen 5 maal met één "trigger"
+
+Je kunt een reeks afwisselende berichten krijgen met behulp van een combinatie
+van een vertraging en een terugkoppeling, zoals in de flow hierboven.
+In deze flow injecteert de inject-node éénmaal een bericht;
+dat wordt via de terugkoppeling 5 maal rondgestuurd.
+Na een vertraging van 1 seconde wordt de LED uitgezet,
+en weer een seconde later weer aan;
+dat wordt 5 maal herhaald.
+
+**Vraag** Is na afloop de LED aan of uit? Wat is het laatste bericht dat verstuurd wordt?

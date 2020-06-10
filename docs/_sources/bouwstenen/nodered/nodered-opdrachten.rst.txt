@@ -1,12 +1,17 @@
 NodeRed opdrachten
 ==================
 
-In deze opdrachten maak je kennis met NodeRed.
-Je gebruikt NodeRed voor een eenvoudige IoT-toepassing: een dashboard van een IoT-knoop.
-Met dit dashboard kun je op een computer of op een smartphone de toestand van de IoT-knoop waarnemen,
-en de IoT-knoop besturen.
+.. toctree::
+  :maxdepth: 1
 
-Met NodeRed kun je allerlei protocollen, diensten en besturingen aan elkaar koppelen, op een grafische manier.
+  voorbereiding.rst
+  eerste-flow.rst
+  tweede-flow.rst
+  iot-dashboard.rst
+  nodered-faq.rst
+
+In deze opdrachten maak je kennis met NodeRed.
+Met NodeRed kun je op een grafische manier allerlei protocollen, diensten en besturingen aan elkaar koppelen.
 Hiermee kun je je IoT-keten samenstellen van sensoren en actuatoren tot Data Science- en Artificial Intelligence-diensten.
 
 .. admonition:: Wat heb je nodig?
@@ -25,14 +30,3 @@ Hiermee kun je je IoT-keten samenstellen van sensoren en actuatoren tot Data Sci
   waarbij je precies de handleiding moet volgen.
   Voer deze opdrachten echt uit: als je deze niet maakt,
   kom je bij volgende opdrachten in de problemen!
-
-.. toctree::
-  :maxdepth: 1
-
-  nodered/voorbereiding.rst
-  nodered/eerste-flow.rst
-  nodered/tweede-flow.rst
-  nodered/iot-dashboard.rst
-  nodered/automatiseren.rst
-  nodered/doorverbinden.rst
-  nodered/nodered-faq.rst

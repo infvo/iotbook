@@ -27,4 +27,4 @@ door IoT-devices met veel beperktere radio's, zoals LoRa.
    mqtts6.rst
    mqtt-toetsvragen.rst
    mqtt-opdrachten.rst
-   mqtt-nodered.rst
+   nodered/mqtt-nodered.rst

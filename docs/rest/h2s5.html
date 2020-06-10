@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>2.3. NodeRed opdrachten &#8212; IoT-book</title>
+    <title>Opdrachten &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -123,8 +123,6 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.3.1. Voorbereiding" href="nodered/voorbereiding.html" />
-    <link rel="prev" title="2.2.10. Toetsvragen" href="protocol-toetsvragen.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -293,7 +291,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/runestone/default/reportabug?course=iotbook&page=nodered-opdrachten'>Report A Problem</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=h2s5'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -310,18 +308,6 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">2.2.10. </span>Toetsvragen" data-toggle="tooltip">
-    <a href="protocol-toetsvragen.html" >
-      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  
-  <li id="relations-next" title='Next Chapter - <span class="section-number">2.3.1. </span>Voorbereiding' data-toggle="tooltip" >              
-    <a href="nodered/voorbereiding.html" >
-        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -355,53 +341,157 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="nodered-opdrachten">
-<h1><span class="section-number">2.3. </span>NodeRed opdrachten<a class="headerlink" href="#nodered-opdrachten" title="Permalink to this headline">¶</a></h1>
-<p>In deze opdrachten maak je kennis met NodeRed.
-Je gebruikt NodeRed voor een eenvoudige IoT-toepassing: een dashboard van een IoT-knoop.
-Met dit dashboard kun je op een computer of op een smartphone de toestand van de IoT-knoop waarnemen,
-en de IoT-knoop besturen.</p>
-<p>Met NodeRed kun je allerlei protocollen, diensten en besturingen aan elkaar koppelen, op een grafische manier.
-Hiermee kun je je IoT-keten samenstellen van sensoren en actuatoren tot Data Science- en Artificial Intelligence-diensten.</p>
-<div class="admonition-wat-heb-je-nodig admonition">
-<p class="admonition-title">Wat heb je nodig?</p>
+  <div class="section" id="opdrachten">
+<h1>Opdrachten<a class="headerlink" href="#opdrachten" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">MQTT-broker in het publieke internet</p>
+<p>We gebruiken in deze opdracht een publieke MQTT-broker.
+Deze broker fungeert ook als webserver voor de statische webtoepassing <code class="docutils literal notranslate"><span class="pre">mqttt</span></code>.</p>
+<div class="topic">
+<p class="topic-title">Statische webtoepassing</p>
+<p>Bij een statische webtoepassing levert de server alleen de bestanden;
+alle actie en interactie vindt plaats in de browser, via JavaScript.
+De server gebruikt geen server-scripting (zoals PHP of Python) en geen server-database.</p>
+</div>
+<p class="rubric" id="mqt3">De app MQT3</p>
+<p>Bij veel opdrachten gebruiken we de app MQT3:
+dit is een mqtt-client waarmee we mqtt-berichten kunnen sturen en ontvangen.
+Door de aard van het mqtt-protocol kunnen we daarmee ook <em>topics</em> “afluisteren”.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="rest/IoT-mqtt0-app.png"><img alt="rest/IoT-mqtt0-app.png" src="rest/IoT-mqtt0-app.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">MQTTTest app (MQT3)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>De  web-app kun je vinden via de broker: <a class="reference external" href="http://infvopedia.nl/mqt3.html">http://infvopedia.nl/mqt3.html</a>.
+Hierin is <code class="docutils literal notranslate"><span class="pre">infvopedia.nl</span></code> de domeinnaam van de broker.
+De broker fungeert ook als (statische) webserver.
+MQT3 communiceert met de MQTT-broker via het <em>websockets</em> protocol.
+Het MQTT-protocol gebruikt poort <code class="docutils literal notranslate"><span class="pre">1883</span></code>.</p>
+<p>De app heeft de volgende invoervelden en knoppen:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt>NodeRed-installatie</dt><dd><ul>
-<li><p>bijvoorbeeld: FRED - <a class="reference external" href="https://fred.sensetecnic.com">https://fred.sensetecnic.com</a> (gratis versie)</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">IoT-node</span></code>: de ID van de IoT-knoop waarvan je de sensordata wilt ontvangen</dt><dd><ul>
+<li><p>knoppen On en Off: publiceren berichten met topic <code class="docutils literal notranslate"><span class="pre">node/ID/actuators</span></code>,
+om led0 aan- en uit te schakelen</p></li>
+<li><p>de sensordata worden ontvangen via topic <code class="docutils literal notranslate"><span class="pre">node/ID/sensors</span></code></p></li>
+<li><p>de ontvangen sensordata worden in tabelvorm weergegeven</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>een IoT-knoop, bijvoorbeeld:</dt><dd><ul>
-<li><p>een gesimuleerde IoT-knoop</p></li>
-<li><p>een IoT-knoop “elders”</p></li>
-<li><p>een eigen hardware IoT-knoop, bijvoorbeeld een ESP8266-knoop met het programma <code class="docutils literal notranslate"><span class="pre">esp8266-node-0</span></code>
-(zie <a class="reference external" href="https://infvo.github.io/iot-1/html/combinatie.html">https://infvo.github.io/iot-1/html/combinatie.html</a>)</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">subscribe</span> <span class="pre">to</span> <span class="pre">topic</span></code>: het topic waarvan je de berichten wilt ontvangen</dt><dd><ul>
+<li><p>daaronder verschijnen de ontvangen berichten</p></li>
+<li><p>in het topic kun je ook wildcard-tekens opnemen, zoals <code class="docutils literal notranslate"><span class="pre">+</span></code> en <code class="docutils literal notranslate"><span class="pre">#</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">publish</span> <span class="pre">to</span> <span class="pre">topic</span></code>: het topic waarvoor je berichten wilt versturen:</dt><dd><ul>
+<li><p>het bericht voer je daaronder in, en</p></li>
+<li><p>met de “publish”-knop verstuur je het bericht.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
+<div class="admonition-let-op admonition">
+<p class="admonition-title">Let op</p>
+<p>Een nieuwe waarde in een invoerveld wordt actief zodra de cursor dat invoerveld verlaat.
+Je ziet dan geen blauwe rand meer om het veld.</p>
+<p>Als je een nieuw topic invult of een nieuwe IoT-node ID,
+vindt er automatisch een <em>subscribe</em> op dit nieuwe topic plaats,
+en een <em>unsubscribe</em> op het vorige topic.
+Na het invullen verschijnen dan automatisch de ontvangen berichten voor dat nieuwe topic.</p>
 </div>
-<div class="admonition-voer-de-oefenopdrachten-uit admonition">
-<p class="admonition-title">Voer de oefenopdrachten uit!</p>
-<p>De meeste opdrachten in dit hoofdstuk zijn oefenopdrachten,
-waarbij je precies de handleiding moet volgen.
-Voer deze opdrachten echt uit: als je deze niet maakt,
-kom je bij volgende opdrachten in de problemen!</p>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="nodered/voorbereiding.html">2.3.1. Voorbereiding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nodered/eerste-flow.html">2.3.2. Eerste flow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nodered/tweede-flow.html">2.3.3. Tweede flow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nodered/iot-dashboard.html">2.3.4. Een IoT-dashboard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nodered/automatiseren.html">2.3.5. Automatiseren</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nodered/doorverbinden.html">2.3.6. Doorverbinden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nodered/nodered-faq.html">2.3.7. NodeRed FAQ</a></li>
+<p class="rubric">Alternatief: MQTT-box</p>
+<p>Er zijn ook desktop-applicaties waarmee je deze opdrachten kunt uitvoeren.
+Een voorbeeld is MQTTbox (<a class="reference external" href="http://workswithweb.com/mqttbox.html">http://workswithweb.com/mqttbox.html</a>).</p>
+<div class="section" id="een-eerste-iot-keten">
+<h2>Een eerste IoT-keten<a class="headerlink" href="#een-eerste-iot-keten" title="Permalink to this headline">¶</a></h2>
+<p>Een eerste voorbeeld van een IoT-keten, van IoT-knoop tot toepassings (“app”), bestaat uit de volgende onderdelen:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>een gesimuleerde IoT-knoop</dt><dd><ul>
+<li><p><a class="reference external" href="http://infvopedia.nl/iotnode-app.html">http://infvopedia.nl/iotnode-app.html</a></p></li>
 </ul>
+</dd>
+</dl>
+</li>
+<li><p>een MQTT-broker in het publieke internet;</p></li>
+<li><dl class="simple">
+<dt>het programma MQT3, waarmee je het mqtt-verkeer van de sensor kunt bekijken.</dt><dd><ul>
+<li><p><a class="reference external" href="http://infvopedia.nl/mqt3.html">http://infvopedia.nl/mqt3.html</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="rest/Iotnode-simulator-0.png"><img alt="rest/Iotnode-simulator-0.png" src="rest/Iotnode-simulator-0.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">IoT-knoop simulator</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p class="rubric">Opdracht 1.1</p>
+<p>Voer de onderstaande stappen uit:</p>
+<ol class="arabic simple">
+<li><p>open de gesimuleerde IoT-knoop op in een browservenster</p></li>
+<li><dl class="simple">
+<dt>open het programma MQTTT in een ander browservenster</dt><dd><ul class="simple">
+<li><p>deze opzet werkt het best met twee browservensters naast elkaar.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>voer in het “IoT-node”-venster van MQTTT de nodeID in van de gesimuleerde IoT-knoop</p></li>
+<li><dl class="simple">
+<dt>druk in MQTTT op de knop om de LED (led0) aan (of uit) te zetten</dt><dd><ul class="simple">
+<li><p>in MQTTT zie je de waarden van de sensoren in tabelvorm verschijnen</p></li>
+<li><p>je ziet in de gesimuleerde IoT-knoop de linker LED aan (of uit) gaan.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>verander één van de sliders van de IoT-knoop</dt><dd><ul class="simple">
+<li><p>je ziet nu (na verloop van tijd) de berichten met de nieuwe waarde langskomen.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>druk één van de knoppen op de (gesimuleerde) IoT-knoop in</dt><dd><ul class="simple">
+<li><p>wat gebeurt er?</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Opmerkingen:</p>
+<ul class="simple">
+<li><p>Mogelijk zie je ook berichten van andere IoT-knopen langskomen:
+die gebruiken dezelfde MQTT-broker,
+en via <code class="docutils literal notranslate"><span class="pre">subscribe:</span> <span class="pre">+/+/+</span></code> ontvangt MQTTT de berichten van alle knopen.</p></li>
+<li><p>De IoT-knoop-simulator verstuurt ca. elke 60 seconden de waarden van de lokale sensoren;
+dit zullen we later ook bij de hardware-IoT-knopen zien.</p></li>
+<li><p>je kunt meerdere (gesimuleerde) IoT-knopen hebben met dezelfde node-ID:
+deze zijn op het MQTT-niveau niet van elkaar te onderscheiden.</p></li>
+</ul>
+</div>
+<div class="section" id="een-tweede-iot-keten">
+<h2>Een tweede IoT-keten<a class="headerlink" href="#een-tweede-iot-keten" title="Permalink to this headline">¶</a></h2>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/Users/eelco/stack/books/iotbook/_sources/rest/h2s5.rst</span>, line 115)</p>
+<p>Unknown directive type “todo”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. todo::
+
+  Verder uitwerken - ook de infrastructuur.
+
+  * gebruik van een IoT-dashboard
+      * NB: uiteindelijk moeten we een dashboard zien te bieden waarin meerdere sensoren/IoT-knopen gecombineerd worden?
+      * gebruik van IoT-dashboard voor gegeven knopen (elders)
+      * gebruik van IoT-dashboard voor gesimuleerde knopen
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -411,29 +501,6 @@ kom je bij volgende opdrachten in de problemen!</p>
   </div>
   
       
-<ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
-    <a href="protocol-toetsvragen.html" aria-label="<-previous">
-        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-            <span style="visibility:hidden;"> <span class="section-number">2.2.10. </span>Toetsvragen </span>
-        </div>
-    </a>
-  </li>
-</ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="protocol-toetsvragen.html" aria-label="prev"></a>
-  
-<ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
-    <a href="nodered/voorbereiding.html" aria-label="->next">
-      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-          <span style="visibility:hidden;"> <span class="section-number">2.3.1. </span>Voorbereiding </span>
-      </div>
-    </a>
-  </li>
-</ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="nodered/voorbereiding.html" aria-label="next">Next Section - 2.3.1. Voorbereiding</a>
 
 <script type="text/javascript">
   var relations_next = $('#relations-next');
