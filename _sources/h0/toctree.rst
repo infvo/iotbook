@@ -6,3 +6,4 @@ Voor de docent
 
    voorbereiding.rst
    planning.rst
+   ten-geleide.rst

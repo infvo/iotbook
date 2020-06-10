@@ -9,9 +9,9 @@ Inleiding...
    :numbered:
 
    h1/toctree.rst
-   h2/toctree.rst
-   h3/toctree.rst
-   h4/toctree.rst
+   bouwstenen/toctree.rst
+   mqtt/toctree.rst
+   http/toctree.rst
    h5/toctree.rst
    h6/toctree.rst
 
