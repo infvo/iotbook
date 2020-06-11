@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>4.5.6. (*)Sensor-dashboard &#8212; IoT-book</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/presenter_mode.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../../_static/clickable.css?v=58C4E18A" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabbedstuff.css?v=424F1CC9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fitb.css?v=3BA0E63E" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css?v=E5385B3B" />
+    <link rel="stylesheet" type="text/css" href="../../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/codemirror.css?v=9CF75563" />
+    <link rel="stylesheet" type="text/css" href="../../_static/spreadsheet.css?v=B5F018A" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jexcel.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/japp.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/reveal.css?v=4A81D381" />
+    <link rel="stylesheet" type="text/css" href="../../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/parsons.css?v=2F3E13EE" />
+    <link rel="stylesheet" type="text/css" href="../../_static/js_lib/prettify.css?v=2A364B6B" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shortanswer.css?v=7E18C432" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pytutor.css?v=7850698F" />
+    <link rel="stylesheet" type="text/css" href="../../_static/modal-basic.css?v=8A1A42E4" />
+    <link rel="stylesheet" type="text/css" href="../../_static/activecode.css?v=F471F95B" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/datafile.css?v=C184EB8A" />
+    <link rel="stylesheet" type="text/css" href="../../_static/showEval.css?v=C6382F3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="../../_static/dragndrop.css?v=1FF7F927" />
+    <link rel="stylesheet" type="text/css" href="../../_static/poll.css?v=E220AC33" />
+    <link rel="stylesheet" href="../../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/runestone-custom-sphinx-bootstrap.css?v=4.2.6" type="text/css" />
+    <link rel="stylesheet" href="../../_static/theme-overrides.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/runestonebase.js?v=4.2.6"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../../_static/clickable.js?v=846DC076"></script>
+    <script src="../../_static/timedclickable.js?v=93989C23"></script>
+    <script src="../../_static/tabbedstuff.js?v=5BE6106"></script>
+    <script src="../../_static/fitb.js?v=60630F3D"></script>
+    <script src="../../_static/timedfitb.js?v=2AA17071"></script>
+    <script src="../../_static/jquery_i18n/CLDRPluralRuleParser.js?v=599B42B0"></script>
+    <script src="../../_static/jquery_i18n/jquery.i18n.js?v=88A1430F"></script>
+    <script src="../../_static/jquery_i18n/jquery.i18n.messagestore.js?v=AE15A4A1"></script>
+    <script src="../../_static/jquery_i18n/jquery.i18n.fallbacks.js?v=8ABDFE7F"></script>
+    <script src="../../_static/jquery_i18n/jquery.i18n.language.js?v=747279FF"></script>
+    <script src="../../_static/jquery_i18n/jquery.i18n.parser.js?v=7B020E13"></script>
+    <script src="../../_static/jquery_i18n/jquery.i18n.emitter.js?v=660E85C3"></script>
+    <script src="../../_static/jquery_i18n/jquery.i18n.emitter.bidi.js?v=54B21948"></script>
+    <script src="../../_static/fitb-i18n.en.js?v=389ED00C"></script>
+    <script src="../../_static/runestonevideo.js?v=53E888DE"></script>
+    <script src="../../_static/codemirror.js?v=25B54D0A"></script>
+    <script src="../../_static/xml.js?v=236EDFF7"></script>
+    <script src="../../_static/css.js?v=623153CE"></script>
+    <script src="../../_static/htmlmixed.js?v=4EBE05BF"></script>
+    <script src="../../_static/javascript.js?v=6F38CA04"></script>
+    <script src="../../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../../_static/Blob.js?v=AEC2447"></script>
+    <script src="../../_static/spreadsheet.js?v=ABDABEC0"></script>
+    <script src="../../_static/jexcel.js"></script>
+    <script src="../../_static/japp.js"></script>
+    <script src="../../_static/reveal.js?v=35AF34F1"></script>
+    <script src="../../_static/lp.js?v=5E742BDC"></script>
+    <script src="../../_static/gas.js?v=129CE036"></script>
+    <script src="../../_static/js_lib/prettify.js?v=CA7E8928"></script>
+    <script src="../../_static/js_lib/hammer.min.js?v=73056367"></script>
+    <script src="../../_static/parsons.js?v=CE79120E"></script>
+    <script src="../../_static/timedparsons.js?v=2EEA9E5A"></script>
+    <script src="../../_static/parsons-i18n.en.js?v=A9C11155"></script>
+    <script src="../../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../../_static/mchoice.js?v=7B685250"></script>
+    <script src="../../_static/timedmc.js?v=B010A457"></script>
+    <script src="../../_static/timed.js?v=D12F9A17"></script>
+    <script src="../../_static/mchoice-i18n.en.js?v=354E6CD"></script>
+    <script src="../../_static/shortanswer.js?v=89F557ED"></script>
+    <script src="../../_static/timed_shortanswer.js?v=B3A117D7"></script>
+    <script src="../../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../../_static/codelens.js?v=7032EEF2"></script>
+    <script src="../../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../../_static/bookfuncs.js?v=24766D61"></script>
+    <script src="../../_static/python.js?v=76B9CFA2"></script>
+    <script src="../../_static/sql.js?v=49D0BD74"></script>
+    <script src="../../_static/activecode-i18n.en.js?v=65CA0724"></script>
+    <script src="../../_static/skulpt.min.js?v=A901CC2"></script>
+    <script src="../../_static/skulpt-stdlib.js?v=24904821"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../../_static/activecode.js?v=C77C2985"></script>
+    <script src="../../_static/clike.js?v=4247C891"></script>
+    <script src="../../_static/timed_activecode.js?v=20BFB7B1"></script>
+    <script src="../../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="../../_static/datafile.js?v=156D8707"></script>
+    <script src="../../_static/showEval.js?v=5B2DD7A6"></script>
+    <script src="../../_static/dragndrop.js?v=86D99604"></script>
+    <script src="../../_static/timeddnd.js?v=378F237E"></script>
+    <script src="../../_static/dragndrop-i18n.en.js?v=40C28531"></script>
+    <script src="../../_static/poll.js?v=45F04365"></script>
+    <script src="../../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../../_static/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
+    <script src="../../_static/waypoints.min.js"></script>
+    <script src="../../_static/user-highlights.js?v=4.2.6"></script>
+    <script src="../../_static/jquery.idle-timer.js"></script>
+    <script src="../../_static/processing-1.4.1.min.js"></script>
+    <script src="../../_static/jquery.hotkey.js"></script>
+    <script src="../../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../../_static/presenter_mode.js?v=4.2.6"></script>
+    <script src="../../_static/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.6. Toetsvragen" href="../toetsvragen.html" />
+    <link rel="prev" title="4.5.5. Webformulieren" href="webformulieren.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    eBookConfig.useRunestoneServices = false;
+    eBookConfig.host = 'http://127.0.0.1:8000' || 'http://127.0.0.1:8000';
+    eBookConfig.app = eBookConfig.host+'/runestone';
+    eBookConfig.course = 'iotbook';
+    eBookConfig.basecourse = 'iotbook';
+    eBookConfig.isLoggedIn = false;
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 30;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = true;
+  eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
+  eBookConfig.runestone_version = '4.2.6';
+  eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
+  eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
+  eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../../index.html" aria-label="index-page">
+          
+          iotbook
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+	  
+			  
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=sensor-dashboard'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">4.5.5. </span>Webformulieren" data-toggle="tooltip">
+    <a href="webformulieren.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">4.6. </span>Toetsvragen' data-toggle="tooltip" >              
+    <a href="../toetsvragen.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+  
+  <div class="section" id="sensor-dashboard">
+<h1><span class="section-number">4.5.6. </span>(*)Sensor-dashboard<a class="headerlink" href="#sensor-dashboard" title="Permalink to this headline">¶</a></h1>
+<p>Met enige moeite kunnen we met NodeRed de (sensor)gegevens van een website halen en weergeven in een dashboard.
+Hiervoor halen we een html-document op van een website (met een HTTP GET request),
+vervolgens ontleden we dit document om de sensorgegevens eruit te halen.
+Daarna geven we deze sensorgegevens weer in een dashboard.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/Nodered-dashboard-display-01.png"><img alt="../../_images/Nodered-dashboard-display-01.png" src="../../_images/Nodered-dashboard-display-01.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">NodeRed dashboard display</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>NodeRed biedt de bouwstenen voor het maken van een eenvoudig dashboard. We gebruiken in het voorbeeld de volgende knopen:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 23%" />
+<col style="width: 21%" />
+<col style="width: 31%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>figuur</strong></p></td>
+<td><p><strong>naam</strong></p></td>
+<td><p><strong>soort</strong></p></td>
+<td><p><strong>betekenis</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="dashboard-gauge" src="../../_images/nodered-dashboard-gauge.png" /></p></td>
+<td><p>dashboard-gauge</p></td>
+<td><p>output</p></td>
+<td><p>meter (actuele waarde)</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="dashboard-chart" src="../../_images/nodered-dashboard-chart.png" /></p></td>
+<td><p>dashboard-chart</p></td>
+<td><p>output</p></td>
+<td><p>grafiek (verloop)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Zie voor het installeren van deze nodes de NodeRed-inleiding (in Bouwstenen).</p>
+<p>Om een dashboard te maken moeten we eerst de gegevens van de sensoren ophalen.
+In dit geval (IoT-knoop als webserver) hebben we hierbij twee problemen:</p>
+<ul class="simple">
+<li><p>de IoT-knoop-webserver is alleen beschikbaar in het lokale netwerk.
+Dit betekent dat we het dashboard alleen via een computer in het lokale netwerk kunnen laten werken.
+Dit kan bijvoorbeeld een Raspberry Pi met NodeRed zijn.</p></li>
+<li><p>de gegevens zijn beschikbaar als HTML-document (tekst).
+Hierin moeten we de sensorgegevens zien te vinden.
+NodeRed heeft o.a. een html-node om elementen uit een HTML-document te selecteren.</p></li>
+</ul>
+<p>Voor demonstratiedoeleinden gebruiken we hier een website die hetzelfde interface heeft als de IoT-knopen.
+De website <a class="reference external" href="http://infvopedia.nl:1880/sensors">http://infvopedia.nl:1880/sensors</a> is gekoppeld aan de hardware-IoT-knoop <code class="docutils literal notranslate"><span class="pre">ec54</span></code>.
+In het lokale netwerk zou je deze kunnen benaderen via <code class="docutils literal notranslate"><span class="pre">http://esp8266-ec54.local/</span></code> of via het IP-adres.</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/IoT-webserver-dashboard-flow.png"><img alt="../../_images/IoT-webserver-dashboard-flow.png" src="../../_images/IoT-webserver-dashboard-flow.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Webserver dashboard flow</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Uitleg bij deze flow:</p>
+<ul class="simple">
+<li><p>je start de flow door op de “inject”-knoop te klikken.
+(Dit kun je later automatiseren.)</p></li>
+<li><p>de volgende actie is het versturen van een HTTP GET-request,
+met als URL: <code class="docutils literal notranslate"><span class="pre">http://infvopedia.nl:1880/sensors</span></code></p></li>
+<li><p>het resultaat daarvan vind je via de debug-knoop in het debug-venster.
+Dit resultaat is een HTML-document (tekst).</p></li>
+<li><p>via de html-node selecteren we alle “td” elementen in deze tekst.
+het resultaat daarvan vind je weer in het debug-venster.</p></li>
+<li><p>we vullen de sensorwaarden in de payload in, als normale velden (<code class="docutils literal notranslate"><span class="pre">msg.payload.temperature</span></code>, enz.),
+via de functie <em>Select-sensor-values</em>.</p></li>
+<li><p>via de change-nodes zetten we de payload met de gewenste sensorwaarde,
+bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">msg.payload</span> <span class="pre">to</span> <span class="pre">msg.payload.temperature</span></code>.
+(We zouden hiervoor ook een function-node kunnen gebruiken.)</p></li>
+<li><p>deze payload maken we zichtbaar via de dashboard-nodes.</p></li>
+</ul>
+<p>De html-node die we hier gebruiken is handig voor het selecteren van elementen in een html-document.</p>
+<p>In het debug-venster vind je de outputs van de verschillende debug-nodes.
+Als je een output hierin selecteert, zie je van welke node deze afkomstig is.
+Je kunt een debug-node tijdelijk uitzetten met de knop aan de rechterkant.
+Je moet de veranderde flow dan wel activeren met de <em>deploy</em>-knop.</p>
+<p>De functie <em>Select-sensor-values</em>:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
+<span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">temperature</span> <span class="o">=</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">barometer</span> <span class="o">=</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">input</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+<span class="k">return</span> <span class="nx">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Hieronder staat de flow in JSON-notatie.
+Deze kun je met Copy-Paste overbrengen en vervolgens importeren in je NodeRed-editor.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;9d733e0b.01778&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;inject&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;topic&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;payload&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;payloadType&quot;</span><span class="p">:</span><span class="s2">&quot;date&quot;</span><span class="p">,</span><span class="nt">&quot;repeat&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;crontab&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;once&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;onceDelay&quot;</span><span class="p">:</span><span class="mf">0.1</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">120</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[</span><span class="s2">&quot;56b0445f.766c5c&quot;</span><span class="p">]]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;56b0445f.766c5c&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;http request&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="nt">&quot;ret&quot;</span><span class="p">:</span><span class="s2">&quot;txt&quot;</span><span class="p">,</span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;http://infvopedia.nl:1880/sensors&quot;</span><span class="p">,</span><span class="nt">&quot;tls&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[</span><span class="s2">&quot;dba2f76f.d09588&quot;</span><span class="p">,</span><span class="s2">&quot;da3db487.e2c9a8&quot;</span><span class="p">]]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;dba2f76f.d09588&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;property&quot;</span><span class="p">:</span><span class="s2">&quot;payload&quot;</span><span class="p">,</span><span class="nt">&quot;outproperty&quot;</span><span class="p">:</span><span class="s2">&quot;payload&quot;</span><span class="p">,</span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="s2">&quot;td&quot;</span><span class="p">,</span><span class="nt">&quot;ret&quot;</span><span class="p">:</span><span class="s2">&quot;html&quot;</span><span class="p">,</span><span class="nt">&quot;as&quot;</span><span class="p">:</span><span class="s2">&quot;single&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">170</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[</span><span class="s2">&quot;ec6a7f9b.10bca8&quot;</span><span class="p">,</span><span class="s2">&quot;6b21f3b7.50e694&quot;</span><span class="p">]]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;ec6a7f9b.10bca8&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;debug&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;tosidebar&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;tostatus&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;complete&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">370</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">160</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;6b21f3b7.50e694&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Select-sensor-values&quot;</span><span class="p">,</span><span class="nt">&quot;func&quot;</span><span class="p">:</span><span class="s2">&quot;var input = msg.payload;\nmsg.payload = {};\nmsg.payload.temperature = parseFloat(input[1]);\nmsg.payload.barometer = parseFloat(input[3]);\nreturn msg;&quot;</span><span class="p">,</span><span class="nt">&quot;outputs&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;noerr&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">380</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[</span><span class="s2">&quot;6491c42f.903274&quot;</span><span class="p">,</span><span class="s2">&quot;8a35258e.865308&quot;</span><span class="p">,</span><span class="s2">&quot;ee82ff5d.2ac73&quot;</span><span class="p">]]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;6491c42f.903274&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;debug&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;tosidebar&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;tostatus&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;complete&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">630</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;7db1e8a8.5d3ca8&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ui_gauge&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="s2">&quot;a4643fc8.e80d68&quot;</span><span class="p">,</span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;gtype&quot;</span><span class="p">:</span><span class="s2">&quot;gage&quot;</span><span class="p">,</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;Temperatuur&quot;</span><span class="p">,</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;&#39;C&quot;</span><span class="p">,</span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="s2">&quot;{{payload}}&quot;</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="s2">&quot;50&quot;</span><span class="p">,</span><span class="nt">&quot;colors&quot;</span><span class="p">:[</span><span class="s2">&quot;#00b500&quot;</span><span class="p">,</span><span class="s2">&quot;#e6e600&quot;</span><span class="p">,</span><span class="s2">&quot;#ca3838&quot;</span><span class="p">],</span><span class="nt">&quot;seg1&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;seg2&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">630</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;9583a0a1.3f21e&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ui_chart&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="s2">&quot;6afe9bdf.976fec&quot;</span><span class="p">,</span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;Temperatuur&quot;</span><span class="p">,</span><span class="nt">&quot;chartType&quot;</span><span class="p">:</span><span class="s2">&quot;line&quot;</span><span class="p">,</span><span class="nt">&quot;legend&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;xformat&quot;</span><span class="p">:</span><span class="s2">&quot;HH:mm:ss&quot;</span><span class="p">,</span><span class="nt">&quot;interpolate&quot;</span><span class="p">:</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span><span class="nt">&quot;nodata&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;dot&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;ymin&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="nt">&quot;ymax&quot;</span><span class="p">:</span><span class="s2">&quot;50&quot;</span><span class="p">,</span><span class="nt">&quot;removeOlder&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;removeOlderPoints&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;removeOlderUnit&quot;</span><span class="p">:</span><span class="s2">&quot;86400&quot;</span><span class="p">,</span><span class="nt">&quot;cutout&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;useOneColor&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;colors&quot;</span><span class="p">:[</span><span class="s2">&quot;#1f77b4&quot;</span><span class="p">,</span><span class="s2">&quot;#aec7e8&quot;</span><span class="p">,</span><span class="s2">&quot;#ff7f0e&quot;</span><span class="p">,</span><span class="s2">&quot;#2ca02c&quot;</span><span class="p">,</span><span class="s2">&quot;#98df8a&quot;</span><span class="p">,</span><span class="s2">&quot;#d62728&quot;</span><span class="p">,</span><span class="s2">&quot;#ff9896&quot;</span><span class="p">,</span><span class="s2">&quot;#9467bd&quot;</span><span class="p">,</span><span class="s2">&quot;#c5b0d5&quot;</span><span class="p">],</span><span class="nt">&quot;useOldStyle&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">630</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">340</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[],[]]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;8a35258e.865308&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;change&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;rules&quot;</span><span class="p">:[{</span><span class="nt">&quot;t&quot;</span><span class="p">:</span><span class="s2">&quot;set&quot;</span><span class="p">,</span><span class="nt">&quot;p&quot;</span><span class="p">:</span><span class="s2">&quot;payload&quot;</span><span class="p">,</span><span class="nt">&quot;pt&quot;</span><span class="p">:</span><span class="s2">&quot;msg&quot;</span><span class="p">,</span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="s2">&quot;payload.temperature&quot;</span><span class="p">,</span><span class="nt">&quot;tot&quot;</span><span class="p">:</span><span class="s2">&quot;msg&quot;</span><span class="p">}],</span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;property&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;reg&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">320</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[</span><span class="s2">&quot;9583a0a1.3f21e&quot;</span><span class="p">,</span><span class="s2">&quot;7db1e8a8.5d3ca8&quot;</span><span class="p">]]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;872c6883.661e3&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ui_gauge&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="s2">&quot;a4643fc8.e80d68&quot;</span><span class="p">,</span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;gtype&quot;</span><span class="p">:</span><span class="s2">&quot;gage&quot;</span><span class="p">,</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;Luchtdruk&quot;</span><span class="p">,</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;units&quot;</span><span class="p">,</span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="s2">&quot;{{payload}}&quot;</span><span class="p">,</span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="s2">&quot;950&quot;</span><span class="p">,</span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="s2">&quot;1050&quot;</span><span class="p">,</span><span class="nt">&quot;colors&quot;</span><span class="p">:[</span><span class="s2">&quot;#00b500&quot;</span><span class="p">,</span><span class="s2">&quot;#e6e600&quot;</span><span class="p">,</span><span class="s2">&quot;#ca3838&quot;</span><span class="p">],</span><span class="nt">&quot;seg1&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;seg2&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">620</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">380</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;380c3cf1.a6ac94&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ui_chart&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="s2">&quot;6afe9bdf.976fec&quot;</span><span class="p">,</span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;Luchtdruk&quot;</span><span class="p">,</span><span class="nt">&quot;chartType&quot;</span><span class="p">:</span><span class="s2">&quot;line&quot;</span><span class="p">,</span><span class="nt">&quot;legend&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;xformat&quot;</span><span class="p">:</span><span class="s2">&quot;HH:mm:ss&quot;</span><span class="p">,</span><span class="nt">&quot;interpolate&quot;</span><span class="p">:</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span><span class="nt">&quot;nodata&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;dot&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;ymin&quot;</span><span class="p">:</span><span class="s2">&quot;950&quot;</span><span class="p">,</span><span class="nt">&quot;ymax&quot;</span><span class="p">:</span><span class="s2">&quot;1050&quot;</span><span class="p">,</span><span class="nt">&quot;removeOlder&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;removeOlderPoints&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;removeOlderUnit&quot;</span><span class="p">:</span><span class="s2">&quot;86400&quot;</span><span class="p">,</span><span class="nt">&quot;cutout&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;useOneColor&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;colors&quot;</span><span class="p">:[</span><span class="s2">&quot;#1f77b4&quot;</span><span class="p">,</span><span class="s2">&quot;#aec7e8&quot;</span><span class="p">,</span><span class="s2">&quot;#ff7f0e&quot;</span><span class="p">,</span><span class="s2">&quot;#2ca02c&quot;</span><span class="p">,</span><span class="s2">&quot;#98df8a&quot;</span><span class="p">,</span><span class="s2">&quot;#d62728&quot;</span><span class="p">,</span><span class="s2">&quot;#ff9896&quot;</span><span class="p">,</span><span class="s2">&quot;#9467bd&quot;</span><span class="p">,</span><span class="s2">&quot;#c5b0d5&quot;</span><span class="p">],</span><span class="nt">&quot;useOldStyle&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">620</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">420</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[],[]]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;ee82ff5d.2ac73&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;change&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;rules&quot;</span><span class="p">:[{</span><span class="nt">&quot;t&quot;</span><span class="p">:</span><span class="s2">&quot;set&quot;</span><span class="p">,</span><span class="nt">&quot;p&quot;</span><span class="p">:</span><span class="s2">&quot;payload&quot;</span><span class="p">,</span><span class="nt">&quot;pt&quot;</span><span class="p">:</span><span class="s2">&quot;msg&quot;</span><span class="p">,</span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="s2">&quot;payload.barometer&quot;</span><span class="p">,</span><span class="nt">&quot;tot&quot;</span><span class="p">:</span><span class="s2">&quot;msg&quot;</span><span class="p">}],</span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;property&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;reg&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[</span><span class="s2">&quot;872c6883.661e3&quot;</span><span class="p">,</span><span class="s2">&quot;380c3cf1.a6ac94&quot;</span><span class="p">]]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;da3db487.e2c9a8&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;debug&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;f5bf33f.ce9c85&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;tosidebar&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;tostatus&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;complete&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">530</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;a4643fc8.e80d68&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ui_group&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Web-meters&quot;</span><span class="p">,</span><span class="nt">&quot;tab&quot;</span><span class="p">:</span><span class="s2">&quot;9c0984df.31b73&quot;</span><span class="p">,</span><span class="nt">&quot;disp&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="nt">&quot;collapse&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;6afe9bdf.976fec&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ui_group&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Web-graphs&quot;</span><span class="p">,</span><span class="nt">&quot;tab&quot;</span><span class="p">:</span><span class="s2">&quot;9c0984df.31b73&quot;</span><span class="p">,</span><span class="nt">&quot;disp&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="nt">&quot;collapse&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;9c0984df.31b73&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ui_tab&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Web-dashboard&quot;</span><span class="p">,</span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="s2">&quot;dashboard&quot;</span><span class="p">}]</span>
+</pre></div>
+</div>
+<p class="rubric">Opdrachten</p>
+<ol class="loweralpha simple">
+<li><p>gebruik van de flow</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>importeer de dashboard-flow in een lege flow-pagina</p></li>
+<li><p>activeer deze flow (via deploy)</p></li>
+<li><p>controleer de flow door op de inject-knop (in de flow) te klikken.</p></li>
+<li><p>bekijk het dashboard:</p></li>
+</ul>
+</div></blockquote>
+<ol class="loweralpha simple" start="2">
+<li><p>experiment 1: http-request</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>verwijder de link tussen de http-request-node en de html-node (<code class="docutils literal notranslate"><span class="pre">td</span></code>).</p></li>
+<li><p>klik op de inject-knop, en bekijk de output van de debug-node: dit is een html-document.</p></li>
+<li><p>pas de http-request node aan, voor een andere website naar keuze;
+en bekijk de html-code van die website.</p></li>
+<li><p>herstel de oorspronkelijke flow (eventueel kun je alle knopen verwijderen en de flow opnieuw importeren)</p></li>
+</ul>
+</div></blockquote>
+<ol class="loweralpha simple" start="3">
+<li><p>experiment 2: html-node</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>verwijder de link tussen de html-code (<code class="docutils literal notranslate"><span class="pre">td</span></code>) en <em>select-sensor-values</em>.</p></li>
+<li><p>klik op de inject-knop, en bekijk de output van de debug-node van <code class="docutils literal notranslate"><span class="pre">td</span></code>:
+dit is een array met alle <code class="docutils literal notranslate"><span class="pre">td</span></code>-elementen in het html-document.</p></li>
+<li><p>configureer de html-node: verander de selector in <code class="docutils literal notranslate"><span class="pre">h1</span></code> of <code class="docutils literal notranslate"><span class="pre">p</span></code>.</p></li>
+<li><p>controleer of je nu de overeenkomstige elementen uit het html-document krijgt.</p></li>
+<li><p>herstel de oorspronkelijke flow.</p></li>
+</ul>
+</div></blockquote>
+<ol class="loweralpha simple" start="4">
+<li><p>experiment 3: herhaald opvragen van sensordata</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>configureer de inject-node: verander de “Repeat” in “Interval”;</p></li>
+<li><p>vul als waarde voor het interval in: 30 seconden;</p></li>
+<li><p>ga na (aan de hand van de grafiek in het dashboard) of je dit interval ook groter kunt maken.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>Opmerkingen</strong></p>
+<ul class="simple">
+<li><p>html-documenten zijn niet erg handig om data van een server te halen.
+Een formaat dat in veel website-API’s gebruikt wordt is JSON:
+dat komt in het volgende hoofdstuk aan de orde.</p></li>
+<li><p>tegenwoordig maken websites het steeds lastiger om data uit het html-document te halen,
+bijvoorbeeld doordat deze data pas op het laatste moment ingevuld wordt vanuit javascript.
+Je kunt het geluk hebben dat zo’n website een JSON-API heeft, anders heb je pech.</p></li>
+<li><p>(Het FRED-voorbeeld van de Google Finance website werkt niet meer,
+en Google heeft de finance-API gedeactiveerd.)</p></li>
+<li><p>het herhaald opvragen van de sensorwaarden door de client bij de (web)server heet “polling”.
+Dit is geen handige aanpak: je krijgt veel onnodige communicatie, zeker als de sensorwaarden niet veranderen.
+Het is handiger als de IoT-knoop deze waarden opstuurt als ze veranderd zijn:
+een aanpak daarvoor zien we in het volgende hoofdstuk.</p></li>
+</ul>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/Users/eelco/stack/books/iotbook/_sources/http/nodered/sensor-dashboard.rst</span>, line 140)</p>
+<p>Unknown directive type “todo”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">todo</span><span class="p">::</span>
+
+  <span class="o">*</span> <span class="n">gebruik</span> <span class="n">van</span> <span class="n">inject</span><span class="o">-</span><span class="n">node</span> <span class="n">om</span> <span class="n">led</span> <span class="n">te</span> <span class="n">laten</span> <span class="n">knipperen</span>
+    <span class="p">(</span><span class="n">nb</span><span class="p">:</span> <span class="n">we</span> <span class="n">hebben</span> <span class="n">dan</span> <span class="n">wel</span> <span class="n">een</span> <span class="n">webserver</span><span class="o">-</span><span class="n">knoop</span> <span class="ow">in</span> <span class="n">het</span> <span class="n">publieke</span> <span class="n">internet</span> <span class="n">nodig</span><span class="p">,</span> <span class="n">of</span> <span class="n">tenminste</span> <span class="n">een</span> <span class="n">gesimuleerde</span> <span class="n">versie</span> <span class="n">daarvan</span><span class="p">)</span><span class="o">.</span>
+  <span class="o">*</span> <span class="n">gebruik</span> <span class="n">van</span> <span class="n">schedule</span><span class="o">-</span><span class="n">node</span> <span class="n">om</span> <span class="n">led</span> <span class="n">via</span> <span class="n">tijd</span> <span class="n">te</span> <span class="n">besturen</span>
+  <span class="o">*</span> <span class="n">opdracht</span><span class="p">:</span> <span class="n">maak</span> <span class="n">met</span> <span class="n">NodeRed</span> <span class="n">een</span> <span class="n">website</span><span class="o">/</span><span class="n">dashboard</span> <span class="n">dat</span> <span class="n">weergeeft</span> <span class="n">of</span> <span class="n">je</span> <span class="n">morgen</span> <span class="n">het</span> <span class="n">eerste</span> <span class="n">uur</span> <span class="n">vrij</span> <span class="n">hebt</span><span class="o">.</span>
+    <span class="p">(</span><span class="o">...</span><span class="n">als</span> <span class="n">de</span> <span class="n">rooster</span><span class="o">-</span><span class="n">website</span> <span class="n">van</span> <span class="n">je</span> <span class="n">school</span> <span class="n">dit</span> <span class="n">mogelijk</span> <span class="n">maakt</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
+    <a href="webformulieren.html" aria-label="<-previous">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+            <span style="visibility:hidden;"> <span class="section-number">4.5.5. </span>Webformulieren </span>
+        </div>
+    </a>
+  </li>
+</ul>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="webformulieren.html" aria-label="prev"></a>
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
+    <a href="../toetsvragen.html" aria-label="->next">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+          <span style="visibility:hidden;"> <span class="section-number">4.6. </span>Toetsvragen </span>
+      </div>
+    </a>
+  </li>
+</ul>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="../toetsvragen.html" aria-label="next">Next Section - 4.6. Toetsvragen</a>
+
+<script type="text/javascript">
+  var relations_next = $('#relations-next');
+  var relations_prev = $('#relations-prev');
+  relations_next.attr("title", "Next - " + relations_next.text());
+  relations_prev.attr("title", "Previous - " + relations_prev.text());
+
+  relations_prev.tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  relations_next.tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2020 eelco.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 4.2.6.
+    </p>
+  </div>
+</footer>
+
+
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>
