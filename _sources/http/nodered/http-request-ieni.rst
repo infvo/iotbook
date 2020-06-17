@@ -22,10 +22,10 @@ Deze URL kun je in de HTTP-request node zelf configureren, of via de ``msg.paylo
 | |template-node|      | template-node      |  input-output    |
 +----------------------+--------------------+------------------+
 
-.. |http-request-node| image:: nodered-http-request-node.png
+.. |http-request-node| image:: NodeRed-http-request-node.png
    :width: 150px
 
-.. |html-node| image:: nodered-html-node.png
+.. |html-node| image:: NodeRed-html-node.png
    :width: 150px
 
 .. |template-node| image:: nodered-template-node.png
