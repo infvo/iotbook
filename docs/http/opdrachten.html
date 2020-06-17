@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.4. Webserver-Opdrachten &#8212; IoT-book</title>
+    <title>4.5. Webserver-Opdrachten &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -123,8 +123,8 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.5. NodeRed-opdrachten" href="nodered/nodered-opdrachten.html" />
-    <link rel="prev" title="4.3. Protocollen" href="webserver-protocol.html" />
+    <link rel="next" title="4.6. NodeRed-opdrachten" href="nodered/nodered-opdrachten.html" />
+    <link rel="prev" title="4.4. Payload" href="http-payload.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -310,13 +310,13 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">4.3. </span>Protocollen" data-toggle="tooltip">
-    <a href="webserver-protocol.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">4.4. </span>Payload" data-toggle="tooltip">
+    <a href="http-payload.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">4.5. </span>NodeRed-opdrachten' data-toggle="tooltip" >              
+  <li id="relations-next" title='Next Chapter - <span class="section-number">4.6. </span>NodeRed-opdrachten' data-toggle="tooltip" >              
     <a href="nodered/nodered-opdrachten.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -356,7 +356,7 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="webserver-opdrachten">
-<h1><span class="section-number">4.4. </span>Webserver-Opdrachten<a class="headerlink" href="#webserver-opdrachten" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.5. </span>Webserver-Opdrachten<a class="headerlink" href="#webserver-opdrachten" title="Permalink to this headline">¶</a></h1>
 <p>In de opdrachten gebruiken we een IoT-knoop met daarop een webserver.
 Via een computer (browser) in hetzelfde netwerk als deze IoT-knoop maak je contact met deze webserver:
 daarmee vraag je sensorwaarden van de IoT-knoop op en bestuur je de actuatoren (LEDs) van de knoop.</p>
@@ -368,7 +368,7 @@ daarmee vraag je sensorwaarden van de IoT-knoop op en bestuur je de actuatoren (
 </ul>
 </div>
 <div class="section" id="iot-knoop-als-access-point">
-<h2><span class="section-number">4.4.1. </span>(1) IoT-knoop als Access Point<a class="headerlink" href="#iot-knoop-als-access-point" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.1. </span>(1) IoT-knoop als Access Point<a class="headerlink" href="#iot-knoop-als-access-point" title="Permalink to this headline">¶</a></h2>
 <p>In het eerste voorbeeld gebruik je een IoT-knoop in Access Point mode.
 Het gaat bij deze opdracht om het uitlezen van de sensorwaarden van de IoT-knoop.
 In deze opdracht verander je de configuratie niet!</p>
@@ -396,7 +396,7 @@ Veranderen de sensorwaarden in de pagina?</p></li>
 </ul>
 </div>
 <div class="section" id="led-besturing-1">
-<h2><span class="section-number">4.4.2. </span>(2) LED-besturing (1)<a class="headerlink" href="#led-besturing-1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.2. </span>(2) LED-besturing (1)<a class="headerlink" href="#led-besturing-1" title="Permalink to this headline">¶</a></h2>
 <p>De IoT-knoop heeft een eenvoudige manier om de LED aan en uit te zetten:</p>
 <ol class="arabic simple">
 <li><p>Vul als URL in de browser in: <code class="docutils literal notranslate"><span class="pre">http://192.168.4.1/ledon</span></code>.
@@ -425,7 +425,7 @@ Zoals je ziet kun je met een URL soms heel direct hardware (actuatoren) besturen
 <p>Er is nog een manier om de LED aan- en uit te schakelen: dit komt in opdracht (x) aan de orde.</p>
 </div>
 <div class="section" id="ontwikkelaarstools">
-<h2><span class="section-number">4.4.3. </span>(3) Ontwikkelaarstools<a class="headerlink" href="#ontwikkelaarstools" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.3. </span>(3) Ontwikkelaarstools<a class="headerlink" href="#ontwikkelaarstools" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-browser-ontwikkelaarstools admonition">
 <p class="admonition-title">Browser-ontwikkelaarstools</p>
 <p>Moderne browsers beschikken over <em>ontwikkelaarstools</em> voor ontwikkelaars van websites.
@@ -474,7 +474,7 @@ Geef de beginregel hiervan.</p></li>
 </ol>
 </div>
 <div class="section" id="led-besturing-2">
-<h2><span class="section-number">4.4.4. </span>(4) LED-besturing (2)<a class="headerlink" href="#led-besturing-2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.4. </span>(4) LED-besturing (2)<a class="headerlink" href="#led-besturing-2" title="Permalink to this headline">¶</a></h2>
 <p>Naast de eenvoudige URLs <code class="docutils literal notranslate"><span class="pre">/ledon</span></code> en <code class="docutils literal notranslate"><span class="pre">/ledoff</span></code> is er nog een manier om de LED aan- en uit te schakelen:
 via de <em>buttons</em> op de homepagina.
 Het gebruik van deze buttons resulteert in het opsturen van een formulier naar de webserver.</p>
@@ -515,7 +515,7 @@ met als parameter het naam-waarde-paar: <code class="docutils literal notranslat
 </div>
 </div>
 <div class="section" id="adresseren-van-de-webserver">
-<h2><span class="section-number">4.4.5. </span>(5) Adresseren van de webserver<a class="headerlink" href="#adresseren-van-de-webserver" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.5. </span>(5) Adresseren van de webserver<a class="headerlink" href="#adresseren-van-de-webserver" title="Permalink to this headline">¶</a></h2>
 <p>Als je met een browser de webserver van de IoT-knoop wilt benaderen,
 moeten ze in hetzelfde lokale netwerk verbonden zijn.
 Bovendien moet je het IP-adres van de IoT-knoop kennen.
@@ -544,7 +544,7 @@ mDNS (multicast DNS).
 Deze aanpak laten we hier buiten beschouwing, omdat deze niet door alle browsers ondersteund wordt.</p>
 </div>
 <div class="section" id="een-eigen-voorbeeld">
-<h2><span class="section-number">4.4.6. </span>(6) Een eigen voorbeeld<a class="headerlink" href="#een-eigen-voorbeeld" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.5.6. </span>(6) Een eigen voorbeeld<a class="headerlink" href="#een-eigen-voorbeeld" title="Permalink to this headline">¶</a></h2>
 <p>Zoek een apparaat in je omgeving dat via een webinterface bediend kan worden.
 Enkele suggesties: router; netwerkprinter; IoT-gateway (zoals de Hue Bridge).</p>
 <ol class="arabic simple">
@@ -571,27 +571,27 @@ Enkele suggesties: router; netwerkprinter; IoT-gateway (zoals de Hue Bridge).</p
       
 <ul>
   <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
-    <a href="webserver-protocol.html" aria-label="<-previous">
+    <a href="http-payload.html" aria-label="<-previous">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-            <span style="visibility:hidden;"> <span class="section-number">4.3. </span>Protocollen </span>
+            <span style="visibility:hidden;"> <span class="section-number">4.4. </span>Payload </span>
         </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="webserver-protocol.html" aria-label="prev"></a>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="http-payload.html" aria-label="prev"></a>
   
 <ul>
   <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
     <a href="nodered/nodered-opdrachten.html" aria-label="->next">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-          <span style="visibility:hidden;"> <span class="section-number">4.5. </span>NodeRed-opdrachten </span>
+          <span style="visibility:hidden;"> <span class="section-number">4.6. </span>NodeRed-opdrachten </span>
       </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="nodered/nodered-opdrachten.html" aria-label="next">Next Section - 4.5. NodeRed-opdrachten</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="nodered/nodered-opdrachten.html" aria-label="next">Next Section - 4.6. NodeRed-opdrachten</a>
 
 <script type="text/javascript">
   var relations_next = $('#relations-next');

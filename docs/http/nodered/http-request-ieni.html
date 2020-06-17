@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.6.4. LED-besturing &#8212; IoT-book</title>
+    <title>4.6.7. HTTP website-up test &#8212; IoT-book</title>
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -123,8 +123,8 @@
     <script src="../../_static/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.6.5. Webformulieren" href="webformulieren.html" />
-    <link rel="prev" title="4.6.3. Een teller" href="teller.html" />
+    <link rel="next" title="4.6.8. HTTP API test" href="http-api-test-openweathermap.html" />
+    <link rel="prev" title="4.6.6. (*)Sensor-dashboard" href="sensor-dashboard.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -293,7 +293,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/runestone/default/reportabug?course=iotbook&page=led-besturing'>Report A Problem</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=http-request-ieni'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -310,14 +310,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">4.6.3. </span>Een teller" data-toggle="tooltip">
-    <a href="teller.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">4.6.6. </span>(*)Sensor-dashboard" data-toggle="tooltip">
+    <a href="sensor-dashboard.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">4.6.5. </span>Webformulieren' data-toggle="tooltip" >              
-    <a href="webformulieren.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">4.6.8. </span>HTTP API test' data-toggle="tooltip" >              
+    <a href="http-api-test-openweathermap.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -355,79 +355,141 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="led-besturing">
-<h1><span class="section-number">4.6.4. </span>LED-besturing<a class="headerlink" href="#led-besturing" title="Permalink to this headline">¶</a></h1>
-<p>In deze opdracht stuur je via een webserver de LED van een IoT-knoop aan.
-In de webserver zetten we het HTTP-request om in een MQTT-bericht.</p>
-<p>Als je NodeRed op een Raspberry Pi gebruikt, kun je ook de GPIO-pinnen van de Pi
-vanuit NodeRed besturen.
-Daarmee kun je ook een LED op de PI aan- en uitzetten.</p>
-<p>Voor het aansturen van de LED gebruiken we twee URLs: <code class="docutils literal notranslate"><span class="pre">/ledon</span></code> en <code class="docutils literal notranslate"><span class="pre">/ledoff</span></code>.
-De uitvoer van een HTTP input-node koppelen we aan een template-node voor de HTTP/HTML-response,
-en aan een template-node voor het JSON-bericht dat we via MQTT versturen.
-De beide outputs, HTTP en MQTT, zijn voor beide inputs dezelfde,
-en deze kunnen we dus combineren.</p>
-<div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../../_images/Nodered-ledon-ledoff.png"><img alt="../../_images/Nodered-ledon-ledoff.png" src="../../_images/Nodered-ledon-ledoff.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">NodeRed flow voor led-besturing</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+  <div class="section" id="http-website-up-test">
+<h1><span class="section-number">4.6.7. </span>HTTP website-up test<a class="headerlink" href="#http-website-up-test" title="Permalink to this headline">¶</a></h1>
+<p>In deze opdracht maak je een NodeRed-flow waarmee je kunt testen of een website “up” is.
+Afhankelijk van het resultaat laat je op een IoT-knoop een groene of rode LED branden.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/NodeRed-http-request-ieni.png"><img alt="../../_images/NodeRed-http-request-ieni.png" src="../../_images/NodeRed-http-request-ieni.png" style="width: 700px;" /></a>
 </div>
-<p class="rubric">Opdracht</p>
+<p>Voor deze opdracht gebruik je de HTTP-request node,
+waarmee je een HTTP-verzoek met een opgegeven URL kunt versturen.
+Deze URL kun je in de HTTP-request node zelf configureren, of via de <code class="docutils literal notranslate"><span class="pre">msg.payload</span></code> meegeven.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 33%" />
+<col style="width: 30%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>figuur</strong></p></td>
+<td><p><strong>naam</strong></p></td>
+<td><p><strong>soort node</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../_images/nodered-http-request-node.png"><img alt="http-request-node" src="../../_images/nodered-http-request-node.png" style="width: 150px;" /></a></p></td>
+<td><p>http-request-node</p></td>
+<td><p>input-output</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../_images/nodered-html-node.png"><img alt="html-node" src="../../_images/nodered-html-node.png" style="width: 150px;" /></a></p></td>
+<td><p>html-node</p></td>
+<td><p>input-output</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../_images/nodered-template-node2.png"><img alt="template-node" src="../../_images/nodered-template-node2.png" style="width: 150px;" /></a></p></td>
+<td><p>template-node</p></td>
+<td><p>input-output</p></td>
+</tr>
+</tbody>
+</table>
 <ol class="arabic simple">
-<li><p>Maak deze flow door de nodes naar het flow-venster te slepen en te verbinden.</p></li>
-<li><p>Configureer de eerste http-input-node: <em>URL</em>: <code class="docutils literal notranslate"><span class="pre">/ledon</span></code>, <em>method</em>: <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p></li>
-<li><p>Configureer de verbonden (HTML) template node, met output naar de HTTP-response-node:</p>
-<ol class="arabic simple">
-<li><p><em>Format</em>: <code class="docutils literal notranslate"><span class="pre">Mustache</span> <span class="pre">template</span></code></p></li>
-<li><p><em>Template</em>: <code class="docutils literal notranslate"><span class="pre">Led</span> <span class="pre">switched</span> <span class="pre">on.</span></code></p></li>
-</ol>
+<li><p>Maak de deelflow: inject node - http-request node - debug node.</p>
+<ul class="simple">
+<li><p>configureer http-request node:</p></li>
+<li><p><em>method</em>: <code class="docutils literal notranslate"><span class="pre">GET</span></code>,</p></li>
+<li><p><em>URL</em>: <code class="docutils literal notranslate"><span class="pre">https://ieni.org</span></code></p></li>
+</ul>
 </li>
-<li><p>Configureer de verbonden (JSON) template node, met output naar de MQTT output node:</p>
-<ol class="arabic simple">
-<li><p><em>Format</em>: <code class="docutils literal notranslate"><span class="pre">Plain</span> <span class="pre">text</span></code></p></li>
-<li><p><em>Syntax highlight</em>: <code class="docutils literal notranslate"><span class="pre">JSON</span></code></p></li>
-<li><p><em>Template</em>: <code class="docutils literal notranslate"><span class="pre">{&quot;0&quot;:</span> <span class="pre">{&quot;dOut&quot;:</span> <span class="pre">1}}</span></code></p></li>
-</ol>
-</li>
-<li><p>Configureer de MQTT output node:</p>
-<ol class="arabic simple">
-<li><p><em>Server</em> - vul de MQTT brokergegevens in;</p></li>
-<li><p><em>Topic</em>: <code class="docutils literal notranslate"><span class="pre">node/xxxx/actuators</span></code> - waarin <code class="docutils literal notranslate"><span class="pre">xxxx</span></code> het nummer van je IoT-knoop is.</p></li>
-</ol>
-</li>
-<li><p>Configureer de tweede http-input-node: <em>URL</em>: <code class="docutils literal notranslate"><span class="pre">/ledon</span></code>, <em>method</em>: <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p></li>
-<li><p>Configureer de tweede HTML template node als hierboven, met <em>Template</em>: <code class="docutils literal notranslate"><span class="pre">Led</span> <span class="pre">switched</span> <span class="pre">off</span></code></p></li>
-<li><p>Configureer de tweede JSON template node als hierboven, met <em>Template</em>: <code class="docutils literal notranslate"><span class="pre">{&quot;0&quot;:</span> <span class="pre">{&quot;dOut&quot;:</span> <span class="pre">0}}</span></code></p></li>
 <li><p>Deploy</p></li>
 </ol>
-<p>Als je nu via een browser het URL-pad <code class="docutils literal notranslate"><span class="pre">/ledon</span></code> gebruikt, moet de LED op de IoT-knoop aangaan;
-bijvoorbeeld: <code class="docutils literal notranslate"><span class="pre">https://anna.fred.sensetecnic.com/api/ledon</span></code>.
-Met <code class="docutils literal notranslate"><span class="pre">/ledoff</span></code> kun je de LED weer uitschakelen.</p>
-<p><strong>Opmerking.</strong> Zoals je ziet kun je met deze flow, met alleen GET-opdrachten,
-de LED aan- en uitschakelen.
-Dit gebruik van GET is niet in overeenstemming met de regels van het web:
-een GET-opdracht vraagt alleen data op, en verandert de toestand van de “resource” niet.
-Bij de REST-API’s gaan we daar verder op in.</p>
-<div class="topic">
-<p class="topic-title">Idempotente opdrachten</p>
-<p>Waarom gebruiken we hier <em>twee links (knoppen)</em> voor het besturen van de LED?
-Je kunt toch met één drukknop een lamp aan- en uitzetten?
-De ene keer drukken zet de lamp aan, de volgende zet deze weer uit.
-Maar: deze aanpak geeft problemen als de drukknop niet betrouwbaar is,
-zoals bij communicatie vaak het geval is.
-Als een omschakelbericht niet aankomt,
-heeft het volgende bericht een tegengestelde betekenis.
-Door twee knoppen te gebruiken, heeft elke knop een duidelijke betekenis.
-Je kunt dan een knop nog een keer gebruiken,
-“voor de zekerheid”, bijvoorbeeld als je nog geen reactie gezien hebt.</p>
-<p>Een opdracht die dezelfde betekenis houdt als je deze herhaalt noemen we <em>idempotent</em>.
-Het maakt dan niet uit of je deze 1, 2 of 10 keer uitvoert.</p>
-<p>De HTTP GET-opdracht voor het ophalen van een webpagina is idempotent.
-Je kunt altijd een “reload” van een webpagina doen: je krijgt dan hetzelfde resultaat.</p>
-<p>De HTTP POST-opdracht, voor het insturen van een formulier, is niet idempotent.
-De browser geeft een waarschuwing als je voor een formulier een “reload” uit wilt voeren:
-je loopt bijvoorbeeld het risico dat je een artikel nog een keer bestelt.</p>
-<p><em>Vraag</em>: welke knoppen op een TV-afstandsbediening zijn idempotent?</p>
+<p>Test deze flow met de inject-node.
+Bekijk het resultaat in het debug-venster:
+als het goed is zie je daar het HTML-document dat de server als response teruggestuurd heeft.</p>
+<p>We hebben niet een compleet HTML-bestand nodig:
+we willen alleen weten of de inhoud ongeveer klopt met wat we verwachten.
+We gebruiken daarvoor de HTML-node: daarmee kun je elementen uit een HTML-document filteren.</p>
+<ol class="arabic simple" start="3">
+<li><p>Voeg tussen de http-request node en de debug node een html-node toe:</p>
+<ul class="simple">
+<li><p>configureer de html-node:</p></li>
+<li><p>selector: <code class="docutils literal notranslate"><span class="pre">h1</span></code></p></li>
+</ul>
+</li>
+<li><p>Deploy</p></li>
+</ol>
+<p>Test deze flow weer.
+In het debug-venster moet je nu de H1-elementen van de i&amp;i pagina zien.
+Als het goed is, is dit een array met één element.</p>
+<p>De volgende stap is dat je controleert of het resultaat klopt met je verwachtingen;
+afhankelijk van het resultaat sturen je de ene of de andere LED aan.</p>
+<ol class="arabic simple" start="5">
+<li><p>Voor het testen van het resultaat gebruiken we een <em>function node</em>.</p>
+<ul class="simple">
+<li><p>configureer de function node:</p></li>
+<li><p>2 <em>outputs</em> (!)</p></li>
+<li><p><em>function</em>:</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">title</span> <span class="o">==</span> <span class="s2">&quot;Informatica is de Toekomst.&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="p">[{</span><span class="nx">payload</span><span class="o">:</span> <span class="nx">title</span><span class="p">},</span> <span class="kc">null</span><span class="p">];</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">result</span> <span class="o">=</span> <span class="p">[</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="nx">payload</span><span class="o">:</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">}];</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+</pre></div>
 </div>
+<p>Door op te geven dat de function node 2 outputs heeft,
+krijgt de figuur 2 output-bolletjes.
+Je krijgt voor elke output een flow,
+die we hier gebruiken om de ene of de andere LED aan te zetten.
+Het resultaat van de functie bestaat uit een array van twee elementen,
+één voor elke flow.
+Merk op dat het resultaat de vorm heeft <code class="docutils literal notranslate"><span class="pre">[msg,</span> <span class="pre">null]</span></code> of <code class="docutils literal notranslate"><span class="pre">[null,</span> <span class="pre">msg]</span></code>:
+het bericht komt in de ene of in de andere flow,
+een <code class="docutils literal notranslate"><span class="pre">null</span></code> resultaat wordt niet verder verstuurd.</p>
+<p><em>Dit is een veel gebruikte aanpak in zo’n flow-taal:
+een “if-statement” vertaal je zo in twee verschillende flows.</em></p>
+<ol class="arabic simple" start="6">
+<li><p>Verbind in elke flow een template-node:</p>
+<ul class="simple">
+<li><p>configureer template node (Led 1 on, led 0 off):</p></li>
+<li><p><em>format</em>: Plain text</p></li>
+<li><p><em>syntax highlight</em>: JSON</p></li>
+<li><p><em>template</em> <code class="docutils literal notranslate"><span class="pre">{&quot;0&quot;:</span> <span class="pre">{&quot;dOut&quot;:</span> <span class="pre">0},</span> <span class="pre">&quot;1&quot;:</span> <span class="pre">{&quot;dOut&quot;:</span> <span class="pre">1}}</span></code></p></li>
+<li><p>configureer template node (Led 0 on, led 1 off):</p></li>
+<li><p><em>format</em>: Plain text</p></li>
+<li><p><em>syntax highlight</em>: JSON</p></li>
+<li><p><em>template</em> <code class="docutils literal notranslate"><span class="pre">{&quot;0&quot;:</span> <span class="pre">{&quot;dOut&quot;:</span> <span class="pre">1},</span> <span class="pre">&quot;1&quot;:</span> <span class="pre">{&quot;dOut&quot;:</span> <span class="pre">0}}</span></code></p></li>
+</ul>
+</li>
+<li><p>Verbind de template node outputs met een debug-node</p></li>
+<li><p>Deploy</p></li>
+</ol>
+<p>Test de flow.
+De site zal meestal “up” zijn, je krijgt dat maar één output te zien.
+Suggestie: voeg een extra inject-node toe aan de input van de function-node,
+om ook het andere resultaat te testen.</p>
+<ol class="arabic simple" start="9">
+<li><p>Verbind de template nodes met een MQTT output-node:</p>
+<ul class="simple">
+<li><p>configureer de MQTT broker:</p></li>
+<li><p><em>Server</em>: <code class="docutils literal notranslate"><span class="pre">infvopedia.nl</span></code>, <em>Port</em>: 1883</p></li>
+<li><p>Server-Security - <em>Username</em>: <code class="docutils literal notranslate"><span class="pre">user</span></code>, <em>Password</em>: <code class="docutils literal notranslate"><span class="pre">pwd</span></code></p></li>
+<li><p><em>Topic</em>: <code class="docutils literal notranslate"><span class="pre">node/xxx/actuators</span></code></p></li>
+</ul>
+</li>
+</ol>
+<p>Vul hierin voor <code class="docutils literal notranslate"><span class="pre">user</span></code>, <code class="docutils literal notranslate"><span class="pre">pwd</span></code> de gegevens van de server (broker) in.
+En voor <code class="docutils literal notranslate"><span class="pre">xxxx</span></code> de node-ID van je IoT-knoop</p>
+<ol class="arabic simple" start="10">
+<li><p>Deploy</p></li>
+</ol>
+<p>Je kunt de flow activeren met de inject-node aan het begin.</p>
+<ol class="arabic simple" start="11">
+<li><p>Pas de inject-node aan het begin van de flow aan
+zodat deze elke 10 minuten een een output geeft.</p></li>
+<li><p>Deploy.</p></li>
+</ol>
 </div>
 
 
@@ -438,27 +500,27 @@ je loopt bijvoorbeeld het risico dat je een artikel nog een keer bestelt.</p>
       
 <ul>
   <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
-    <a href="teller.html" aria-label="<-previous">
+    <a href="sensor-dashboard.html" aria-label="<-previous">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-            <span style="visibility:hidden;"> <span class="section-number">4.6.3. </span>Een teller </span>
+            <span style="visibility:hidden;"> <span class="section-number">4.6.6. </span>(*)Sensor-dashboard </span>
         </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="teller.html" aria-label="prev"></a>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="sensor-dashboard.html" aria-label="prev"></a>
   
 <ul>
   <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
-    <a href="webformulieren.html" aria-label="->next">
+    <a href="http-api-test-openweathermap.html" aria-label="->next">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-          <span style="visibility:hidden;"> <span class="section-number">4.6.5. </span>Webformulieren </span>
+          <span style="visibility:hidden;"> <span class="section-number">4.6.8. </span>HTTP API test </span>
       </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="webformulieren.html" aria-label="next">Next Section - 4.6.5. Webformulieren</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="http-api-test-openweathermap.html" aria-label="next">Next Section - 4.6.8. HTTP API test</a>
 
 <script type="text/javascript">
   var relations_next = $('#relations-next');

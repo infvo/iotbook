@@ -1,5 +1,5 @@
-Protocollen
-===========
+HTTP-protocol
+=============
 
 .. figure:: IoT-webserver-protocol.png
    :width: 500 px

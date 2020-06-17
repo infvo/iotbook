@@ -1,84 +1,60 @@
 LED-besturing
 -------------
 
-In deze opdracht werken we uit hoe je via een webserver een LED kunt aansturen.
-In de FRED-versie hebben we geen toegang tot een LED;
-we simuleren deze door de kleur in de webpagina.
+In deze opdracht stuur je via een webserver de LED van een IoT-knoop aan.
+In de webserver zetten we het HTTP-request om in een MQTT-bericht.
 
-In de Raspberry Pi-versie heb je vanuit NodeRed toegang tot de GPIO-pinnen.
-Daarmee kun je eventueel een LED aansturen.
+Als je NodeRed op een Raspberry Pi gebruikt, kun je ook de GPIO-pinnen van de Pi
+vanuit NodeRed besturen.
+Daarmee kun je ook een LED op de PI aan- en uitzetten.
 
 Voor het aansturen van de LED gebruiken we twee URLs: ``/ledon`` en ``/ledoff``.
-Hiervoor maken we twee flows, met voor elk dezelfde opzet als bij de teller:
-een http-input-node, een function-node, een template-node, en een http-output-node.
+De uitvoer van een HTTP input-node koppelen we aan een template-node voor de HTTP/HTML-response,
+en aan een template-node voor het JSON-bericht dat we via MQTT versturen.
+De beide outputs, HTTP en MQTT, zijn voor beide inputs dezelfde,
+en deze kunnen we dus combineren.
 
-.. figure:: Nodered-flow-led-on-off.png
+.. figure:: Nodered-ledon-ledoff.png
    :width: 600 px
    :align: center
 
    NodeRed flow voor led-besturing
 
-1. Maak deze flow voor ``ledon``, door de nodes naar het flow-venster te slepen en verbinden.
-2. Configureer de http-input-node: *URL*: ``/ledon``, *method*: ``GET``.
-3. Configureer de function node: *Name*: ``led-on``, ``Function``:
+.. rubric:: Opdracht
 
-.. code-block:: javascript
+1. Maak deze flow door de nodes naar het flow-venster te slepen en te verbinden.
+2. Configureer de eerste http-input-node: *URL*: ``/ledon``, *method*: ``GET``.
+3. Configureer de verbonden (HTML) template node, met output naar de HTTP-response-node:
 
-  msg.color = "red";
-  return msg;
+   1. *Format*: ``Mustache template``
+   2. *Template*: ``Led switched on.``
 
-Als je toegang hebt tot hardware zul je in deze functie de LED uitschakelen.
+4. Configureer de verbonden (JSON) template node, met output naar de MQTT output node:
 
-4. Configureer de template node: *Template*:
+   1. *Format*: ``Plain text``
+   2. *Syntax highlight*: ``JSON``
+   3. *Template*: ``{"0": {"dOut": 1}}``
 
-.. code-block:: html
+5. Configureer de MQTT output node:
 
-  <!doctype HTML>
-  <html>
-    <head>
-      <title>LED control</title>
-    </head>
-    <body>
-      <h1>LED control</h1>
-      <p>
-        <a href="/api/ledon">on</a>
-        <span style="color: {{color}}"> [[LED]]</span>
-        <a href="/api/ledoff">off</a>
-      </p>
-    </body>
-  </html>
+   1. *Server* - vul de MQTT brokergegevens in;
+   2. *Topic*: ``node/xxxx/actuators`` - waarin ``xxxx`` het nummer van je IoT-knoop is.
 
-*Opmerking*: in deze html-code gebruiken we de URLs ``/api/ledon`` en ``/api/ledoff``.
-Dit is nodig voor de FRED-versie.
-Voor andere NodeRed-installaties laat je het ``/api``-deel weg.
+6. Configureer de tweede http-input-node: *URL*: ``/ledon``, *method*: ``GET``.
+7. Configureer de tweede HTML template node als hierboven, met *Template*: ``Led switched off``
+8. Configureer de tweede JSON template node als hierboven, met *Template*: ``{"0": {"dOut": 0}}``
+9. Deploy
 
-5. Kopieer deze flow voor ``ledoff``
-6. Configureer in deze kopie de http-input-node: *URL*: ``/ledoff``.
-7. Configureer de function-node: *Name*: ``led-off``, ``Function``:
+Als je nu via een browser het URL-pad ``/ledon`` gebruikt, moet de LED op de IoT-knoop aangaan;
+bijvoorbeeld: ``https://anna.fred.sensetecnic.com/api/ledon``.
+Met ``/ledoff`` kun je de LED weer uitschakelen.
 
-.. code-block:: javascript
+**Opmerking.** Zoals je ziet kun je met deze flow, met alleen GET-opdrachten,
+de LED aan- en uitschakelen.
+Dit gebruik van GET is niet in overeenstemming met de regels van het web:
+een GET-opdracht vraagt alleen data op, en verandert de toestand van de "resource" niet.
+Bij de REST-API's gaan we daar verder op in.
 
-  msg.color = "black";
-  return msg;
-
-Als je toegang hebt tot hardware zul je in deze functie de LED uitschakelen.
-
-8. De template-node hoef je niet aan te passen.
-9. "Deploy" en controleer via de browser de werking van de webpagina's.
-   (bijvoorbeeld: ``https://anna.fred.sensetecnic.com/api/ledon``)
-10. Je kunt deze flows vereenvoudigen: voor beide flows zijn de "staarten" gelijk.
-    Deze kun je combineren: verbind de output van function-node ``led-off``
-    met de template-node in de flow van ``/ledon``.
-    Verwijder de tweede template-node en de bijbehorende http-output-node.
-    Je krijgt dan onderstaande flow:
-
-.. figure:: Nodered-flow-led-on-off-combined.png
-   :width: 600 px
-   :align: center
-
-   Ledbesturing met gedeelde response-"staart"
-
-Door slim gebruik te maken van templates kun je vaker flows op zo'n manier combineren.
 
 .. topic:: Idempotente opdrachten
 

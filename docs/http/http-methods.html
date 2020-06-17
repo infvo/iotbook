@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.7. Toetsvragen &#8212; IoT-book</title>
+    <title>HTTP methods &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
@@ -123,8 +123,6 @@
     <script src="../_static/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. RFM69-devices" href="../h5/toctree.html" />
-    <link rel="prev" title="4.6.8. HTTP API test" href="nodered/http-api-test-openweathermap.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -293,7 +291,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/runestone/default/reportabug?course=iotbook&page=toetsvragen'>Report A Problem</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=http-methods'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -310,18 +308,6 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">4.6.8. </span>HTTP API test" data-toggle="tooltip">
-    <a href="nodered/http-api-test-openweathermap.html" >
-      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  
-  <li id="relations-next" title='Next Chapter - <span class="section-number">5. </span>RFM69-devices' data-toggle="tooltip" >              
-    <a href="../h5/toctree.html" >
-        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
-    </a>
-  </li>
-  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -355,10 +341,26 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="toetsvragen">
-<h1><span class="section-number">4.7. </span>Toetsvragen<a class="headerlink" href="#toetsvragen" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="http-methods">
+<h1>HTTP methods<a class="headerlink" href="#http-methods" title="Permalink to this headline">¶</a></h1>
+<p>(figuur?)</p>
+<p>Het eerste element van een HTTP-request is een <em>method-keyword</em>.
+Hiermee geef je aan hoe de server de URL en eventuele extra data moet interpreteren.
+De meest gebruikte methods zijn:</p>
 <ul class="simple">
-<li><p>waarom kun je de IoT-knoop alleen in het lokale netwerk benaderen?</p></li>
+<li><p>GET - de client vraagt de server om een document (“representatie”) voor de URL;</p></li>
+<li><p>POST - de client stuurt de server informatie over de URL - bijvoorbeeld de inhoud van een formulier;</p></li>
+<li><p>PUT - de client stuurt de server een document voor de URL;</p></li>
+<li><p>DELETE - de client verzoekt de server om de URL te verwijderen.</p></li>
+<li><p>HEAD - de client vraagt de server om de metadata (headers) voor de URL.</p></li>
+</ul>
+<p>De methods GET en HEAD worden alleen gebruikt om gegevens op te vragen.
+Deze zijn niet bedoeld om de toestand bij de server te veranderen.</p>
+<p>In een REST-API worden deze methods op een speciale manier gebruikt.</p>
+<p>Lees verder:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nl.wikipedia.org/wiki/Hypertext_Transfer_Protocol">https://nl.wikipedia.org/wiki/Hypertext_Transfer_Protocol</a></p></li>
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods</a></p></li>
 </ul>
 </div>
 
@@ -368,29 +370,6 @@
   </div>
   
       
-<ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
-    <a href="nodered/http-api-test-openweathermap.html" aria-label="<-previous">
-        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-            <span style="visibility:hidden;"> <span class="section-number">4.6.8. </span>HTTP API test </span>
-        </div>
-    </a>
-  </li>
-</ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="nodered/http-api-test-openweathermap.html" aria-label="prev"></a>
-  
-<ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
-    <a href="../h5/toctree.html" aria-label="->next">
-      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
-          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-          <span style="visibility:hidden;"> <span class="section-number">5. </span>RFM69-devices </span>
-      </div>
-    </a>
-  </li>
-</ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="../h5/toctree.html" aria-label="next">Next Section - 5. RFM69-devices</a>
 
 <script type="text/javascript">
   var relations_next = $('#relations-next');

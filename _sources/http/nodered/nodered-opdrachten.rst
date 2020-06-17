@@ -1,7 +1,7 @@
 NodeRed-opdrachten
 ==================
 
-.. bij webserver-keten
+.. bij http-keten
 
 .. admonition:: Leerdoelen en concepten
 
@@ -28,3 +28,5 @@ Voorkennis: elementaire HTML-kennis.
    led-besturing.rst
    webformulieren.rst
    sensor-dashboard.rst
+   http-request-ieni.rst
+   http-api-test-openweathermap.rst

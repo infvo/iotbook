@@ -8,26 +8,26 @@ We gebruiken dit voor het bestuderen van het HTTP-protocol.
 
 We gebruiken hiervoor de volgende knopen:
 
-+--------------------+------------------+------------------+
-| **figuur**         | **naam**         | **soort node**   |
-+--------------------+------------------+------------------+
-| |http-input-node|  | http-input-node  |  input           |
-+--------------------+------------------+------------------+
-| |http-output-node| | http-output-node |  output          |
-+--------------------+------------------+------------------+
-| |template-node|    | template-node    |  in-out          |
-+--------------------+------------------+------------------+
++----------------------+--------------------+------------------+
+| **figuur**           | **naam**           | **soort node**   |
++----------------------+--------------------+------------------+
+| |http-input-node|    | http-input-node    |  input           |
++----------------------+--------------------+------------------+
+| |http-response-node| | http-response-node |  output          |
++----------------------+--------------------+------------------+
+| |template-node|      | template-node      |  in-out          |
++----------------------+--------------------+------------------+
 
 .. |http-input-node| image:: nodered-http-input-node.png
-.. |http-output-node| image:: nodered-http-output-node.png
+.. |http-response-node| image:: nodered-http-output-node.png
 .. |template-node| image:: nodered-template-node.png
 
 Een HTTP-request van een browser bevat onder andere de volgende onderdelen:
 
-* het pad-gedeelte van de URL van het HTTP-request, bijvoorbeeld: ``/mypage``.
 * de HTTP-request *method*, bijvoorbeeld ``GET`` of ``POST``.
+* het pad-gedeelte van de URL van het HTTP-request, bijvoorbeeld: ``/hello``.
 
-Maak met deze nodes de volgende flow:
+.. rubric:: Opdracht A
 
 .. figure:: Nodered-hello.png
    :width: 600 px
@@ -35,58 +35,46 @@ Maak met deze nodes de volgende flow:
 
    NodeRed http flow-voorbeeld
 
-(De namen van de knopen hoef je niet aan te passen.)
+Maak met de bovenstaande flow een simpele webserver in NodeRed:
 
-Door het configureren van de nodes maken we een eigen webserver,
-voor het afhandelen van een eigen pagina.
+1. De eerste node in deze HTTP-flow is een http-input-node.
+   Configureer deze als volgt (dubbel-klik op de node):
 
-1. De eerste stap in een HTTP-flow is een http-input-node.
-   Deze configureren we als volgt (dubbel-klik op de node):
-   1. gebruik als *method*: ``GET``
-   2. gebruik als *URL*: ``/mypage``
-2. verbind een debug-node met de output van deze http-input-node.
-   De andere verbindingen kun je laten zoals ze zijn.
-3. Configureer de debug-node *Output*: ``complete msg object`` (en "Done").
-4. "Deploy"
+   1. *method*: ``GET``
+   2. *URL*: ``/hello``
 
-5. Nu kun je testen of een GET-request voor ``/mypage`` afgehandeld wordt.
+2. De tweede node is een template-node. Configuratie:
 
-Gebruik hiervoor als URL in een browser:
+   1. *Format*: ``Mustache template``
+   2. *Template*: ``<h1>Hello World!<h1>``
 
-* voor FRED: de URL van je NodeRed-instantie, gevolgd door ``/api/mypage``.
-  Bijvoorbeeld:  ``https://anna.fred.sensetecnic.com/api/mypage``
-* voor een Raspberry Pi: de URL van de NodeRed-instantie, gevolgd door ``/mypage``.
+3. De derde node is een HTTP-response node. Configureren is niet nodig.
+4. Voor het testen verbind je een debug-node met de output van de http-input-node.
+   Configuratie:
+
+   1. *Output*: ``complete msg object``
+
+5. "Deploy"
+6. Test de webserver.
+   Geef in een browser de URL van je website op:
+
+* voor FRED: de URL van je NodeRed-instantie, gevolgd door ``/api/hello``.
+  Bijvoorbeeld:  ``https://anna.fred.sensetecnic.com/api/hello``
+* voor een Raspberry Pi: de URL van de NodeRed-instantie, gevolgd door ``/hello``,
+  bijvoorbeeld: ``http://192.168.1.201:1880/hello``
 
 In het geval van FRED moet je dit doen in een venster van de browser waarmee je ingelogd bent bij FRED.
 Dit betekent dat alleen jij deze website kunt zien, anderen niet.
 Dit is een beperking van de gratis versie van FRED.
-
 Een "normale" NodeRed-installatie heeft deze beperking niet: iedereen kan dan je webpagina zien.
 
-Als response in de browser krijg je:  ``This is the payload: [object Object] !``
+Als alles goed gaat, krijg je als response in de browser krijg je:  ``Hello World!``
+Via de debug-output kun je de binnenkomende HTTP-requests bekijken.
 
-6. zoek in de debug-output naar het ``req``-deel van het msg-object.
+7. zoek in de debug-output in NodeRed naar het ``req``-deel van het msg-object.
    Daarin vind je onder andere de velden ``URL`` en ``method``.
    Controleer of deze kloppen met wat je verwacht.
 
-7. De volgende stap is het aanpassen van de webpagina.
-   Configureer de template-node, en vul als template-waarde in:
-
-.. code-block::html
-
-  <!doctype HTML>
-  <html>
-    <head>
-      <title>My page</title>
-    </head>
-    <body>
-      <h1>Welkom op mijn website</h1>
-    </body>
-  </html>
-
-Vul als *Name* in: ``mypage``.
-En "Done" en "Deploy".
-
-Open nu in de browser een webpagina met de URL van je NodeRed-pagina.
-(Bijvoorbeeld: ``https://anna.fred.sensetecnic.com/api/mypage``.)
-Controleer of je nu je eigen webpagina te zien krijgt.
+*Opmerking* Een Mustache-template wordt automatisch omgezet in de bijbehorende HTML-code.
+Je kunt ook de pure HTML invullen, als *Format* geef je dan ``plain text``,
+en voor de syntax highlight gebruik je ``HTML``.
