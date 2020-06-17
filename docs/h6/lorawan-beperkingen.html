@@ -361,21 +361,20 @@
 <a class="reference internal image-reference" href="../_images/LoRaWan-uplink-downlink-duty-cycle.png"><img alt="../_images/LoRaWan-uplink-downlink-duty-cycle.png" src="../_images/LoRaWan-uplink-downlink-duty-cycle.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-text">Beperkingen aan uplink- en downlink berichten</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>LoRa maakt gebruik van vrije radiobanden.
-Zo’n radioband heeft beperkingen: een radio mag maximaal 1% van de tijd zenden, met een beperkt vermogen.
-TheThingsNetwork heeft bovendien de “fair use” regel: een device mag niet meer dan 30 seconden per dag zenden.
-Dit geeft de volgende beperkingen:</p>
+<p>De vrije radioband die LoRa gebruikt heeft beperkingen:
+een radio mag maximaal 1% van de tijd zenden, met een beperkt vermogen.
+TheThingsNetwork eist bovendien “fair use”:
+een device mag niet meer dan 30 seconden per dag zenden.</p>
+<p>Dit geeft de volgende beperkingen:</p>
 <ul class="simple">
 <li><p>payload: zo klein mogelijk, typisch ca. 10 bytes;</p></li>
 <li><p>uplink-berichten:  maximaal ca. 20 maal maal per uur (gateway dichtbij),
 of ca. 20 maal per dag (gateway ver weg);</p></li>
 <li><p>uplink-berichten: “best effort”, geen ontvangstbevestiging;</p></li>
-<li><p>downlink-berichten: enkele berichten per dag;</p></li>
-<li><p>downlink-berichten: timing bepaald door uplink-berichten van het IoT-device,
-geen “real time” garanties.</p></li>
+<li><p>downlink-berichten: enkele berichten per dag; zonder “real time” garantie.</p></li>
 </ul>
 <p>Een kleine payload betekent dat je deze binair moet coderen: tekst (JSON) gebruikt teveel bytes.</p>
-<p>De IoT-device bepaalt het moment waarop dit een uplink-bericht verstuurt.
+<p>Het IoT-device bepaalt het moment waarop dit een uplink-bericht verstuurt.
 Daarna moet het device weer geruime tijd tijd wachten voordat het weer kan zenden.</p>
 <p>Een downlink-bericht wordt door de gateway naar het IoT-device verstuurd
 direct na het ontvangen een uplink-bericht.
