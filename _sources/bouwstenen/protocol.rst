@@ -13,6 +13,7 @@ Protocollen
   protocol-7.rst
   protocol-8.rst
   protocol-9.rst
+  protocol-10.rst
   protocol-toetsvragen.rst
 
 

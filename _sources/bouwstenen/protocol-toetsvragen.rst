@@ -11,7 +11,7 @@ Toetsvragen
 .. dragndrop:: h2-dd-1
   :match_11: adressering|||identificatie van bestemming of afzender
   :match_12: payload|||de eigenlijke data (inhoud) van de communicatie
-  :match_13: metatada|||data over het protocol en/of de inhoud
+  :match_13: metadata|||data over het protocol en/of de inhoud
   :match_14: interactie|||manier waarop de communicerende partijen samenwerken
 
   Plaats het begrip bij de best passende omschrijving.
@@ -64,5 +64,3 @@ Toetsvragen
   :correct: b
 
   Welke eis stel je aan het adres van de knopen in een netwerk?
-
-  

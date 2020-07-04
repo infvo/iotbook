@@ -1,11 +1,16 @@
 Payload
-=======
+-------
 
-(figuur?)
+.. figure:: http-html-json.png
+   :width: 600px
+   :align: center
 
-Er zijn allerlei verschillende payloads mogelijk met het HTTP-protocol,
-zoals een HTML-document, een JavaScript- of CSS-bestand, of een PNG-figuur.
-De meest gebruikte formaten in een web-API zijn JSON en XML.
+   HTTP payload-voorbeelden
+
+De belangrijkste payload voor het HTTP-protocol is een HTML-document.
+Daarnaast kent HTTP allerlei andere soorten payloads,
+zoals JavaScript- of CSS-bestanden of een PNG-figuur.
+De meest gebruikte payload-formaten in web-API's zijn JSON en XML.
 
 Soms stuurt de client gegevens naar de server,
 bijvoorbeeld de inhoud van een ingevuld formulier.
