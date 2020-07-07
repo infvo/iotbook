@@ -14,7 +14,7 @@ Inleiding...
    http/toctree.rst
    h5/toctree.rst
    h6/toctree.rst
-   lan-ip/toctree.rst 
+   lan-ip/toctree.rst
 
 **************
 Voor de docent

@@ -4,10 +4,11 @@ HTTP-protocol
 .. toctree::
   :maxdepth: 2
 
+  http-inleiding.rst
   http-client-server.rst
-  http-methods.rst
   http-adressering.rst
-  http-payload.rst
-  http-metadata.rst
+  http-request.rst
+  http-response.rst
   http-protocol-stack.rst
-  http-toetsvragen.rst 
+  http-toetsvragen.rst
+  http-opdrachten.rst 

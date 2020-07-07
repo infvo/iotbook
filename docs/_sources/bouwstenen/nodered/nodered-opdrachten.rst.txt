@@ -1,4 +1,4 @@
-NodeRed opdrachten
+NodeRed-opdrachten
 ==================
 
 .. toctree::

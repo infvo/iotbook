@@ -10,6 +10,7 @@ figuur: IoT-keten met plaatsen waar HTTP gebruikt wordt
    iot-besturen.rst
    iot-api-besturen.rst
    iot-api-diensten.rst
+   iot-toetsvragen.rst
 
 In het Internet of Things kom je HTTP protocol op verschillende plaatsen tegen:
 

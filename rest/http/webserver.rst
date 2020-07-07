@@ -1,6 +1,6 @@
-*********
-Inleiding
-*********
+**************
+Inleiding (**)
+**************
 
 In dit hoofdstuk behandelen we HTTP: het web-protocol.
 HTTP wordt in het IoT op meerdere manieren gebruikt:

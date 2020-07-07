@@ -1,4 +1,3 @@
-
 Een IoT-dashboard
 -----------------
 

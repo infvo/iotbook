@@ -1,5 +1,5 @@
-HTTP in de protocol-stack
--------------------------
+HTTP in de protocolstack
+------------------------
 
 .. figure:: IoT-webserver-protocol.png
    :width: 500 px
@@ -22,5 +22,13 @@ en extra protocolgegevens voor de adressering, de beveiliging van de payload, en
 
 De basisprotocollen van het internet, "TCP/IP", vormen een logische laag die de toepassingen scheidt van de hardware
 (zie *3-lagen model*).
-Deze logische laag is volgende het *end-to-end principe* van het internet gesplitst in een universele netwerklaag
-(het IP-protocol) en meer gespecialiseerde lagen in het eindpunt, zoals de TCP- en UDP-protocollen.
+
+Het HTTP-protocol vind je alleen in de eindapparaten, niet in het netwerk zelf.
+Dit is een voorbeeld van het *end-to-end principe* van het internet.
+Dit betekent bijvoorbeeld dat wanneer er een nieuwe versie is van het HTTP-protocol,
+er geen aanpassingen in het netwerk zelf nodig zijn.
+
+Bovendien kan het verkeer tussen de client en de server "end-to-end" versleuteld worden:
+alleen in de client en in de server is de data niet-versleuteld toegankelijk.
+Voor deze versleuteling (in het geval van HTTPS) heb je een apart protocol nodig: TLS,
+tussen TCP en HTTPS.
