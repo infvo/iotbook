@@ -12,6 +12,11 @@ REST API's
   rest-keys.rst
   rest-toetsvragen.rst
 
+.. admonition:: Gevorderd materiaal - nog incompleet
+
+  Het materiaal over REST APIs behoort niet tot de normale lesstof.
+  Het wordt toegevoegd voor de volledigheid - en is nog in bewerking. 
+
 Veel web-API zijn RESTful: deze gebruiken de REST-regels.
 Dit is geen "standaard", maar een reeks afspraken die het gemakkelijker maken
 om een API te begrijpen.
