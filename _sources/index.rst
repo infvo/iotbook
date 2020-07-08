@@ -16,6 +16,16 @@ Inleiding...
    h6/toctree.rst
    lan-ip/toctree.rst
 
+********
+Appendix
+********
+
+.. toctree::
+   :maxdepth: 1
+
+   glossary.rst  
+   configureren.rst
+
 **************
 Voor de docent
 **************

@@ -11,4 +11,3 @@ HTTP-protocol
   http-response.rst
   http-protocol-stack.rst
   http-toetsvragen.rst
-  http-opdrachten.rst 

@@ -14,7 +14,7 @@ NodeRed-opdrachten
 
   * NodeRed-installatie, bijvoorbeeld:
 
-    * FRED - https://fred.sensetecnic.com (gratis versie)
+    * FRED - https://fred.sensetecnic.com (gratis versie), *of*
     * NodeRed op Raspberry Pi (onderdeel van standaardsoftware)
 
 Voorkennis: elementaire HTML-kennis.
@@ -24,9 +24,7 @@ Voorkennis: elementaire HTML-kennis.
 
    eerste-webserver.rst
    tweede-pagina.rst
-   teller.rst
    led-besturing.rst
    webformulieren.rst
-   sensor-dashboard.rst
    http-request-ieni.rst
    http-api-test-openweathermap.rst

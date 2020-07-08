@@ -309,11 +309,12 @@
 <li><p>lokaal vs. publiek internet; webservers in het lokale netwerk.</p></li>
 </ul>
 <div class="section" id="ontwikkelaarstools">
-<h2><span class="section-number">4.2.8.1. </span>Ontwikkelaarstools<a class="headerlink" href="#ontwikkelaarstools" title="Permalink to this headline">¶</a></h2>
+<span id="browser-developer-tools"></span><h2><span class="section-number">4.2.8.1. </span>Ontwikkelaarstools<a class="headerlink" href="#ontwikkelaarstools" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-browser-ontwikkelaarstools admonition">
 <p class="admonition-title">Browser-ontwikkelaarstools</p>
 <p>Moderne browsers beschikken over <em>ontwikkelaarstools</em> voor ontwikkelaars van websites.
-Met deze tools kun je de interactie tussen de browser, de webserver en de html/css/javascript-bestanden volgen.</p>
+Met deze tools kun je de interactie tussen de browser,
+de webserver en de html/css/javascript-bestanden volgen.</p>
 <p>De manier waarop je deze tools vindt verschilt per browser:</p>
 <ul class="simple">
 <li><p>Chrome (OS X): Weergave-&gt;Ontwikkelaar-&gt;Ontwikkelaarstools</p></li>
@@ -323,12 +324,12 @@ Met deze tools kun je de interactie tussen de browser, de webserver en de html/c
 </ul>
 </div>
 <p>Via de browser-ontwikkelaarstools bestudeer je de interactie tussen de browser en een webserver.
-Je kunt een willekeurige webserver gebruiken, bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">https://ieni.org</span></code>,
-of de website van je school.</p>
+Je kunt een willekeurige webserver gebruiken,
+bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">https://ieni.org</span></code> of de website van je school.</p>
 <ol class="arabic simple">
 <li><p>Bestudeer het http-protocol tussen de browser en een webserver via de tab “Netwerk”.
 Door op een element links te klikken krijg je de gegevens over de interactie voor dat element.
-Let op: als er onder de tab “Netwerk” geen gegevens staan,
+<em>Let op</em>: als er onder de tab “Netwerk” geen gegevens staan,
 ververs dan de pagina in het URL-venster met de “refresh”-knop,
 of open een andere (sub)pagina in hetzelfde venster.</p>
 <ol class="loweralpha simple">
@@ -354,15 +355,19 @@ Dit is de end-to-end <em>latency</em> van de interactie tussen browser en server
 </div>
 <div class="section" id="curl-en-postman">
 <h2><span class="section-number">4.2.8.2. </span>cURL en Postman<a class="headerlink" href="#curl-en-postman" title="Permalink to this headline">¶</a></h2>
-<p>Met het commandoregel-programma <code class="docutils literal notranslate"><span class="pre">curl</span></code> kun je willekeurige HTTP-verzoeken sturen.
-Dit is een manier om het HTTP-protocol te leren kennen, en om web-APIs te verkennen.
-(Zie verderop.)</p>
-<p>Er zijn ook online tools waarmee je dit kunt, bijvoorbeeld <a class="reference external" href="https://reqbin.com/curl">https://reqbin.com/curl</a>.
-(Een nadeel hiervan is dat je daarmee alleen requests in het publieke internet
-kunt sturen, niet in het lokale netwerk.)</p>
-<p>Met het programma Postman (Postman.com) kun je hetzelfde als met cURL,
-maar uitgewerkt in een desktop-programma, met de nodige extra faciliteiten.</p>
-<p>De onderstaande opdrachten kun je zowel met curl als met Postman uitvoeren.</p>
+<p>Met het commandoregel-programma <code class="docutils literal notranslate"><span class="pre">curl</span></code> (<a class="reference external" href="https://curl.haxx.se">https://curl.haxx.se</a>) kun je willekeurige HTTP-verzoeken sturen.
+Dit is een manier om het HTTP-protocol te leren kennen en om web-APIs te verkennen.
+(Zie verderop.)
+Door curl-opdrachten in scripts te gebruiken kun je allerlei HTTP-transacties automatiseren.</p>
+<p>Er zijn ook online tools waarmee je dit kunt, bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">https://reqbin.com/curl</span></code>.
+Een nadeel hiervan is dat je daarmee alleen requests in het publieke internet
+kunt sturen, niet in het lokale netwerk.</p>
+<p>Met het programma Postman (Postman.com) kun je hetzelfde als met curl,
+maar uitgewerkt in een desktop-programma, met de nodige extra faciliteiten.
+Tip: Je kunt in Postman de “raw” requests en responses zien, in het console.
+Dit krijg je via menu View-&gt;Show Postman Console.
+Selecteer in het console “Show raw log”.</p>
+<p>De onderstaande opdrachten kun je zowel met curl, reqbin.com/curl als met Postman uitvoeren.</p>
 <ol class="arabic">
 <li><p>Stuur een GET-request naar een website naar keuze, bijvoorbeeld ieni.org
 of de website van je school.</p>
@@ -374,7 +379,17 @@ Als je <code class="docutils literal notranslate"><span class="pre">curl</span> 
 <p>Postman: <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">https://ieni.org</span></code> (SEND)</p>
 <p>Bestudeer de headers van de response.
 Wat is het Content-Type van de payload?
-En de Content-Lenght (als die er is)?</p>
+En wat is de Content-Lenght (als die er is)?</p>
+</li>
+<li><p>Probeer een URL te vinden die verwijst naar een figuur (foto o.i.d.).
+Voer daarvoor bovenstaande opdrachten uit.</p>
+<p>Wat is nu het Content-Type van de payload?
+En wat is de Content-Length (als die er is)?</p>
+</li>
+<li><p>Probeer een URL te vinden met een JSON payload.
+Een voorbeeld hiervan is <a class="reference external" href="https://adafruit.com/api/quotes.php">https://adafruit.com/api/quotes.php</a>.</p>
+<p>Wat is nu het Content-Type van de payload?
+En wat is de Content-Length (als die er is)?</p>
 </li>
 </ol>
 </div>

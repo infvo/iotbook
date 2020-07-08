@@ -1,6 +1,12 @@
 Besturen via een API
 --------------------
 
+.. figure:: iot-web-api-1.png
+  :width: 400px
+  :align: center
+
+  Apparaat of toepassing met webpagina's en een web-API
+
 Het gebruik van webpagina’s voor het besturen van een IoT-knoop is bedoeld voor een browser,
 met een mens als gebruiker.
 
@@ -10,14 +16,24 @@ In principe kun je voor elk API een eigen protocol ontwerpen,
 maar het is handig om het HTTP-protocol als basis te gebruiken.
 In dat geval kun je profiteren van de hele web-infrastructuur.
 
-Als payload in een web-API wordt meestal JSON gebruikt (in plaats van HTML):
-een programma kan dat eenvoudig in een object omzetten en omgekeerd.
+Een web-API gebruikt als payload meestal JSON, in plaats van HTML:
+een programma kan JSON eenvoudig in een object omzetten en omgekeerd.
 
-Opdracht: gebruik het eenvoudige API via een browser.
-Opmerking: dit API voldoet niet aan de regels van het web:
-Een GET-request is bedoeld om de huidige toestand te lezen, niet om deze te veranderen.
-(Dit gaat bijvoorbeeld mis als een GET-request gecached wordt:
-het request komt dan niet bij de IoT-knoop terecht, en de toestand verandert niet.)
+Je kunt via deze web-API een apparaat in het lokale netwerk,
+bijvoorbeeld een IoT-knoop, een controller of een netwerkprinter,
+automatisch bewaken en besturen.
+Je kunt daarvoor elke programmeertaal gebruiken, bijvoorbeeld Python.
+Als je in een scriptingtaal HTTP-requests kunt opbouwen en versturen,
+kun je daarmee ook toepassingen met web-API’s besturen.
 
-Opdracht: gebruik van een REST API met behulp van Postman (of met behulp van NodeRed).
-Ook de Philips Hue gebruikt een REST API - voorbeelden?
+Niet alleen apparaten kunnen een API hebben:
+ook veel webtoepassingen hebben, naast het normale gebruikersinterface via webpagina's,
+een web-API waarmee je deze toepassing met behulp van programma's en scripts kunt automatiseren.
+
+Enkele voorbeelden van toepassingen met een web-API:
+
+* Trello - https://developer.atlassian.com/cloud/trello/rest/api-group-actions/
+* Google Docs - https://developers.google.com/docs/api
+* Wikipedia/Mediawiki - https://www.mediawiki.org/wiki/API:Main_page
+* Slack - https://api.slack.com/web
+* GitHub - https://developer.github.com/v3/

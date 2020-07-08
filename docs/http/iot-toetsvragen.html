@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4.4. REST API’s" href="rest/toctree.html" />
-    <link rel="prev" title="4.3.4. API’s voor web-diensten" href="iot-api-diensten.html" />
+    <link rel="prev" title="4.3.4. API’s voor webdiensten" href="iot-api-diensten.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -244,7 +244,7 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">4.3.4. </span>API’s voor web-diensten" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">4.3.4. </span>API’s voor webdiensten" data-toggle="tooltip">
     <a href="iot-api-diensten.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -291,10 +291,75 @@
   
   <div class="section" id="toetsvragen">
 <h1><span class="section-number">4.3.5. </span>Toetsvragen<a class="headerlink" href="#toetsvragen" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>waarom kun je de IoT-knoop alleen in het lokale netwerk benaderen?</p></li>
-</ul>
-</div>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="http-iot-01" >
+            <p>Q-1: Wat zijn de <em>verschillen</em> tussen een normale WiFi-access point (base station)/gateway en
+de IoT-knoop als access point?</p>
+
+            <li data-component="answer"  id="http-iot-01_opt_a">De IoT-knoop gebruikt een ander WiFi-protocol.</li><li data-component="feedback">Ze kunnen hetzelfde protocol gebruiken.</li>
+            
+            <li data-component="answer" data-correct id="http-iot-01_opt_b">De IoT-knoop is naast het eigen WiFi-netwerk niet met een ander netwerk verbonden.</li><li data-component="feedback">Inderdaad: het netwerk is daardoor los van het internet.</li>
+            
+            <li data-component="answer"  id="http-iot-01_opt_c">De IoT-knoop heeft een vast IP-adres in het eigen WiFi-netwerk.</li><li data-component="feedback">Ook de gateway in het WiFi-netwerk heeft een vast IP-adres.</li>
+            
+            <li data-component="answer"  id="http-iot-01_opt_d">De IoT-knoop kan niet dezelfde IP-adressen gebruiken als het normale WiFi-netwerk.</li><li data-component="feedback">Ze gebruiken beide "lokale IP-adressen".</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="http-iot-05" >
+            <p>Q-2: Door middel van een ingebouwde webserver kun je een apparaat (printer, controller, IoT-knoop)
+in het lokale netwerk bewaken (monitoren) en besturen.
+Welke informatie wordt in de client-server communicatie met deze webserver direct doorgestuurd?</p>
+
+            <li data-component="answer"  id="http-iot-05_opt_a">Een veranderde sensorwaarde van het apparaat.</li><li data-component="feedback"></li>
+            
+            <li data-component="answer" data-correct id="http-iot-05_opt_b">De besturing van een actuator van het apparaat.</li><li data-component="feedback"></li>
+            
+            <li data-component="answer"  id="http-iot-05_opt_c">Beide.</li><li data-component="feedback"></li>
+            
+            <li data-component="answer"  id="http-iot-05_opt_d">Geen van beide.</li><li data-component="feedback"></li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="http-iot-07" >
+            <p>Q-3: Welke <em>method</em> gebruikt de browser voor het opsturen van een ingevuld formulier
+naar de server, om daarmee de toestand van de server te veranderen?</p>
+
+            <li data-component="answer"  id="http-iot-07_opt_a">GET.</li><li data-component="feedback"></li>
+            
+            <li data-component="answer" data-correct id="http-iot-07_opt_b">POST.</li><li data-component="feedback"></li>
+            
+            <li data-component="answer"  id="http-iot-07_opt_c">Kan allebeide.</li><li data-component="feedback"></li>
+            
+            <li data-component="answer"  id="http-iot-07_opt_d">Een andere method.</li><li data-component="feedback"></li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="http-iot-09" >
+            <p>Q-4: Een apparaat in het lokale netwerk met een ingebouwde webserver kun je besturen:</p>
+
+            <li data-component="answer"  id="http-iot-09_opt_a">via een browser op een computer in het publieke internet.</li><li data-component="feedback"></li>
+            
+            <li data-component="answer" data-correct id="http-iot-09_opt_b">via een browser op een computer in het lokale netwerk.</li><li data-component="feedback"></li>
+            
+            <li data-component="answer"  id="http-iot-09_opt_c">via allebeide.</li><li data-component="feedback"></li>
+            
+            <li data-component="answer"  id="http-iot-09_opt_d">via geen van beide.</li><li data-component="feedback"></li>
+            
+
+            </ul>
+            </div>
+            </div>
 
 
   <div id=scprogresscontainer>
@@ -307,7 +372,7 @@
     <a href="iot-api-diensten.html" aria-label="<-previous">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-            <span style="visibility:hidden;"> <span class="section-number">4.3.4. </span>API’s voor web-diensten </span>
+            <span style="visibility:hidden;"> <span class="section-number">4.3.4. </span>API’s voor webdiensten </span>
         </div>
     </a>
   </li>

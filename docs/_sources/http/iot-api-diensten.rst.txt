@@ -1,33 +1,33 @@
-API's voor web-diensten
+API's voor webdiensten
 -----------------------
 
+.. figure:: iot-web-api-2.png
+   :width: 500px
+   :align: center
+
+   Webtoepassing met ondersteunende diensten in het web
+
 **Het programmeerbare web.**
-Het web wordt niet alleen gebruikt voor webpagina’s,
-maar steeds meer ook voor webtoepassingen en diensten.
-Voorbeelden hiervan zijn Google Mail, Google Docs, Office-365, enz.
-De browser begint hiermee de desktop te vervangen.
-Deze aanpak heeft als voordeel dat je geef software hoeft te installeren:
-je hebt altijd de meest recente versie.
-Bovendien zijn je documenten vanaf elke computer toegankelijk
-en kun je met anderen aan documenten werken.
+Zoals we hiervoor gezien hebben kun je veel webtoepassingen tegenwoordig automatiseren via een web-API.
+Deze toepassingen kunnen zelf ook weer gebruik maken van allerlei diensten die via een web-API toegankelijk zijn.
+Voorbeelden van dergelijke diensten:
 
-Deze web-toepassingen en -diensten zijn niet alleen door mensen te gebruiken,
-maar ook door andere programma’s.
-De toepassingen bieden daarvoor een web-API.
-Via zo’n interface kunnen programma’s de toepassing besturen.
-Waar desktop-toepassingen vaak een eigen scripting-taal gebruiken,
-zoals Visual Basic,
-kun je toepassingen met een web-API met je eigen scriptingtaal automatiseren, bijvoorbeeld met Python.
-Als je in een scriptingtaal HTTP-requests kunt opbouwen en versturen,
-kun je daarmee ook toepassingen met web-API’s besturen.
+* basisdiensten zoals databases (couchDB; MongoDB Atlas (https://www.mongodb.com/cloud/atlas); enz.)
+  en autorisatie (OAuth2);
+* kaartdiensten, bijvoorbeeld open street map (https://wiki.openstreetmap.org/wiki/API),
+  Google Maps (https://developers.google.com/maps),
+* weerdiensten, zoals openweathermap (https://openweathermap.org/api);
+* diensten voor het vertalen van teksten (Google Translate);
+* diensten voor het omzetten van tekst in spraak en omgekeerd;
+* diensten voor AI verwerking van data; enz.
 
-Door deze web-API’s kun je toepassingen en diensten van anderen in je eigen toepassingen gebruiken.
-Je kunt veel werk uitbesteden aan gespecialiseerde diensten, waardoor je je eigen toepassing eenvoudig kunt houden.
-Voorbeelden van diensten die je in je eigen webpagina’s en webtoepassingen kunt gebruiken: weerbericht; Google Maps; Google Translate; speech-to-text/text-to-speech; database-diensten; enz.
+Door middel van web-API’s kun je gespecialiseerde diensten van anderen in je eigen toepassingen gebruiken.
+Hierdoor kun je je eigen toepassing eenvoudig houden,
+en toch een rijke functionaliteit kunt bieden.
 
-Een veel-gebruikte vorm van web-API’s is het REST-API.
+Een veelgebruikte vorm van web-API’s is het REST-API.
 Een voordeel van web-API’s is dat je deze eenvoudig kunt uitproberen.
-Je hebt daarvoor een programma nodig waarmee je willekeurige HTTP-queries kunt maken.
-Voorbeelden van dergelijke programma’s zijn Postman (desktop-toepassing),
-curl (command line toepassing), en vele online-gebaseerde varianten hiervan.
-Ook NodeRed is hiervoor geschikt.
+Je hebt daarvoor een programma nodig waarmee je willekeurige HTTP-queries kunt maken,
+zoals curl (commandoregel-toepassing), Postman (desktop-toepassing),
+en vele online-gebaseerde varianten.
+Ook NodeRed kun je daarvoor gebruiken.

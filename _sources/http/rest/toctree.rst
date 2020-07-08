@@ -8,6 +8,7 @@ REST API's
   rest-resources.rst
   rest-methods.rst
   rest-crud.rst
+  rest-stateless.rst
   rest-keys.rst
   rest-toetsvragen.rst
 

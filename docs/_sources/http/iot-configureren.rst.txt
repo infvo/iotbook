@@ -1,9 +1,9 @@
 Configureren via HTTP
 ---------------------
 
-figuur: protocol-stack bij directe communicatie tussen browser en webserver
-
-figuur: netwerk met alleen de IoT-knoop en een computer - met browser
+.. figure:: IoT-access-point-stack.png
+   :width: 450px
+   :align: center
 
 Sommige IoT-knopen beschikken over een WiFi-radio,
 en kunnen als WiFi base-station (access point) functioneren.
@@ -13,8 +13,9 @@ Je moet de IoT-knoop vaak op een speciale manier herstarten om deze in de base-s
 
 Als zo’n knoop in de base-station toestand is,
 kun je met je computer of smartphone verbinding maken met het netwerk van deze knoop.
-Dit netwerk is niet verbonden met de rest van het internet:
+*Dit netwerk is niet verbonden met de rest van het internet*:
 alleen de IoT-knoop en je computer zijn in dit netwerk verbonden.
+Dit betekent ook dat je computer niet met het internet verbonden is.
 
 De volgende stap is dat je via de browser van je computer contact maakt met de webserver van de IoT-knoop.
 Deze biedt dan één of meer webpagina’s waarmee je de knoop kunt configureren.

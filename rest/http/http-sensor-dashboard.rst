@@ -1,10 +1,18 @@
 
-(*)Sensor-dashboard
--------------------
+HTTP Sensor-dashboard
+---------------------
 
-Met enige moeite kunnen we met NodeRed de (sensor)gegevens van een website halen en weergeven in een dashboard.
-Hiervoor halen we een html-document op van een website (met een HTTP GET request),
-vervolgens ontleden we dit document om de sensorgegevens eruit te halen.
+In deze opdracht maak je een Sensor-dashboard voor een IoT-knoop met een webserver.
+Dit geeft wat meer problemen dan een sensor-dashboard voor een IoT-knoop via MQTT:
+
+* NodeRed en de IoT-knoop/webserver moeten in hetzelfde (lokale) netwerk verbonden zijn.
+  N.B.: **dit werkt dus niet voor de FRED-versie.**
+* de NodeRed-flow moet regelmatig, bijvoorbeeld elke minuut, de sensorgegevens ophalen
+  van de IoT-knoop/webserver ("polling").
+
+Met behulp van de http-request-node haalt de NodeRed-flow een html-document
+met sensorgegevens op van de IoT-knoop/webserver (met een HTTP GET request).
+Vervolgens ontleden we dit document om de sensorgegevens eruit te halen.
 Daarna geven we deze sensorgegevens weer in een dashboard.
 
 .. figure:: Nodered-dashboard-display-0.png
