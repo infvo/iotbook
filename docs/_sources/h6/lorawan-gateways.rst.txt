@@ -8,9 +8,11 @@ LoRaWan Gateways
     LoRaWan gateways
 
 
-De LoRaWan-devices van je toepassing moeten hun data naar een TTN LoRaWan-gateway “in de buurt” kunnen versturen.
-Soms is zo’n gateway al door anderen geïnstalleerd: via TTN kun je die gratis gebruiken.
-Soms moet je zelf zo’n gateway installeren om in elk geval voor je eigen toepassing “bereik” te hebben.
+De LoRaWan-devices van je toepassing moeten hun data naar een LoRaWan-gateway “in de buurt” kunnen versturen.
+Soms is zo’n gateway al door anderen geïnstalleerd:
+je gebruikt een gateway van een commerciële aanbieder als KPN,
+of een TTN gateway van iemand anders.
+Soms moet je zelf een TTN gateway installeren om in elk geval voor je eigen toepassing “bereik” te hebben.
 Anderen kunnen dan ook van jouw gateway gebruik maken.
 
 Er zijn verschillende soorten gateways: van kleine en eenvoudige gateways voor gebruik binnenshuis,
@@ -21,4 +23,3 @@ Je moet dan wel rekening houden met blikseminslag. (zie:
 
 Als je zelf een TTN gateway beheert, kun je via het TTN-console het verkeer via de gateway volgen.
 Je kunt alleen de inhoud van de berichten niet zien: die is versleuteld.
-(evt. fig. met gateway-verkeer?)

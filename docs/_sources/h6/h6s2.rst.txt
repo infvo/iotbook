@@ -10,4 +10,3 @@ LoRaWan bouwstenen
    lorawan-gateways.rst
    lorawan-toepassingen-1.rst
    h6s2-toetsvragen.rst
-   h6s2-opdrachten.rst

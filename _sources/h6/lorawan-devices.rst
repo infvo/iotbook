@@ -26,15 +26,15 @@ Hierboven staan enkele voorbeelden:
 De luchtkwaliteitsensoren zijn gemaakt als onderdeel van het MySense project voor "Behoud de Parel".
 Zie: http://behouddeparel.nl/?q=MySense
 
-.. figure:: LoRaWan-zelfbouw.png
-    :width: 800px
-    :align: center
-
-    LoRaWan IoT-devices voor prototyping en zelfbouw
-
 Voor vrijwel alle "physical computing" en prototyping platforms,
 zoals Arduino, microbit, Raspberry Pi, Feather, enz,
 zijn LoRa-versies of LoRa-modules beschikbaar.
 Deze kun je programmeren via de Arduino IDE of in microPython.
 Je kunt hiermee vrij eenvoudig en goedkoop je eigen LoRaWan-toepassing maken.
 Experimenteren met LoRaWan is daardoor erg laagdrempelig.
+
+.. figure:: LoRaWan-zelfbouw.png
+    :width: 800px
+    :align: center
+
+    LoRaWan IoT-devices voor prototyping en zelfbouw

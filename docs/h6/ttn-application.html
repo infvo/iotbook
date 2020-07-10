@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>TTN - applications &#8212; IoT-book</title>
+    <title>6.3.1. TTN - applications &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
@@ -54,6 +54,8 @@
     <script src="../_static/theme.js?v=D899FB97"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.3.2. Payload" href="ttn-payload.html" />
+    <link rel="prev" title="6.3. TTN: zelf aan de slag" href="h6s3.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -242,6 +244,18 @@
         
         <!-- 
           
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.3. </span>TTN: zelf aan de slag" data-toggle="tooltip">
+    <a href="h6s3.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6.3.2. </span>Payload' data-toggle="tooltip" >              
+    <a href="ttn-payload.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -276,47 +290,50 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="ttn-applications">
-<h1>TTN - applications<a class="headerlink" href="#ttn-applications" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6.3.1. </span>TTN - applications<a class="headerlink" href="#ttn-applications" title="Permalink to this headline">¶</a></h1>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/TTN-console-application.png"><img alt="../_images/TTN-console-application.png" src="../_images/TTN-console-application.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-text">TTN console: application</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Opmerking: we gebruiken hieronder de termen “device” en “application” voor de onderdelen
 die je in het TTN-console tegenkomt.
-“Toepassing” staat voor de toepassing inclusief de onderdelen op externe servers, NodeRed, mobiele apps enz.</p>
+“Toepassing” staat voor de toepassing inclusief de onderdelen op externe servers, NodeRed, mobiele apps enz.
+In TTN-terminologie heten dit wel de “integrations”.</p>
 <p>In het TTN console kun je je applications beheren. Per application vind je de volgende onderdelen:</p>
 <ul class="simple">
-<li><p>application ID: de naam van de application, als identificatie naar de externe toepassing;
+<li><p><strong>application ID</strong>: de naam van de application, als identificatie naar de externe toepassing;
 deze wordt onder andere gebruikt in de MQTT topics van de application.
+Deze naam moet uniek zijn binnen TTN.
 NB: kies een handige naam, deze kun je achteraf niet meer veranderen.</p></li>
-<li><p>application EUI(s): de unieke identificatie(s) van de application.
+<li><p><strong>application EUI(s)</strong>: de unieke identificatie(s) van de application.
 Deze wordt  in de devices (IoT-knopen) gebruikt als identificatie van de bijbehorende application.</p></li>
-<li><p>devices: de IoT-knopen die bij de application horen.
+<li><p><strong>devices</strong>: de IoT-knopen die bij de application horen.
 Een device hoort altijd bij ten hoogste één application.</p></li>
-<li><p>data: de data die door de devices verstuurd wordt (uplink) en naar de devices (downlink)</p></li>
-<li><p>payload format: zie verderop.</p></li>
-<li><p>collaborators: je kunt anderen toegang geven tot je toepassing; daarbij kun je per persoon aangeven welke autorisaties deze heeft.</p></li>
-<li><p>access keys: de sleutels die gebruikt worden voor het opzetten van een MQTT data-verbinding.</p></li>
+<li><p><strong>data</strong>: de data die door de devices verstuurd wordt (uplink) en naar de devices (downlink)</p></li>
+<li><p><strong>payload format</strong>: de functies voor het (de)coderen van de payload, zie verderop.</p></li>
+<li><p><strong>collaborators</strong>: je kunt anderen toegang geven tot je toepassing;
+daarbij kun je per persoon aangeven welke autorisaties deze heeft.</p></li>
+<li><p><strong>access keys</strong>: de sleutels waarmee een externe toepasssing (“integration”) toegang heeft
+tot de data van de toepassing (ook wel: API-key).</p></li>
 </ul>
-<p>(Voor het gebruik van de application-data via een access key hoef je niet als collaborator geautoriseerd te zijn.)</p>
-<p>Een gebruiker die een access key heeft hoeft niet noodza</p>
+<p>EUI staat voor Extended Unique Identifier: een wereldwijd unieke identificatie,
+als generalisatie van een hardware MAC-adres.
+TTN gebruikt 64-bits EUIs.</p>
+<p>Enkele inleidende video’s:</p>
 <ul class="simple">
-<li><p>aanmaken van een application</p></li>
-<li><p>identificeren van een application</p></li>
-<li><p>communiceren met een application - met NodeRed (of andere application-servers)</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=JrNjY-pGuno">https://www.youtube.com/watch?v=JrNjY-pGuno</a> - TTN Console</p></li>
 </ul>
-<p>Opmerking: zoals gezegd kan een application meerdere EUIs hebben.
+<p>Een application kan meerdere application-EUIs hebben.
 Dit gebruik je bijvoorbeeld voor een IoT-device waarvan alle parameters vooraf ingesteld zijn,
 zoals de Dragino GPS-tracker.
 Je kunt de application EUI van het device dan toevoegen aan de application.</p>
-<p>Scenario: gebruik X toegang geven tot de data van je toepassing.</p>
-<ul class="simple">
-<li><p>maak een access-key aan voor X, en geef deze door aan X.</p></li>
-</ul>
-<p>X kan nu in NodeRed een TTN-node of een MQTT-node configureren met deze access key als password.
-Tip: als je per externe gebruiker een aparte access-key aanmaakt,
-dan kun je de toegangsrechten ook eenvoudig per gebruiker herroepen.</p>
-<p>(Opmerking: de V3-software gebruikt in plaats van access key de term API-key.)</p>
+<p class="rubric">Access-keys cq. API-keys</p>
+<p>Met de access-keys kun je externe toepassingen (“integrations”) toegang geven tot de data van deze toepassing.
+<em>Tip</em>: maak voor elke externe toepassing of gebruiker een aparte access-key aan,
+dan kun je die ook weer afzonderlijk intrekken, mocht dat nodig zijn (bij misbruik e.d.).
+(Opmerking: de V3-software gebruikt in plaats van Access key de term API-key.)</p>
+<p>Als je in NodeRed de data van een TTN-toepassing wilt gebruiken,
+dan heb je nodig: (i) de Application-ID; (ii) een Access-key.</p>
 </div>
 
 
@@ -325,6 +342,29 @@ dan kun je de toegangsrechten ook eenvoudig per gebruiker herroepen.</p>
   </div>
   
       
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
+    <a href="h6s3.html" aria-label="<-previous">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+            <span style="visibility:hidden;"> <span class="section-number">6.3. </span>TTN: zelf aan de slag </span>
+        </div>
+    </a>
+  </li>
+</ul>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="h6s3.html" aria-label="prev"></a>
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
+    <a href="ttn-payload.html" aria-label="->next">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+          <span style="visibility:hidden;"> <span class="section-number">6.3.2. </span>Payload </span>
+      </div>
+    </a>
+  </li>
+</ul>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="ttn-payload.html" aria-label="next">Next Section - 6.3.2. Payload</a>
 
 <script type="text/javascript">
   var relations_next = $('#relations-next');

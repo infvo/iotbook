@@ -7,10 +7,8 @@ Beperkingen van LoRaWan
 
     Beperkingen aan uplink- en downlink berichten
 
-De vrije radioband die LoRa gebruikt heeft beperkingen:
-een radio mag maximaal 1% van de tijd zenden, met een beperkt vermogen.
-TheThingsNetwork eist bovendien “fair use”:
-een device mag niet meer dan 30 seconden per dag zenden.
+In de vrije radioband die LoRa gebruikt mag een radio maximaal 1% van de tijd zenden.
+Volgens de "fair use" regel van TheThingsNetwork mag een device bovendien niet meer dan 30 seconden per dag zenden.
 Dit geeft de volgende beperkingen:
 
 * payload: zo klein mogelijk, typisch ca. 10 bytes;
@@ -19,11 +17,13 @@ Dit geeft de volgende beperkingen:
 * uplink-berichten: "best effort", geen ontvangstbevestiging;
 * downlink-berichten: enkele berichten per dag; zonder "real time" garantie.
 
-Een kleine payload betekent dat je deze binair moet coderen: tekst (JSON) gebruikt teveel bytes.
+Een kleine payload betekent dat je deze *binair* moet coderen: tekst (JSON) gebruikt teveel bytes.
 
+**Uplink-berichten.**
 Het IoT-device bepaalt het moment waarop dit een uplink-bericht verstuurt.
 Daarna moet het device weer geruime tijd tijd wachten voordat het weer kan zenden.
 
+**Downlink-berichten.**
 De gateway stuurt een downlink-bericht direct na het ontvangen een uplink-bericht van het IoT-device.
 Met andere woorden: het IoT-device bepaalt wanneer het downlink-bericht verstuurd wordt,
 niet de gateway.

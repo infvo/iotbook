@@ -28,4 +28,5 @@ door IoT-devices te combineren met diensten en apps voor het user interface.
    h6s2.rst
    h6s3.rst
    h6s4.rst
-   
+   opdrachten.rst
+   nodered-opdrachten.rst 

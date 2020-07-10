@@ -291,12 +291,22 @@
   
   <div class="section" id="lorawan-toepassingen">
 <h1><span class="section-number">6.2.4. </span>LoRaWan toepassingen<a class="headerlink" href="#lorawan-toepassingen" title="Permalink to this headline">¶</a></h1>
-<p>(fig: TTN-deel en externe toepassings-server)</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/LoRaWan-server-toepassing.png"><img alt="../_images/LoRaWan-server-toepassing.png" src="../_images/LoRaWan-server-toepassing.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">TTN-LoRaWan en toepassingen-servers</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <p>Een TTN-LoRaWan toepassing bestaat eigenlijk uit twee delen:
 het TTN-gedeelte (in TTN termen: de application, zoals je deze in het TTN-console vindt),
-en de eigenlijke toepassing op een externe server, bijvoorbeeld NodeRed.
-Het TTN-gedeelte vormt de koppeling tussen de bijbehorende TTN-devices en de externe server.
-De datacommunicatie tussen de TTN-application en de toepassing op de externe server gebeurt via MQTT.</p>
+en de eigenlijke toepassing (in TTN termen: <em>integration</em>) op een externe server, bijvoorbeeld NodeRed.
+De TTN application server vormt vormt de koppeling tussen de bijbehorende TTN-devices en de externe server.
+De datacommunicatie tussen de TTN-application en de toepassingen op de externe servers gebeurt via MQTT of HTTP.</p>
+<p>In het TTN console kun je voor een toepassing:</p>
+<ul class="simple">
+<li><p>de devices koppelen aan de toepassing;</p></li>
+<li><p>de binnenkomende en uitgaande berichten van de toepassing bekijken (data en metadata);</p></li>
+<li><p>de functies definiëren voor het (de)coderen van de payload van de binnenkomende en uitgaande berichten.</p></li>
+<li><p>de API-keys aanmaken waarmee de externe toepassingen toegang krijgen tot de data van deze toepassing.</p></li>
+</ul>
 <p><a class="reference external" href="https://www.thethingsnetwork.org/tech-stack#section7">https://www.thethingsnetwork.org/tech-stack#section7</a></p>
 </div>
 

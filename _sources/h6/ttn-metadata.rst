@@ -1,5 +1,5 @@
-Metatadata
------------
+Metadata
+--------
 
 
 (fig: metadata in TTN console)
