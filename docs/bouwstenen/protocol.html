@@ -333,37 +333,30 @@ Het helpt ook niet dat bedrijven proberen een deel van het IoT voor zichzelf te 
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
-    <a href="com-toetsvragen.html" aria-label="<-previous">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 2.1.8. Toetsvragen' data-toggle="tooltip">
+    <a href="com-toetsvragen.html" aria-label="2.1.8. Toetsvragen">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-            <span style="visibility:hidden;"> <span class="section-number">2.1.8. </span>Toetsvragen </span>
         </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="com-toetsvragen.html" aria-label="prev"></a>
+
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
-    <a href="protocol-1.html" aria-label="->next">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 2.2.1. Inleiding' data-toggle="tooltip" >
+    <a href="protocol-1.html" aria-label="2.2.1. Inleiding">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-          <span style="visibility:hidden;"> <span class="section-number">2.2.1. </span>Inleiding </span>
       </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="protocol-1.html" aria-label="next">Next Section - 2.2.1. Inleiding</a>
 
 <script type="text/javascript">
-  var relations_next = $('#relations-next');
-  var relations_prev = $('#relations-prev');
-  relations_next.attr("title", "Next - " + relations_next.text());
-  relations_prev.attr("title", "Previous - " + relations_prev.text());
 
-  relations_prev.tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
-  relations_next.tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
 
 </script>
 

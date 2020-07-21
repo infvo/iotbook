@@ -446,37 +446,30 @@ Welke apparaten kunnen de berichten ontsleutelen?</p>
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
-    <a href="lorawan-beperkingen.html" aria-label="<-previous">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.1.3. Beperkingen van LoRaWan' data-toggle="tooltip">
+    <a href="lorawan-beperkingen.html" aria-label="6.1.3. Beperkingen van LoRaWan">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-            <span style="visibility:hidden;"> <span class="section-number">6.1.3. </span>Beperkingen van LoRaWan </span>
         </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="lorawan-beperkingen.html" aria-label="prev"></a>
+
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
-    <a href="h6s1-opdrachten.html" aria-label="->next">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.1.5. Opdrachten inleiding' data-toggle="tooltip" >
+    <a href="h6s1-opdrachten.html" aria-label="6.1.5. Opdrachten inleiding">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-          <span style="visibility:hidden;"> <span class="section-number">6.1.5. </span>Opdrachten inleiding </span>
       </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="h6s1-opdrachten.html" aria-label="next">Next Section - 6.1.5. Opdrachten inleiding</a>
 
 <script type="text/javascript">
-  var relations_next = $('#relations-next');
-  var relations_prev = $('#relations-prev');
-  relations_next.attr("title", "Next - " + relations_next.text());
-  relations_prev.attr("title", "Previous - " + relations_prev.text());
 
-  relations_prev.tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
-  relations_next.tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
 
 </script>
 

@@ -315,7 +315,7 @@
 <div class="section" id="ontvangen-van-ttn-data-in-nodered">
 <h2><span class="section-number">6.6.1. </span>Ontvangen van TTN data in NodeRed<a class="headerlink" href="#ontvangen-van-ttn-data-in-nodered" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/iot-ttn-mqtt-flow.png"><img alt="../_images/iot-ttn-mqtt-flow.png" src="../_images/iot-ttn-mqtt-flow.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/iot-ttn-mqtt-flow.png"><img alt="../_images/iot-ttn-mqtt-flow.png" src="../_images/iot-ttn-mqtt-flow.png" style="width: 550px;" /></a>
 <p class="caption"><span class="caption-text">Flow voor het ontvangen van TTN-data</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Maak de bovenstaande flow in NodeRed.
@@ -351,7 +351,7 @@ deze zijn nog wat eenvoudiger in het gebruik, maar worden niet meer onderhouden.
 <p>Met NodeRed maak je een dashboard voor de sensordata van een Lora/TTN IoT-knoop.
 Je gebruikt MQTT voor het dataverkeer met TheThingsNetwork.</p>
 <div class="figure align-center" id="id2">
-<a class="reference internal image-reference" href="../_images/iot-ttn-dashboard-flow.png"><img alt="../_images/iot-ttn-dashboard-flow.png" src="../_images/iot-ttn-dashboard-flow.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/iot-ttn-dashboard-flow.png"><img alt="../_images/iot-ttn-dashboard-flow.png" src="../_images/iot-ttn-dashboard-flow.png" style="width: 550px;" /></a>
 <p class="caption"><span class="caption-text">Dashboard-flow voor TTN</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
@@ -380,6 +380,71 @@ Een voorbeeld hiervan zie je hieronder:</p>
 <li><p>wat is de (geschatte) <em>air time</em> van de berichten?</p></li>
 </ol>
 </div>
+<div class="section" id="gateways-op-de-kaart">
+<h2><span class="section-number">6.6.3. </span>Gateways op de kaart<a class="headerlink" href="#gateways-op-de-kaart" title="Permalink to this headline">¶</a></h2>
+<p>De meeste gateways geven hun eigen positie door (latitude, longitude).
+We kunnen de positie van de gateways die een bericht ontvangen hebben,
+op een kaart weergeven.
+We gebruiken daarbij een web-dienst om kaarten in webpagina’s te tonen.
+De <code class="docutils literal notranslate"><span class="pre">worldmap</span></code>-nodes maken het gebruik daarvan erg gemakkelijk.
+Zie: <a class="reference external" href="https://www.npmjs.com/package/node-red-contrib-web-worldmap">https://www.npmjs.com/package/node-red-contrib-web-worldmap</a>.
+Je installeert deze nodes:</p>
+<ul class="simple">
+<li><p>in de normale NodeRed-installatie: via het hamburgermenu rechtsboven,
+“Manage Pallette”; en dan bij Install zoeken naar “worldmap”; en dan Install.</p></li>
+<li><p>in een FRED-installatie: FRED-menu links, “Add or Remove Nodes”,
+zoeken maar “worldmap”; en dan aanvinken.</p></li>
+</ul>
+<p>We gebruiken de onderstaande flow:</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/iot-ttn-gateway-map-flow.png"><img alt="../_images/iot-ttn-gateway-map-flow.png" src="../_images/iot-ttn-gateway-map-flow.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Flow voor het weergeven van gateways op een kaart.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>We gebruiken een functie om de metadata van een bericht om te zetten
+in een payload voor deze worldmap-node.
+We laten de functie een array met een array van coördinaten opleveren:
+dit resulteert in een reeks van nodered-messages naar de worldmap-node.
+Zie ook: <a class="reference external" href="https://nodered.org/docs/user-guide/writing-functions#multiple-messages">https://nodered.org/docs/user-guide/writing-functions#multiple-messages</a></p>
+<p>De JavaScript-functie ziet er als volgt uit:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">gateways</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">metadata</span><span class="p">.</span><span class="nx">gateways</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">g</span> <span class="k">of</span> <span class="nx">gateways</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="nx">payload</span><span class="o">:</span> <span class="p">{</span>
+                  <span class="nx">lat</span><span class="o">:</span> <span class="nx">g</span><span class="p">.</span><span class="nx">latitude</span><span class="p">,</span>
+                  <span class="nx">lon</span><span class="o">:</span> <span class="nx">g</span><span class="p">.</span><span class="nx">longitude</span><span class="p">,</span>
+                  <span class="nx">name</span><span class="o">:</span> <span class="nx">g</span><span class="p">.</span><span class="nx">gtw_id</span><span class="p">,</span>
+                  <span class="nx">rssi</span><span class="o">:</span> <span class="nx">g</span><span class="p">.</span><span class="nx">rssi</span><span class="p">,</span>
+                  <span class="nx">device</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">dev_id</span>
+    <span class="p">}});</span>
+<span class="p">}</span>
+<span class="nx">result</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="nx">payload</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">command</span><span class="o">:</span> <span class="p">{</span><span class="nx">lat</span><span class="o">:</span> <span class="nx">gateways</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">latitude</span><span class="p">,</span>
+              <span class="nx">lon</span><span class="o">:</span> <span class="nx">gateways</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">longitude</span><span class="p">,</span>
+              <span class="nx">zoom</span><span class="o">:</span> <span class="mi">16</span>
+<span class="p">}}});</span>
+<span class="k">return</span> <span class="p">[</span><span class="nx">result</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>Je kunt de flow importeren vanuit de onderstaande JSON-tekst:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;cfe7341.6b96ac8&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;mqtt in&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;4edac56d.0049ec&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;topic&quot;</span><span class="p">:</span><span class="s2">&quot;ieni-2019/devices/+/up&quot;</span><span class="p">,</span><span class="nt">&quot;qos&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="nt">&quot;broker&quot;</span><span class="p">:</span><span class="s2">&quot;f8750939.19b468&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">180</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[</span><span class="s2">&quot;d7172949.bc9a7&quot;</span><span class="p">]]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;d7172949.bc9a7&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;json&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;4edac56d.0049ec&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;property&quot;</span><span class="p">:</span><span class="s2">&quot;payload&quot;</span><span class="p">,</span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;pretty&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">170</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[</span><span class="s2">&quot;76058e3e.ee615&quot;</span><span class="p">,</span><span class="s2">&quot;70486c3c.af848c&quot;</span><span class="p">]]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;76058e3e.ee615&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;debug&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;4edac56d.0049ec&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;tosidebar&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;tostatus&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;complete&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">350</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">140</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;92159be3.398e58&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;worldmap&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;4edac56d.0049ec&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="s2">&quot;52.092876&quot;</span><span class="p">,</span><span class="nt">&quot;lon&quot;</span><span class="p">:</span><span class="s2">&quot;5.104480&quot;</span><span class="p">,</span><span class="nt">&quot;zoom&quot;</span><span class="p">:</span><span class="s2">&quot;11&quot;</span><span class="p">,</span><span class="nt">&quot;layer&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;cluster&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;maxage&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;usermenu&quot;</span><span class="p">:</span><span class="s2">&quot;show&quot;</span><span class="p">,</span><span class="nt">&quot;layers&quot;</span><span class="p">:</span><span class="s2">&quot;show&quot;</span><span class="p">,</span><span class="nt">&quot;panit&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;panlock&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;zoomlock&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;hiderightclick&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;coords&quot;</span><span class="p">:</span><span class="s2">&quot;none&quot;</span><span class="p">,</span><span class="nt">&quot;showgrid&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="s2">&quot;/worldmap&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">680</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;70486c3c.af848c&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;4edac56d.0049ec&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Get-gateway-positions&quot;</span><span class="p">,</span><span class="nt">&quot;func&quot;</span><span class="p">:</span><span class="s2">&quot;var gateways = msg.payload.metadata.gateways;\nvar result = []\nfor (var g of gateways) {\n    result.push({payload: {\n                  lat: g.latitude,\n                  lon: g.longitude,\n                  name: g.gtw_id,\n                  rssi: g.rssi,\n                  device: msg.payload.dev_id\n    }});\n}\nresult.push({payload: {\n    command: {lat: gateways[0].latitude,\n              lon: gateways[0].longitude,\n              zoom: 16\n}}});\nreturn [result];&quot;</span><span class="p">,</span><span class="nt">&quot;outputs&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&quot;noerr&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">380</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">220</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[</span><span class="s2">&quot;85a59580.a06018&quot;</span><span class="p">,</span><span class="s2">&quot;92159be3.398e58&quot;</span><span class="p">]]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;85a59580.a06018&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;debug&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;4edac56d.0049ec&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;tosidebar&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;tostatus&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;complete&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">650</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">160</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[]},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;f8750939.19b468&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;mqtt-broker&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;TTN-EU-mqtt&quot;</span><span class="p">,</span><span class="nt">&quot;broker&quot;</span><span class="p">:</span><span class="s2">&quot;eu.thethings.network&quot;</span><span class="p">,</span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="s2">&quot;8883&quot;</span><span class="p">,</span><span class="nt">&quot;tls&quot;</span><span class="p">:</span><span class="s2">&quot;ee6286cb.030f78&quot;</span><span class="p">,</span><span class="nt">&quot;clientid&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;usetls&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;compatmode&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;keepalive&quot;</span><span class="p">:</span><span class="s2">&quot;60&quot;</span><span class="p">,</span><span class="nt">&quot;cleansession&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="nt">&quot;birthTopic&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;birthQos&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="nt">&quot;birthPayload&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;closeTopic&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;closeQos&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="nt">&quot;closePayload&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;willTopic&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;willQos&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="nt">&quot;willPayload&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">},{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;ee6286cb.030f78&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;tls-config&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;cert&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;ca&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;certname&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;keyname&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;caname&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;verifyservercert&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">}]</span>
+</pre></div>
+</div>
+<p>Opdrachten:</p>
+<ol class="arabic simple">
+<li><p>Maak bovenstaande flow werkend: je vindt de kaart via het <code class="docutils literal notranslate"><span class="pre">/worldmap</span></code>-pad
+in plaats van het dashboard-pad, bijvoorbeeld: <code class="docutils literal notranslate"><span class="pre">https://hans.fred.sensetecnic.com/api/worldmap</span></code>
+(voor een FRED installatie).</p></li>
+<li><p>door voor het punt een “radius”-waarde mee te geven, in meters, wordt er rond de gateway een (gevulde)
+cirkel getekend (zie <a class="reference external" href="https://www.npmjs.com/package/node-red-contrib-web-worldmap#circles-and-ellipses">https://www.npmjs.com/package/node-red-contrib-web-worldmap#circles-and-ellipses</a>).
+Je kunt deze straal af laten hangen van de rssi: hoe negatiever de waarde van rssi,
+des te groter de afstand tot de gateway - en des te groter de cirkel.
+Voeg deze cirkels toe, als hulp om te bepalen waar de IoT-devices zich ten opzicht van de gateways
+bevinden. <em>Opmerking</em> de signaalsterkte rssi hangt niet alleen af van de afstand,
+maar ook van de obstakels tussen het IoT-device en de gateway.
+Een hoger geplaatste gateway heeft meestal minder obstakels,
+en geeft een grotere signaalsterkte (minder negatieve rssi).</p></li>
+</ol>
+</div>
 </div>
 
 
@@ -389,37 +454,30 @@ Een voorbeeld hiervan zie je hieronder:</p>
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
-    <a href="opdrachten.html" aria-label="<-previous">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.5. Opdrachten' data-toggle="tooltip">
+    <a href="opdrachten.html" aria-label="6.5. Opdrachten">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-            <span style="visibility:hidden;"> <span class="section-number">6.5. </span>Opdrachten </span>
         </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="opdrachten.html" aria-label="prev"></a>
+
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
-    <a href="../lan-ip/toctree.html" aria-label="->next">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 7. Internet en het lokale netwerk' data-toggle="tooltip" >
+    <a href="../lan-ip/toctree.html" aria-label="7. Internet en het lokale netwerk">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-          <span style="visibility:hidden;"> <span class="section-number">7. </span>Internet en het lokale netwerk </span>
       </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="../lan-ip/toctree.html" aria-label="next">Next Section - 7. Internet en het lokale netwerk</a>
 
 <script type="text/javascript">
-  var relations_next = $('#relations-next');
-  var relations_prev = $('#relations-prev');
-  relations_next.attr("title", "Next - " + relations_next.text());
-  relations_prev.attr("title", "Previous - " + relations_prev.text());
 
-  relations_prev.tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
-  relations_next.tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
 
 </script>
 

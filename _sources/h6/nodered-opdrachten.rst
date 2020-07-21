@@ -22,7 +22,7 @@ Ontvangen van TTN data in NodeRed
 ---------------------------------
 
 .. figure:: iot-ttn-mqtt-flow.png
-  :width: 500px
+  :width: 550px
   :align: center
 
   Flow voor het ontvangen van TTN-data
@@ -65,7 +65,7 @@ Je gebruikt MQTT voor het dataverkeer met TheThingsNetwork.
 
 .. figure:: iot-ttn-dashboard-flow.png
   :align: center
-  :width: 500px
+  :width: 550px
 
   Dashboard-flow voor TTN
 
@@ -96,3 +96,80 @@ Beantwoord de onderstaande vragen aan de hand van de metadata in het debug-venst
 1. welke gateway(s) ontvangen de berichten van deze IoT-knoop(en)?
 2. welke SF wordt gebruikt?
 3. wat is de (geschatte) *air time* van de berichten?
+
+Gateways op de kaart
+--------------------
+
+De meeste gateways geven hun eigen positie door (latitude, longitude).
+We kunnen de positie van de gateways die een bericht ontvangen hebben,
+op een kaart weergeven.
+We gebruiken daarbij een web-dienst om kaarten in webpagina's te tonen.
+De ``worldmap``-nodes maken het gebruik daarvan erg gemakkelijk.
+Zie: https://www.npmjs.com/package/node-red-contrib-web-worldmap.
+Je installeert deze nodes:
+
+* in de normale NodeRed-installatie: via het hamburgermenu rechtsboven,
+  "Manage Pallette"; en dan bij Install zoeken naar "worldmap"; en dan Install.
+* in een FRED-installatie: FRED-menu links, "Add or Remove Nodes",
+  zoeken maar "worldmap"; en dan aanvinken.
+
+We gebruiken de onderstaande flow:
+
+.. figure:: iot-ttn-gateway-map-flow.png
+  :width: 600px
+  :align: center
+
+  Flow voor het weergeven van gateways op een kaart.
+
+We gebruiken een functie om de metadata van een bericht om te zetten
+in een payload voor deze worldmap-node.
+We laten de functie een array met een array van coördinaten opleveren:
+dit resulteert in een reeks van nodered-messages naar de worldmap-node.
+Zie ook: https://nodered.org/docs/user-guide/writing-functions#multiple-messages
+
+De JavaScript-functie ziet er als volgt uit:
+
+.. code-block:: JavaScript
+
+  var gateways = msg.payload.metadata.gateways;
+  var result = []
+  for (var g of gateways) {
+      result.push({payload: {
+                    lat: g.latitude,
+                    lon: g.longitude,
+                    name: g.gtw_id,
+                    rssi: g.rssi,
+                    device: msg.payload.dev_id
+      }});
+  }
+  result.push({payload: {
+      command: {lat: gateways[0].latitude,
+                lon: gateways[0].longitude,
+                zoom: 16
+  }}});
+  return [result];
+
+..
+
+Je kunt de flow importeren vanuit de onderstaande JSON-tekst:
+
+.. code-block:: JSON
+
+  [{"id":"cfe7341.6b96ac8","type":"mqtt in","z":"4edac56d.0049ec","name":"","topic":"ieni-2019/devices/+/up","qos":"2","broker":"f8750939.19b468","x":180,"y":80,"wires":[["d7172949.bc9a7"]]},{"id":"d7172949.bc9a7","type":"json","z":"4edac56d.0049ec","name":"","property":"payload","action":"","pretty":false,"x":170,"y":220,"wires":[["76058e3e.ee615","70486c3c.af848c"]]},{"id":"76058e3e.ee615","type":"debug","z":"4edac56d.0049ec","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","x":350,"y":140,"wires":[]},{"id":"92159be3.398e58","type":"worldmap","z":"4edac56d.0049ec","name":"","lat":"52.092876","lon":"5.104480","zoom":"11","layer":"","cluster":"","maxage":"","usermenu":"show","layers":"show","panit":"false","panlock":"false","zoomlock":"false","hiderightclick":"false","coords":"none","showgrid":"false","path":"/worldmap","x":680,"y":220,"wires":[]},{"id":"70486c3c.af848c","type":"function","z":"4edac56d.0049ec","name":"Get-gateway-positions","func":"var gateways = msg.payload.metadata.gateways;\nvar result = []\nfor (var g of gateways) {\n    result.push({payload: {\n                  lat: g.latitude,\n                  lon: g.longitude,\n                  name: g.gtw_id,\n                  rssi: g.rssi,\n                  device: msg.payload.dev_id\n    }});\n}\nresult.push({payload: {\n    command: {lat: gateways[0].latitude,\n              lon: gateways[0].longitude,\n              zoom: 16\n}}});\nreturn [result];","outputs":1,"noerr":0,"x":380,"y":220,"wires":[["85a59580.a06018","92159be3.398e58"]]},{"id":"85a59580.a06018","type":"debug","z":"4edac56d.0049ec","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","x":650,"y":160,"wires":[]},{"id":"f8750939.19b468","type":"mqtt-broker","z":"","name":"TTN-EU-mqtt","broker":"eu.thethings.network","port":"8883","tls":"ee6286cb.030f78","clientid":"","usetls":true,"compatmode":true,"keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","closeTopic":"","closeQos":"0","closePayload":"","willTopic":"","willQos":"0","willPayload":""},{"id":"ee6286cb.030f78","type":"tls-config","z":"","name":"","cert":"","key":"","ca":"","certname":"","keyname":"","caname":"","verifyservercert":false}]
+
+..
+
+Opdrachten:
+
+1. Maak bovenstaande flow werkend: je vindt de kaart via het ``/worldmap``-pad
+   in plaats van het dashboard-pad, bijvoorbeeld: ``https://hans.fred.sensetecnic.com/api/worldmap``
+   (voor een FRED installatie).
+2. door voor het punt een "radius"-waarde mee te geven, in meters, wordt er rond de gateway een (gevulde)
+   cirkel getekend (zie https://www.npmjs.com/package/node-red-contrib-web-worldmap#circles-and-ellipses).
+   Je kunt deze straal af laten hangen van de rssi: hoe negatiever de waarde van rssi,
+   des te groter de afstand tot de gateway - en des te groter de cirkel.
+   Voeg deze cirkels toe, als hulp om te bepalen waar de IoT-devices zich ten opzicht van de gateways
+   bevinden. *Opmerking* de signaalsterkte rssi hangt niet alleen af van de afstand,
+   maar ook van de obstakels tussen het IoT-device en de gateway.
+   Een hoger geplaatste gateway heeft meestal minder obstakels,
+   en geeft een grotere signaalsterkte (minder negatieve rssi).

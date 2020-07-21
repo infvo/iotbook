@@ -458,37 +458,30 @@ Deze oefeningen hebben geen effect op de flows zelf.</p>
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
-    <a href="nodered-opdrachten.html" aria-label="<-previous">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 2.3. NodeRed-opdrachten' data-toggle="tooltip">
+    <a href="nodered-opdrachten.html" aria-label="2.3. NodeRed-opdrachten">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-            <span style="visibility:hidden;"> <span class="section-number">2.3. </span>NodeRed-opdrachten </span>
         </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="nodered-opdrachten.html" aria-label="prev"></a>
+
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
-    <a href="eerste-flow.html" aria-label="->next">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 2.3.2. Eerste flow' data-toggle="tooltip" >
+    <a href="eerste-flow.html" aria-label="2.3.2. Eerste flow">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-          <span style="visibility:hidden;"> <span class="section-number">2.3.2. </span>Eerste flow </span>
       </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="eerste-flow.html" aria-label="next">Next Section - 2.3.2. Eerste flow</a>
 
 <script type="text/javascript">
-  var relations_next = $('#relations-next');
-  var relations_prev = $('#relations-prev');
-  relations_next.attr("title", "Next - " + relations_next.text());
-  relations_prev.attr("title", "Previous - " + relations_prev.text());
 
-  relations_prev.tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
-  relations_next.tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
 
 </script>
 

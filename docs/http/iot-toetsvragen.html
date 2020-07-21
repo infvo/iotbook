@@ -368,37 +368,30 @@ naar de server, om daarmee de toestand van de server te veranderen?</p>
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous' data-toggle="tooltip">
-    <a href="iot-api-diensten.html" aria-label="<-previous">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 4.3.4. API’s voor webdiensten' data-toggle="tooltip">
+    <a href="iot-api-diensten.html" aria-label="4.3.4. API’s voor webdiensten">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
-            <span style="visibility:hidden;"> <span class="section-number">4.3.4. </span>API’s voor webdiensten </span>
         </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="iot-api-diensten.html" aria-label="prev"></a>
+
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next' data-toggle="tooltip" >
-    <a href="rest/toctree.html" aria-label="->next">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 4.4. REST API’s' data-toggle="tooltip" >
+    <a href="rest/toctree.html" aria-label="4.4. REST API’s">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
-          <span style="visibility:hidden;"> <span class="section-number">4.4. </span>REST API’s </span>
       </div>
     </a>
   </li>
 </ul>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="rest/toctree.html" aria-label="next">Next Section - 4.4. REST API’s</a>
 
 <script type="text/javascript">
-  var relations_next = $('#relations-next');
-  var relations_prev = $('#relations-prev');
-  relations_next.attr("title", "Next - " + relations_next.text());
-  relations_prev.attr("title", "Previous - " + relations_prev.text());
 
-  relations_prev.tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
-  relations_next.tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
 
 </script>
 
