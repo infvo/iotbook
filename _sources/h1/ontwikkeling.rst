@@ -5,7 +5,7 @@ Geschiedenis en ontwikkeling
 
 .. rubric:: Van Internet van computers tot Internet of Things
 
-.. figure:: internet-of-computers.png
+.. figure:: images/internet-of-computers.png
    :width: 400px
    :align: center
 
@@ -18,7 +18,7 @@ Deze periode zou je het "internet van computers" kunnen noemen:
 het internet werd vooral gebruikt om computers aan elkaar te verbinden,
 en bijvoorbeeld om op afstand toegang te hebben tot supercomputers.
 
-.. figure:: internet-of-people.png
+.. figure:: images/internet-of-people.png
    :width: 400px
    :align: center
 
@@ -49,7 +49,7 @@ Deze netwerkprovider heeft daarvoor overal antenne's geplaatst, bij voorkeur hoo
 Via het netwerk van je provider maak je dan verbinding met de rest van het internet.
 De rest van het internet hoeft voor het gebruik van smartphones en de bijbehorende toepassingen niet aangepast te worden.
 
-.. figure:: internet-of-things.png
+.. figure:: images/internet-of-things.png
    :width: 400px
    :align: center
 
