@@ -1,0 +1,24 @@
+TTN: zelf aan de slag
+=====================
+
+In dit gedeelte beschrijven we het interface (console) van TheThingsNetwork.
+
+.. admonition:: Nodig voor praktische opdrachten - geen leerstof
+
+  De onderwerpen in dit gedeelte zijn bedoeld als naslagwerk,
+  om de bijbehorende praktische opdrachten uit te kunnen voeren.
+  Probeer dit door te lezen en te begrijpen,
+  uit je hoofd leren is niet nodig.
+
+.. toctree::
+   :maxdepth: 1
+
+   ttn-application.rst
+   ttn-keys.rst
+   ttn-payload-function.rst
+   ttn-gateway.rst
+   ttn-payload.rst
+   ttn-metadata.rst
+   tt-devices.rst
+   ttn-toetsvragen.rst
+   h6s3-opdrachten.rst

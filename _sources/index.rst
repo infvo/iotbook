@@ -13,7 +13,7 @@ Inleiding...
    mqtt/toctree.rst
    http/toctree.rst
    h5/toctree.rst
-   h6/toctree.rst
+   lorawan/toctree.rst
    lan-ip/toctree.rst
 
 ********
@@ -23,7 +23,7 @@ Appendix
 .. toctree::
    :maxdepth: 1
 
-   glossary.rst  
+   glossary.rst
    configureren.rst
 
 **************
