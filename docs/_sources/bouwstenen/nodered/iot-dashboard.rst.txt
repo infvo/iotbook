@@ -9,7 +9,7 @@ je kunt hiermee ook de LED van de IoT-knoop aansturen.
    :width: 700 px
    :align: center
 
-De dashboard-flow vind je via: :download:`/bouwstenen/nodered/dashboard-flow-1.json`,
+De dashboard-flow vind je via: :download:`./dashboard-flow-1.json`,
 (Of via `GitHub gist <https://gist.github.com/eelcodijkstra/1e6c2b4737b3cca7aa68efa26dc179f3>`_.)
 
   Deze flow is in het JSON-formaat; later in het materiaal komt JSON uitgebreider aan bod.

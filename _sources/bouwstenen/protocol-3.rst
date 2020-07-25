@@ -1,7 +1,7 @@
 Internet-protocolstack
 ----------------------
 
-.. figure:: internet-stack.png
+.. figure:: Internet-stack.png
   :width: 800px
   :align: center
 

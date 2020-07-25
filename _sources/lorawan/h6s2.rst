@@ -5,8 +5,11 @@ LoRaWan bouwstenen
 .. toctree::
    :maxdepth: 1
 
+
    lorawan-keten.rst
    lorawan-devices.rst
+   lora-radio.rst
+   lora-sf.rst
    lorawan-gateways.rst
    lorawan-server.rst
    h6s2-toetsvragen.rst

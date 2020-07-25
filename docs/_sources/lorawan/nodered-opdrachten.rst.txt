@@ -63,9 +63,8 @@ Je gebruikt MQTT voor het dataverkeer met TheThingsNetwork.
 
 * kopieer de onderstaande NodeRed-flow, en importeer deze naar een leeg tabblad in NodeRed.
 
-Download: :download:`ttn-dashboard-flow.json<./ttn-dashboard-flow.json>`
-
-.. code-block:: json
+Download: :download:`ttn-dashboard-flow.json<./ttn-dashboard-flow.json>` of
+`Gist:IoT-ttn-dashboard-flow.json <https://gist.github.com/eelcodijkstra/2d960c527a47687552507ce4b83b4a14>`_
 
 * configureer de MQTT input node zoals in de vorige opdracht ;
 * configureer de debug-node, met output: complete msg object
@@ -145,7 +144,8 @@ De JavaScript-functie ziet er als volgt uit:
 
 Je kunt de flow importeren vanuit de onderstaande JSON-tekst:
 
-(download: :download:`ttn-map-flow.json <./ttn-map-flow.json>`)
+download: :download:`ttn-map-flow.json <./ttn-map-flow.json>` of
+`Gist:IoT-ttn-map-flow.json <https://gist.github.com/eelcodijkstra/9fad035f0b04b0112e019cca7f4469a2>`_
 
 ..
 

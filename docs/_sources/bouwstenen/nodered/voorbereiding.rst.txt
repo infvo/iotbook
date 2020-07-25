@@ -57,9 +57,9 @@ Een NodeRed-toepassing kan uit meerdere flows bestaan: elke flow heeft een eigen
 | |template-node|    | template-node    |  in-out          |
 +--------------------+------------------+------------------+
 
-.. |http-input-node| image:: nodered-http-input-node.png
-.. |http-output-node| image:: nodered-http-output-node.png
-.. |template-node| image:: nodered-template-node.png
+.. |http-input-node| image:: Nodered-http-input-node.png
+.. |http-output-node| image:: Nodered-http-output-node.png
+.. |template-node| image:: Nodered-template-node.png
 
 **Hoe werkt een flow?**
 Als een node een bericht (message) krijgt via de input,
