@@ -85,3 +85,22 @@ Toetsvragen inleiding
    LoRaWan wordt veilig ("secure") genoemd vanwege de end-to-end encryptie.
    Wat betekent dit?
    Welke apparaten kunnen de berichten ontsleutelen?
+
+.. mchoice:: mc-6-1-9
+   :answer_a: een groter bereik
+   :answer_b: een kleiner bereik
+   :answer_c: meer berichten per uur mogelijk
+   :answer_d: minder berichten per uur mogelijk
+   :answer_e: kortere batterij-levensduur voor het IoT-device
+   :correct: a,d,e
+
+   LoRa-radioberichten verstuurd met SF12 hebben ten opzichte van SF7-berichten de volgende eigenschappen:
+
+.. dragndrop:: dd-6-10
+   :match_11: lagere bitrate|||groter bereik
+   :match_12: grotere airtime|||groter energieverbruik per bericht
+   :match_13: hogere bitrate|||kleiner bereik
+   :match_14: kleinere airtime|||meer berichten per uur
+
+   Je gebruikt een radio met een bepaalde frequentie en een bepaald maximaal zendvermogen.
+   Welke combinaties van eigenschappen gelden hiervoor?

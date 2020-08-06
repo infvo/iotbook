@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6.6. NodeRed-opdrachten &#8212; IoT-book</title>
+    <title>6.18. NodeRed-opdrachten &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Internet en het lokale netwerk" href="../lan-ip/toctree.html" />
-    <link rel="prev" title="6.5. Opdrachten" href="opdrachten.html" />
+    <link rel="prev" title="6.17. Opdrachten" href="opdrachten.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -245,7 +245,7 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.5. </span>Opdrachten" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.17. </span>Opdrachten" data-toggle="tooltip">
     <a href="opdrachten.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -291,7 +291,7 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="nodered-opdrachten">
-<h1><span class="section-number">6.6. </span>NodeRed-opdrachten<a class="headerlink" href="#nodered-opdrachten" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6.18. </span>NodeRed-opdrachten<a class="headerlink" href="#nodered-opdrachten" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-wat-heb-je-nodig admonition">
 <p class="admonition-title">Wat heb je nodig?</p>
 <ul class="simple">
@@ -307,12 +307,14 @@
 </ul>
 </div>
 <div class="section" id="ontvangen-van-ttn-data-in-nodered">
-<h2><span class="section-number">6.6.1. </span>Ontvangen van TTN data in NodeRed<a class="headerlink" href="#ontvangen-van-ttn-data-in-nodered" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.18.1. </span>Ontvangen van TTN data in NodeRed<a class="headerlink" href="#ontvangen-van-ttn-data-in-nodered" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/iot-ttn-mqtt-flow.png"><img alt="../_images/iot-ttn-mqtt-flow.png" src="../_images/iot-ttn-mqtt-flow.png" style="width: 550px;" /></a>
 <p class="caption"><span class="caption-text">Flow voor het ontvangen van TTN-data</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Maak de bovenstaande flow in NodeRed.
+<p>Met deze flow test je de verbinding met de TTN-application.
+Deze gebruik je in de volgende opdrachten voor een dashboard e.d.</p>
+<p>Maak de bovenstaande flow in NodeRed. (Er is geen JSON-bestand om deze flow te importeren.)
 Instellingen voor de MQTT input node:</p>
 <ul class="simple">
 <li><p>server (broker):</p>
@@ -325,28 +327,35 @@ Instellingen voor de MQTT input node:</p>
 </ul>
 <p>Hierin vervang je <code class="docutils literal notranslate"><span class="pre">my-app-id</span></code> door de Application-ID (de unieke naam),
 <code class="docutils literal notranslate"><span class="pre">my-api-key</span></code> door de Access key (API-key),
-en <code class="docutils literal notranslate"><span class="pre">my-dev-id</span></code> door de Device-ID (de unieke naam).
-Je kunt in het topic in plaats van my-app-id ook <code class="docutils literal notranslate"><span class="pre">+</span></code> gebruiken,
-als wildcard voor alle devices.</p>
+en <code class="docutils literal notranslate"><span class="pre">my-dev-id</span></code> door de Device-ID (de unieke naam van een device) of
+door een <code class="docutils literal notranslate"><span class="pre">+</span></code> als wildcard voor alle devices.</p>
 <p>Vergeet <strong>Deploy</strong> niet!</p>
-<p>Na enige tijd zie je als alles goed is de data in het debug-venster verschijnen.
-(De berichten worden om de paar minuten verstuurd.)</p>
-<p>Vragen:</p>
+<p>Na enige tijd zie je als alles goed is de debug-output in het debug-venster verschijnen.
+(De berichten worden om de paar minuten verstuurd.)
+Via de debug-node kun je de metadata van de communicatie tussen de IoT-knoop en de gateway volgen.
+Een voorbeeld hiervan zie je hieronder:</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/iot-ttn-metadata.png"><img alt="../_images/iot-ttn-metadata.png" src="../_images/iot-ttn-metadata.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">Metadata voor TTN-LoRaWan-communicatie</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Beantwoord de onderstaande vragen aan de hand van de metadata van een bericht in het debug-venster.</p>
 <ol class="arabic simple">
 <li><p>met welke datarate (SF, bandbreedte) is het bericht verstuurd?</p></li>
-<li><p>door hoeveel gateways is het bericht ontvangen? Met welke signaalsterktes?</p></li>
-<li><p>kun je op grond van de signaalsterktes en de posities van de gateways iets zeggen over de locatie van het IoT-device?</p></li>
+<li><p>wat is de (geschatte) <em>air time</em> van het bericht?</p></li>
+<li><p>door welke gateways is het bericht ontvangen? Met welke signaalsterktes?</p></li>
+<li><p>kun je op grond van de signaalsterktes en de posities van de gateways (heel globaal) iets zeggen over de locatie van het IoT-device?</p></li>
 </ol>
 <p><em>Opmerking.</em> Er zijn ook speciale TTN-nodes in NodeRed,
-deze zijn nog wat eenvoudiger in het gebruik, maar worden niet meer onderhouden.</p>
+deze zijn nog wat eenvoudiger in het gebruik dan de MQTT-nodes,
+maar worden niet meer onderhouden.</p>
 </div>
 <div class="section" id="nodered-ttn-dashboard">
-<h2><span class="section-number">6.6.2. </span>Nodered-TTN-Dashboard<a class="headerlink" href="#nodered-ttn-dashboard" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.18.2. </span>Nodered-TTN-Dashboard<a class="headerlink" href="#nodered-ttn-dashboard" title="Permalink to this headline">¶</a></h2>
 <p>Met NodeRed maak je een dashboard voor de sensordata van een Lora/TTN IoT-knoop.
 Je gebruikt MQTT voor het dataverkeer met TheThingsNetwork.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="../_images/iot-ttn-dashboard-flow.png"><img alt="../_images/iot-ttn-dashboard-flow.png" src="../_images/iot-ttn-dashboard-flow.png" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-text">Dashboard-flow voor TTN</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Dashboard-flow voor TTN</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>kopieer de onderstaande NodeRed-flow, en importeer deze naar een leeg tabblad in NodeRed.</p></li>
@@ -360,21 +369,10 @@ Je gebruikt MQTT voor het dataverkeer met TheThingsNetwork.</p>
 </ul>
 <p>Je ziet nu (als het goed is) in het bijbehorende dashboard-tab “TTN dashboard” de gegevens van de IoT-knoop verschijnen.
 Dit kan even duren, omdat een TTN IoT-knoop met tussenperioden van enkele minuten zendt.</p>
-<p>Via de debug-node kun je de metadata van de communicatie tussen de IoT-knoop en de gateway volgen.
-Een voorbeeld hiervan zie je hieronder:</p>
-<div class="figure align-center" id="id3">
-<a class="reference internal image-reference" href="../_images/iot-ttn-metadata.png"><img alt="../_images/iot-ttn-metadata.png" src="../_images/iot-ttn-metadata.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-text">Metadata voor TTN-LoRaWan-communicatie</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
-<p>Beantwoord de onderstaande vragen aan de hand van de metadata in het debug-venster.</p>
-<ol class="arabic simple">
-<li><p>welke gateway(s) ontvangen de berichten van deze IoT-knoop(en)?</p></li>
-<li><p>welke SF wordt gebruikt?</p></li>
-<li><p>wat is de (geschatte) <em>air time</em> van de berichten?</p></li>
-</ol>
+<p><strong>Opdracht</strong>. Maak deze flow werkend.</p>
 </div>
 <div class="section" id="gateways-op-de-kaart">
-<h2><span class="section-number">6.6.3. </span>Gateways op de kaart<a class="headerlink" href="#gateways-op-de-kaart" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.18.3. </span>Gateways op de kaart<a class="headerlink" href="#gateways-op-de-kaart" title="Permalink to this headline">¶</a></h2>
 <p>De meeste gateways geven hun eigen positie door (latitude, longitude).
 We kunnen de positie van de gateways die een bericht ontvangen hebben,
 op een kaart weergeven.
@@ -446,8 +444,8 @@ en geeft een grotere signaalsterkte (minder negatieve rssi).</p></li>
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.5. Opdrachten' data-toggle="tooltip">
-    <a href="opdrachten.html" aria-label="6.5. Opdrachten">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.17. Opdrachten' data-toggle="tooltip">
+    <a href="opdrachten.html" aria-label="6.17. Opdrachten">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>

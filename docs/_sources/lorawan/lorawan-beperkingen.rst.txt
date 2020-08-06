@@ -13,7 +13,8 @@ Dit geeft de volgende beperkingen:
 
 * payload: zo klein mogelijk, typisch ca. 10 bytes;
 * uplink-berichten:  maximaal ca. 20 maal maal per uur (gateway dichtbij),
-  of ca. 20 maal per dag (gateway ver weg);
+  of ca. 20 maal per dag (gateway ver weg),
+  zie :ref:`LoRa Spreading Factor(SF)<lora-spreading-factor>`.
 * uplink-berichten: "best effort", geen ontvangstbevestiging;
 * downlink-berichten: enkele berichten per dag; zonder "real time" garantie.
 
@@ -28,3 +29,6 @@ De gateway stuurt een downlink-bericht direct na het ontvangen een uplink-berich
 Met andere woorden: het IoT-device bepaalt wanneer het downlink-bericht verstuurd wordt,
 niet de gateway.
 Dit beperkt de mogelijkheden voor “real time besturing”.
+
+Voor meer details:
+`LoRaWan class-A devices <https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices/>`_

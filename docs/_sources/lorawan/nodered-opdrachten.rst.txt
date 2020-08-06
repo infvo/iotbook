@@ -19,7 +19,10 @@ Ontvangen van TTN data in NodeRed
 
   Flow voor het ontvangen van TTN-data
 
-Maak de bovenstaande flow in NodeRed.
+Met deze flow test je de verbinding met de TTN-application.
+Deze gebruik je in de volgende opdrachten voor een dashboard e.d.
+
+Maak de bovenstaande flow in NodeRed. (Er is geen JSON-bestand om deze flow te importeren.)
 Instellingen voor de MQTT input node:
 
 * server (broker):
@@ -31,23 +34,32 @@ Instellingen voor de MQTT input node:
 
 Hierin vervang je ``my-app-id`` door de Application-ID (de unieke naam),
 ``my-api-key`` door de Access key (API-key),
-en ``my-dev-id`` door de Device-ID (de unieke naam).
-Je kunt in het topic in plaats van my-app-id ook ``+`` gebruiken,
-als wildcard voor alle devices.
+en ``my-dev-id`` door de Device-ID (de unieke naam van een device) of
+door een ``+`` als wildcard voor alle devices.
 
 Vergeet **Deploy** niet!
 
-Na enige tijd zie je als alles goed is de data in het debug-venster verschijnen.
+Na enige tijd zie je als alles goed is de debug-output in het debug-venster verschijnen.
 (De berichten worden om de paar minuten verstuurd.)
+Via de debug-node kun je de metadata van de communicatie tussen de IoT-knoop en de gateway volgen.
+Een voorbeeld hiervan zie je hieronder:
 
-Vragen:
+.. figure:: images/iot-ttn-metadata.png
+  :width: 300px
+  :align: center
+
+  Metadata voor TTN-LoRaWan-communicatie
+
+Beantwoord de onderstaande vragen aan de hand van de metadata van een bericht in het debug-venster.
 
 1. met welke datarate (SF, bandbreedte) is het bericht verstuurd?
-2. door hoeveel gateways is het bericht ontvangen? Met welke signaalsterktes?
-3. kun je op grond van de signaalsterktes en de posities van de gateways iets zeggen over de locatie van het IoT-device?
+2. wat is de (geschatte) *air time* van het bericht?
+3. door welke gateways is het bericht ontvangen? Met welke signaalsterktes?
+4. kun je op grond van de signaalsterktes en de posities van de gateways (heel globaal) iets zeggen over de locatie van het IoT-device?
 
 *Opmerking.* Er zijn ook speciale TTN-nodes in NodeRed,
-deze zijn nog wat eenvoudiger in het gebruik, maar worden niet meer onderhouden.
+deze zijn nog wat eenvoudiger in het gebruik dan de MQTT-nodes,
+maar worden niet meer onderhouden.
 
 Nodered-TTN-Dashboard
 ---------------------
@@ -73,20 +85,7 @@ Download: :download:`ttn-dashboard-flow.json<./ttn-dashboard-flow.json>` of
 Je ziet nu (als het goed is) in het bijbehorende dashboard-tab "TTN dashboard" de gegevens van de IoT-knoop verschijnen.
 Dit kan even duren, omdat een TTN IoT-knoop met tussenperioden van enkele minuten zendt.
 
-Via de debug-node kun je de metadata van de communicatie tussen de IoT-knoop en de gateway volgen.
-Een voorbeeld hiervan zie je hieronder:
-
-.. figure:: images/iot-ttn-metadata.png
-  :width: 300px
-  :align: center
-
-  Metadata voor TTN-LoRaWan-communicatie
-
-Beantwoord de onderstaande vragen aan de hand van de metadata in het debug-venster.
-
-1. welke gateway(s) ontvangen de berichten van deze IoT-knoop(en)?
-2. welke SF wordt gebruikt?
-3. wat is de (geschatte) *air time* van de berichten?
+**Opdracht**. Maak deze flow werkend.
 
 Gateways op de kaart
 --------------------

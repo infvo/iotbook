@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6.2.4. LoRa - Spreading Factor &#8212; IoT-book</title>
+    <title>6.4. LoRa - Spreading Factor &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
@@ -55,8 +55,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.2.5. LoRaWan Gateways" href="lorawan-gateways.html" />
-    <link rel="prev" title="6.2.3. LoRa-radio" href="lora-radio.html" />
+    <link rel="next" title="6.5. De LoRaWan-keten" href="lorawan-keten.html" />
+    <link rel="prev" title="6.3. Beperkingen van LoRaWan" href="lorawan-beperkingen.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -245,14 +245,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.2.3. </span>LoRa-radio" data-toggle="tooltip">
-    <a href="lora-radio.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.3. </span>Beperkingen van LoRaWan" data-toggle="tooltip">
+    <a href="lorawan-beperkingen.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.2.5. </span>LoRaWan Gateways' data-toggle="tooltip" >              
-    <a href="lorawan-gateways.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6.5. </span>De LoRaWan-keten' data-toggle="tooltip" >              
+    <a href="lorawan-keten.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -291,38 +291,94 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="lora-spreading-factor">
-<h1><span class="section-number">6.2.4. </span>LoRa - Spreading Factor<a class="headerlink" href="#lora-spreading-factor" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-center" id="id1">
+<span id="id1"></span><h1><span class="section-number">6.4. </span>LoRa - Spreading Factor<a class="headerlink" href="#lora-spreading-factor" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/lora-sf-vgl.png"><img alt="../_images/lora-sf-vgl.png" src="../_images/lora-sf-vgl.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-text">Eenzelfde bericht bij verschillende SF-waarden</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Berichten met dezelfde (korte) payload bij verschillende SF-waarden</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Om een groter bereik te krijgen bij een bepaalde radiofrequentie heb je meer <em>energie per bit</em> nodig.
-Als het (maximal) vermogen van een zender vastligt, bijvoorbeeld door regelgeving,
-dan betekent dit dat je de duur van een bit moet vergroten:
+<p>Om een groter bereik te krijgen bij een gegeven radiofrequentie heb je meer <em>energie per bit</em> nodig.
+Als het (maximale) vermogen van een zender vastligt, bijvoorbeeld door regelgeving,
+dan betekent dit dat je de duur (<em>airtime</em>) van een bit moet vergroten:
 <span class="math notranslate nohighlight">\(\textit{energie} = \textit{vermogen} \times \textit{tijd}\)</span>.
 Anders gezegd: je moet de bitrate verlagen: <span class="math notranslate nohighlight">\(\textit{tijd}/\textit{bit} = 1/\textit{bitrate}\)</span>.</p>
-<p>In het geval van LoRa is de Spreading Factor (SF) een maat voor de duur (en dus de energie) per bit.
-Bij het verzenden van een bericht kun je opgeven welke SF gebruikt moet worden.
+<p>In het geval van LoRa is de Spreading Factor (SF) een maat voor de duur en dus de energie per bit.
+Bij het verzenden van een bericht kun je de SF opgeven.
 De SF is een logaritmische maat: de tijd/bit bij SF8 is 2 maal de tijd/bit bij SF7, enz.
 De tijd/bit bij SF12 is dan 32 maal de tijd/bit bij SF7.
 Een bericht dat bij SF7 50 ms duurt, zal bij SF12 32*50=1600 ms duren, ofwel 1,6 s.</p>
-<p>Omdat een LoRa-radio niet meer dan 1% van de tijd mag zenden,
+<p><em>Opmerking.</em> De bovenstaande berekening geeft een goede eerste benadering.
+Door allerlei details wijken de echte waarden hier wat vanaf:
+met een airtime calculator zoals
+<a class="reference external" href="https://www.thethingsnetwork.org/airtime-calculator">TTN LoRaWan airtime calculator</a>
+krijg je een realistische waarde.</p>
+<p><strong>Beperkingen.</strong>
+Omdat een LoRa-radio niet meer dan 1% van de tijd mag zenden (<em>1% duty cycle</em>),
 is er na elk verzonden bericht een gedwongen pauze van ca. 100 maal de duur van dat bericht.
 Voor een bericht van bijvoorbeeld 50 ms (SF7) is die pauze 5000 ms, ofwel 5 s.
 Maar voor een bericht van 1600 ms (SF12) is die pauze 160.000 ms, ofwel 2,5 minuten.</p>
 <p>De “fair use” regels van TheThingsNetwork zijn nog wat strikter:
-een zender mag maximaal 30 s per dag zenden.
+een IoT-device mag maximaal 30 s per dag zenden.
 Voor een bericht van 50 ms betekent dat maximaal ca. 30 berichten per uur,
 voor een bericht van 1600 ms maximaal ca. 20 berichten per dag.</p>
-<p>De energie van een radiosignaal neemt af met het kwadraat van de afstand (<span class="math notranslate nohighlight">\(1/r^2\)</span>).
+<p><strong>Bereik.</strong> De energie van een radiosignaal neemt af met het kwadraat van de afstand (<span class="math notranslate nohighlight">\(1/r^2\)</span>).
 Anders gezegd: het bereik neemt toe met de <span class="math notranslate nohighlight">\(\sqrt{\textit{energie}/\textit{bit}}\)</span>.
 De energie per bit is bij SF12 32 maal de energie per bij bij SF7.
 Het bereik bij SF12 zal dan ongeveer <span class="math notranslate nohighlight">\(\sqrt{32} \approx 5,6\)</span> maal zo groot zijn als bij SF7.</p>
 <p>Samengevat: als je kiest voor een grotere SF, krijg je een groter bereik,
-maar mag je minder berichten per uur versturen.</p>
-<p>Een LoRa-radio kan de SF ook aanpassen afhankelijk van de afstand tot de gateway:
-als een gateway een sterk signaal ontvangt met een hoge SF,
-dan stuurt de gateway een verzoek om de SF terug te brengen.</p>
+maar mag je minder berichten per uur versturen.
+Bovendien is het energieverbruik per bericht (veel) groter.</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Vergelijking van SFs voor een kort bericht</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>SF</p></th>
+<th class="head"><p>airtime</p></th>
+<th class="head"><p>berichten/uur</p></th>
+<th class="head"><p>berichten/uur</p></th>
+<th class="head"><p>bereik</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>(1% duty cycle)</p></td>
+<td><p>(TTN: &lt; 30 s/dag)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SF7</p></td>
+<td><p>51,5 ms</p></td>
+<td><p>699</p></td>
+<td><p>24</p></td>
+<td><p>1km</p></td>
+</tr>
+<tr class="row-even"><td><p>SF8</p></td>
+<td><p>102,9 ms</p></td>
+<td><p>349</p></td>
+<td><p>12</p></td>
+<td><p>1,5km</p></td>
+</tr>
+<tr class="row-odd"><td><p>SF12</p></td>
+<td><p>1.318,9 ms</p></td>
+<td><p>27</p></td>
+<td><p>0,9</p></td>
+<td><p>6km</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Opmerking</em> Het bereik hangt ook van allerlei andere factoren af,
+zoals de gebruikte antenne’s, positie van de gateway- en IoT-device-antenne,
+bebouwing e.d.</p>
+<p><em>Adaptive data rate.</em>
+Een LoRa-radio kan de SF ook aanpassen afhankelijk van de afstand tot de gateway:
+als een gateway een sterk signaal met een hoge SF ontvangt van een IoT-device,
+dan stuurt de gateway een verzoek terug om de SF terug te brengen.
+Dat is zowel voor het IoT-device als voor het LoRa-netwerk gunstig.</p>
 <p>Voor meer detail, zie: <a class="reference external" href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/">https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/</a></p>
 </div>
 
@@ -333,8 +389,8 @@ dan stuurt de gateway een verzoek om de SF terug te brengen.</p>
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.2.3. LoRa-radio' data-toggle="tooltip">
-    <a href="lora-radio.html" aria-label="6.2.3. LoRa-radio">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.3. Beperkingen van LoRaWan' data-toggle="tooltip">
+    <a href="lorawan-beperkingen.html" aria-label="6.3. Beperkingen van LoRaWan">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -344,8 +400,8 @@ dan stuurt de gateway een verzoek om de SF terug te brengen.</p>
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.2.5. LoRaWan Gateways' data-toggle="tooltip" >
-    <a href="lorawan-gateways.html" aria-label="6.2.5. LoRaWan Gateways">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.5. De LoRaWan-keten' data-toggle="tooltip" >
+    <a href="lorawan-keten.html" aria-label="6.5. De LoRaWan-keten">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

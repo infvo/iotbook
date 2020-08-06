@@ -14,7 +14,7 @@ Toetsvragen inleiding
 
 .. shortanswer:: short-6-1-1
 
-  Verklaar je antwoord(en) hierboven.
+  Verklaar de antwoord(en) die je hierboven gegeven hebt.
 
 ..
 
@@ -30,7 +30,7 @@ Toetsvragen inleiding
 
 .. shortanswer:: short-6-1-2
 
-  Verklaar je antwoord(en) hierboven.
+  Verklaar de antwoord(en) die je hierboven gegeven hebt.
 
 
 .. shortanswer:: short-6-1-3

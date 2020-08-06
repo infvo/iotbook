@@ -1,5 +1,5 @@
-Payload
--------
+TTN - Payload
+-------------
 
 .. figure:: images/cayenne-lpp.png
   :width: 600px
@@ -32,7 +32,7 @@ bijvoorbeeld 21,7 'Celcius geef je dan weer als 217.
 Soms is zelfs het Cayenne-LPP formaat niet compact genoeg:
 je kunt dan een eigen binaire codering bedenken, waarbij je gebruik maakt
 van al je kennis over de sensorwaarden die je denkt te versturen.
-Zie bijvoorbeeld: 
+Zie bijvoorbeeld:
 
 De MQTT-berichten die TTN verstuurt naar externe toepassingen bevatten naast de eigenlijke payload
 ook de metadata van het oorspronkelijke bericht, zie: https://www.thethingsnetwork.org/docs/applications/mqtt/api.html

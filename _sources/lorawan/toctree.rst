@@ -24,9 +24,21 @@ door IoT-devices te combineren met diensten en apps voor het user interface.
 .. toctree::
    :maxdepth: 2
 
-   lorawan-inleiding.rst
-   h6s2.rst
-   h6s3.rst
-   h6s4.rst
+   lorawan-toepassingen.rst
+   lorawan-voordelen.rst
+   lorawan-beperkingen.rst
+   lora-sf.rst
+   lorawan-keten.rst
+   lorawan-devices.rst
+   lorawan-gateways.rst
+   lorawan-server.rst
+   lorawan-security.rst
+   lorawan-toetsvragen.rst
+   h6s1-opdrachten.rst
+   h6s2-toetsvragen.rst
+   ttn-application.rst
+   ttn-payload.rst
+   ttn-metadata.rst
+   ttn-devices.rst
    opdrachten.rst
    nodered-opdrachten.rst
