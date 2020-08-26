@@ -55,10 +55,14 @@ Beantwoord de onderstaande vragen aan de hand van de metadata van een bericht in
 1. met welke datarate (SF, bandbreedte) is het bericht verstuurd?
 2. wat is de (geschatte) *air time* van het bericht?
 3. door welke gateways is het bericht ontvangen? Met welke signaalsterktes?
-4. kun je op grond van de signaalsterktes en de posities van de gateways (heel globaal) iets zeggen over de locatie van het IoT-device?
+4. kun je op grond van de signaalsterktes (rssi) en de posities van de gateways (heel globaal) iets zeggen over de locatie van het IoT-device?
+
+De signaalsterkte (rssi) wordt gegeven als een negatief getal:
+hoe kleiner (negatiever) de waarde, des te zwakker het signaal.
+(-100 is dus zwakker dan -40).
 
 *Opmerking.* Er zijn ook speciale TTN-nodes in NodeRed,
-deze zijn nog wat eenvoudiger in het gebruik dan de MQTT-nodes,
+deze zijn iets eenvoudiger in het gebruik dan de MQTT-nodes,
 maar worden niet meer onderhouden.
 
 Nodered-TTN-Dashboard
@@ -155,7 +159,7 @@ Opdrachten:
    (voor een FRED installatie).
 2. door voor het punt een "radius"-waarde mee te geven, in meters, wordt er rond de gateway een (gevulde)
    cirkel getekend (zie https://www.npmjs.com/package/node-red-contrib-web-worldmap#circles-and-ellipses).
-   Je kunt deze straal af laten hangen van de rssi: hoe negatiever de waarde van rssi,
+   Je kunt deze straal af laten hangen van de signaalsterkte (rssi): hoe kleiner (negatiever) de waarde van rssi,
    des te groter de afstand tot de gateway - en des te groter de cirkel.
    Voeg deze cirkels toe, als hulp om te bepalen waar de IoT-devices zich ten opzicht van de gateways
    bevinden. *Opmerking* de signaalsterkte rssi hangt niet alleen af van de afstand,
