@@ -9,7 +9,8 @@ Inleiding...
    :numbered:
 
    h1/toctree.rst
-   bouwstenen/toctree.rst
+   verbindingen/toctree.rst
+   protocollen/toctree.rst
    mqtt/toctree.rst
    http/toctree.rst
    h5/toctree.rst

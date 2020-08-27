@@ -22,3 +22,5 @@ de verbinding tussen de IoT-knopen en het internet.
   com-6.rst
   com-7.rst
   com-toetsvragen.rst
+  vragen-en-opdrachten.rst
+  nodered/nodered-opdrachten.rst
