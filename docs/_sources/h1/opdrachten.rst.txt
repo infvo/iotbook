@@ -8,4 +8,3 @@ Vragen en opdrachten
 
   opdracht-bestaande-toepassing.rst
   opdracht-eigen-toepassing.rst
-  opdracht-dashboard.rst

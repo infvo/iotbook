@@ -16,6 +16,8 @@ Inleiding...
    h5/toctree.rst
    lorawan/toctree.rst
    lan-ip/toctree.rst
+   http-rest/toctree.rst
+   ttn/toctree.rst
 
 ********
 Appendix

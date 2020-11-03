@@ -1,4 +1,0 @@
-Opdrachten
-----------
-
-.. bij Meer voorbeelden

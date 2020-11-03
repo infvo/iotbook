@@ -1,16 +1,12 @@
-********************
-LoRa, LoRaWan en TTN
-********************
+***************
+LoRa en LoRaWan
+***************
 
-In dit hoofdstuk behandelen we de LoRa radio, het IoT Wide-area network LoRaWan en
-de LoRaWan-provider TheThingsNetwork (TTN).
-
-Met het LoRaWan-netwerk van TheThingsNetwork hebben je IoT-apparaten (bijna) overal verbinding -
-als bij mobiele telefonie.
-LoRa is een voorbeeld van een long range radio - vergelijkbaar in eigenschappen met SigFox of NB-IoT.
-LoRaWan is een wide-area netwerk en netwerkprotocol op basis van LoRa.
-TheThingsNetwork (TTN) is een wereldwijde aanbieder van LoRaWan.
-Met TTN kun je eenvoudig zelf met je IoT-LoRaWan-toepassingen maken - met ondersteuning van de TTN-community.
+In dit hoofdstuk behandelen we de LoRa radio en het IoT Wide-area network LoRaWan,
+als voorbeeld van een long range IoT-radio.
+De eigenschappen van LoRaWan zijn vergelijkbaar met die van SigFox of NB-IoT.
+De LoRaWan-netwerken van KPN of TheThingsNetwork (TTN) hebben vrijwel landelijke dekking;
+het netwerk van TTN is zelfs internationaal.
 
 Een LoRaWan device (IoT-apparaat, IoT-knoop) heeft een LoRa-radio en een LoRaWan protocol-stack.
 Via een LoRaWan gateway maakt het device verbinding met het LoRaWan-netwerk.
@@ -22,23 +18,16 @@ je kunt dan op dezelfde manier als je eerder gezien hebt slimme IoT-toepassingen
 door IoT-devices te combineren met diensten en apps voor het user interface.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    lorawan-toepassingen.rst
+   lorawan-toepassingen-karakteristieken.rst
    lorawan-voordelen.rst
    lorawan-beperkingen.rst
-   lora-sf.rst
    lorawan-keten.rst
    lorawan-devices.rst
    lorawan-gateways.rst
-   lorawan-server.rst
-   lorawan-security.rst
+   lorawan-providers.rst
    lorawan-toetsvragen.rst
-   h6s1-opdrachten.rst
-   h6s2-toetsvragen.rst
-   ttn-application.rst
-   ttn-payload.rst
-   ttn-metadata.rst
-   ttn-devices.rst
-   opdrachten.rst
+   lorawan-opdrachten.rst
    nodered-opdrachten.rst

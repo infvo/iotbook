@@ -11,13 +11,13 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
     <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=6547A273" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
     <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
-    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.6" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.11" />
     <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -28,7 +28,7 @@
     <script src="../_static/webglinteractive.js?v=2B768384"></script>
     <script src="../_static/FileSaver.min.js?v=8408C997"></script>
     <script src="../_static/Blob.js?v=AEC2447"></script>
-    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/html4css1.css?v=4533ACD3"></script>
     <script src="../_static/animationbase.js?v=A043C3A7"></script>
     <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
     <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
@@ -44,7 +44,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
-    <script src="../_static/runestone.js?v=B89F6473"></script>
+    <script src="../_static/runestone.js?v=585CE143"></script>
     <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
     <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
     <script src="../_static/jquery-fix.js?v=1226591B"></script>
@@ -55,7 +55,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.4. Functionele bouwstenen" href="h1s2.html" />
+    <link rel="next" title="1.4. Functionele bouwstenen" href="functionele-bouwstenen.html" />
     <link rel="prev" title="1.2. Voorbeeld: watersproeier" href="vb-sproeier.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -78,7 +78,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.python3 = true;
   eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
-  eBookConfig.runestone_version = '5.0.6';
+  eBookConfig.runestone_version = '5.0.11';
   eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
   eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
   eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
@@ -252,7 +252,7 @@
   </li>
   
   <li id="relations-next" title='Next Chapter - <span class="section-number">1.4. </span>Functionele bouwstenen' data-toggle="tooltip" >              
-    <a href="h1s2.html" >
+    <a href="functionele-bouwstenen.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -304,6 +304,9 @@ Deze kun je bedienen met drukknoppen en met (bewegings)sensoren.
 De controller (“bridge”) zorgt voor de koppeling tussen de sensoren en de actuatoren.
 De controller heeft geen eigen user interface:
 hiervoor gebruik je de app die via het lokale (WiFi) netwerk verbinding maakt met de controller.</p>
+<p>De bridge heeft hier nog een andere functie: het is de gateway (koppeling) tussen het ZigBee-netwerk
+van de lampen en schakelaars en het lokale netwerk.
+In de volgende hoofdstukken komen deze communicatie-aspecten aan de orde.</p>
 </div>
 <div class="section" id="aan-het-internet">
 <h2><span class="section-number">1.3.2. </span>Aan het internet<a class="headerlink" href="#aan-het-internet" title="Permalink to this headline">¶</a></h2>
@@ -312,7 +315,7 @@ hiervoor gebruik je de app die via het lokale (WiFi) netwerk verbinding maakt me
 </div>
 <p>Je kunt met de app de lampen ook op afstand bedienen, via het internet.
 Hiervoor maakt de app contact met de hue-server/controller in het publieke internet,
-die weer contact maakt met de lokale controller.</p>
+die weer contact maakt met de bridge als lokale controller.</p>
 <p>We hebben hier te maken met 3 lagen van controllers:</p>
 <ul class="simple">
 <li><p>de lampen en de schakelaars zijn IoT-knopen, met lokaal sensor(en)/actuator(en),
@@ -321,22 +324,105 @@ een microcontroller, en een radio;</p></li>
 <li><p>de server in het publieke internet is de globale controller.</p></li>
 </ul>
 </div>
-<div class="section" id="andere-controllers">
-<h2><span class="section-number">1.3.3. </span>Andere controllers<a class="headerlink" href="#andere-controllers" title="Permalink to this headline">¶</a></h2>
-<p>De lokale controller is in eerste instantie bedoeld voor verlichting.
-Je kunt de lokale controller ook verbinden met andere “domotica”-controllers voor bijvoorbeeld verwarming, koeling, veiligheid e.d.
-Voorbeelden van controller-software voor domotica-toepassingen zijn OpenHAB (<a class="reference external" href="https://www.openhab.org">https://www.openhab.org</a>) en Home Assist (<a class="reference external" href="https://www.home-assistant.io">https://www.home-assistant.io</a>).
-Via de hue-webserver kun je verbinding maken met controller-diensten als Apple Home Kit en Amazon Alexa.</p>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/Users/eelco/stack/books/iotbook/_sources/h1/vb-verlichting.rst</span>, line 47)</p>
-<p>Unknown directive type “todo”.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">todo</span><span class="p">::</span>
+<div class="section" id="combineren-met-andere-diensten">
+<h2><span class="section-number">1.3.3. </span>Combineren met andere diensten<a class="headerlink" href="#combineren-met-andere-diensten" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/hue-server-extensions-public.png"><img alt="../_images/hue-server-extensions-public.png" src="../_images/hue-server-extensions-public.png" style="width: 550px;" /></a>
+</div>
+<p>Een oplossing is pas “slim” als je deze kunt koppelen aan andere diensten
+en apparaten.
+Je kunt de verlichting bijvoorbeeld koppelen aan oplossingen
+voor veiligheid, voor beeld (tv/video) en voor verwarming.
+Voor deze “domotica” (huisautomatisering) kun je tegenwoordig
+allerlei oplossingen krijgen,
+bijvoorbeeld van Google (Google Home en Nest) en Apple (HomeKit).
+In deze figuur zie je Alexa (de Amazon assistent met spraakbesturing)
+en IFTTT (If This Then That, voor de koppeling aan allerlei andere diensten).</p>
+<p>Dit combineren met andere (publieke) diensten heeft voor- en nadelen:
+voor het dagelijks gebruik heb je veel meer mogelijkheden.
+Maar het maakt je afhankelijk van andere diensten en leveranciers.
+Naast de afhankelijkheid van een bepaalde leverancier brengt dit
+mogelijk ook extra privacy- en veiligheidsrisico’s met zich mee.
+Omdat deze diensten erg direct gekoppeld zijn aan je leefomgeving,
+zijn die risico’s niet verwaarloosbaar.
+Overigens zijn dergelijke risico’s veel groter met veel goedkopere IoT-producten.</p>
+<div class="admonition-opmerking admonition">
+<p class="admonition-title">Opmerking</p>
+<p>De Hue Bridge heeft een web-API (Application Programmer’s Interface)
+waarmee je deze vanuit een ander programma kunt besturen.
+In een volgend hoofdstuk gaan we dieper in op web-API’s.</p>
+</div>
+</div>
+<div class="section" id="eigen-domotica">
+<h2><span class="section-number">1.3.4. </span>Eigen domotica<a class="headerlink" href="#eigen-domotica" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/hue-server-extensions-private.png"><img alt="../_images/hue-server-extensions-private.png" src="../_images/hue-server-extensions-private.png" style="width: 550px;" /></a>
+</div>
+<p>Je kunt ook je eigen domotica-oplossingen maken,
+bijvoorbeeld met behulp van een Raspberry Pi als lokale controller,
+met open source domotica-software,
+die via een MQTT-broker in het publieke internet met andere diensten
+verbonden kan worden.
+Enkele voorbeelden van open source voor domotica zijn
+OpenHAB (<a class="reference external" href="https://www.openhab.org">https://www.openhab.org</a>) en
+Home Assist (<a class="reference external" href="https://www.home-assistant.io">https://www.home-assistant.io</a>).</p>
+<p>In de volgende hoofdstukken zullen we de bouwstenen daarvoor behandelen.</p>
+</div>
+<div class="section" id="toetsvragen">
+<h2><span class="section-number">1.3.5. </span>Toetsvragen<a class="headerlink" href="#toetsvragen" title="Permalink to this headline">¶</a></h2>
 
-  <span class="o">*</span> <span class="n">figuur</span> <span class="n">van</span> <span class="n">Hue</span> <span class="n">met</span> <span class="n">andere</span> <span class="n">controller</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-</pre></div>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="IoT-020" >
+            <p>Q-1: Wat is de functie van de Hue Bridge (meerdere antwoorden mogelijk).</p>
+
+            <li data-component="answer" data-correct id="IoT-020_opt_a">gateway (koppeling) tussen het ZigBee-netwerk van de lampen en schakelaars en het lokale netwerk;</li><li data-component="feedback"></li>
+            
+            <li data-component="answer" data-correct id="IoT-020_opt_b">controller voor het verbinden van de lampen en de schakelaars</li><li data-component="feedback"></li>
+            
+            <li data-component="answer"  id="IoT-020_opt_c">versterken van het WiFi-signaal voor de lampen</li><li data-component="feedback"></li>
+            
+            <li data-component="answer" data-correct id="IoT-020_opt_d">verbinding tussen de lampen en de Hue-server</li><li data-component="feedback"></li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="IoT-021" >
+            <p>Q-2: Wat is de functie van de Hue server voor het lokale netwerk? (meerdere antwoorden mogelijk)</p>
+
+            <li data-component="answer" data-correct id="IoT-021_opt_a">verbinding tussen de Bridge en de mobiele app</li><li data-component="feedback"></li>
+            
+            <li data-component="answer" data-correct id="IoT-021_opt_b">verbinding tussen de Bridge en externe diensten</li><li data-component="feedback"></li>
+            
+            <li data-component="answer" data-correct id="IoT-021_opt_c">software-updates voor de Bridge en de lampen</li><li data-component="feedback"></li>
+            
+            <li data-component="answer"  id="IoT-021_opt_d">controller voor het verbinden van de lampen en de schakelaars</li><li data-component="feedback"></li>
+            
+
+            </ul>
+            </div>
+            <div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/hue-server-quiz.png"><img alt="../_images/hue-server-quiz.png" src="../_images/hue-server-quiz.png" style="width: 500px;" /></a>
 </div>
-</div>
-</div>
+
+<div class="runestone">
+<ul data-component="dragndrop" id="IoT-022" >
+    <span data-component="question">Q-3: Plaats de termen bij de juiste letter in de figuur</span>
+	<span data-component=feedback>Zie de eerdere figuren in dit gedeelte.</span>
+
+    <li data-component="draggable" id="IoT-022_drag1">Hue-server</li>
+    <li data-component="dropzone" for="IoT-022_drag1">C</li>
+
+    <li data-component="draggable" id="IoT-022_drag2">Lamp</li>
+    <li data-component="dropzone" for="IoT-022_drag2">A</li>
+
+    <li data-component="draggable" id="IoT-022_drag3">Hue-bridge</li>
+    <li data-component="dropzone" for="IoT-022_drag3">B</li>
+
+    <li data-component="draggable" id="IoT-022_drag4">UI-mobiele app</li>
+    <li data-component="dropzone" for="IoT-022_drag4">D</li>
+</ul></div></div>
 </div>
 
 
@@ -358,7 +444,7 @@ Via de hue-webserver kun je verbinding maken met controller-diensten als Apple H
   
 <ul>
   <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 1.4. Functionele bouwstenen' data-toggle="tooltip" >
-    <a href="h1s2.html" aria-label="1.4. Functionele bouwstenen">
+    <a href="functionele-bouwstenen.html" aria-label="1.4. Functionele bouwstenen">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>
@@ -400,7 +486,7 @@ Via de hue-webserver kun je verbinding maken met controller-diensten als Apple H
     </p>
     <p>
         &copy; Copyright 2020 eelco.
-      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.6.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.11.
     </p>
   </div>
 </footer>

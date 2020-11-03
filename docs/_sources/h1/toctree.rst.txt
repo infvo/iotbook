@@ -31,6 +31,8 @@ In de opdrachten ga je praktisch aan de slag:
    ontwikkeling.rst
    vb-sproeier.rst
    vb-verlichting.rst
-   h1s2.rst
-   h1-meervoorbeelden.rst
+   functionele-bouwstenen.rst
+   h1-meervoorbeelden-lijst.rst
+   communicatie-analyse.rst
+   voordelen-en-risicos.rst
    opdrachten.rst

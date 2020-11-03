@@ -1,4 +1,0 @@
-Opdrachten LoRaWan
-------------------
-
-P.M.

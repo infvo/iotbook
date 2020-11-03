@@ -8,7 +8,8 @@ Voordelen van LoRaWan
 De belangrijkste voordelen van LoRaWan zijn:
 
 * dekking van het netwerk in een groot gebied (“wide area network”, WAN),
-  door het gebruik van LoRa (long range) radio.
+  door de combinatie van LoRa (long range) radio met een bereik van enkele kilometers,
+  en een groot aantal gateways.
 * IoT-devices kunnen mobiel zijn: een IoT-device is niet gebonden aan een gateway,
   berichten kunnen door meerdere gateways ontvangen worden.
 * locatiebepaling van IoT-devices door het combineren van gateway-ontvangstdata.

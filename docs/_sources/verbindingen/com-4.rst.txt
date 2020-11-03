@@ -18,7 +18,7 @@ Het lokale netwerk gebruikt dan geen echte (publieke) internetadressen,
 maar lokale (of “private”) adressen van de vorm 192.168.xxx.xxx, 10.xxx.xxx.xxx, 172.xxx.xxx.xxx.
 De LAN-gateway heeft zelf één enkel publiek internetadres.
 NAT betekent dat de LAN-gateway deze lokale adressen omzet
-naar dit publieke interadres, en omgekeerd.
+naar dit publieke interadres en omgekeerd.
 
 Een gevolg is dat computers in het lokale netwerk niet direct bereikbaar zijn vanuit het publieke internet.
 Dit betekent dat ook de IoT-knopen en/of de IoT-gateway niet direct bereikbaar zijn.

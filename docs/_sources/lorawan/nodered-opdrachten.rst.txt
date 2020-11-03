@@ -5,10 +5,6 @@ NodeRed-opdrachten
   * de Application-ID en een Access key (API-key) een bestaande TTN-toepassing
     (application) met actieve IoT-knopen (via je docent);
   * een (gratis) FRED-account, of andere NodeRed-server.
-  * alleen voor de gevorderde opdrachten:
-
-    * een (gratis) TTN-account, en
-    * een eigen LoRaWan-device.
 
 Ontvangen van TTN data in NodeRed
 ---------------------------------
@@ -34,8 +30,8 @@ Instellingen voor de MQTT input node:
 
 Hierin vervang je ``my-app-id`` door de Application-ID (de unieke naam),
 ``my-api-key`` door de Access key (API-key),
-en ``my-dev-id`` door de Device-ID (de unieke naam van een device) of
-door een ``+`` als wildcard voor alle devices.
+en ``my-dev-id`` door de Device-ID (de unieke naam van een device) *of
+door een ``+`` als wildcard voor alle devices*.
 
 Vergeet **Deploy** niet!
 

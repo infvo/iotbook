@@ -7,7 +7,7 @@ Bovendien kan het IoT-device in dit gebied mobiel zijn: het is niet gebonden aan
 
 De beperkingen van LoRaWan-radio’s (zie verderop) maken deze technologie vooral geschikt voor toepassingen
 waarbij een IoT-device enkele keren per uur tot enkele keren per dag een bericht verstuurt
-van maximaal ca. 10 bytes.
+van maximaal ongeveer 10 bytes.
 Het IoT-device staat bijna altijd uit (meer dan 99% van de tijd),
 en de LoRa-radio is erg energiezuinig:
 door het geringe energieverbruik heeft de batterij meestal een jarenlange levensduur.

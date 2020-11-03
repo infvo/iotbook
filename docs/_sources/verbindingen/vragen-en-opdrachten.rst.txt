@@ -66,3 +66,9 @@ nodig om vanuit een app overal te kunnen communiceren met de IoT-knopen thuis?
    :match_4: MQTT-broker|||Verbindt de IoT-knopen met de IoT-controllers, apps en diensten in het publieke internet,
 
    Plaats de termen bij hun omschrijving.
+
+**Opdracht**
+
+1. Ga na wat het IP-adres (internetadres) is van je computer, via de netwerkinstellingen van je computer.
+2. Ga na wat het (publieke) IP-adres is van je computer, via een website als https://www.whatismyip.com.
+3. Als deze twee verschillen, wat kun je dan zeggen over het lokale netwerk (LAN) en de bijbehorende LAN/WAN gateway/router?

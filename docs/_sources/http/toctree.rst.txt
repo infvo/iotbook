@@ -8,7 +8,6 @@ HTTP, webservers en API's
    inleiding.rst
    http-protocol.rst
    http-iot.rst
-   rest/toctree.rst
    opdrachten.rst
    nodered/nodered-opdrachten.rst
 

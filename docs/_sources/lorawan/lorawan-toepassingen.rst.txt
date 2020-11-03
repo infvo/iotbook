@@ -3,7 +3,7 @@ LoRaWan toepassingen: voorbeelden
 
 Hieronder geven we enkele voorbeelden van LoRa(Wan) toepassingen.
 Deze toepassingen profiteren van de voordelen van LoRaWan en
-zijn eenvoudig genoeg om geen hinder te hebben van de beperkingen van LoRaWan-netwerken.
+zijn eenvoudig genoeg om geen last te hebben van de beperkingen van LoRaWan-netwerken.
 
 
 .. figure:: images/LoRaWan-wissels.png

@@ -7,6 +7,7 @@ Protocollen
   protocol-1.rst
   protocol-2.rst
   protocol-3.rst
+  protocol-3a.rst
   protocol-4.rst
   protocol-5.rst
   protocol-6.rst
@@ -15,10 +16,11 @@ Protocollen
   protocol-9.rst
   protocol-10.rst
   protocol-toetsvragen.rst
+  nodered/nodered-opdrachten.rst
 
 
-Samenvatting
-------------
+
+.. rubric:: Samenvatting
 
 Wat zijn belangrijke punten?
 

@@ -16,11 +16,5 @@ Soms moet je zelf een TTN gateway installeren om in elk geval voor je eigen toep
 Anderen kunnen dan ook van jouw gateway gebruik maken.
 
 Er zijn verschillende soorten gateways: van kleine en eenvoudige gateways voor gebruik binnenshuis,
-kant-en-klaar en zelfbouw,
-tot gateways die buiten alle elementen kunnen trotseren.
-De antenne van een gateway plaats je het liefst zo hoog mogelijk, met vrij uitzicht.
-Je moet dan wel rekening houden met blikseminslag.
-(zie: https://www.thethingsnetwork.org/docs/gateways/lightning-protection.html).
-
-Als je zelf een TTN gateway beheert, kun je via het TTN-console het verkeer via de gateway volgen.
-Je kunt echter de inhoud van de berichten niet zien: die is versleuteld.
+kant-en-klaar en zelfbouw, tot gateways die buiten alle elementen kunnen trotseren.
+Een antenne die hoog geplaatst is, met vrij uitzicht, geeft het grootste bereik.

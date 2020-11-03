@@ -1,5 +1,5 @@
 Voorbeelden van IoT-toepassingen
---------------------------------
+================================
 
 Het Internet of Things biedt ontelbare mogelijkheden;
 veel toepassingen moeten nog bedacht en ontwikkeld worden.

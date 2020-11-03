@@ -1,7 +1,7 @@
-LoRaWan provider: TheThingsNetwork
-----------------------------------
+LoRaWan providers
+-----------------
 
-.. figure:: ttn-gateways-map.png
+.. figure:: images/TTN-gateways-map.png
     :width: 500px
     :align: center
 
@@ -9,6 +9,7 @@ LoRaWan provider: TheThingsNetwork
 
 Er zijn in Nederland meerdere aanbieders van een LoRaWan netwerk,
 onder andere KPN en TTN (TheThingsNetwork).
+
 TTN is een bijzondere organisatie:
 iedereen met een eigen LoRaWan gateway kan bijdragen aan dit netwerk,
 en daarmee de dekking van het netwerk vergroten.

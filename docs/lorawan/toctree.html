@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>7. LoRa, LoRaWan en TTN &#8212; IoT-book</title>
+    <title>7. LoRa en LoRaWan &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
@@ -11,13 +11,13 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
     <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=6547A273" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
     <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
-    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.6" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.11" />
     <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -28,7 +28,7 @@
     <script src="../_static/webglinteractive.js?v=2B768384"></script>
     <script src="../_static/FileSaver.min.js?v=8408C997"></script>
     <script src="../_static/Blob.js?v=AEC2447"></script>
-    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/html4css1.css?v=4533ACD3"></script>
     <script src="../_static/animationbase.js?v=A043C3A7"></script>
     <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
     <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
@@ -44,7 +44,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
-    <script src="../_static/runestone.js?v=B89F6473"></script>
+    <script src="../_static/runestone.js?v=585CE143"></script>
     <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
     <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
     <script src="../_static/jquery-fix.js?v=1226591B"></script>
@@ -78,7 +78,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.python3 = true;
   eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
-  eBookConfig.runestone_version = '5.0.6';
+  eBookConfig.runestone_version = '5.0.11';
   eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
   eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
   eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
@@ -290,16 +290,13 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="lora-lorawan-en-ttn">
-<h1><span class="section-number">7. </span>LoRa, LoRaWan en TTN<a class="headerlink" href="#lora-lorawan-en-ttn" title="Permalink to this headline">¶</a></h1>
-<p>In dit hoofdstuk behandelen we de LoRa radio, het IoT Wide-area network LoRaWan en
-de LoRaWan-provider TheThingsNetwork (TTN).</p>
-<p>Met het LoRaWan-netwerk van TheThingsNetwork hebben je IoT-apparaten (bijna) overal verbinding -
-als bij mobiele telefonie.
-LoRa is een voorbeeld van een long range radio - vergelijkbaar in eigenschappen met SigFox of NB-IoT.
-LoRaWan is een wide-area netwerk en netwerkprotocol op basis van LoRa.
-TheThingsNetwork (TTN) is een wereldwijde aanbieder van LoRaWan.
-Met TTN kun je eenvoudig zelf met je IoT-LoRaWan-toepassingen maken - met ondersteuning van de TTN-community.</p>
+  <div class="section" id="lora-en-lorawan">
+<h1><span class="section-number">7. </span>LoRa en LoRaWan<a class="headerlink" href="#lora-en-lorawan" title="Permalink to this headline">¶</a></h1>
+<p>In dit hoofdstuk behandelen we de LoRa radio en het IoT Wide-area network LoRaWan,
+als voorbeeld van een long range IoT-radio.
+De eigenschappen van LoRaWan zijn vergelijkbaar met die van SigFox of NB-IoT.
+De LoRaWan-netwerken van KPN of TheThingsNetwork (TTN) hebben vrijwel landelijke dekking;
+het netwerk van TTN is zelfs internationaal.</p>
 <p>Een LoRaWan device (IoT-apparaat, IoT-knoop) heeft een LoRa-radio en een LoRaWan protocol-stack.
 Via een LoRaWan gateway maakt het device verbinding met het LoRaWan-netwerk.
 De LoRaWan-server verbindt het LoRaWan-netwerk aan het internet.</p>
@@ -310,33 +307,16 @@ door IoT-devices te combineren met diensten en apps voor het user interface.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="lorawan-toepassingen.html">7.1. LoRaWan toepassingen: voorbeelden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lorawan-voordelen.html">7.2. Voordelen van LoRaWan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lorawan-beperkingen.html">7.3. Beperkingen van LoRaWan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lora-sf.html">7.4. LoRa - Spreading Factor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lorawan-toepassingen-karakteristieken.html">7.2. Karakteristieken van LoRaWan-toepassingen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lorawan-voordelen.html">7.3. Voordelen van LoRaWan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lorawan-beperkingen.html">7.4. Beperkingen van LoRaWan</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lorawan-keten.html">7.5. De LoRaWan-keten</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lorawan-devices.html">7.6. LoraWan IoT-devices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lorawan-gateways.html">7.7. LoRaWan Gateways</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lorawan-server.html">7.8. LoRaWan network server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lorawan-security.html">7.9. Veiligheid (security)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lorawan-toetsvragen.html">7.10. Toetsvragen LoRaWan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="h6s1-opdrachten.html">7.11. Opdrachten inleiding</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="h6s1-opdrachten.html#zoek-voorbeelden">7.11.1. Zoek voorbeelden</a></li>
-<li class="toctree-l2"><a class="reference internal" href="h6s1-opdrachten.html#bestudeer-een-bestaande-lorawan-toepassing">7.11.2. Bestudeer een bestaande LoRaWan-toepassing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="h6s1-opdrachten.html#bedenk-een-eigen-lorawan-toepassing">7.11.3. Bedenk een eigen LoRaWan-toepassing</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="h6s2-toetsvragen.html">7.12. Toetsvragen LoRaWan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ttn-application.html">7.13. TTN - applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ttn-payload.html">7.14. TTN - Payload</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ttn-metadata.html">7.15. TTN-Metadata</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ttn-devices.html">7.16. TTN - devices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="opdrachten.html">7.17. Opdrachten</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nodered-opdrachten.html">7.18. NodeRed-opdrachten</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nodered-opdrachten.html#ontvangen-van-ttn-data-in-nodered">7.18.1. Ontvangen van TTN data in NodeRed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nodered-opdrachten.html#nodered-ttn-dashboard">7.18.2. Nodered-TTN-Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nodered-opdrachten.html#gateways-op-de-kaart">7.18.3. Gateways op de kaart</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="lorawan-providers.html">7.8. LoRaWan providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lorawan-toetsvragen.html">7.9. Toetsvragen LoRaWan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lorawan-opdrachten.html">7.10. Opdrachten LoRaWan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodered-opdrachten.html">7.11. NodeRed-opdrachten</a></li>
 </ul>
 </div>
 </div>
@@ -402,7 +382,7 @@ door IoT-devices te combineren met diensten en apps voor het user interface.</p>
     </p>
     <p>
         &copy; Copyright 2020 eelco.
-      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.6.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.11.
     </p>
   </div>
 </footer>
