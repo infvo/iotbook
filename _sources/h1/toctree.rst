@@ -1,7 +1,7 @@
 ****************
 IoT-toepassingen
 ****************
-
+ 
 We beginnen met een aantal voorbeeldtoepassingen van het internet of things.
 Hiermee laten we zien wat de *functionele* bouwstenen zijn van een IoT-toepassing
 en hoe deze verbonden zijn in de *functionele IoT-keten*.
