@@ -1,9 +1,0 @@
-Meer voorbeelden
-================
-
-.. toctree::
-   :maxdepth: 1
-
-   h1-meervoorbeelden-lijst.rst
-   h1-meervoorbeelden-overeenkomsten.rst
-   h1-meervoorbeelden-voordelen.rst

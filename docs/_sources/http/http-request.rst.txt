@@ -1,5 +1,5 @@
 Een HTTP request
-----------------
+================
 
 .. figure:: http-request-ex1.png
   :width: 700px

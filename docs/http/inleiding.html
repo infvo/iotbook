@@ -55,8 +55,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.2. HTTP-protocol" href="http-protocol.html" />
-    <link rel="prev" title="5. HTTP, webservers en API’s" href="toctree.html" />
+    <link rel="next" title="5.2. Client-server interactie" href="http-client-server.html" />
+    <link rel="prev" title="5. HTTP: webservers" href="toctree.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -245,14 +245,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5. </span>HTTP, webservers en API’s" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5. </span>HTTP: webservers" data-toggle="tooltip">
     <a href="toctree.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">5.2. </span>HTTP-protocol' data-toggle="tooltip" >              
-    <a href="http-protocol.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">5.2. </span>Client-server interactie' data-toggle="tooltip" >              
+    <a href="http-client-server.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -292,9 +292,48 @@
   
   <div class="section" id="inleiding">
 <h1><span class="section-number">5.1. </span>Inleiding<a class="headerlink" href="#inleiding" title="Permalink to this headline">¶</a></h1>
-<p>In dit hoofdstuk behandelen we het HTTP-protocol en
-het gebruik daarvan in het IoT.</p>
-<p>HTTP vormt de basis van het web, de belangrijkste toepassing van het internet.</p>
+<p>In dit hoofdstuk behandelen we het HTTP-protocol en het gebruik daarvan voor het web:
+de belangrijkste toepassing van het internet.
+Het web vormt steeds met het “user interface” van het internet.
+In het volgende hoofdstuk gaan we in op het gebruik van HTTP in het IoT.</p>
+<p>In dit gedeelte behandelen we de elementen van het HTTP-protocol,
+aan de hand van de browser-webserver interactie.</p>
+<div class="admonition-begrippen admonition">
+<p class="admonition-title">begrippen</p>
+<p>client-server, URL, request, response, header, payload, HTML, JSON,
+veiligheid (security), certificaat, IP-adres,</p>
+</div>
+<p>Een samenvatting van de elementen van HTTP protocol:</p>
+<table class="colwidths-auto docutils align-left">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>in HTTP</p></th>
+<th class="head"><p>Voorbeeld</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Interactie</p></td>
+<td><p>client-server</p></td>
+<td><p>browser-webserver</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adressering</p></td>
+<td><p>URL</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">https://infvopedia.nl/iot-app.html</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Request-type</p></td>
+<td><p>http-method</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GET</span></code>, <code class="docutils literal notranslate"><span class="pre">POST</span></code>, <code class="docutils literal notranslate"><span class="pre">PUT</span></code> etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Medadata</p></td>
+<td><p>http-headers</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Content-Type:</span> <span class="pre">text/html</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Payload</p></td>
+<td><p>HTML, JSON, enz.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{&quot;level&quot;:</span> <span class="pre">133}</span></code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 
 
@@ -304,8 +343,8 @@ het gebruik daarvan in het IoT.</p>
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5. HTTP, webservers en API’s' data-toggle="tooltip">
-    <a href="toctree.html" aria-label="5. HTTP, webservers en API’s">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5. HTTP: webservers' data-toggle="tooltip">
+    <a href="toctree.html" aria-label="5. HTTP: webservers">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -315,8 +354,8 @@ het gebruik daarvan in het IoT.</p>
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 5.2. HTTP-protocol' data-toggle="tooltip" >
-    <a href="http-protocol.html" aria-label="5.2. HTTP-protocol">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 5.2. Client-server interactie' data-toggle="tooltip" >
+    <a href="http-client-server.html" aria-label="5.2. Client-server interactie">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

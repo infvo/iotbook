@@ -297,16 +297,26 @@
 <p class="caption"><span class="caption-text">Client-server interactie (HTTP)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>In een client-server interactie stuurt de client een verzoek (request) naar de server;
-de server verwerkt dit verzoek, en stuurt een antwoord (response) terug.</p>
+de server verwerkt dit verzoek en stuurt een antwoord (response) terug.</p>
 <p>Je kunt deze interactie vergelijken met een klant voor een loket met een loketbediende.
 Na de afhandeling van een verzoek wacht de loketbediende op de volgende klant.</p>
+<p>Het initiatief voor deze interactie ligt dus bij de client:
+de server stuurt nooit ongevraagd een bericht naar de client.
+De client moet de server kennen en kunnen vinden;
+de server hoeft de clients niet te kennen.</p>
 <p>Voor deze interactie moet de server in principe altijd beschikbaar en bereikbaar zijn:
 online in het publieke internet.
 Clients hoeven alleen tijdens de interactie online te zijn, eventueel vanuit een lokaal netwerk.</p>
-<p>Het webprotocol HTTP gebruikt een <em>client-server</em> interactie:
-de browser (client) stuurt een verzoek met een URL naar de webserver,
-en krijgt als response van de webserver het bijbehorende HTML-document.
-In plaats van de browser kunnen ook andere programma’s als webclient optreden.</p>
+<p>In het internet kom je de client-server interactie op veel plaatsen tegen:</p>
+<ul class="simple">
+<li><p>de browser (client) stuurt een verzoek met een URL naar de webserver,
+en krijgt als response van de webserver het bijbehorende HTML-document.</p></li>
+<li><p>de e-mail client op je computer stuurt uitgaande post naar een SMTP-mail server,
+en haalt inkomende post op van een POP3 of IMAP mail server.</p></li>
+<li><p>een DNS-server zet een domeinnaam (“mijnschool.nl”) om in het bijbehorende IP-adres.</p></li>
+<li><p>een database-server biedt toegang tot een database,
+zodat verschillende client-toepassingen dezelfde database kunnen gebruiken.</p></li>
+</ul>
 </div>
 
 

@@ -17,18 +17,5 @@ Het web-protocol HTTP werkt op basis van een client-server interactie:
 De client-server interactie kun je vergelijken met een loket, bijvoorbeeld van een bank,
 met een rij klanten die één voor één door de loketbeambte bediend worden.
 
-De client-server interactie heeft de volgende kenmerken:
-
-* de client neemt het initiatief voor de interactie;
-  de server stuurt nooit ongevraagd een bericht naar de client;
-* de client moet de server kennen en kunnen vinden; de server hoeft de clients niet te kennen;
-* de server moet in principe altijd bereikbaar zijn (online, in het publieke internet);
-  de client hoeft alleen met het internet verbonden te zijn tijdens de interactie met de server.
-
-In het internet kom je de client-server interactie op veel plaatsen tegen:
-
-* de e-mail client op je computer stuurt uitgaande post naar een SMTP-mail server,
-  en haalt inkomende post op van een POP3 of IMAP mail server.
-* een DNS-server zet een domeinnaam ("mijnschool.nl") om in het bijbehorende IP-adres.
-* een database-server biedt toegang tot een database,
-  zodat verschillende toepassingen dezelfde database kunnen gebruiken.
+Zoals we later zullen zien kunnen ook andere programma's als client van een webserver optreden:
+dat vormt de basis voor het programmeerbare web.

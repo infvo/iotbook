@@ -8,9 +8,9 @@ door een eigen gateway in het netwerk op te nemen.
 En iedereen kan gratis gebruik maken van dit netwerk.
 
 Er zijn overal in Nederland, maar ook internationaal, TTN-*communities*
-waarin mensen samen actief zijn rond het Internet of Things.
+waarin mensen samen actief zijn rond het internet of things.
 
-Via de TTN-website (thethingsnetwork.org) kun je veel informatie of TTN,
+Via de TTN-website (https://thethingsnetwork.org) kun je veel informatie of TTN,
 LoRa en LoRaWan, en het internet of things vinden.
 
 In de volgende secties bespreken we hoe je TTN kunt gebruiken voor je

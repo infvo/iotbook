@@ -1,31 +1,19 @@
-*************************
-HTTP, webservers en API's
-*************************
+****************
+HTTP: webservers
+****************
 
 .. toctree::
    :maxdepth: 1
 
    inleiding.rst
-   http-protocol.rst
-   http-iot.rst
+   http-client-server.rst
+   http-adressering.rst
+   http-request.rst
+   http-response.rst
+   http-protocol-stack.rst
+   http-toetsvragen.rst
    opdrachten.rst
    nodered/nodered-opdrachten.rst
 
-Het HTTP-protocol gebruik je dagelijk als je het web gebruikt.
-Het web kun je zien als het "user interface" van het internet.
-
-Daarnaast vormt HTTP de basis voor het "programmeerbare web":
-met behulp van web-APIs kun je een (web)toepassing maken
-waarin je allerlei webdiensten van anderen gebruikt.
-Enkele voorbeelden:
-
-* inbedden ("embedden") van kaarten, video's of documenten in een webpagina;
-* automatisch vertalen van de tekst van je website, via Google translate e.d.;
-* raadplegen van een database (zoals CouchDB);
-
-In het Internet of Things kom je het HTTP-protocol op de volgende plaatsen tegen:
-
-* voor het configureren van een IoT-knoop in de browser (via WiFi);
-* voor het besturen van IoT-knopen in de browser;
-* als web-API voor het aansturen van een controller of van een IoT-knoop;
-* als web-API van een webdienst (cloud-services).
+Het web is het "user interface" van het internet.
+Het HTTP-protocol is het basisprotocol van het web.

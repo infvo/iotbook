@@ -26,5 +26,3 @@ Voorkennis: elementaire HTML-kennis.
    tweede-pagina.rst
    led-besturing.rst
    webformulieren.rst
-   http-request-ieni.rst
-   http-api-test-openweathermap.rst

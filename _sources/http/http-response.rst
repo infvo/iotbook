@@ -1,5 +1,5 @@
 Een HTTP-response: payload
---------------------------
+==========================
 
 .. figure:: http-response-ex1.png
   :width: 500px

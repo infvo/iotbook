@@ -13,8 +13,9 @@ Inleiding...
    protocollen/toctree.rst
    mqtt/toctree.rst
    http/toctree.rst
-   h5/toctree.rst
+   http-iot/toctree.rst
    lorawan/toctree.rst
+   rfm69/toctree.rst
    lan-ip/toctree.rst
    http-rest/toctree.rst
    ttn/toctree.rst

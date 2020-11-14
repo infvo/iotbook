@@ -27,7 +27,7 @@ In het TTN console kun je je applications beheren. Per *application* vind je de 
 * **payload format**: de functies voor het (de)coderen van de payload, zie verderop.
 * **collaborators**: andere gebruikers die je toegang geeft tot je toepassing;
   daarbij kun je per persoon aangeven welke autorisaties deze heeft.
-* **access keys**: de sleutels waarmee een externe toepasssing ("integration") toegang heeft
+* **access keys**: de sleutels waarmee een externe toepasssing ("integration") zoals NodeRed toegang heeft
   tot de data van de toepassing (ook wel: API-key).
 
 EUI staat voor Extended Unique Identifier: een wereldwijd unieke identificatie,
@@ -45,10 +45,7 @@ Je kunt de application EUI van het device dan toevoegen aan de application.
 
 .. rubric:: Access-keys ofwel API-keys
 
-Met de access-keys kun je externe toepassingen ("integrations") toegang geven tot de data van deze toepassing.
+Met de access-keys geef je externe toepassingen ("integrations") toegang tot de data van deze toepassing.
 *Tip*: maak voor elke externe toepassing of gebruiker een aparte access-key aan,
 dan kun je die ook weer afzonderlijk intrekken, mocht dat nodig zijn (bij misbruik e.d.).
 (Opmerking: de TTN V3-software gebruikt in plaats van Access key de term API-key.)
-
-Als je in NodeRed de data van een TTN-toepassing wilt gebruiken,
-dan heb je nodig: (i) de Application-ID; (ii) een Access-key.

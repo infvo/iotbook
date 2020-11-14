@@ -4,7 +4,7 @@ TheThingsNetwork
 
 .. admonition:: Gevorderd materiaal
 
-  Dit hoofdstuk bevat gevorderde stof, en is bedoeld voor leerlingen die
+  Dit hoofdstuk bevat gevorderde stof bedoeld voor leerlingen die
   meer over LoRaWan en TheThingsNetwork willen weten.
   Dit materiaal helpt je bij het configureren van TTN toepassingen en de bijbehorende IoT-knopen.
 
