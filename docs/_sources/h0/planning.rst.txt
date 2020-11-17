@@ -1,7 +1,7 @@
 Planning
 ========
 
-Het materiaal van de module IoT-0 is bedoeld voor een blok van 8-10 weken,
+Het materiaal van de module IoT-0 (iotbook) is bedoeld voor een blok van 8-10 weken,
 met ca. 4-5 SLU per week (totaal 40 SLU).
 Leerlingen kunnen met het meeste materiaal ook thuis aan de slag,
 door gebruik te maken van gesimuleerde IoT-knopen,
@@ -12,20 +12,19 @@ Na de behandeling van IoT-0 kunnen de leerlingen met een project IoT aan de slag
 Suggesties hiervoor worden later beschreven.
 
 De tabel hieronder geeft een voorlopige planning.
-Voor een module van 8 weken kan een keuze gemaakt worden tussen de RFM69-knopen en de LoRa-knopen.
 Ook een korte module van 4 weken is mogelijk, zie de tabel hieronder.
 
 .. csv-table:: Planning IoT-0
    :header: "Week", "Kort", "Onderdeel", "Beschrijving"
    :widths: 5, 5, 20, 30
 
-   1, 1, "Inleiding", "Verkenning van IoT en IoT-toepassingen"
-   2, 2, "Bouwstenen", "Overzicht van de bouwstenen van het IoT"
-   3,  , "Webserver-knopen(1)", "HTTP; browser als client"
-   4,  , "Webserver-knopen(2)", "NodeRed: HTTP server"
-   5, 3, "WiFi-MQTT-knopen(1)", "MQTT: Publish-subscribe; JSON"
-   6, 4, "WiFi-MQTT-knopen(2)", "NodeRed: MQTT-app, dashboard"
-   7,  , "RFM69-knopen(1)", ""
-   8,  , "RFM69-knopen(2)", ""
-   9 (7),  , "LoRa-knopen(1)", ""
-   10 (8),  , "LoRa-knopen(2)", ""
+   1, 1, "IoT-toepassingen", "Verkenning van IoT en IoT-toepassingen"
+   2, 2, "Verbindingen en verbindingsapparaten", "(en IoT-apps, dashboard)"
+   3, 3, "Protocollen", "(en inleiding NodeRed)"
+   4, 4, "MQTT", "WiFi MQTT knopen, Publish/Subscribe, JSON"
+   5,  , "HTTP: webservers", "HTTP protocol; browser als client"
+   6,  , "HTTP in het IoT", "HTTP via API's"
+   7,  , "LoRaWan", "LoRaWan toepassingen, ook in NodeRed"
+   8,  , "uitloop/volgend hoofdstuk/eigen toepassing", "(keuze)"
+   9,  , "uitloop/volgend hoofdstuk/eigen toepassing", "(keuze)"
+   10,  , "uitloop/volgend hoofdstuk/eigen toepassing", "(keuze)"
