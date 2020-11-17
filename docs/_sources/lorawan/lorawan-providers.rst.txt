@@ -1,7 +1,7 @@
 LoRaWan providers
 -----------------
 
-.. figure:: images/TTN-gateways-map.png
+.. figure:: images/gateways-map.png
     :width: 500px
     :align: center
 
