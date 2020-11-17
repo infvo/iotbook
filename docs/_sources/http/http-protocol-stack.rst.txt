@@ -1,8 +1,8 @@
 HTTP in de protocolstack
 ------------------------
 
-.. figure:: IoT-webserver-protocol.png
-   :width: 500 px
+.. figure:: HTTP-IP-stack.png
+   :width: 700 px
    :align: center
 
    Webserver protocolstack
@@ -11,16 +11,12 @@ De protocolstack voor de webserver-keten bevat de volgende elementen, vanaf de t
 
 * web-app
 * web: hypertext transfer protocol (HTTP): HTML-documenten enz.
-* internet: transmission control protocol (TCP): betrouwbare bytestromen
+* internet: transmission control protocol (TCP): betrouwbare bi-direectionele bytestromen
 * internet-protocol (IP): best-effort pakketcommunicatie;
   universeel datatransport, onafhankelijk van hardware en toepassingen
 * fysieke (hardware) verbinding: WiFi of Ethernet
 
-Elk protocol heeft zijn eigen vorm van *adressering* en zijn eigen formaat voor datatransport.
-Dit bevat de "netto" te transporteren data: de *payload*,
-en extra protocolgegevens voor de adressering, de beveiliging van de payload, enz.
-
-De basisprotocollen van het internet, "TCP/IP", vormen een logische laag die de toepassingen scheidt van de hardware
+De basisprotocollen van het internet, TCP en IP, vormen een logische laag die de toepassingen scheidt van de hardware
 (zie *3-lagen model*).
 
 Het HTTP-protocol vind je alleen in de eindapparaten, niet in het netwerk zelf.

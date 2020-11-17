@@ -55,7 +55,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.2. Configureren via HTTP" href="iot-configureren.html" />
+    <link rel="next" title="6.2. Besturen via de browser" href="iot-besturen.html" />
     <link rel="prev" title="6. HTTP in het IoT" href="toctree.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -251,8 +251,8 @@
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.2. </span>Configureren via HTTP' data-toggle="tooltip" >              
-    <a href="iot-configureren.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6.2. </span>Besturen via de browser' data-toggle="tooltip" >              
+    <a href="iot-besturen.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -292,26 +292,29 @@
   
   <div class="section" id="inleiding">
 <h1><span class="section-number">6.1. </span>Inleiding<a class="headerlink" href="#inleiding" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p>begrippen</p></li>
-<li><p>leerdoelen</p></li>
-<li><p>samenvatting</p></li>
-</ul>
-<p>Daarnaast vormt HTTP de basis voor het “programmeerbare web”:
-met behulp van web-APIs kun je een (web)toepassing maken
-waarin je allerlei webdiensten van anderen gebruikt.
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/IoT-chain-communication-HTTP.png"><img alt="../_images/IoT-chain-communication-HTTP.png" src="../_images/IoT-chain-communication-HTTP.png" style="width: 700px;" /></a>
+</div>
+<div class="admonition-begrippen-en-leerdoelen admonition">
+<p class="admonition-title">begrippen en leerdoelen</p>
+<p>webserver voor apparaat-besturing; apparaat-configuratie;
+web-API; API-key; JSON;</p>
+</div>
+<p>In het Internet of Things kom je HTTP protocol op verschillende plaatsen tegen:</p>
+<ol class="arabic simple">
+<li><p>besturen van een IoT-apparaat of van een controller (vanuit de browser);</p></li>
+<li><p>configureren van een IoT-knoop (vanuit de browser);</p></li>
+<li><p>besturen van een IoT-knoop of van een controller (via een API vanuit een andere toepassing);</p></li>
+<li><p>communiceren met andere toepassingen en diensten “in the cloud” (via de API’s van die toepassingen).</p></li>
+</ol>
+<p>Web-API’s vormen de basis voor het “programmeerbare web”.
 Enkele voorbeelden:</p>
 <ul class="simple">
+<li><p>koppeling met een database zoals CoachDB;</p></li>
+<li><p>raadplegen van de weersverwachting via OpenWeatherMap;</p></li>
 <li><p>inbedden (“embedden”) van kaarten, video’s of documenten in een webpagina;</p></li>
 <li><p>automatisch vertalen van de tekst van je website, via Google translate e.d.;</p></li>
-<li><p>raadplegen van een database (zoals CouchDB);</p></li>
-</ul>
-<p>In het Internet of Things kom je het HTTP-protocol op de volgende plaatsen tegen:</p>
-<ul class="simple">
-<li><p>voor het configureren van een IoT-knoop in de browser (via WiFi);</p></li>
-<li><p>voor het besturen van IoT-knopen in de browser;</p></li>
-<li><p>als web-API voor het aansturen van een controller of van een IoT-knoop;</p></li>
-<li><p>als web-API van een webdienst (cloud-services).</p></li>
+<li><p>enz.</p></li>
 </ul>
 </div>
 
@@ -333,8 +336,8 @@ Enkele voorbeelden:</p>
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.2. Configureren via HTTP' data-toggle="tooltip" >
-    <a href="iot-configureren.html" aria-label="6.2. Configureren via HTTP">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.2. Besturen via de browser' data-toggle="tooltip" >
+    <a href="iot-besturen.html" aria-label="6.2. Besturen via de browser">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

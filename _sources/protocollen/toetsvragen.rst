@@ -1,12 +1,5 @@
-
 Toetsvragen
 -----------
-
-* wat houdt het end-to-end principe van het internet in?
-* waardoor is het internet universeel, en ondersteunt dit allerlei toepassingen - en bijv. het klassieke telefoonnet niet?
-* zet de protocollen in de juiste volgorde
-*
-
 
 .. dragndrop:: h2-dd-1
   :match_11: adressering|||identificatie van bestemming of afzender

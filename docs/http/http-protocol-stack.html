@@ -293,22 +293,19 @@
   <div class="section" id="http-in-de-protocolstack">
 <h1><span class="section-number">5.6. </span>HTTP in de protocolstack<a class="headerlink" href="#http-in-de-protocolstack" title="Permalink to this headline">¶</a></h1>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/IoT-webserver-protocol.png"><img alt="../_images/IoT-webserver-protocol.png" src="../_images/IoT-webserver-protocol.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/HTTP-IP-stack.png"><img alt="../_images/HTTP-IP-stack.png" src="../_images/HTTP-IP-stack.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-text">Webserver protocolstack</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>De protocolstack voor de webserver-keten bevat de volgende elementen, vanaf de toepassing gezien:</p>
 <ul class="simple">
 <li><p>web-app</p></li>
 <li><p>web: hypertext transfer protocol (HTTP): HTML-documenten enz.</p></li>
-<li><p>internet: transmission control protocol (TCP): betrouwbare bytestromen</p></li>
+<li><p>internet: transmission control protocol (TCP): betrouwbare bi-direectionele bytestromen</p></li>
 <li><p>internet-protocol (IP): best-effort pakketcommunicatie;
 universeel datatransport, onafhankelijk van hardware en toepassingen</p></li>
 <li><p>fysieke (hardware) verbinding: WiFi of Ethernet</p></li>
 </ul>
-<p>Elk protocol heeft zijn eigen vorm van <em>adressering</em> en zijn eigen formaat voor datatransport.
-Dit bevat de “netto” te transporteren data: de <em>payload</em>,
-en extra protocolgegevens voor de adressering, de beveiliging van de payload, enz.</p>
-<p>De basisprotocollen van het internet, “TCP/IP”, vormen een logische laag die de toepassingen scheidt van de hardware
+<p>De basisprotocollen van het internet, TCP en IP, vormen een logische laag die de toepassingen scheidt van de hardware
 (zie <em>3-lagen model</em>).</p>
 <p>Het HTTP-protocol vind je alleen in de eindapparaten, niet in het netwerk zelf.
 Dit is een voorbeeld van het <em>end-to-end principe</em> van het internet.

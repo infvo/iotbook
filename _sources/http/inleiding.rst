@@ -3,7 +3,7 @@ Inleiding
 
 In dit hoofdstuk behandelen we het HTTP-protocol en het gebruik daarvan voor het web:
 de belangrijkste toepassing van het internet.
-Het web vormt steeds met het "user interface" van het internet.
+Het web vormt eigenlijk het "user interface" van het internet.
 In het volgende hoofdstuk gaan we in op het gebruik van HTTP in het IoT.
 
 In dit gedeelte behandelen we de elementen van het HTTP-protocol,

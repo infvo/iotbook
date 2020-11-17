@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>3.7. Client-server interactie &#8212; IoT-book</title>
+    <title>3.11. Verbindingsgerichte communicatie &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
@@ -55,8 +55,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.8. Publish/subscribe" href="protocol-7.html" />
-    <link rel="prev" title="3.6. Interactie" href="protocol-5.html" />
+    <link rel="next" title="3.12. Client-server interactie" href="client-server.html" />
+    <link rel="prev" title="3.10. Pakketcommunicatie" href="pakketcommunicatie.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -228,7 +228,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/runestone/default/reportabug?course=iotbook&page=protocol-6'>Report A Problem</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=verbindingen'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -245,14 +245,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3.6. </span>Interactie" data-toggle="tooltip">
-    <a href="protocol-5.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3.10. </span>Pakketcommunicatie" data-toggle="tooltip">
+    <a href="pakketcommunicatie.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">3.8. </span>Publish/subscribe' data-toggle="tooltip" >              
-    <a href="protocol-7.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">3.12. </span>Client-server interactie' data-toggle="tooltip" >              
+    <a href="client-server.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -290,33 +290,35 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="client-server-interactie">
-<h1><span class="section-number">3.7. </span>Client-server interactie<a class="headerlink" href="#client-server-interactie" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/Client-server-interactie.png"><img alt="../_images/Client-server-interactie.png" src="../_images/Client-server-interactie.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Client-server interactie (HTTP)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<p>In een client-server interactie stuurt de client een verzoek (request) naar de server;
-de server verwerkt dit verzoek en stuurt een antwoord (response) terug.</p>
-<p>Je kunt deze interactie vergelijken met een klant voor een loket met een loketbediende.
-Na de afhandeling van een verzoek wacht de loketbediende op de volgende klant.</p>
-<p>Het initiatief voor deze interactie ligt dus bij de client:
-de server stuurt nooit ongevraagd een bericht naar de client.
-De client moet de server kennen en kunnen vinden;
-de server hoeft de clients niet te kennen.</p>
-<p>Voor deze interactie moet de server in principe altijd beschikbaar en bereikbaar zijn:
-online in het publieke internet.
-Clients hoeven alleen tijdens de interactie online te zijn, eventueel vanuit een lokaal netwerk.</p>
-<p>In het internet kom je de client-server interactie op veel plaatsen tegen:</p>
+  <div class="section" id="verbindingsgerichte-communicatie">
+<h1><span class="section-number">3.11. </span>Verbindingsgerichte communicatie<a class="headerlink" href="#verbindingsgerichte-communicatie" title="Permalink to this headline">¶</a></h1>
+<p>Bij verbindingsgerichte communicatie wordt voor de eigenlijke communicatie kan beginnen
+een verbinding gemaakt door het hele netwerk.</p>
+<p>Denk bijvoorbeeld aan de telefoon:
+voordat het gesprek kan beginnen wordt een verbinding gemaakt tussen de betrokken toestellen.
+Bij de analoge telefonie werd hierbij een hardwareverbinding gemaakt,
+door de draden in het netwerk te verbinden via grote schakelkasten in centrales.
+Maar je kunt ook “virtuele verbindingen” hebben: voor de gebruiker lijkt dit een verbinding,
+maar deze werkt op basis van onderliggende pakketcommunicatie.</p>
+<p>Voorbeelden van verbindingen:</p>
 <ul class="simple">
-<li><p>de browser (client) stuurt een verzoek met een URL naar de webserver,
-en krijgt als response van de webserver het bijbehorende HTML-document.</p></li>
-<li><p>de e-mail client op je computer stuurt uitgaande post naar een SMTP-mail server,
-en haalt inkomende post op van een POP3 of IMAP mail server.</p></li>
-<li><p>een DNS-server zet een domeinnaam (“mijnschool.nl”) om in het bijbehorende IP-adres.</p></li>
-<li><p>een database-server biedt toegang tot een database,
-zodat verschillende client-toepassingen dezelfde database kunnen gebruiken.</p></li>
+<li><p>TCP: het TCP-protocol biedt betrouwbare verbindingen (bytestreams) aan tussen de eindpunten, op basis van de onderliggende pakketcommunicatie van het IP-protocol.</p></li>
+<li><p>websockets: dit biedt verbindingen aan in het web, tussen web-clients en web-servers. Hiermee kan een webserver op elk moment een bericht naar een web-clients sturen (in tegenstelling tot HTTP, waar het initiatief altijd bij de client ligt).</p></li>
+<li><p>internet-telefonie (Skype, VoIP)</p></li>
 </ul>
+<p>Eigenschappen van verbindingsgerichte communicatie:</p>
+<ul class="simple">
+<li><p><em>adressering</em>: de adressering speelt alleen bij het opzetten van de verbinding een rol.</p></li>
+<li><p><em>payload</em>: de payload is een stroom van data (bytestream).</p></li>
+<li><p><em>metadata</em>: metadata kan in de datastroom verwerkt worden (“in band”): je hebt dan een ontsnappingsmechanisme nodig (escape); of er wordt een aparte verbinding voor de metadata gebruikt.</p></li>
+<li><p><em>bi-directioneel</em>: na het opbouwen werkt een verbinding vaak symmetrisch:  beide deelnemers kunnen als zender optreden.</p></li>
+</ul>
+<p>Verbindingen zijn in het gebruik gemakkelijk, maar voor het netwerk lastig:</p>
+<ul class="simple">
+<li><p>in het geval van een hardware-verbinding worden de resources (bijvoorbeeld datakabel, glasvezel) gedurende de hele duur van de verbinding exclusief aan de verbinding toegewezen; (Dit in tegenstelling tot pakketcommunicatie, waarbij bijvoorbeeld een datakabel alleen voor de duur van een pakket gebruikt wordt.) Het vooraf vastleggen van resources kan wel helpen om de latency laag te houden.</p></li>
+<li><p>bij een hardware-verbinding moet je <em>in het netwerk bijhouden</em> welke verbindingen er zijn, en welke draden en schakelaars daarvoor gebruikt worden.</p></li>
+</ul>
+<p>Dit zijn belangrijke redenen waarom het basisniveau van het internet pakketcommunicatie gebruikt.</p>
 </div>
 
 
@@ -326,8 +328,8 @@ zodat verschillende client-toepassingen dezelfde database kunnen gebruiken.</p><
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 3.6. Interactie' data-toggle="tooltip">
-    <a href="protocol-5.html" aria-label="3.6. Interactie">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 3.10. Pakketcommunicatie' data-toggle="tooltip">
+    <a href="pakketcommunicatie.html" aria-label="3.10. Pakketcommunicatie">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -337,8 +339,8 @@ zodat verschillende client-toepassingen dezelfde database kunnen gebruiken.</p><
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 3.8. Publish/subscribe' data-toggle="tooltip" >
-    <a href="protocol-7.html" aria-label="3.8. Publish/subscribe">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 3.12. Client-server interactie' data-toggle="tooltip" >
+    <a href="client-server.html" aria-label="3.12. Client-server interactie">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

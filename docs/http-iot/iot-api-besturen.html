@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6.4. Besturen via een API &#8212; IoT-book</title>
+    <title>6.4. API’s voor IoT-apparaten &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6.5. API’s voor webdiensten" href="iot-api-diensten.html" />
-    <link rel="prev" title="6.3. Besturen via de browser" href="iot-besturen.html" />
+    <link rel="prev" title="6.3. Configureren via HTTP" href="iot-configureren.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -245,8 +245,8 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.3. </span>Besturen via de browser" data-toggle="tooltip">
-    <a href="iot-besturen.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.3. </span>Configureren via HTTP" data-toggle="tooltip">
+    <a href="iot-configureren.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -290,38 +290,26 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="besturen-via-een-api">
-<h1><span class="section-number">6.4. </span>Besturen via een API<a class="headerlink" href="#besturen-via-een-api" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="api-s-voor-iot-apparaten">
+<h1><span class="section-number">6.4. </span>API’s voor IoT-apparaten<a class="headerlink" href="#api-s-voor-iot-apparaten" title="Permalink to this headline">¶</a></h1>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/iot-web-api-1.png"><img alt="../_images/iot-web-api-1.png" src="../_images/iot-web-api-1.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Apparaat of toepassing met webpagina’s en een web-API</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Het gebruik van webpagina’s voor het besturen van een IoT-knoop is bedoeld voor een browser,
-met een mens als gebruiker.</p>
-<p>Voor het besturen van een IoT-knoop vanuit een ander programma heb je een ander soort interface nodig:
+<p>Je kunt als menselijke gebruiker apparaten met een webserver besturen vanuit de browser,
+op basis van webpagina’s (HTML).</p>
+<p>Voor het besturen van een IoT-knoop <em>vanuit een ander programma</em> heb je een ander soort interface nodig:
 een API (Application Programming Interface).
 In principe kun je voor elk API een eigen protocol ontwerpen,
 maar het is handig om het HTTP-protocol als basis te gebruiken.
-In dat geval kun je profiteren van de hele web-infrastructuur.</p>
+Via zo’n web-API profiteer je van de hele web-infrastructuur.</p>
 <p>Een web-API gebruikt als payload meestal JSON, in plaats van HTML:
-een programma kan JSON eenvoudig in een object omzetten en omgekeerd.</p>
-<p>Je kunt via deze web-API een apparaat in het lokale netwerk,
-bijvoorbeeld een IoT-knoop, een controller of een netwerkprinter,
-automatisch bewaken en besturen.
-Je kunt daarvoor elke programmeertaal gebruiken, bijvoorbeeld Python.
+JSON kun je eenvoudig in een intern object omzetten en omgekeerd.</p>
+<p>Je kunt via zo’n web-API een apparaat in het lokale netwerk automatisch bewaken en besturen;
+denk bijvoorbeeld aan een IoT-knoop, een controller (Hue bridge) of een netwerkprinter.
+Je kunt hiervoor elke programmeertaal gebruiken, bijvoorbeeld Python.
 Als je in een scriptingtaal HTTP-requests kunt opbouwen en versturen,
 kun je daarmee ook toepassingen met web-API’s besturen.</p>
-<p>Niet alleen apparaten kunnen een API hebben:
-ook veel webtoepassingen hebben, naast het normale gebruikersinterface via webpagina’s,
-een web-API waarmee je deze toepassing met behulp van programma’s en scripts kunt automatiseren.</p>
-<p>Enkele voorbeelden van toepassingen met een web-API:</p>
-<ul class="simple">
-<li><p>Trello - <a class="reference external" href="https://developer.atlassian.com/cloud/trello/rest/api-group-actions/">https://developer.atlassian.com/cloud/trello/rest/api-group-actions/</a></p></li>
-<li><p>Google Docs - <a class="reference external" href="https://developers.google.com/docs/api">https://developers.google.com/docs/api</a></p></li>
-<li><p>Wikipedia/Mediawiki - <a class="reference external" href="https://www.mediawiki.org/wiki/API:Main_page">https://www.mediawiki.org/wiki/API:Main_page</a></p></li>
-<li><p>Slack - <a class="reference external" href="https://api.slack.com/web">https://api.slack.com/web</a></p></li>
-<li><p>GitHub - <a class="reference external" href="https://developer.github.com/v3/">https://developer.github.com/v3/</a></p></li>
-</ul>
 </div>
 
 
@@ -331,8 +319,8 @@ een web-API waarmee je deze toepassing met behulp van programma’s en scripts k
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.3. Besturen via de browser' data-toggle="tooltip">
-    <a href="iot-besturen.html" aria-label="6.3. Besturen via de browser">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.3. Configureren via HTTP' data-toggle="tooltip">
+    <a href="iot-configureren.html" aria-label="6.3. Configureren via HTTP">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>

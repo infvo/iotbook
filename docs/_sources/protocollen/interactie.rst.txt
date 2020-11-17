@@ -25,8 +25,8 @@ Net als bij briefpost kan ook in het internet de volgorde van pakketten bij ontv
 verschillen van de volgorde bij verzenden.
 Betrouwbare communicatie moet je op een hogere laag regelen (TCP).
 
-**Stroom- of verbindingsgeoriënteerde communicatie.**
-De tweede vorm vind je als stroom- of verbindingsgeoriënteerde communicatie in het TCP-protocol:
+**verbindingsgerichte communicatie.**
+De tweede vorm vind je als verbindingsgerichte communicatie in het TCP-protocol:
 dit biedt betrouwbare bi-directionele bytestroom-verbindingen.
 TCP werkt op basis van het IP-protocol: als er IP-pakketten verloren raken,
 zorgt TCP voor de her-transmissie.

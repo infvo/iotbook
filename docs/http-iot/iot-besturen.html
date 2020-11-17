@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6.3. Besturen via de browser &#8212; IoT-book</title>
+    <title>6.2. Besturen via de browser &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
@@ -55,8 +55,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.4. Besturen via een API" href="iot-api-besturen.html" />
-    <link rel="prev" title="6.2. Configureren via HTTP" href="iot-configureren.html" />
+    <link rel="next" title="6.3. Configureren via HTTP" href="iot-configureren.html" />
+    <link rel="prev" title="6.1. Inleiding" href="inleiding.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -245,14 +245,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.2. </span>Configureren via HTTP" data-toggle="tooltip">
-    <a href="iot-configureren.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.1. </span>Inleiding" data-toggle="tooltip">
+    <a href="inleiding.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.4. </span>Besturen via een API' data-toggle="tooltip" >              
-    <a href="iot-api-besturen.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6.3. </span>Configureren via HTTP' data-toggle="tooltip" >              
+    <a href="iot-configureren.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -291,7 +291,7 @@
 <div class="container" id="main-content" role="main">
   
   <div class="section" id="besturen-via-de-browser">
-<h1><span class="section-number">6.3. </span>Besturen via de browser<a class="headerlink" href="#besturen-via-de-browser" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6.2. </span>Besturen via de browser<a class="headerlink" href="#besturen-via-de-browser" title="Permalink to this headline">¶</a></h1>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/IoT-webserver-interface-0.png"><img alt="../_images/IoT-webserver-interface-0.png" src="../_images/IoT-webserver-interface-0.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Webpagina van een netwerkprinter</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -299,13 +299,14 @@
 <p>Een apparaat met een netwerkverbinding, zoals een printer of een router,
 heeft vaak een ingebouwde webserver waardoor je dit apparaat via de browser kunt bewaken en besturen.
 Dit kan via elke browser in het lokale netwerk.
-De besturing via de browser kan bovendien erg uitgebreid zijn terwijl het apparaat zelf een minimum aan knoppen kan hebben.
+Met een minimum aan knoppen op het apparaat zelf krijg je zo een uitgebreide besturing.
 Dit is een goedkope en gebruikersvriendelijke oplossing.</p>
 <p>Ook IoT-knopen of controllers kunnen een webserver hebben.
 Via een browser kun je deze dan bewaken en besturen.
 Op een webpagina kun je de waarden van de sensoren zien,
 en via knoppen (van een html-formulier) de actuatoren besturen.</p>
-<p><strong>HTTP is minder geschikt voor het het bewaken van sensoren.</strong>
+<p>Voor het besturen van actuatoren, zoals slimme verlichting, is deze oplossing goed bruikbaar.
+HTTP is minder geschikt voor het het bewaken van sensoren.
 HTTP is een client-server protocol.
 Dit betekent dat de client (browser) steeds de waarden van de sensoren moet opvragen bij de IoT-knoop (pull).
 De server kan niet op het moment dat een sensorwaarde verandert,
@@ -313,9 +314,6 @@ zelf een nieuwe webpagina naar de browser sturen (push).
 Een aanpak die vaak gebruikt wordt is om de browser bijvoorbeeld elke minuut de sensorwaarden op te laten vragen (polling).
 Maar een sensorwaarde kan dan nog steeds bijna een minuut achterlopen,
 terwijl er veel overbodige HTTP-requests verstuurd worden voor niet-veranderde sensorwaarden.</p>
-<p>Voor het besturen van actuatoren is HTTP goed bruikbaar.</p>
-<p>(Opdracht: ga na welke apparaten in het huisnetwerk een ingebouwde webserver hebben. Gebruik daarvoor de netwerk-scanner,
-en ga na welke apparaten een dienst hebben op poort 80: de poort voor het http-protocol.)</p>
 </div>
 
 
@@ -325,8 +323,8 @@ en ga na welke apparaten een dienst hebben op poort 80: de poort voor het http-p
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.2. Configureren via HTTP' data-toggle="tooltip">
-    <a href="iot-configureren.html" aria-label="6.2. Configureren via HTTP">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.1. Inleiding' data-toggle="tooltip">
+    <a href="inleiding.html" aria-label="6.1. Inleiding">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -336,8 +334,8 @@ en ga na welke apparaten een dienst hebben op poort 80: de poort voor het http-p
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.4. Besturen via een API' data-toggle="tooltip" >
-    <a href="iot-api-besturen.html" aria-label="6.4. Besturen via een API">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.3. Configureren via HTTP' data-toggle="tooltip" >
+    <a href="iot-configureren.html" aria-label="6.3. Configureren via HTTP">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

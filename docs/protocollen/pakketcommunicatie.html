@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>3.6. Interactie &#8212; IoT-book</title>
+    <title>3.10. Pakketcommunicatie &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
@@ -55,8 +55,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.7. Client-server interactie" href="protocol-6.html" />
-    <link rel="prev" title="3.5. IoT protocolstack" href="protocol-4.html" />
+    <link rel="next" title="3.11. Verbindingsgerichte communicatie" href="verbindingen.html" />
+    <link rel="prev" title="3.9. Interactie" href="interactie.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -228,7 +228,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/runestone/default/reportabug?course=iotbook&page=protocol-5'>Report A Problem</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=pakketcommunicatie'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -245,14 +245,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3.5. </span>IoT protocolstack" data-toggle="tooltip">
-    <a href="protocol-4.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3.9. </span>Interactie" data-toggle="tooltip">
+    <a href="interactie.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">3.7. </span>Client-server interactie' data-toggle="tooltip" >              
-    <a href="protocol-6.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">3.11. </span>Verbindingsgerichte communicatie' data-toggle="tooltip" >              
+    <a href="verbindingen.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -290,34 +290,35 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="interactie">
-<h1><span class="section-number">3.6. </span>Interactie<a class="headerlink" href="#interactie" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/Alice-Bob-1.png"><img alt="../_images/Alice-Bob-1.png" src="../_images/Alice-Bob-1.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Communicatie tussen Alice en Bob</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<p>De communicatie-interactie tussen Alice en Bob kan op verschillende manieren plaatsvinden:</p>
-<ol class="arabic simple">
-<li><p>Alice kan Bob een bericht sturen, bijvoorbeeld door een brief te posten.</p></li>
-<li><p>Alice kan Bob opbellen: er is tijdens het gesprek een verbinding in twee richtingen (bi-directioneel).</p></li>
-<li><p>Alice kan Bob een verzoek sturen waarna Bob een antwoord terugstuurt (client-server).</p></li>
-<li><p>Alice kan een bericht sturen naar een tussenpersoon (makelaar, broker),
-die dit vervolgens doorstuurt naar alle geïnteresseerde Bob’s.</p></li>
-</ol>
-<p><strong>Bericht- of pakketcommunicatie.</strong>
-De eerste vorm kom je als pakketcommunicatie tegen in de onderste lagen van het internet,
-en in het verkeer tussen IoT-devices en IoT-gateways.
-Vaak is deze pakketcommunicatie “best effort”,
-dat wil zeggen dat er (zoals bij normale briefpost) geen bericht van ontvangst of
-automatische her-transmissie van het pakket is.
-Net als bij briefpost kan ook in het internet de volgorde van pakketten bij ontvangst
-verschillen van de volgorde bij verzenden.
-Betrouwbare communicatie moet je op een hogere laag regelen (TCP).</p>
-<p><strong>Stroom- of verbindingsgeoriënteerde communicatie.</strong>
-De tweede vorm vind je als stroom- of verbindingsgeoriënteerde communicatie in het TCP-protocol:
-dit biedt betrouwbare bi-directionele bytestroom-verbindingen.
-TCP werkt op basis van het IP-protocol: als er IP-pakketten verloren raken,
-zorgt TCP voor de her-transmissie.</p>
+  <div class="section" id="pakketcommunicatie">
+<h1><span class="section-number">3.10. </span>Pakketcommunicatie<a class="headerlink" href="#pakketcommunicatie" title="Permalink to this headline">¶</a></h1>
+<p>Bij pakketcommunicatie worden gegevens als afzonderlijke berichten van een beperkt aantal bytes verstuurd.
+Een typisch internet-pakket is ongeveer 1,5 kbyte; veel IoT-radio’s gebruiken pakketten van enkele tientallen bytes.
+Elk bericht wordt volledig geadresseerd en wordt afzonderlijk bezorgd.</p>
+<p>Je kunt pakketcommunicatie vergelijken met briefpost: de afzender voorziet de brief van het adres van de bestemming,
+en de post levert deze waarschijnlijk binnen niet al te lange tijd af bij de ontvanger.</p>
+<p>Voorbeelden van pakketcommunicatie: hardware: Ethernet, WiFi, Bluetooth, LoRa, RFM69, ZigBee, enz;
+IP-protocol; UDP-protocol; e-mail; MQTT berichten; HTTP request/response</p>
+<p>Zoals je ziet kun je pakketcommunicatie op alle niveaus in een protocolstack gebruiken;
+afhankelijk van het niveau spreek je dan bijvoorbeeld over frame (Ethernet),
+packet (IP), datagram (UDP), bericht (e-mail, MQTT), request/response (HTTP), enz.
+Berichten op hogere niveaus zoals HTTP kunnen overigens erg groot worden.</p>
+<p>Enkele eigenschappen van pakketcommunicatie:</p>
+<ul class="simple">
+<li><p><em>adressering</em>: elk pakket bevat het volledige adres van de bestemming;
+het pakket bevat ook het adres van de afzender, waarmee de ontvanger een antwoord terug kan sturen.</p></li>
+<li><p><em>payload</em>: de eigenlijke data die in het pakket verstuurd wordt; deze wordt vaak gebruikt in een hoger-niveau protocol;</p></li>
+<li><p><em>metadata</em>: typische metadata in een pakket: lengte van de payload, checksum van de payload, protocol voor het verwerken van de payload;</p></li>
+<li><p><em>checksum</em>: hiermee kan de ontvanger nagaan of het pakket onbeschadigd aangekomen is;</p></li>
+<li><p><em>best effort</em>: pakketcommunicatie is meestal “best effort”, net als de post: er kunnen onderweg pakketten verloren raken; de afzender weet niet of een pakket aangekomen is; pakketten kunnen in een andere volgorde aankomen dan ze verstuurd zijn.</p></li>
+</ul>
+<p>Zoals gezegd is pakketcommunicatie meestal <em>best effort</em>,
+maar je kunt deze betrouwbaar maken door de ontvanger altijd een bericht van ontvangst (ACK) te laten versturen.
+In de praktijk wordt dit vaak overgelaten aan de toepassing,
+omdat daar bekend is wat de problemen zijn die zoekgeraakte pakketten geven.</p>
+<p>Bij pakketcommunicatie gebruikt de afzender de (hardware) verbinding alleen voor de duur van een pakket,
+daarna kunnen andere afzenders de verbinding gebruiken.
+Eenzelfde verbinding kan zo door veel apparaten gedeeld worden (time-multiplexing).</p>
 </div>
 
 
@@ -327,8 +328,8 @@ zorgt TCP voor de her-transmissie.</p>
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 3.5. IoT protocolstack' data-toggle="tooltip">
-    <a href="protocol-4.html" aria-label="3.5. IoT protocolstack">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 3.9. Interactie' data-toggle="tooltip">
+    <a href="interactie.html" aria-label="3.9. Interactie">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -338,8 +339,8 @@ zorgt TCP voor de her-transmissie.</p>
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 3.7. Client-server interactie' data-toggle="tooltip" >
-    <a href="protocol-6.html" aria-label="3.7. Client-server interactie">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 3.11. Verbindingsgerichte communicatie' data-toggle="tooltip" >
+    <a href="verbindingen.html" aria-label="3.11. Verbindingsgerichte communicatie">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

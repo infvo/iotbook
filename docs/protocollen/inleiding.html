@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>3.8. Publish/subscribe &#8212; IoT-book</title>
+    <title>3.1. Inleiding &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
@@ -55,8 +55,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.9. Adressering" href="protocol-8.html" />
-    <link rel="prev" title="3.7. Client-server interactie" href="protocol-6.html" />
+    <link rel="next" title="3.2. Stapelen van protocollen" href="stapelen.html" />
+    <link rel="prev" title="3. Protocollen" href="toctree.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -228,7 +228,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/runestone/default/reportabug?course=iotbook&page=protocol-7'>Report A Problem</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=inleiding'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -245,14 +245,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3.7. </span>Client-server interactie" data-toggle="tooltip">
-    <a href="protocol-6.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3. </span>Protocollen" data-toggle="tooltip">
+    <a href="toctree.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">3.9. </span>Adressering' data-toggle="tooltip" >              
-    <a href="protocol-8.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">3.2. </span>Stapelen van protocollen' data-toggle="tooltip" >              
+    <a href="stapelen.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -290,22 +290,33 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="publish-subscribe">
-<h1><span class="section-number">3.8. </span>Publish/subscribe<a class="headerlink" href="#publish-subscribe" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="inleiding">
+<h1><span class="section-number">3.1. </span>Inleiding<a class="headerlink" href="#inleiding" title="Permalink to this headline">¶</a></h1>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/MQTT-01.png"><img alt="../_images/MQTT-01.png" src="../_images/MQTT-01.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Publish-subscribe interactie (MQTT)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../_images/Alice-Bob-1.png"><img alt="../_images/Alice-Bob-1.png" src="../_images/Alice-Bob-1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Communicatie van Alice naar Bob</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Het IoT-protocol MQTT gebruikt een <em>publish-subscribe</em> interactie,
-waarbij een <em>broker</em> als tussenschakel fungeert tussen de clients:</p>
+<p>Om communicatie goed te laten verlopen heb je afspraken nodig.
+Deze afspraken noemen we het <em>communicatieprotocol</em>,
+of kortweg <em>protocol</em>.</p>
+<p>In het voorbeeld wil Alice Bob een bericht sturen. Hiervoor moet Alice het bericht in een vorm gieten (representeren) die naar Bob getransporteerd kan worden,
+en die Bob weer kan begrijpen (interpreteren.)</p>
+<p>Een netwerk-communicatieprotocol bevat meestal de volgende elementen:</p>
 <ul class="simple">
-<li><p>een client publiceert (<em>push</em>) een bericht met een bepaald <em>topic</em> naar de broker,</p></li>
-<li><p>de broker stuurt (<em>push</em>) een ontvangen bericht door naar alle clients die op dit topic geabonneerd zijn.</p></li>
+<li><p>adressering: in een netwerk moet de zender de ontvanger van de communicatie identificeren/adresseren;</p></li>
+<li><p>payload: de eigenlijke inhoud van de communicatie, in een afgesproken vorm;</p></li>
+<li><p>metadata: extra gegevens voor het protocol en/of over de eigenlijke inhoud;</p></li>
+<li><p>interactiemodel: op welke manier communiceren de deelnemers, wie kan het initiatief nemen, enz.</p></li>
 </ul>
-<p>Zowel de IoT-knopen en de controllers en apps zijn clients van de MQTT-broker:
-voor de broker zijn deze gelijkwaardig.</p>
-<p>Een publish-subscribe interactie kun je vergelijken met een abonnement op een krant of tijdschrift:
-zodra er een nieuw exemplaar gepubliceerd is wordt dat naar alle abonnees verspreid.</p>
+<p class="rubric">Voorbeeld: HTTP</p>
+<p>HTTP is het protocol tussen een browser (web client) en een webserver.
+Voorbeelden van de afspraken voor het HTTP-protocol:</p>
+<ul class="simple">
+<li><p>adressering: URL - bijvoorbeeld “<a class="reference external" href="https://infvo.nl/betapartners">https://infvo.nl/betapartners</a>”;</p></li>
+<li><p>payload: HTML-document, of CSS-, JavaScript-, image-bestanden;</p></li>
+<li><p>metadata: de HTTP-headers, met bijvoorbeeld cookies, gegevens over de browser, enz.;</p></li>
+<li><p>interactiemodel: client-server, met de browser als client en de webserver als server.</p></li>
+</ul>
 </div>
 
 
@@ -315,8 +326,8 @@ zodra er een nieuw exemplaar gepubliceerd is wordt dat naar alle abonnees verspr
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 3.7. Client-server interactie' data-toggle="tooltip">
-    <a href="protocol-6.html" aria-label="3.7. Client-server interactie">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 3. Protocollen' data-toggle="tooltip">
+    <a href="toctree.html" aria-label="3. Protocollen">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -326,8 +337,8 @@ zodra er een nieuw exemplaar gepubliceerd is wordt dat naar alle abonnees verspr
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 3.9. Adressering' data-toggle="tooltip" >
-    <a href="protocol-8.html" aria-label="3.9. Adressering">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 3.2. Stapelen van protocollen' data-toggle="tooltip" >
+    <a href="stapelen.html" aria-label="3.2. Stapelen van protocollen">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

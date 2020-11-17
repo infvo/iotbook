@@ -4,18 +4,20 @@ Protocollen
 .. toctree::
   :maxdepth: 1
 
-  protocol-1.rst
-  protocol-2.rst
-  protocol-3.rst
+  inleiding.rst
+  stapelen.rst
+  internet-stack.rst
   protocol-3a.rst
   protocol-4.rst
-  protocol-5.rst
-  protocol-6.rst
-  protocol-7.rst
   protocol-8.rst
   protocol-9.rst
   protocol-10.rst
-  protocol-toetsvragen.rst
+  interactie.rst
+  pakketcommunicatie.rst
+  verbindingen.rst
+  client-server.rst
+  publish-subscribe.rst
+  toetsvragen.rst
   nodered/nodered-opdrachten.rst
 
 

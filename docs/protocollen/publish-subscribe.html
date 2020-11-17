@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>6.6. Toetsvragen &#8212; IoT-book</title>
+    <title>3.13. Publish/subscribe &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
@@ -55,8 +55,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.7. NodeRed opdrachten" href="nodered/nodered-opdrachten.html" />
-    <link rel="prev" title="6.5. API’s voor webdiensten" href="iot-api-diensten.html" />
+    <link rel="next" title="3.14. Toetsvragen" href="toetsvragen.html" />
+    <link rel="prev" title="3.12. Client-server interactie" href="client-server.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -228,7 +228,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/runestone/default/reportabug?course=iotbook&page=iot-toetsvragen'>Report A Problem</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=publish-subscribe'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -245,14 +245,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.5. </span>API’s voor webdiensten" data-toggle="tooltip">
-    <a href="iot-api-diensten.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3.12. </span>Client-server interactie" data-toggle="tooltip">
+    <a href="client-server.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">6.7. </span>NodeRed opdrachten' data-toggle="tooltip" >              
-    <a href="nodered/nodered-opdrachten.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">3.14. </span>Toetsvragen' data-toggle="tooltip" >              
+    <a href="toetsvragen.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -290,77 +290,23 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="toetsvragen">
-<h1><span class="section-number">6.6. </span>Toetsvragen<a class="headerlink" href="#toetsvragen" title="Permalink to this headline">¶</a></h1>
-
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="true"  id="http-iot-01" >
-            <p>Q-1: Wat zijn de <em>verschillen</em> tussen een normale WiFi-access point (base station)/gateway en
-de IoT-knoop als access point?</p>
-
-            <li data-component="answer"  id="http-iot-01_opt_a">De IoT-knoop gebruikt een ander WiFi-protocol.</li><li data-component="feedback">Ze kunnen hetzelfde protocol gebruiken.</li>
-            
-            <li data-component="answer" data-correct id="http-iot-01_opt_b">De IoT-knoop is naast het eigen WiFi-netwerk niet met een ander netwerk verbonden.</li><li data-component="feedback">Inderdaad: het netwerk is daardoor los van het internet.</li>
-            
-            <li data-component="answer"  id="http-iot-01_opt_c">De IoT-knoop heeft een vast IP-adres in het eigen WiFi-netwerk.</li><li data-component="feedback">Ook de gateway in het WiFi-netwerk heeft een vast IP-adres.</li>
-            
-            <li data-component="answer"  id="http-iot-01_opt_d">De IoT-knoop kan niet dezelfde IP-adressen gebruiken als het normale WiFi-netwerk.</li><li data-component="feedback">Ze gebruiken beide "lokale IP-adressen".</li>
-            
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="http-iot-05" >
-            <p>Q-2: Door middel van een ingebouwde webserver kun je een apparaat (printer, controller, IoT-knoop)
-in het lokale netwerk bewaken (monitoren) en besturen.
-Welke informatie wordt in de client-server communicatie met deze webserver direct doorgestuurd?</p>
-
-            <li data-component="answer"  id="http-iot-05_opt_a">Een veranderde sensorwaarde van het apparaat.</li><li data-component="feedback"></li>
-            
-            <li data-component="answer" data-correct id="http-iot-05_opt_b">De besturing van een actuator van het apparaat.</li><li data-component="feedback"></li>
-            
-            <li data-component="answer"  id="http-iot-05_opt_c">Beide.</li><li data-component="feedback"></li>
-            
-            <li data-component="answer"  id="http-iot-05_opt_d">Geen van beide.</li><li data-component="feedback"></li>
-            
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="http-iot-07" >
-            <p>Q-3: Welke <em>method</em> gebruikt de browser voor het opsturen van een ingevuld formulier
-naar de server, om daarmee de toestand van de server te veranderen?</p>
-
-            <li data-component="answer"  id="http-iot-07_opt_a">GET.</li><li data-component="feedback"></li>
-            
-            <li data-component="answer" data-correct id="http-iot-07_opt_b">POST.</li><li data-component="feedback"></li>
-            
-            <li data-component="answer"  id="http-iot-07_opt_c">Kan allebeide.</li><li data-component="feedback"></li>
-            
-            <li data-component="answer"  id="http-iot-07_opt_d">Een andere method.</li><li data-component="feedback"></li>
-            
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="http-iot-09" >
-            <p>Q-4: Een apparaat in het lokale netwerk met een ingebouwde webserver kun je besturen:</p>
-
-            <li data-component="answer"  id="http-iot-09_opt_a">via een browser op een computer in het publieke internet.</li><li data-component="feedback"></li>
-            
-            <li data-component="answer" data-correct id="http-iot-09_opt_b">via een browser op een computer in het lokale netwerk.</li><li data-component="feedback"></li>
-            
-            <li data-component="answer"  id="http-iot-09_opt_c">via allebeide.</li><li data-component="feedback"></li>
-            
-            <li data-component="answer"  id="http-iot-09_opt_d">via geen van beide.</li><li data-component="feedback"></li>
-            
-
-            </ul>
-            </div>
-            </div>
+  <div class="section" id="publish-subscribe">
+<h1><span class="section-number">3.13. </span>Publish/subscribe<a class="headerlink" href="#publish-subscribe" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/MQTT-01.png"><img alt="../_images/MQTT-01.png" src="../_images/MQTT-01.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Publish-subscribe interactie (MQTT)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Het IoT-protocol MQTT gebruikt een <em>publish-subscribe</em> interactie,
+waarbij een <em>broker</em> als tussenschakel fungeert tussen de clients:</p>
+<ul class="simple">
+<li><p>een client publiceert (<em>push</em>) een bericht met een bepaald <em>topic</em> naar de broker,</p></li>
+<li><p>de broker stuurt (<em>push</em>) een ontvangen bericht door naar alle clients die op dit topic geabonneerd zijn.</p></li>
+</ul>
+<p>Zowel de IoT-knopen en de controllers en apps zijn clients van de MQTT-broker:
+voor de broker zijn deze gelijkwaardig.</p>
+<p>Een publish-subscribe interactie kun je vergelijken met een abonnement op een krant of tijdschrift:
+zodra er een nieuw exemplaar gepubliceerd is wordt dat naar alle abonnees verspreid.</p>
+</div>
 
 
   <div id=scprogresscontainer>
@@ -369,8 +315,8 @@ naar de server, om daarmee de toestand van de server te veranderen?</p>
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.5. API’s voor webdiensten' data-toggle="tooltip">
-    <a href="iot-api-diensten.html" aria-label="6.5. API’s voor webdiensten">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 3.12. Client-server interactie' data-toggle="tooltip">
+    <a href="client-server.html" aria-label="3.12. Client-server interactie">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -380,8 +326,8 @@ naar de server, om daarmee de toestand van de server te veranderen?</p>
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.7. NodeRed opdrachten' data-toggle="tooltip" >
-    <a href="nodered/nodered-opdrachten.html" aria-label="6.7. NodeRed opdrachten">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 3.14. Toetsvragen' data-toggle="tooltip" >
+    <a href="toetsvragen.html" aria-label="3.14. Toetsvragen">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

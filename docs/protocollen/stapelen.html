@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>3.12. Toetsvragen &#8212; IoT-book</title>
+    <title>3.2. Stapelen van protocollen &#8212; IoT-book</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
@@ -55,8 +55,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.13. NodeRed-opdrachten" href="nodered/nodered-opdrachten.html" />
-    <link rel="prev" title="3.11. Payload" href="protocol-10.html" />
+    <link rel="next" title="3.3. Internet-protocolstack" href="internet-stack.html" />
+    <link rel="prev" title="3.1. Inleiding" href="inleiding.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -228,7 +228,7 @@
             <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
             <li class="divider"></li>
             <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
-            <li><a href='/runestone/default/reportabug?course=iotbook&page=protocol-toetsvragen'>Report A Problem</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=stapelen'>Report A Problem</a></li>
           </ul>
         </li>
         <!-- end help menu dropdown -->
@@ -245,14 +245,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3.11. </span>Payload" data-toggle="tooltip">
-    <a href="protocol-10.html" >
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">3.1. </span>Inleiding" data-toggle="tooltip">
+    <a href="inleiding.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">3.13. </span>NodeRed-opdrachten' data-toggle="tooltip" >              
-    <a href="nodered/nodered-opdrachten.html" >
+  <li id="relations-next" title='Next Chapter - <span class="section-number">3.3. </span>Internet-protocolstack' data-toggle="tooltip" >              
+    <a href="internet-stack.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -290,136 +290,30 @@
 
 <div class="container" id="main-content" role="main">
   
-  <div class="section" id="toetsvragen">
-<h1><span class="section-number">3.12. </span>Toetsvragen<a class="headerlink" href="#toetsvragen" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="stapelen-van-protocollen">
+<h1><span class="section-number">3.2. </span>Stapelen van protocollen<a class="headerlink" href="#stapelen-van-protocollen" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/Alice-Bob-morse-2.png"><img alt="../_images/Alice-Bob-morse-2.png" src="../_images/Alice-Bob-morse-2.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Stapelen van protocollen</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>In de praktijk heb je vaak te maken met een stapeling (stacking) van protocollen:
+een protocol wordt dan gebruikt als basis voor een hoger-niveau communicatie.</p>
+<p>Ook in het dagelijks leven kom je deze situatie vaak tegen, bijvoorbeeld:</p>
 <ul class="simple">
-<li><p>wat houdt het end-to-end principe van het internet in?</p></li>
-<li><p>waardoor is het internet universeel, en ondersteunt dit allerlei toepassingen - en bijv. het klassieke telefoonnet niet?</p></li>
-<li><p>zet de protocollen in de juiste volgorde</p></li>
-<li></li>
+<li><p>je gebruikt het protocol van de telefoon om een spraakverbinding te maken.
+Een telefoonverbinding brengt geluid over, vooral menselijke spraak,
+waarbij de taal niet uitmaakt.</p></li>
+<li><p>je gebruikt het protocol van de nederlandse taal voor het gesprek met je gesprekspartner.</p></li>
+<li><p>voor een goede kennis of voor een collega gebruik je allerlei familie-woorden of vaktermen die in
+het normale nederlands niet gebruikt worden.</p></li>
 </ul>
-
-<div class="runestone">
-<ul data-component="dragndrop" id="h2-dd-1" >
-    <span data-component="question">Q-1: Plaats het begrip bij de best passende omschrijving.</span>
-	
-
-    <li data-component="draggable" id="h2-dd-1_drag11">adressering</li>
-    <li data-component="dropzone" for="h2-dd-1_drag11">identificatie van bestemming of afzender</li>
-
-    <li data-component="draggable" id="h2-dd-1_drag12">payload</li>
-    <li data-component="dropzone" for="h2-dd-1_drag12">de eigenlijke data (inhoud) van de communicatie</li>
-
-    <li data-component="draggable" id="h2-dd-1_drag13">metadata</li>
-    <li data-component="dropzone" for="h2-dd-1_drag13">data over het protocol en/of de inhoud</li>
-
-    <li data-component="draggable" id="h2-dd-1_drag14">interactie</li>
-    <li data-component="dropzone" for="h2-dd-1_drag14">manier waarop de communicerende partijen samenwerken</li>
-</ul></div>
-<div class="runestone">
-<ul data-component="dragndrop" id="h2-dd-2" >
-    <span data-component="question">Q-2: Plaats de interactie-vorm bij het best passende voorbeeld uit het dagelijks leven.</span>
-	
-
-    <li data-component="draggable" id="h2-dd-2_drag11">client-server</li>
-    <li data-component="dropzone" for="h2-dd-2_drag11">loket met loketbediende en klant(en)</li>
-
-    <li data-component="draggable" id="h2-dd-2_drag12">publish/subscribe</li>
-    <li data-component="dropzone" for="h2-dd-2_drag12">krant of tijdschrift</li>
-
-    <li data-component="draggable" id="h2-dd-2_drag13">best effort packet communication</li>
-    <li data-component="dropzone" for="h2-dd-2_drag13">briefpost</li>
-
-    <li data-component="draggable" id="h2-dd-2_drag14">reliable bi-directional bytestreams</li>
-    <li data-component="dropzone" for="h2-dd-2_drag14">telefoon</li>
-</ul></div>
-<div class="runestone">
-<ul data-component="dragndrop" id="h2-dd-3" >
-    <span data-component="question">Q-3: Plaats het begrip bij het best passende voorbeeld.</span>
-	
-
-    <li data-component="draggable" id="h2-dd-3_drag11">adressering</li>
-    <li data-component="dropzone" for="h2-dd-3_drag11">naam/straat+nr/plaats</li>
-
-    <li data-component="draggable" id="h2-dd-3_drag12">payload</li>
-    <li data-component="dropzone" for="h2-dd-3_drag12">brief (in envelop)</li>
-
-    <li data-component="draggable" id="h2-dd-3_drag13">metadata</li>
-    <li data-component="dropzone" for="h2-dd-3_drag13">adres, afzender, postzegel, "aantekenen"</li>
-
-    <li data-component="draggable" id="h2-dd-3_drag14">interactie</li>
-    <li data-component="dropzone" for="h2-dd-3_drag14">brief posten/brief ontvangen</li>
-</ul></div>
-<div class="runestone">
-<ul data-component="dragndrop" id="h2-dd-4" >
-    <span data-component="question">Q-4: Plaats het begrip bij de overeenkomstige HTTP-protocol-aspect.</span>
-	
-
-    <li data-component="draggable" id="h2-dd-4_drag11">adressering</li>
-    <li data-component="dropzone" for="h2-dd-4_drag11">URL</li>
-
-    <li data-component="draggable" id="h2-dd-4_drag12">payload</li>
-    <li data-component="dropzone" for="h2-dd-4_drag12">HTML-bestand</li>
-
-    <li data-component="draggable" id="h2-dd-4_drag13">metadata</li>
-    <li data-component="dropzone" for="h2-dd-4_drag13">HTTP headers</li>
-
-    <li data-component="draggable" id="h2-dd-4_drag14">interactie</li>
-    <li data-component="dropzone" for="h2-dd-4_drag14">client-server</li>
-</ul></div>
-<div class="runestone">
-<ul data-component="dragndrop" id="h2-dd-5" >
-    <span data-component="question">Q-5: 
-</span>
-	
-
-    <li data-component="draggable" id="h2-dd-5_drag11">HTTP</li>
-    <li data-component="dropzone" for="h2-dd-5_drag11">URL (https://infvo.nl/betapartners)</li>
-
-    <li data-component="draggable" id="h2-dd-5_drag12">MQTT</li>
-    <li data-component="dropzone" for="h2-dd-5_drag12">Broker + topic (mqtt.ieni.org node/1234/actuators)</li>
-
-    <li data-component="draggable" id="h2-dd-5_drag13">TCP</li>
-    <li data-component="dropzone" for="h2-dd-5_drag13">IP-adres + poortnummer (101.92.27.13:8080)</li>
-
-    <li data-component="draggable" id="h2-dd-5_drag14">IP</li>
-    <li data-component="dropzone" for="h2-dd-5_drag14"> IP-adres (101.92.27.13)</li>
-
-    <li data-component="draggable" id="h2-dd-5_drag15">WiFI</li>
-    <li data-component="dropzone" for="h2-dd-5_drag15">60:f7:2a:b3:09:2c</li>
-</ul></div>
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="true"  id="h2-mc-6" >
-            <p>Q-6: Welke van de onderstaande adressen kun je gebruiken om te routeren?</p>
-
-            <li data-component="answer"  id="h2-mc-6_opt_a">WiFi MAC-adres</li><li data-component="feedback"></li>
-            
-            <li data-component="answer" data-correct id="h2-mc-6_opt_b">URL</li><li data-component="feedback"></li>
-            
-            <li data-component="answer" data-correct id="h2-mc-6_opt_c">IP-adres</li><li data-component="feedback"></li>
-            
-            <li data-component="answer" data-correct id="h2-mc-6_opt_d">postadres</li><li data-component="feedback"></li>
-            
-
-            </ul>
-            </div>
-            
-            <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="h2-mc-7" >
-            <p>Q-7: Welke eis stel je aan het adres van de knopen in een netwerk?</p>
-
-            <li data-component="answer"  id="h2-mc-7_opt_a">iedere knoop moet precies één uniek adres hebben</li><li data-component="feedback"></li>
-            
-            <li data-component="answer" data-correct id="h2-mc-7_opt_b">iedere knoop moet één of meer unieke adressen hebben</li><li data-component="feedback"></li>
-            
-            <li data-component="answer"  id="h2-mc-7_opt_c">iedere knoop moet nul of meer unieke adressen hebben</li><li data-component="feedback"></li>
-            
-            <li data-component="answer"  id="h2-mc-7_opt_d">iedere knoop moet een adres hebben, dat hoeft niet uniek te zijn.</li><li data-component="feedback"></li>
-            
-
-            </ul>
-            </div>
-            </div>
+<p>In dit geval heb je al een “stack” van tenminste 3 protocollen.</p>
+<p>In een bepaalde laag van deze stack hoef je alleen rekening te houden
+met de direct onderliggende laag.
+Dit betekent dat de lagen daaronder kunnen veranderen zonder dat je daarvoor iets hoeft aan te passen.
+In het morse-voorbeeld: de morse-telegrafisten kunnen het bericht als letterreeks ook telefonisch doorgeven,
+als die technologie beschikbaar is.</p>
+</div>
 
 
   <div id=scprogresscontainer>
@@ -428,8 +322,8 @@
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 3.11. Payload' data-toggle="tooltip">
-    <a href="protocol-10.html" aria-label="3.11. Payload">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 3.1. Inleiding' data-toggle="tooltip">
+    <a href="inleiding.html" aria-label="3.1. Inleiding">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -439,8 +333,8 @@
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 3.13. NodeRed-opdrachten' data-toggle="tooltip" >
-    <a href="nodered/nodered-opdrachten.html" aria-label="3.13. NodeRed-opdrachten">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 3.3. Internet-protocolstack' data-toggle="tooltip" >
+    <a href="internet-stack.html" aria-label="3.3. Internet-protocolstack">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>

@@ -55,8 +55,8 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6.6. Toetsvragen" href="iot-toetsvragen.html" />
-    <link rel="prev" title="6.4. Besturen via een API" href="iot-api-besturen.html" />
+    <link rel="next" title="6.6. Toetsvragen" href="toetsvragen.html" />
+    <link rel="prev" title="6.4. API’s voor IoT-apparaten" href="iot-api-besturen.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -245,14 +245,14 @@
         
         <!-- 
           
-  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.4. </span>Besturen via een API" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">6.4. </span>API’s voor IoT-apparaten" data-toggle="tooltip">
     <a href="iot-api-besturen.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
   <li id="relations-next" title='Next Chapter - <span class="section-number">6.6. </span>Toetsvragen' data-toggle="tooltip" >              
-    <a href="iot-toetsvragen.html" >
+    <a href="toetsvragen.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -292,33 +292,31 @@
   
   <div class="section" id="api-s-voor-webdiensten">
 <h1><span class="section-number">6.5. </span>API’s voor webdiensten<a class="headerlink" href="#api-s-voor-webdiensten" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-center" id="id1">
+<div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/iot-web-api-2.png"><img alt="../_images/iot-web-api-2.png" src="../_images/iot-web-api-2.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Webtoepassing met ondersteunende diensten in het web</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>Het programmeerbare web.</strong>
-Zoals we hiervoor gezien hebben kun je veel webtoepassingen tegenwoordig automatiseren via een web-API.
-Deze toepassingen kunnen zelf ook weer gebruik maken van allerlei diensten die via een web-API toegankelijk zijn.
-Voorbeelden van dergelijke diensten:</p>
+<p>Webtoepassing met ondersteunende diensten in het web</p>
+<p><strong>Het programmeerbare web</strong></p>
+<p>Niet alleen apparaten kunnen een web-API hebben:
+ook veel webtoepassingen hebben, naast het normale gebruikersinterface via webpagina’s,
+een web-API waarmee je deze toepassing met behulp van programma’s en scripts kunt automatiseren.
+Met deze API’s kun je toepassingen op elkaar aansluiten, om weer een andere toepassing te maken.
+Op deze manier vormen deze web-API’s de basis voor het programmeerbare web.</p>
+<p>Enkele voorbeelden van toepassingen en diensten met een web-API:</p>
 <ul class="simple">
-<li><p>basisdiensten zoals databases (couchDB; MongoDB Atlas (<a class="reference external" href="https://www.mongodb.com/cloud/atlas">https://www.mongodb.com/cloud/atlas</a>); enz.)
-en autorisatie (OAuth2);</p></li>
+<li><p>basisdiensten zoals databases (CouchDB; MongoDB Atlas) en autorisatie (OAuth2);</p></li>
 <li><p>kaartdiensten, bijvoorbeeld open street map (<a class="reference external" href="https://wiki.openstreetmap.org/wiki/API">https://wiki.openstreetmap.org/wiki/API</a>),
 Google Maps (<a class="reference external" href="https://developers.google.com/maps">https://developers.google.com/maps</a>),</p></li>
 <li><p>weerdiensten, zoals openweathermap (<a class="reference external" href="https://openweathermap.org/api">https://openweathermap.org/api</a>);</p></li>
 <li><p>diensten voor het vertalen van teksten (Google Translate);</p></li>
 <li><p>diensten voor het omzetten van tekst in spraak en omgekeerd;</p></li>
 <li><p>diensten voor AI verwerking van data; enz.</p></li>
+<li><p>Trello - <a class="reference external" href="https://developer.atlassian.com/cloud/trello/rest/api-group-actions/">https://developer.atlassian.com/cloud/trello/rest/api-group-actions/</a></p></li>
+<li><p>Google Docs - <a class="reference external" href="https://developers.google.com/docs/api">https://developers.google.com/docs/api</a></p></li>
+<li><p>Wikipedia/Mediawiki - <a class="reference external" href="https://www.mediawiki.org/wiki/API:Main_page">https://www.mediawiki.org/wiki/API:Main_page</a></p></li>
+<li><p>Slack - <a class="reference external" href="https://api.slack.com/web">https://api.slack.com/web</a></p></li>
+<li><p>GitHub - <a class="reference external" href="https://developer.github.com/v3/">https://developer.github.com/v3/</a></p></li>
 </ul>
-<p>Door middel van web-API’s kun je gespecialiseerde diensten van anderen in je eigen toepassingen gebruiken.
-Hierdoor kun je je eigen toepassing eenvoudig houden,
-en toch een rijke functionaliteit kunt bieden.</p>
-<p>Een veelgebruikte vorm van web-API’s is het REST-API.
-Een voordeel van web-API’s is dat je deze eenvoudig kunt uitproberen.
-Je hebt daarvoor een programma nodig waarmee je willekeurige HTTP-queries kunt maken,
-zoals curl (commandoregel-toepassing), Postman (desktop-toepassing),
-en vele online-gebaseerde varianten.
-Ook NodeRed kun je daarvoor gebruiken.</p>
 </div>
 
 
@@ -328,8 +326,8 @@ Ook NodeRed kun je daarvoor gebruiken.</p>
   
       
 <ul>
-  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.4. Besturen via een API' data-toggle="tooltip">
-    <a href="iot-api-besturen.html" aria-label="6.4. Besturen via een API">
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 6.4. API’s voor IoT-apparaten' data-toggle="tooltip">
+    <a href="iot-api-besturen.html" aria-label="6.4. API’s voor IoT-apparaten">
         <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
             <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
         </div>
@@ -340,7 +338,7 @@ Ook NodeRed kun je daarvoor gebruiken.</p>
   
 <ul>
   <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6.6. Toetsvragen' data-toggle="tooltip" >
-    <a href="iot-toetsvragen.html" aria-label="6.6. Toetsvragen">
+    <a href="toetsvragen.html" aria-label="6.6. Toetsvragen">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>
