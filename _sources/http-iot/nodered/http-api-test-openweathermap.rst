@@ -11,7 +11,7 @@ Deze moet je misschien eerst installeren:
 * de node heet: ``node-red-node-openweathermap``
 
 .. figure:: NodeRed-openweathermap-test.png
-   :width: 600px
+   :width: 700px
    :align: center
 
 **API-key.** Voor het gebruik van de openweathermap API heb je een API-key nodig.
@@ -41,4 +41,3 @@ Anders zie je het weer in Amsterdam verschijnen.
 
 7. Inspecteer de verschillende velden van het resultaat,
    in het debug-venster.
-      
