@@ -35,7 +35,7 @@ en "node" voor een NodeRed-node.
 Nodes en flows
 --------------
 
-.. figure:: Nodered-hello.png
+.. figure:: nodered-hello.png
    :width: 600 px
    :align: center
 
