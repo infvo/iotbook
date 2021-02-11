@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.9.4. Webformulieren &#8212; IoT-book</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/accessibility.css?v=50109A2C" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/presenter_mode.css?v=9FF1320F" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/user-highlights.css?v=A2326E52" />
+    <link rel="stylesheet" type="text/css" href="../../_static/runestone-custom-sphinx-bootstrap.css?v=5.5.12" />
+    <link rel="stylesheet" type="text/css" href="../../_static/theme-overrides.css?v=2DAFE138" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../../_static/Blob.js?v=AEC2447"></script>
+    <script src="../../_static/html4css1.css?v=4533ACD3"></script>
+    <script src="../../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../../_static/sql-wasm.js?v=D71B5933"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../../_static/runestone.js?v=DC48DFAC"></script>
+    <script src="../../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
+    <script src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../../_static/jquery-fix.js?v=1226591B"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
+    <script src="../../_static/jquery.idle-timer.js?v=E942DAF1"></script>
+    <script src="../../_static/presenter_mode.js?v=2DF16FB4"></script>
+    <script src="../../_static/theme.js?v=D899FB97"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6. HTTP in het IoT" href="../../http-iot/toctree.html" />
+    <link rel="prev" title="5.9.3. LED-besturing" href="led-besturing.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    eBookConfig.useRunestoneServices = false;
+    eBookConfig.host = 'http://127.0.0.1:8000' || 'http://127.0.0.1:8000';
+    eBookConfig.app = eBookConfig.host+'/runestone';
+    eBookConfig.course = 'iotbook';
+    eBookConfig.basecourse = 'iotbook';
+    eBookConfig.isLoggedIn = false;
+    eBookConfig.enableCompareMe = eBookConfig.useRunestoneServices;
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 30;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = true;
+  eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
+  eBookConfig.runestone_version = '5.5.12';
+  eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
+  eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
+  eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+<!-- Ad Serving Headers Only serve ads to Anonymous Users -->
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../../index.html" aria-label="index-page">
+          
+          iotbook
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone">Follow @iRunestone</a>
+                <a href="https://www.facebook.com/RunestoneInteractive">Our Facebook Page</a>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=webformulieren'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">5.9.3. </span>LED-besturing" data-toggle="tooltip">
+    <a href="led-besturing.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">6. </span>HTTP in het IoT' data-toggle="tooltip" >              
+    <a href="../../http-iot/toctree.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+<!-- Ad Serving for Runestone Campaign -->
+
+
+  
+  <div class="section" id="webformulieren">
+<h1><span class="section-number">5.9.4. </span>Webformulieren<a class="headerlink" href="#webformulieren" title="Permalink to this headline">¶</a></h1>
+<p>In deze opdracht gaan we aan de slag met een webformulier:
+in de browser vul je de waarden in het formulier in;
+de browser stuurt het formulier via een POST-request (in plaats van GET) naar de server;
+de server verwerkt dit request, en stuurt een (HTML)document terug.</p>
+<p>Een formulier heeft in HTML de vorm:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/form-url&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+  ... <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;inputname1&quot;</span><span class="p">&gt;</span> ...
+  ... <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;inputname2&quot;</span><span class="p">&gt;</span> ...
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Bij de form-tag geef je op wat de URL is van het formulier,
+en wat de bijbehorende http-method is:
+in dit voorbeeld, POST met als URL <code class="docutils literal notranslate"><span class="pre">/form-url</span></code>.
+Daarna volgen een aantal input-velden, voor tekst, wachtwoord, datum, meerkeuze, enz.
+Een formulier heeft meestal een <em>submit-button</em> waarmee je het ingevulde formulier opstuurt.</p>
+<p>We gebruiken hier een formulier voor het aansturen van de LED:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/leds/0&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;on&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>On<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:{{color}};&quot;</span><span class="p">&gt;</span> [[LED]] <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;on&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>Off<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>De URL van het formulier is <code class="docutils literal notranslate"><span class="pre">/leds/0</span></code>: dit geeft aan dat het om LED-0 gaat.
+(De hardware kan meerdere LEDs bevatten.)
+De method is <code class="docutils literal notranslate"><span class="pre">POST</span></code>: via het formulier veranderen we de toestand van de LED.
+(Eigenlijk zou dit een PUT-opdracht moeten zijn, maar dat kan niet in HTML;
+zie de opmerkingen over REST API’s verderop.)
+We gebruiken hier 2 buttons: voor het aan- en uitzetten van de LED.
+Beide buttons zijn submit-buttons: deze zorgen ervoor dat het formulier direct verstuurd wordt.</p>
+<p>Het formulier heeft in dit geval 1 parameter: <code class="docutils literal notranslate"><span class="pre">on</span></code>, met als mogelijke waarden <code class="docutils literal notranslate"><span class="pre">0</span></code> en <code class="docutils literal notranslate"><span class="pre">1</span></code>.
+De parameters van een formulier worden verstuurd als een (gecodeerde) string van de vorm:
+<code class="docutils literal notranslate"><span class="pre">name0=value0&amp;name1=value1...&amp;namex=valuex</span></code>.
+Voor dit voorbeeld krijgen we dan <code class="docutils literal notranslate"><span class="pre">on=1</span></code> of <code class="docutils literal notranslate"><span class="pre">on=0</span></code>.</p>
+<p>Merk op dat we nu één URL hebben voor beide schakelaars (buttons);
+de waarde voor het aansturen van de LED geven we nu niet weer als twee verschillende URLs,
+maar als parameter van de formulier-URL.</p>
+<p>In de (NodeRed) server verwerken we deze parameter als volgt:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">on</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">flow</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;ledOn&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">on</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">flow</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;ledOn&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We kunnen dit ook schrijven als: <code class="docutils literal notranslate"><span class="pre">flow.set(&quot;ledOn&quot;,</span> <span class="pre">msg.payload==&quot;1&quot;)</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Maak de volgende flow, door de nodes naar het flow-deel te slepen en te verbinden.</p></li>
+</ol>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/Nodered-form-flow-0.png"><img alt="../../_images/Nodered-form-flow-0.png" src="../../_images/Nodered-form-flow-0.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">NodeRed form flow</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>(De namen van de nodes hoef je nog niet aan te passen.)</p>
+<ol class="arabic simple" start="2">
+<li><p>Configureer de bovenste http-input-node: <em>URL</em>: <code class="docutils literal notranslate"><span class="pre">/led-control</span></code>,
+<em>method</em>: <code class="docutils literal notranslate"><span class="pre">GET</span></code>.
+Dit is de node/URL voor de html-pagina met het formulier.</p></li>
+<li><p>Configureer de onderste http-input-node: <em>URL</em>: <code class="docutils literal notranslate"><span class="pre">/leds/0</span></code>,
+<em>method</em>:<code class="docutils literal notranslate"><span class="pre">POST</span></code>.
+Dit is de node/URL voor het afhandelen van het ingevulde formulier.</p></li>
+<li><p>Configureer de onderste function-node (<code class="docutils literal notranslate"><span class="pre">updateLed</span></code>),
+voor het afhandelen van het formulier:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">on</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">flow</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;ledOn&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">on</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">flow</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;ledOn&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="nx">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Configureer de bovenste function-node (<code class="docutils literal notranslate"><span class="pre">properties</span></code>),
+voor het zetten van de template-parameters.</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">flow</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;ledOn&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">msg</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">msg</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="nx">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Configureer de template-node:</p></li>
+</ol>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>LED server<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>LED control<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/api/leds/0&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;put&quot;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;on&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>On<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-weight:bold;color:{{color}};&quot;</span><span class="p">&gt;</span> [[LED]] <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;on&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>Off<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/api/led-control&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><em>Opmerking</em>: in deze html-code gebruiken we de URLs <code class="docutils literal notranslate"><span class="pre">/api/leds/0</span></code> en <code class="docutils literal notranslate"><span class="pre">/api/led-control</span></code>.
+Dit is nodig voor de FRED-versie.
+Voor andere NodeRed-installaties laat je het <code class="docutils literal notranslate"><span class="pre">/api</span></code>-deel weg.</p>
+<ol class="arabic simple" start="7">
+<li><p>“Deploy” en test de website.</p></li>
+</ol>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/Nodered-form-gauge.png"><img alt="../../_images/Nodered-form-gauge.png" src="../../_images/Nodered-form-gauge.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">NodeRed flow: formulier met dashboard-meter</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Voeg als uitbreiding van deze flow, een dashboard-node (“gauge”, ronde meter).
+Verbind de input daarvan met de output van de function-node <code class="docutils literal notranslate"><span class="pre">properties</span></code>.
+Configureer deze node als volgt:</p>
+<ol class="arabic simple">
+<li><p>Configureer deze node: <em>Group</em>: <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">new</span> <span class="pre">ui</span> <span class="pre">group</span></code>,</p></li>
+<li><p>Voeg een nieuwe ui groep toe met als naam: Simulated LED;
+gebruik hiervoor het potloodje rechts van <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">new</span> <span class="pre">ui</span> <span class="pre">group</span></code></p></li>
+<li><p>met <em>Tab</em>: add new tab, met als naam: Simulator.</p></li>
+</ol>
+</li>
+<li><p>Pas de function-node <code class="docutils literal notranslate"><span class="pre">Properties</span></code> aan: zet <code class="docutils literal notranslate"><span class="pre">msg.value</span></code> op 0 of 10,
+voor led “aan” of “uit”.</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">flow</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;ledOn&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">msg</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">;</span>
+    <span class="nx">msg</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">msg</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">;</span>
+    <span class="nx">msg</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="mf">10</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="nx">msg</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>“Deploy” en test deze flow.</p></li>
+</ol>
+<div class="topic">
+<p class="topic-title">REST-interfaces</p>
+<p>Waarom gebruiken we hier een formulier voor het veranderen van de toestand van de LED?
+Dit is (bijna) een voorbeeld van een REST-interface (<a class="reference external" href="https://en.wikipedia.org/wiki/Representational_state_transfer">https://en.wikipedia.org/wiki/Representational_state_transfer</a>).
+Dit is een manier om interfaces in het web te definiëren.</p>
+<ul class="simple">
+<li><p>elke <em>resource</em>, bijvoorbeeld een LED, heeft een eigen adres (URL) in het web.
+In dit geval is het adres van de LED: “/led/0”.</p></li>
+<li><p>voor het opvragen van de toestand van een resource gebruik je een HTTP GET-opdracht.
+De afspraak is dat je hiermee de toestand niet verandert:
+voor de resource maakt het niet uit of je deze opdracht 0 maal of vaker uitvoert.
+In dat geval is GET een <em>veilige</em> opdracht (ook wel: <em>nullipotent</em>).</p></li>
+<li><p>voor het veranderen van de toestand van een resource gebruik je een andere opdracht;
+voor dit voorbeeld zou dit een HTTP PUT moeten zijn; deze is <em>idempotent</em>,
+als je deze herhaalt blijft de betekenis gelijk.</p></li>
+<li><p>we kunnen een PUT-opdracht niet gebruiken in een HTML-formulier:
+dat kan alleen vanuit JavaScript.
+Voorlopig behelpen we ons hier met een POST:
+we houden ons daarmee niet aan de regels voor REST API’s.</p></li>
+</ul>
+<p><em>Vraag</em>: bestudeer de (onofficiële) documentatie van de Philips Hue Bridge
+(<a class="reference external" href="http://www.burgestrand.se/hue-api/api/lights/">http://www.burgestrand.se/hue-api/api/lights/</a>).
+Met welke opdracht zet je een lamp aan? Met welke uit?</p>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 5.9.3. LED-besturing' data-toggle="tooltip">
+    <a href="led-besturing.html" aria-label="5.9.3. LED-besturing">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 6. HTTP in het IoT' data-toggle="tooltip" >
+    <a href="../../http-iot/toctree.html" aria-label="6. HTTP in het IoT">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2020 eelco.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.5.12.
+    </p>
+  </div>
+</footer>
+
+
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

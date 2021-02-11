@@ -1,0 +1,2 @@
+HTTP is stateless
+-----------------
