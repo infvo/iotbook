@@ -1,4 +1,4 @@
 #/bin/bash
-for f in *.png; do
-    mv -- "$f" "${f%.png}.pngx"
+for f in *.pngx; do
+    mv -- "$f" "${f%.pngx}.png"
 done
