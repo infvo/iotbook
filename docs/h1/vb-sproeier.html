@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.2. Voorbeeld: watersproeier &#8212; IoT-book</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=50109A2C" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.5.12" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="../_static/html4css1.css?v=4533ACD3"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=D71B5933"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=DC48DFAC"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js?v=1226591B"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js?v=E942DAF1"></script>
+    <script src="../_static/presenter_mode.js?v=2DF16FB4"></script>
+    <script src="../_static/theme.js?v=D899FB97"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.3. Voorbeeld: slimme verlichting" href="vb-verlichting.html" />
+    <link rel="prev" title="1.1. Geschiedenis en ontwikkeling" href="ontwikkeling.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    eBookConfig.useRunestoneServices = false;
+    eBookConfig.host = 'http://127.0.0.1:8000' || 'http://127.0.0.1:8000';
+    eBookConfig.app = eBookConfig.host+'/runestone';
+    eBookConfig.course = 'iotbook';
+    eBookConfig.basecourse = 'iotbook';
+    eBookConfig.isLoggedIn = false;
+    eBookConfig.enableCompareMe = eBookConfig.useRunestoneServices;
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 30;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = true;
+  eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
+  eBookConfig.runestone_version = '5.5.12';
+  eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
+  eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
+  eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+<!-- Ad Serving Headers Only serve ads to Anonymous Users -->
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+          iotbook
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone">Follow @iRunestone</a>
+                <a href="https://www.facebook.com/RunestoneInteractive">Our Facebook Page</a>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=vb-sproeier'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+  <li id="relations-prev" title="Previous Chapter - <span class="section-number">1.1. </span>Geschiedenis en ontwikkeling" data-toggle="tooltip">
+    <a href="ontwikkeling.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - <span class="section-number">1.3. </span>Voorbeeld: slimme verlichting' data-toggle="tooltip" >              
+    <a href="vb-verlichting.html" >
+        <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+<!-- Ad Serving for Runestone Campaign -->
+
+
+  
+  <div class="section" id="voorbeeld-watersproeier">
+<h1><span class="section-number">1.2. </span>Voorbeeld: watersproeier<a class="headerlink" href="#voorbeeld-watersproeier" title="Permalink to this headline">¶</a></h1>
+<p>Als voorbeeld van een IoT-toepassingen kijken we naar het besproeien van een sportveld.
+We beginnen met een eenvoudige, lokale oplossing.
+Deze breiden we stapsgewijs uit naar een “slimme” oplossing door steeds meer aspecten van het internet of things te gebruiken.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/iot-watersproeier.png"><img alt="../_images/iot-watersproeier.png" src="../_images/iot-watersproeier.png" style="width: 600px;" /></a>
+</div>
+<div class="section" id="actuator-en-controller">
+<h2><span class="section-number">1.2.1. </span>Actuator en controller<a class="headerlink" href="#actuator-en-controller" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/actuator-waterklep.png"><img alt="../_images/actuator-waterklep.png" src="../_images/actuator-waterklep.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">Actuator: bestuurbare waterklep. Onderaan de vloeistof-aansluitingen, boven de elektrische aansluitingen voor de besturing</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>De eerste oplossing is een automatische sproei-installatie.
+Deze bestaat uit sproeiers met bestuurbare kleppen (<em>actuatoren</em>) en een computer voor de besturing.
+Een dergelijke besturingscomputer noemen we een <em>controller</em>.
+De eenvoudigste automatische besturing is op basis van tijd, bijvoorbeeld:
+besproei de komende week van 22:00 uur tot 4:00 uur.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/actuator-controller.png"><img alt="../_images/actuator-controller.png" src="../_images/actuator-controller.png" style="width: 300px;" /></a>
+</div>
+<p>Met deze oplossing kunnen we sproeien op momenten dat dit het meeste zin heeft,
+zonder dat we er zelf bij hoeven te zijn.</p>
+<div class="admonition-wat-is-een-actuator admonition">
+<p class="admonition-title">Wat is een actuator?</p>
+<p>Een actuator zet informatie om in een fysiek verschijnsel,
+bijvoorbeeld beweging, geluid of licht.
+Voorbeelden van actuatoren zijn: (servo)motor, relais, klep, luidspreker,
+lamp.
+Actuatoren gebruik je in het internet of things voor het <em>besturen</em> van “dingen”.</p>
+</div>
+<div class="admonition-wat-is-een-controller admonition">
+<p class="admonition-title">Wat is een controller?</p>
+<p>Een controller is een besturingscomputer.
+In een IoT-apparaat vind je vaak een  <em>microcontroller</em>:
+een complete computer op een chip,
+met analoge en digitale aansluitingen voor sensoren en actuatoren.
+Voorbeeld: een <em>micro:bit</em> is een bordje met een ARM-microcontroller,
+een aantal sensoren (drukknoppen, temperatuursensor, 3D-versnellingsopnemer,
+kompas), en actuatoren (led-matrix), en een radio.
+Verderop in een IoT-toepassing gebruik je controllers om de verschillende
+functionele elementen, IoT-apparaten tot internetdiensten te verbinden,
+en te combineren met allerlei regels voor de besturing.
+Een voorbeeld hiervan is een NodeRed-server.</p>
+</div>
+</div>
+<div class="section" id="sensoren">
+<h2><span class="section-number">1.2.2. </span>Sensoren<a class="headerlink" href="#sensoren" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/sensor-bodemvochtigheid.png"><img alt="../_images/sensor-bodemvochtigheid.png" src="../_images/sensor-bodemvochtigheid.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-text">Capacitatieve bodemvochtigheidssensor</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Deze eerste  oplossing is nog niet optimaal.
+Een nadeel is dat er volgens dit schema altijd gesproeid wordt - ook als de grond al nat is van de regen.
+Dit betekent op z’n minst een verspilling van water;
+bovendien kan  het veld hierdoor te drassig worden, wat ook niet de bedoeling is.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/actuator-sensor-controller.png"><img alt="../_images/actuator-sensor-controller.png" src="../_images/actuator-sensor-controller.png" style="width: 300px;" /></a>
+</div>
+<p>We kunnen deze problemen voorkomen door (lokale) <em>sensoren</em> te gebruiken,
+om de bodemvochtigheid te meten, om te meten of het regent,
+en bijvoorbeeld om de luchtvochtigheid en de temperatuur te meten.
+Hiermee kunnen we al zuiniger met water omspringen.</p>
+<div class="admonition-wat-is-een-sensor admonition">
+<p class="admonition-title">Wat is een sensor?</p>
+<p>Een sensor zet een fysiek verschijnsel om in informatie.
+Voorbeelden van sensoren zijn: microfoon (voor geluid), temperatuursensor,
+camera (beeld), lichtsensor, vernellingsopnemer,
+GPS-ontvanger (positie), hall-sensor (magnetisme), gassensoren, enz.</p>
+<p>Een fysiek verschijnsel kan vaak door verschillende sensoren waargenomen worden.
+De aanwezigheid van een persoon kun je bijvoorbeeld meten via temperatuur,
+gewicht, geluid, beeld, gasconcentraties, enz.</p>
+</div>
+</div>
+<div class="section" id="aan-het-internet">
+<h2><span class="section-number">1.2.3. </span>Aan het internet<a class="headerlink" href="#aan-het-internet" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/controller-internet.png"><img alt="../_images/controller-internet.png" src="../_images/controller-internet.png" style="width: 500px;" /></a>
+</div>
+<p>Als volgende stap <em>verbinden we de controller met het internet</em>.
+Hiermee kunnen we de installatie <em>op afstand bedienen</em>, via een app,
+waarin we ook in een dashboard de gegevens van de sensoren kunnen bekijken.</p>
+</div>
+<div class="section" id="slimme-diensten">
+<h2><span class="section-number">1.2.4. </span>“Slimme” diensten<a class="headerlink" href="#slimme-diensten" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/controller-diensten.png"><img alt="../_images/controller-diensten.png" src="../_images/controller-diensten.png" style="width: 500px;" /></a>
+</div>
+<p>Als de controller verbonden is aan het internet,
+kunnen we bij de besturing ook gebruik maken van <em>diensten elders in het internet</em>,
+zoals bijvoorbeeld de weersverwachting:
+het geen zin om te sproeien als er regen verwacht wordt.
+Op deze manier kunnen we nog meer water besparen.</p>
+<p>Door gebruik te maken van de gegevens van de sensoren over langere tijd,
+en door deze te combineren met gegevens van sproei-installaties elders,
+kunnen we het algoritme voor het besproeien steeds verder optimaliseren.
+Dit is een voorbeeld van het combineren van het Internet of Things met Data Science (Big Data).</p>
+<p>Uiteindelijk wil je een sproeisysteem dat optimaal gebruik maakt van de omstandigheden.
+Je wilt daarmee het gras zo laten groeien dat het goed gebruik maakt van het water in de bodem -
+bijvoorbeeld door voldoend lange wortels te ontwikkelen.
+Dat betekent dat je niet altijd moet sproeien als alleen de bovenste laag van de bodem droog is.
+Hiervoor is kennis nodig van de manier waarop gras groeit, en van de lokale bodem- en weersomstandigheden.
+Externe diensten spelen daarvoor een belangrijke rol.</p>
+</div>
+<div class="section" id="meerdere-controllers">
+<h2><span class="section-number">1.2.5. </span>Meerdere controllers<a class="headerlink" href="#meerdere-controllers" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/IoT-node-controller-controller.png"><img alt="../_images/IoT-node-controller-controller.png" src="../_images/IoT-node-controller-controller.png" style="width: 600px;" /></a>
+</div>
+<p>Vaak heeft het zin om controllers op meerdere niveaus te gebruiken,
+bijvoorbeeld een (micro)controller direct bij de sensoren/actuatoren in een <em>IoT-knoop</em>,
+een controller in de buurt van de “dingen” waaraan je meet en stuurt,
+en een controller die bereikbaar is in het publieke internet.</p>
+<p>De IoT-knoop-controller en de lokale controller zorgen voor lokale autonomie en (daardoor) grotere betrouwbaarheid,
+voor snelle beslissingen (door lage latency vanwege de kleine afstand),
+verminderen de druk op de communicatie met en het rekenwerk in de <em>cloud</em>,
+en maken een betere beveiliging mogelijk.
+Omdat je het rekenwerk in de lokale controllers kunt zien als een lokaal verlengstuk van de <em>cloud</em> heet dit wel <em>fog computing</em>.</p>
+<p>De globale controller zorgt voor de bereikbaarheid in het internet,
+en voor de koppeling met diensten elders.</p>
+<p>Dit gebruik van meerdere controllers is een voorbeeld van <em>distributie</em> van functionaliteit in een netwerk.</p>
+<div class="admonition-wat-is-lokale-autonomie admonition">
+<p class="admonition-title">Wat is <em>lokale autonomie</em>?</p>
+<p>Een autonoom systeem kan zelfstandig functioneren, zonder ingrepen van buiten.
+Voorbeelden van autonome systemen zijn: robots, zelfrijdende auto’s, CV met thermostaat, enz.
+Met <em>lokale autonomie</em> bedoelen we hier dat het lokale systeem zonder verbinding met de buitenwereld zelfstandig kan blijven functioneren;
+maar door het ontbreken van globale informatie is het resultaat mogelijk minder optimaal.
+Met andere woorden: ook als de internetverbinding wegvalt, blijft het systeem functioneren,
+maar minder “slim” .</p>
+</div>
+</div>
+<div class="section" id="samenvatting">
+<h2><span class="section-number">1.2.6. </span>Samenvatting<a class="headerlink" href="#samenvatting" title="Permalink to this headline">¶</a></h2>
+<p>Samenvattend zien we de volgende stappen:</p>
+<ol class="arabic simple">
+<li><p>automatisch besturen van actuatoren met een controller;</p></li>
+<li><p>aansluiten van sensoren op de controller, om een slimmere besturing mogelijk te maken;</p></li>
+<li><p>aansluiten van de controller op het internet, voor bewaken (monitoring) en besturen op afstand - via een app;</p></li>
+<li><p>gebruik van diensten in het internet om tot een “slimme oplossing” te komen.</p></li>
+</ol>
+<p>Elke volgende stap helpt om meer water te besparen en om een beter sproei- en groeiresultaat te krijgen.
+De eerste stappen zijn voorbeelden van traditionele lokale automatisering.
+De stappen 3 en 4 zijn voorbeelden van het internet of things:
+de verbinding met het internet geeft veel extra mogelijkheden.</p>
+</div>
+<div class="section" id="toetsvragen">
+<h2><span class="section-number">1.2.7. </span>Toetsvragen<a class="headerlink" href="#toetsvragen" title="Permalink to this headline">¶</a></h2>
+
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="1.2.7.1" data-multipleanswers="false"  id="vraag-VBW-1"  style="visibility: hidden;">
+            <p>Q-1: Hoe heet een opnemer om een fysische grootheid te meten, bijvoorbeeld de temperatuur?</p>
+
+            <li data-component="answer"  id="vraag-VBW-1_opt_a">Controller</li><li data-component="feedback">Met een controller bestuur je een IoT-toepassing</li>
+            
+            <li data-component="answer"  id="vraag-VBW-1_opt_b">IoT-knoop</li><li data-component="feedback">Een IoT-knoop kan sensoren bevatten (en actuatoren)</li>
+            
+            <li data-component="answer" data-correct id="vraag-VBW-1_opt_c">Sensor</li><li data-component="feedback">Goed!</li>
+            
+            <li data-component="answer"  id="vraag-VBW-1_opt_d">Actuator</li><li data-component="feedback">Met een <em>actuator</em> verander je een fysische grootheid</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="1.2.7.2" data-multipleanswers="true"  id="vraag1-VBW-2"  style="visibility: hidden;">
+            <p>Q-2: Welke van de onderstaande uitspraken is waar?</p>
+
+            <li data-component="answer" data-correct id="vraag1-VBW-2_opt_a">een controller bestuurt de sensoren en actuatoren bij het "ding"</li><li data-component="feedback">Ja.</li>
+            
+            <li data-component="answer"  id="vraag1-VBW-2_opt_b">een IoT-knoop bevat altijd sensoren en actuatoren</li><li data-component="feedback">Een IoT-knoop kan ook alleen sensoren of actuatoren bevatten.</li>
+            
+            <li data-component="answer" data-correct id="vraag1-VBW-2_opt_c">een IoT-knoop bevat altijd een controller</li><li data-component="feedback">Ja.</li>
+            
+            <li data-component="answer"  id="vraag1-VBW-2_opt_d">een IoT-knoop is altijd draadloos verbonden aan het internet</li><li data-component="feedback">Een IoT-knoop kan ook bedraad zijn</li>
+            
+
+            </ul>
+            </div>
+            
+<div class="runestone">
+<ul data-component="dragndrop" data-question_label="1.2.7.3" id="vraag1-VBW-3"  style="visibility: hidden;">
+    <span data-component="question">Q-3: Plaats de termen bij hun beschrijving.</span>
+	<span data-component=feedback>Zie: xxx</span>
+
+    <li data-component="draggable" id="vraag1-VBW-3_drag1">Controller </li>
+    <li data-component="dropzone" for="vraag1-VBW-3_drag1"> Besturingscomputer</li>
+
+    <li data-component="draggable" id="vraag1-VBW-3_drag2">Sensor     </li>
+    <li data-component="dropzone" for="vraag1-VBW-3_drag2"> Meet een fysische grootheid</li>
+
+    <li data-component="draggable" id="vraag1-VBW-3_drag3">Gateway    </li>
+    <li data-component="dropzone" for="vraag1-VBW-3_drag3"> Verbindt twee netwerken</li>
+</ul></div>
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="1.2.7.4" data-multipleanswers="true"  id="vraag-VBW-4"  style="visibility: hidden;">
+            <p>Q-4: Welke van de onderstaande apparaten zijn actuatoren?</p>
+
+            <li data-component="answer"  id="vraag-VBW-4_opt_a">drukknop</li><li data-component="feedback">Een drukknop zet beweging om in informatie (sensor)</li>
+            
+            <li data-component="answer" data-correct id="vraag-VBW-4_opt_b">relais</li><li data-component="feedback">Een relais is een elektrische schakelaar bestuurd door informatie (actuator)</li>
+            
+            <li data-component="answer"  id="vraag-VBW-4_opt_c">barometer</li><li data-component="feedback">Een barometer zet luchtdruk om in informatie (sensor)</li>
+            
+            <li data-component="answer" data-correct id="vraag-VBW-4_opt_d">klep</li><li data-component="feedback">Een klep zet informatie om in beweging: open/dicht (actuator)</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="1.2.7.5" data-multipleanswers="true"  id="vraag-VBW-5"  style="visibility: hidden;">
+            <p>Q-5: Welke van de onderstaande apparaten zijn sensoren?</p>
+
+            <li data-component="answer" data-correct id="vraag-VBW-5_opt_a">microfoon</li><li data-component="feedback">Een microfoon zet geluid om in informatie (sensor)</li>
+            
+            <li data-component="answer"  id="vraag-VBW-5_opt_b">luidspreker</li><li data-component="feedback">Een luidspreker zet informatie om in geluid (actuator)</li>
+            
+            <li data-component="answer"  id="vraag-VBW-5_opt_c">controller</li><li data-component="feedback">Een controller is een besturingscomputer (geen sensor of actuator)</li>
+            
+            <li data-component="answer" data-correct id="vraag-VBW-5_opt_d">GPS-ontvanger</li><li data-component="feedback">Een GPS-ontvanger zet een positie om in informatie (sensor)</li>
+            
+            <li data-component="answer"  id="vraag-VBW-5_opt_e">servomotor</li><li data-component="feedback">Een servomotor zet informatie om in een hoekverdraaiing (actuator)</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="runestone alert alert-warning">
+            <ul data-component="multiplechoice" data-question_label="1.2.7.6" data-multipleanswers="false"  id="vraag-VBW-6"  style="visibility: hidden;">
+            <p>Q-6: Wat zet een fysisch verschijnsel om in informatie?</p>
+
+            <li data-component="answer"  id="vraag-VBW-6_opt_a">Controller</li><li data-component="feedback">Met een controller bestuur je een IoT-toepassing</li>
+            
+            <li data-component="answer"  id="vraag-VBW-6_opt_b">IoT-knoop</li><li data-component="feedback">Een IoT-knoop kan sensoren bevatten (en actuatoren)</li>
+            
+            <li data-component="answer" data-correct id="vraag-VBW-6_opt_c">Sensor</li><li data-component="feedback">Goed!</li>
+            
+            <li data-component="answer"  id="vraag-VBW-6_opt_d">Actuator</li><li data-component="feedback">Met een <em>actuator</em> verander je een fysische grootheid</li>
+            
+
+            </ul>
+            </div>
+            </div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+<ul>
+  <li id="relations-prev" style="opacity:0.4" onmouseover="mouseOverPrev()" onmouseout="mouseOutPrev()"class="navLink" title='Previous Section - 1.1. Geschiedenis en ontwikkeling' data-toggle="tooltip">
+    <a href="ontwikkeling.html" aria-label="1.1. Geschiedenis en ontwikkeling">
+        <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+            <i class='prevNav glyphicon glyphicon-chevron-left'  style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black;"></i>
+        </div>
+    </a>
+  </li>
+</ul>
+
+  
+<ul>
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 1.3. Voorbeeld: slimme verlichting' data-toggle="tooltip" >
+    <a href="vb-verlichting.html" aria-label="1.3. Voorbeeld: slimme verlichting">
+      <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
+          <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2020 eelco.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.5.12.
+    </p>
+  </div>
+</footer>
+
+
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>

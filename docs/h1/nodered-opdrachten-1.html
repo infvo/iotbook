@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NodeRed opdrachten &#8212; IoT-book</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
+    <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=50109A2C" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
+    <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.5.12" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="../_static/webglinteractive.js?v=2B768384"></script>
+    <script src="../_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="../_static/Blob.js?v=AEC2447"></script>
+    <script src="../_static/html4css1.css?v=4533ACD3"></script>
+    <script src="../_static/animationbase.js?v=A043C3A7"></script>
+    <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
+    <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
+    <script src="../_static/sql-wasm.js?v=D71B5933"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.fallbacks.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+    <script src="../_static/runestone.js?v=DC48DFAC"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
+    <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../_static/jquery-fix.js?v=1226591B"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/jquery.idle-timer.js?v=E942DAF1"></script>
+    <script src="../_static/presenter_mode.js?v=2DF16FB4"></script>
+    <script src="../_static/theme.js?v=D899FB97"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  
+    eBookConfig.useRunestoneServices = false;
+    eBookConfig.host = 'http://127.0.0.1:8000' || 'http://127.0.0.1:8000';
+    eBookConfig.app = eBookConfig.host+'/runestone';
+    eBookConfig.course = 'iotbook';
+    eBookConfig.basecourse = 'iotbook';
+    eBookConfig.isLoggedIn = false;
+    eBookConfig.enableCompareMe = eBookConfig.useRunestoneServices;
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 30;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = true;
+  eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
+  eBookConfig.runestone_version = '5.5.12';
+  eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
+  eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
+  eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
+  eBookConfig.enable_chatcodes = false ? false : false;
+
+
+</script>
+
+<!-- Ad Serving Headers Only serve ads to Anonymous Users -->
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar" aria-label="navbar toggle" class="visuallyhidden">toggle navbar</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+          <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        
+        <a class="navbar-brand" href="../index.html" aria-label="index-page">
+          
+          iotbook
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+
+
+        <!-- social media dropdown -->
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-globe" style="opacity: 0.9"><span aria-label="Social" class="visuallyhidden">Social</span></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone">Follow @iRunestone</a>
+                <a href="https://www.facebook.com/RunestoneInteractive">Our Facebook Page</a>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li><!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span aria-label="Search" class="visuallyhidden">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='../genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:ACFactory.toggleScratchActivecode()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span aria-label="Scratch Activecode" class="visuallyhidden">Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span aria-label="Help" class="visuallyhidden">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://runestone.academy/runestone/static/instructorguide/index.html'>Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=iotbook&page=nodered-opdrachten-1'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+      </div> <!-- navbar -->
+
+
+
+
+
+
+
+    </div> <!-- container -->
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+<!-- Ad Serving for Runestone Campaign -->
+
+
+  
+  <div class="section" id="nodered-opdrachten">
+<h1>NodeRed opdrachten<a class="headerlink" href="#nodered-opdrachten" title="Permalink to this headline">¶</a></h1>
+<p>Lees eerst de inleiding voor NodeRed.</p>
+<div class="section" id="eerste-flow">
+<h2>1. Eerste flow<a class="headerlink" href="#eerste-flow" title="Permalink to this headline">¶</a></h2>
+<p>Met deze eerste flow kun je zien of alles werkt:</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/Nodered-flow1.png"><img alt="../_images/Nodered-flow1.png" src="../_images/Nodered-flow1.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">NodeRed: eerste flow</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Hiervoor gebruik je de volgende nodes:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 31%" />
+<col style="width: 37%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>figuur</strong></p></td>
+<td><p><strong>naam</strong></p></td>
+<td><p><strong>soort node</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="inject-node" src="../_images/inject-node.png" /></p></td>
+<td><p>inject-node</p></td>
+<td><p>input</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="debug-node" src="../_images/debug-node.png" /></p></td>
+<td><p>debug-node</p></td>
+<td><p>output</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Opdracht 1.1</p>
+<p>Voer de onderstaande opdrachten uit in een lege (flow)tab in NodeRed.</p>
+<ul class="simple">
+<li><p>sleep een inject-node vanuit de lijst met nodes links naar het lege vlak in het midden</p></li>
+<li><p>plaats op dezelfde manier een debug-node;</p></li>
+<li><p>verbind de output (rechts) van de inject-node met de input (links) van de debug-node;</p></li>
+<li><p>activeer deze flow (rechts boven: <strong>Deploy</strong>);</p></li>
+<li><p>selecteer de debug-tab (rechts);</p></li>
+<li><p>test deze flow, door op het knopje links op de input-node (“timestamp”) te klikken.</p></li>
+</ul>
+<p>Als het goed is, krijg je in het debug-venster rechts nu de output van deze flow te zien.
+Elke keer als je op de input-node klikt, genereert deze een timestamp-event.</p>
+<p class="rubric">Opdracht 1.2</p>
+<p>Voor onderstaande opdrachten uit; test de uitwerking (na “Deploy”) via de debug-tab.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>verander de configuratie van de inject-knoop: zorg ervoor dat deze elke 10 seconden een timestamp oplevert.</dt><dd><ul>
+<li><p>double-click op een knoop geeft het configuratie-venster;</p></li>
+<li><p>bewaar de nieuwe configuratie via de “Done”-knop.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>verander de configuratie van de inject-knoop: zorg ervoor dat deze een tekst levert als inhoud van het bericht (payload).</p></li>
+<li><p>verbind meerdere inject-knopen met herhalende berichten met dezelfde debug-knoop.</p></li>
+</ul>
+<p><em>Tips</em>:</p>
+<ul class="simple">
+<li><p>je kunt in het debug-venster aangeven dat je alleen de “current flow” wilt zien;</p></li>
+<li><p>je kunt het debug-venster leeg maken via het vuilnisbakje (rechts boven).</p></li>
+</ul>
+</div>
+<div class="section" id="verbinden-met-een-iot-knoop-via-mqtt">
+<h2>2. Verbinden met een IoT-knoop via MQTT<a class="headerlink" href="#verbinden-met-een-iot-knoop-via-mqtt" title="Permalink to this headline">¶</a></h2>
+<p>Voor de communicatie tussen NodeRed en de IoT-knopen gebruiken we (meestal) het MQTT protocol.
+In een later hoofdstuk werken we dat verder uit.
+Het gebruik van MQTT-nodes in NodeRed is erg eenvoudig;
+het lastigste is het configureren hiervan.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 32%" />
+<col style="width: 32%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>figuur</strong></p></td>
+<td><p><strong>naam</strong></p></td>
+<td><p><strong>soort node</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="mqtt-input-node" src="../_images/nodered-mqtt-input-node.png" /></p></td>
+<td><p>mqtt-input-node</p></td>
+<td><p>input</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="mqtt-output-node" src="../_images/nodered-mqtt-output-node.png" /></p></td>
+<td><p>mqtt-output-node</p></td>
+<td><p>output</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="mqtt-broker-node" src="../_images/nodered-mqtt-broker-node.png" /></p></td>
+<td><p>mqtt-broker-node</p></td>
+<td><p>configuratie</p></td>
+</tr>
+</tbody>
+</table>
+<p>In de volgende opdrachten maak je de onderstaande flow om het gebruik van mqtt te testen.</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/nodered-mqtt-0-flow.png"><img alt="../_images/nodered-mqtt-0-flow.png" src="../_images/nodered-mqtt-0-flow.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">MQTT input- en output-test</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="mqtt-input">
+<h3>2.1 MQTT input<a class="headerlink" href="#mqtt-input" title="Permalink to this headline">¶</a></h3>
+<p>Als eerste proberen we de sensor-gegevens van een IoT-knoop te ontvangen in NodeRed.
+De waarden van deze sensoren geven we eerst weer in het debug-venster;
+later kunnen we deze gebruiken in een besturing of een dashboard.</p>
+<ol class="arabic simple">
+<li><p>Sleep een mqtt-input-node naar het flow-venster;</p></li>
+<li><p>Configureer deze (door double-click):</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Bij <cite>Server</cite> vul je de gegevens van de broker in.
+Zie de schermafbeeldingen verderop.
+Selecteer een eerder ingevulde broker of maak (via het potlood) een nieuwe broker aan.
+Voorbeeld: onder tab Connection: <cite>Server:</cite> <cite>infvopedia.nl</cite> <cite>Port:</cite> <cite>1883</cite>
+Onder de tab Security vul je de username/password-combinatie in.</p></li>
+<li><p>Bij <cite>Topic</cite> vul je het sensor-topic van je IoT-knoop in,
+bijvoorbeeld: <cite>node/xxxx/sensors</cite>,
+met in plaats van <cite>xxxx</cite> de identificatie van je eigen knoop.</p></li>
+<li><p>Bewaar de configuratie (Save).</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Sleep een debug-node naar het flow-venster en
+verbind de output van de mqtt-node met de input van de debug-node.</p></li>
+<li><p>Activeer de flow (“Deploy”)</p></li>
+</ol>
+<p>Als het goed is zie je in het debug-venster nu de berichten van je IoT-knoop verschijnen.
+Je moet misschien even wachten; je kunt ook één de knoppen op de IoT-knoop proberen.</p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/nodered-mqtt-conf-0.png"><img alt="../_images/nodered-mqtt-conf-0.png" src="../_images/nodered-mqtt-conf-0.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">MQTT broker configuration (1)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/nodered-mqtt-conf-1.png"><img alt="../_images/nodered-mqtt-conf-1.png" src="../_images/nodered-mqtt-conf-1.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">MQTT broker configuration (2)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/nodered-mqtt-conf-2.png"><img alt="../_images/nodered-mqtt-conf-2.png" src="../_images/nodered-mqtt-conf-2.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">MQTT broker configuration (3)</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="mqtt-output">
+<h3>2.2 MQTT output<a class="headerlink" href="#mqtt-output" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/nodered-mqtt-0-flow.png"><img alt="../_images/nodered-mqtt-0-flow.png" src="../_images/nodered-mqtt-0-flow.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">MQTT input- en output-test</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Op eenzelfde manier kunnen we via een inject-node berichten sturen naar een IoT-knoop.</p>
+<ol class="arabic simple">
+<li><p>Sleep een mqtt-output-node naar het flow-venster;</p></li>
+<li><p>Configureer deze (door double-click):</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Selecteer bij <cite>Server</cite> de broker die je hierboven geconfigureerd hebt.</p></li>
+<li><p>Vul bij Topic in: <cite>node/xxxx/actuators</cite>,
+met in plaats van <cite>xxxx</cite> de identificatie van je eigen knoop.</p></li>
+<li><p>Bewaar de configuratie.</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Sleep een template-node (met “{” als symbool) naar het flow-venster en
+verbind de output van de template-node met de input van de mqtt-node.
+Configureer deze template-node: <cite>Name:</cite> <code class="docutils literal notranslate"><span class="pre">led0-on</span></code>, <cite>Format:</cite> <code class="docutils literal notranslate"><span class="pre">Plain</span> <span class="pre">text</span></code>,
+en <cite>template</cite>: <code class="docutils literal notranslate"><span class="pre">{&quot;0&quot;:{&quot;dOut&quot;:1}}</span></code>. (Zie de figuur verderop.)</p></li>
+<li><p>Sleep een inject-node naar het flow-venster en
+verbind deze met de template-node <em>led0-on</em>.</p></li>
+<li><p>Sleep een template-node naar het flow-venster en
+verbind de output van de template-node met de input van de mqtt-node.
+Configureer deze template-node: <cite>Name:</cite> <code class="docutils literal notranslate"><span class="pre">led0-off</span></code>, <cite>Format:</cite> <code class="docutils literal notranslate"><span class="pre">Plain</span> <span class="pre">text</span></code>,
+en <cite>template</cite>: <code class="docutils literal notranslate"><span class="pre">{&quot;0&quot;:{&quot;dOut&quot;:0}}</span></code>.</p></li>
+<li><p>Sleep een inject-node naar het flow-venster en
+verbind deze met de template-node <code class="docutils literal notranslate"><span class="pre">led0-off</span></code>.</p></li>
+<li><p>Activeer de flow (“Deploy”).</p></li>
+</ol>
+<p>Met de beide inject-nodes kun je (als alles goed gaat) nu de (linker) led van de IoT-knoop
+in- en uitschakelen.</p>
+<p><em>Opmerking</em>: als je de flow activeert, zie je bij de mqtt-nodes een gekleurd bolletje dat de toestand van de verbinding aangeeft.
+Als de mqtt-knoop verbinding heeft met de mqtt-broker (server) is dit bolletje groen.</p>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/nodered-template-conf-0.png"><img alt="../_images/nodered-template-conf-0.png" src="../_images/nodered-template-conf-0.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Template node configuration (“led0-on”)</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="automatiseren">
+<h2>3. Automatiseren<a class="headerlink" href="#automatiseren" title="Permalink to this headline">¶</a></h2>
+<p>Via NodeRed kun je allerlei protocollen en toepassingen koppelen.
+Je kunt ook allerlei zaken automatiseren, bijvoorbeeld een lamp inschakelen als je thuiskomt.</p>
+<p>Een eenvoudige automatisering is het laten knipperen van LED-0 op de IoT-knoop.</p>
+<p>Maak een NodeRed-flow waarmee je LED-0 van een (gesimuleerde) IoT-knoop laat knipperen.
+Begin met de eenvoudige flow van Opdracht 1, en breid deze later uit met een MQTT-output-node.
+Vergeet niet aan het eind van elke opdracht de flow te activeren (“Deploy”);
+controleer bij elke stap of het werkt.</p>
+<p class="rubric">Opdracht 3.1 - knipperende led(1)</p>
+<p>In de eerste stap maak je een flow die elke seconde een bericht genereert,
+afwisselend “aan” en “uit”.
+Hiervoor gebruik je dezelfde flow die je in de vorige opdracht (2.2) gemaakt hebt.
+Je programmeert alleen de inject-nodes anders.</p>
+<ol class="arabic simple">
+<li><p>Configureer de bovenste inject-node (voor “led0-on”):
+deze moet elke 2 seconden een bericht sturen (“repeat: interval, every 2 seconds”),
+waarmee de led ingeschakeld wordt.
+Zie de figuur verderop.</p></li>
+<li><p>Configureer de onderste inject-node (voor “led0-off”):
+deze moet na een vertraging van 1 seconde (“inject once after 1 sec”),
+elke 2 seconden een bericht sturen (“repeat: interval, every 2 seconds”).</p></li>
+<li><p>Activeer de flow (“Deploy”).</p></li>
+</ol>
+<p>Als het goed is knippert de led nu 1 seconde aan, 1 seconde uit.</p>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/nodered-inject-conf-0.png"><img alt="../_images/nodered-inject-conf-0.png" src="../_images/nodered-inject-conf-0.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Inject node configuration: elke 2 seconden een bericht</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p class="rubric">Opdracht 3.2 - knipperende led(2)</p>
+<p>Uiteindelijk willen we een led laten knipperen op basis van een enkel binnenkomend bericht
+van een enkele node.
+We beginnen daarom met één enkele niet-repeterende inject-node.
+We gebruiken daarvoor een tweetal delay-nodes die we in een lus doorverbinden.
+Zo’n delay node stuurt een binnengekomen bericht na een bepaalde vertraging door.</p>
+<p>We beginnen met de flow als in de vorige opdracht.
+Zorg ervoor dat de eerste inject-node niet herhaalt.
+Verwijder de tweede inject-node.</p>
+<ol class="arabic simple">
+<li><p>Sleep een delay-node naar het flow-gedeelte, en configureer deze voor een vertraging van 1 sec.
+Verbind de output van de bovenste inject-node met de input van deze delay-node.
+Verbind deze input ook met de template-node <em>led0-on</em>.</p></li>
+<li><p>Sleep een delay-node naar het flow-gedeelte, en configureer deze voor een vertraging van 1 sec.
+Verbind de output van de eerste delay-node met de input van de tweede delay-node.
+Verbind deze input ook met de template-node <em>led0-off</em>.
+Verbind de output van de tweede delay-node met de input van de eerste delay-node.</p></li>
+<li><p>Activeer de schakeling</p></li>
+</ol>
+<p>Als het goed is, begint de LED te knipperen als je de inject-node aanklikt.
+(Ga na hoe deze schakeling werkt.)</p>
+<p><em>Opmerking</em>: de techniek van het maken van een “oscillator” door meerdere vertragende componenten
+in een lus te verbinden gebruik je ook in de elektronica (“ring oscillator”).</p>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/nodered-2-delay-flow-0.png"><img alt="../_images/nodered-2-delay-flow-0.png" src="../_images/nodered-2-delay-flow-0.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Knipperende led met delays(1)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p class="rubric">Opdracht 3.3 - knipperende led(3)</p>
+<p>De bovenstaande schakeling heeft één nadeel: deze blijft doorgaan.
+We willen het aantal keren dat de led knippert beperken, bijvoorbeeld tot maximaal 5 keer.
+Hiervoor gebruiken we een functie die steeds 5 berichten doorlaat en dan 1 niet.
+Deze functie-node plaatsen we voor de eerste delay, zie de onderstaande flow:</p>
+<div class="figure align-center" id="id10">
+<a class="reference internal image-reference" href="../_images/nodered-2-delay-flow-1.png"><img alt="../_images/nodered-2-delay-flow-1.png" src="../_images/nodered-2-delay-flow-1.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">Knipperende led met delays(1)</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple">
+<li><p>maak bovenstaande flow.</p></li>
+<li><p>configureer de function-node “limit-5-messages” op de volgende manier:</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)</span><span class="o">||</span><span class="mf">0</span><span class="p">;</span>
+<span class="nx">count</span> <span class="o">=</span> <span class="nx">count</span> <span class="o">+</span> <span class="mf">1</span><span class="p">;</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">count</span> <span class="o">&gt;</span> <span class="mf">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
+    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">msg</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Een korte uitleg bij deze functie (voor als je het naadje van de kous wilt weten):</p>
+<ul class="simple">
+<li><p>we gebruiken een <em>context variabele</em> <code class="docutils literal notranslate"><span class="pre">count</span></code>; deze houdt het aantal aanroepen c.q. ontvangen berichten bij.</p></li>
+<li><p>een verdere uitleg van context variabelen in NodeRed vind je op: <a class="reference external" href="https://nodered.org/docs/user-guide/context">https://nodered.org/docs/user-guide/context</a>
+en <a class="reference external" href="https://nodered.org/docs/user-guide/writing-functions">https://nodered.org/docs/user-guide/writing-functions</a></p></li>
+<li><p>als dit aantal groter is dan 5, zet dan de teller weer op 0, en geef <code class="docutils literal notranslate"><span class="pre">null</span></code> als resultaat.
+In NodeRed betekent dit: stuur  geen bericht naar de volgende nodes.</p></li>
+<li><p>in het andere geval: geef <code class="docutils literal notranslate"><span class="pre">msg</span></code> als resultaat, m.a.w., geef het ontvangen bericht door aan de volgende nodes.</p></li>
+</ul>
+<p>Vraag: wat gebeurt er als we deze functie voor de tweede delay plaatsen?</p>
+<ul class="simple">
+<li><p>je kunt in het debug-venster aangeven dat je alleen de “current flow” wilt zien;</p></li>
+<li><p>je kunt het debug-venster leeg maken via het vuilnisbakje (rechts boven).</p></li>
+</ul>
+<p class="rubric">Opdracht 3.2</p>
+<p>De volgende stap is om elke deze waarden te koppelen aan de led van de IoT-knoop.
+Eerst maken we de waarden geschikt voor de LED.
+Vervolgens koppelen we deze aan de IoT-knoop, via MQTT.</p>
+<ol class="arabic simple">
+<li><p>Configureer de bovenste inject-node:</p>
+<ol class="arabic simple">
+<li><p>Stel de payload in als  JSON, met als waarde: <code class="docutils literal notranslate"><span class="pre">{&quot;0&quot;:</span> <span class="pre">{&quot;dOut&quot;:</span> <span class="pre">1}}</span></code>.
+<em>Tip</em>: bij het invoeren van een JSON-waarde kun je de JSON-editor gebruiken,
+via de <code class="docutils literal notranslate"><span class="pre">...</span></code> rechts in het edit-venster.
+Je maakt dan minder fouten.</p></li>
+<li><p>Bewaar de configuratie (“Save”)</p></li>
+<li><p>“Deploy”, en controleer de output in het debug-venster.</p></li>
+</ol>
+</li>
+<li><p>Configureer de onderste inject-node:</p>
+<ol class="arabic simple">
+<li><p>Stel de payload in als  JSON, met als waarde: <code class="docutils literal notranslate"><span class="pre">{&quot;0&quot;:</span> <span class="pre">{&quot;dOut&quot;:</span> <span class="pre">0}}</span></code>.</p></li>
+<li><p>Bewaar de configuratie (“Save”)</p></li>
+<li><p>“Deploy”, en controleer de output in het debug-venster.</p></li>
+</ol>
+</li>
+<li><p>Voeg een MQTT output-node toe, en configureer deze:</p>
+<ol class="arabic simple">
+<li><p>stel de MQTT broker (“server”) in als in bij het dashboard.</p></li>
+<li><p>gebruik als Topic: <code class="docutils literal notranslate"><span class="pre">node/xxxx/actuators</span></code>,
+waarbij je voor <code class="docutils literal notranslate"><span class="pre">xxxx</span></code> de ID van je IoT-knoop invult.</p></li>
+<li><p>Bewaar de configuratie (“Save”)</p></li>
+<li><p>“Deploy”, en controleer de output in het debug-venster.</p></li>
+</ol>
+</li>
+</ol>
+<p>Als het goed is zie je nu de berichten niet alleen in het debug-venster verschijnen,
+maar knippert de LED van je IoT-knoop ook op dezelfde manier mee.</p>
+<blockquote>
+<div><p>De codes voor het in- en uitschakelen van de LED behandelen we later uitgebreider.
+De eerste <cite>“0”`</cite> staat hier voor LED-0.
+Sommige IoT-knopen hebben ook een LED-1: probeer die op dezelfde manier te laten knipperen.</p>
+</div></blockquote>
+<p>Deze manier van werken is typisch voor NodeRed: je bouwt een flow beetje voor beetje op,
+waarbij je in het begin veel gebruik maakt van inject- en debug-nodes.
+Je test hiermee elke stap.
+Deze nodes kun je laten zitten tijdens het gebruik:
+een debug-node kun je eenvoudig uitschakelen als je deze even niet nodig hebt.</p>
+<p>Nog enkele suggesties:</p>
+<ul class="simple">
+<li><p>je kunt meerdere MQTT-output-nodes toevoegen met dezelfde input,
+voor verschillende IoT-knopen: je kunt die LEDs tegelijk laten knipperen.</p></li>
+<li></li>
+</ul>
+</div>
+<div class="section" id="koppelen-van-iot-apparaten">
+<h2>4. Koppelen van IoT-apparaten<a class="headerlink" href="#koppelen-van-iot-apparaten" title="Permalink to this headline">¶</a></h2>
+<p>In deze opdracht koppel je de knoppen van de ene IoT-knoop aan de LED van een andere IoT-knoop.
+Je kunt deze LED dan op afstand aan- en uitzetten.</p>
+<p>We moeten hiervoor de berichten die deze knoppen sturen splitsen in drie stromen:
+voor het indrukken van de eerste button, voor het indrukken van de tweede button,
+en voor het indrukken van beide buttons.</p>
+<div class="figure align-center" id="id11">
+<a class="reference internal image-reference" href="../_images/nodered-convert-buttons-function.png"><img alt="../_images/nodered-convert-buttons-function.png" src="../_images/nodered-convert-buttons-function.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">Function node <em>Convert-LPP-buttons</em></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>Je kunt deze function-node op twee manieren aanmaken:</p>
+<p><strong>Methode 1.</strong> Sleep een function-node naar het flow-gedeelte, en configureer deze als volgt:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><em>Name:</em>: <code class="docutils literal notranslate"><span class="pre">Convert-LPP-buttons</span></code></p></li>
+<li><p><em>Function:</em> kopieer en plak onderstaande code</p></li>
+<li><p><em>Outputs:</em> 3 (berichten voor het indrukken button 0 gaan naar output 0;
+voor button 1 naar output 1; als beide buttons ingedrukt zijn: output 2)</p></li>
+</ol>
+</div></blockquote>
+<div class="highlight-javascript notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">button0</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">payload</span><span class="p">[</span><span class="mf">2</span><span class="p">].</span><span class="nx">dIn</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">button1</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">payload</span><span class="p">[</span><span class="mf">3</span><span class="p">].</span><span class="nx">dIn</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">button0</span> <span class="o">&amp;&amp;</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">button1</span><span class="p">){</span>
+    <span class="k">return</span> <span class="p">[</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">msg</span><span class="p">];</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">button0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nx">msg</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">];</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">button1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="kc">null</span><span class="p">,</span> <span class="nx">msg</span><span class="p">,</span> <span class="kc">null</span><span class="p">];</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Methode 2</strong>.</p>
+<ol class="arabic simple">
+<li><p>Selecteer en kopieer de flow-tekst in JSON-notatie hieronder naar het Clipboard (CMD-C, CTRL-C afhankelijk van je O.S.)</p></li>
+<li><p>Importeer deze in de flow:</p></li>
+</ol>
+<blockquote>
+<div><ol class="lowerroman simple">
+<li><p>Selecteer hamburgermenu -&gt; Import -&gt; Clipboard</p></li>
+<li><p>“Paste” het clipboard in het venster (CMD-V, CTRL-V)</p></li>
+<li><p>Klik “Import”</p></li>
+</ol>
+</div></blockquote>
+<p>De function-node verschijnt nu in het flow-gedeelte.</p>
+<p>JSON-tekst voor de flow:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;c131fbb8.330988&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="s2">&quot;8d3e9168.dadf98&quot;</span><span class="p">,</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;convert-LPP-buttons&quot;</span><span class="p">,</span><span class="nt">&quot;func&quot;</span><span class="p">:</span><span class="s2">&quot;if (msg.payload.payload.hasOwnProperty(\&quot;2\&quot;)) {\n  msg.payload.button0 = msg.payload.payload[2].dIn;\n}\nif (msg.payload.payload.hasOwnProperty(\&quot;3\&quot;)) {\n  msg.payload.button1 = msg.payload.payload[3].dIn;\n}\n\nif (msg.payload.button0 &amp;&amp; msg.payload.button1){\n    return [null, null, msg];\n} else if (msg.payload.button0) {\n    return [msg, null, null];\n} else if (msg.payload.button1) {\n    return [null, msg, null];\n} else {\n    return [null, null, null];\n}&quot;</span><span class="p">,</span><span class="nt">&quot;outputs&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;noerr&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="mi">580</span><span class="p">,</span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="nt">&quot;wires&quot;</span><span class="p">:[[</span><span class="s2">&quot;eff69e91.a729b8&quot;</span><span class="p">],[</span><span class="s2">&quot;ddca2d4b.b32878&quot;</span><span class="p">],[]]}]</span>
+</pre></div>
+</div>
+<div class="section" id="opdracht-4-1-besturen-van-je-eigen-iot-knoop">
+<h3>Opdracht 4.1 Besturen van je eigen IoT-knoop<a class="headerlink" href="#opdracht-4-1-besturen-van-je-eigen-iot-knoop" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Maak de function-node zoals hierboven beschreven</p></li>
+<li><p>Maak met deze function node de onderstaande flow.
+Zorg ervoor dat de MQTT-nodes voor je eigen button geconfigureerd zijn.</p></li>
+<li><p>Activeer deze flow (Deploy).</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/nodered-buttons-led-flow-0.png"><img alt="../_images/nodered-buttons-led-flow-0.png" src="../_images/nodered-buttons-led-flow-0.png" style="width: 600px;" /></a>
+</div>
+<p>Nu kun je met de buttons op je IoT-knoop de LED aan- en uitzetten.</p>
+<p>Merk op dat in deze flow een JSON-node gebruikt wordt.
+Hiermee zet je de string-notatie zoals als MQTT-bericht binnenkomt om in een JavaScript-object
+dat je gemakkelijk in functies e.d. kunt gebruiken.</p>
+<p><em>Hint</em> Vergelijk met behulp van de debug-node het formaat van de MQTT-berichten zoals deze binnenkomen
+en nadat deze via de JSON-node omgezet zijn.</p>
+</div>
+<div class="section" id="opdracht-4-2-besturen-van-een-andere-iot-knoop">
+<h3>Opdracht 4.2 Besturen van een andere IoT-knoop<a class="headerlink" href="#opdracht-4-2-besturen-van-een-andere-iot-knoop" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Pas het Topic van de mqtt-output-node aan voor de knoop die je wilt besturen.</p></li>
+<li><p>Activeer de flow.</p></li>
+</ol>
+<p>Nu besturen de buttons van je IoT-knoop de LED van een andere knoop.</p>
+<p>Variaties:</p>
+<ol class="loweralpha simple">
+<li><p>je kunt op deze manier ook meerdere IoT-knopen besturen:
+met de output van een template-node kun je meerdere mqtt-output-nodes aansturen.</p></li>
+<li></li>
+</ol>
+<p>Vraag: we gebruiken twee verschillende buttons: één voor het aanzetten,
+en één voor het uitzetten van de LED. Waarom doen we dit?</p>
+</div>
+</div>
+</div>
+
+
+  <div id=scprogresscontainer>
+    You have attempted <span id=scprogresstotal></span> of <span id=scprogressposs></span> activities on this page <div id="subchapterprogress"></div>
+  </div>
+  
+      
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+
+<script>
+	function mouseOverPrev() {
+		document.getElementById("relations-prev").style.opacity=1;
+	}
+
+	function mouseOutPrev() {
+		document.getElementById("relations-prev").style.opacity=0.4;
+	}
+	function mouseOverNext() {
+		document.getElementById("relations-next").style.opacity=1;
+	}
+
+	function mouseOutNext() {
+		document.getElementById("relations-next").style.opacity=0.4;
+	}
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2020 eelco.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.5.12.
+    </p>
+  </div>
+</footer>
+
+
+
+
+<script> getSwitch(); </script>
+
+
+  </body>
+</html>
