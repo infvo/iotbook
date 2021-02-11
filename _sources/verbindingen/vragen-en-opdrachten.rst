@@ -24,14 +24,13 @@ Vragen en opdrachten
    Verklaar met behulp van :code:`energie = vermogen * tijd` dat je met een lagere bitrate
    een grotere afstand kunt overbruggen.
 
-..
 
 .. dragndrop:: IoT-206
    :feedback: Feedback that is displayed if things are incorrectly matched.
    :match_1: IoT-gateway|||Verbindt IoT-radio-netwerk en het lokale netwerk (LAN)
    :match_2: LAN-gateway|||Verbindt het lokale netwerk en het publieke internet
    :match_3: IoT-radio|||Verbindt de IoT-knoop met de IoT-gateway
-   :match_4: MQTT-broker|||Verbindt de IoT-knopen met de IoT-controllers, apps en diensten in het publieke internet,
+   :match_4: MQTT-broker|||Verbindt de IoT-knopen met de IoT-controllers, apps en diensten in het publieke internet
 
    Plaats de termen bij hun omschrijving.
 

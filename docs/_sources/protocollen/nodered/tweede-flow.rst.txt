@@ -27,10 +27,10 @@ We gebruiken voor deze flow de volgende nodes:
 | |html-node|         | html-node         | function (in/out) |
 +---------------------+-------------------+-------------------+
 
-.. |http-request-node| image:: NodeRed-http-request-node.png
+.. |http-request-node| image:: nodered-http-request-node.png
    :width: 150px
 
-.. |html-node| image:: NodeRed-html-node.png
+.. |html-node| image:: nodered-html-node.png
    :width: 150px
 
 Met de http-request-node verstuur je een HTTP-request; het resultaat is de response van de server.
@@ -38,7 +38,7 @@ Dit kun je dan weer verder bewerken.
 
 Met de html-node kun je elementen in een HTML-document selecteren.
 
-.. figure:: NodeRed-checkserver-flow-A.png
+.. figure:: nodered-checkserver-flow-a.png
    :width: 600px
    :align: center
 
@@ -71,7 +71,7 @@ Als de server de juiste HTML-pagina terugstuurt, is de website nog "online".
 
 .. rubric:: Opdracht B
 
-.. figure:: NodeRed-checkserver-flow-B.png
+.. figure:: nodered-checkserver-flow-c.png
    :width: 600px
    :align: center
 
@@ -113,7 +113,7 @@ De ene knop zet de ene LED aan en de andere uit, en omgekeerd.
 
 .. rubric:: Opdracht C
 
-.. figure:: NodeRed-checkserver-flow-C.png
+.. figure:: nodered-checkserver-flow-c.png
    :width: 600px
    :align: center
 
@@ -142,7 +142,7 @@ Op deze manier kun je, afhankelijk van een voorwaarde, verschillende flows activ
 
 .. rubric:: Opdracht D
 
-.. figure:: NodeRed-checkserver-flow-D.png
+.. figure:: nodered-checkserver-flow-d.png
    :width: 600px
    :align: center
 
