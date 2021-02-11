@@ -3,7 +3,7 @@ Eerste flow
 
 Met deze eerste flow kun je zien of alles werkt:
 
-.. figure:: Nodered-flow1.png
+.. figure:: nodered-flow1.png
    :width: 500 px
    :align: center
 
