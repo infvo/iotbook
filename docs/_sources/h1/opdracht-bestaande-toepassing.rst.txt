@@ -1,37 +1,12 @@
 Bestudeeer een bestaande toepassing
 ===================================
 
-Bestudeer (in een kleine groep) een IoT-toepassing uit de bovenstaande lijst (of een zelf gevonden toepassing).
-Beantwoord daarvoor de onderstaande vragen - en presenteer deze aan de andere groepen.
+Bestudeer in een kleine groep een IoT-toepassing uit de voorgaande lijst of een zelf gevonden toepassing.
+Beantwoord daarvoor de onderstaande vragen.
 
-*Suggestie*: voer deze opdracht uit met een kleine groep,
-verdeel de toepassingen over een aantal groepen in de klas,
+*Suggestie*: verdeel de toepassingen over een aantal groepen in de klas,
 maak een presentatie met een overzicht van de toepassing en de resultaten van de onderstaande vragen,
 en presenteer deze in de klas - bijv. 10 minuten per groep.
-
-.. shortanswer:: h1-sa-presentatie
-
-  Vul hier de link (URL) in naar je presentatie.
-
-
-(Verdeel de IoT-toepassingen over verschillende groepen in de klas.)
-
-* hoe is de toepassing opgebouwd?
-  Uit welke onderdelen bestaat deze (voor zover je kunt nagaan)?
-* welke eisen stelt de toepassing aan de communicatie tussen de "dingen" en de rest (het internet)?
-  In het bijzonder, welke eisen stelt de toepassing aan de
-
-    * bitsnelheid (geschat)?
-    * latency (geschat)?
-    * betrouwbaarheid?
-    * beveiliging (security)?
-    * heeft de toepassing draadloze communicatie nodig?
-           * zo ja, welk bereik heeft deze draadloze communicatie nodig?
-
-* is het "ding" altijd van stroom voorzien?
-* wat zijn de voordelen van deze toepassing? voor wie?
-* wat zijn de nadelen en risico's van deze toepassing? voor wie?
-    * opmerking: de voordelen van een toepassing kunnen bij een andere groep terechtkomen dan de nadelen.
 
 Als je de onderstaande vragen voor een groep invult,
 vul dan de naam van de groep of jullie voornamen hieronder in:
@@ -40,7 +15,12 @@ vul dan de naam van de groep of jullie voornamen hieronder in:
 
   Vul hier de naam van de groep(sleden) in
 
-Opmerking: als de toepassing mogelijk verschillende soorten IoT-knopen met sensoren bevat,
+
+.. shortanswer:: h1-sa-presentatie
+
+  Vul hier de link (URL) in naar je presentatie.
+
+*Opmerking:* als de toepassing mogelijk verschillende soorten IoT-knopen met sensoren bevat,
 kies dan één soort, en geef je keuze bij de eerste vraag aan.
 
 .. shortanswer:: h1-sa-10

@@ -22,7 +22,6 @@ de andere onderdelen van deze knoop zorgen voor de verwerking van de data en voo
     IoT-knoop: sensoren, microcontroller, radio, batterij
 
 
-
 Voor de koppeling tussen een IoT-knoop en het internet kunnen we kiezen uit verschillende technologische oplossingen,
 bijvoorbeeld voor verschillende soorten radio's.
 De keuze voor een bepaalde technologie hangt af van de gebruikerseisen.
@@ -104,7 +103,3 @@ Dit is een netwerk opgezet door een wereldwijde community, in plaats van door ee
 Je gebruikt een *TTN-application* via één van de TTN-servers/brokers.
 Daarbij bestudeer je de gevolgen van de lage bitrate.
 Via MQTT communiceer je met de IoT-node(s) (*device*) in deze application: je kunt hiervoor bijvoorbeeld je eigen dashboard maken.
-
-.. todo::
-
-  NB: er ontbreekt één belangrijke technologie: BLE.

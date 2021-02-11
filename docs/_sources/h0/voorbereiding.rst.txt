@@ -10,7 +10,7 @@ Voor de IoT-knopen zijn er verschillende alternatieven:
 a. gesimuleerde IoT-knopen en IoT-knopen elders.
 b. (a), aangevuld met hardware IoT-knopen:
 
-   1. WiFi-knopen (ESP8266) en/of
+   1. WiFi-knopen (ESP8266/ESP32) en/of
    2. RFM69-knopen met WiFi gateway en/of
    3. LoRa knopen met LoRa gateway
 
@@ -20,6 +20,7 @@ Het is niet nodig om alle varianten direct beschikbaar te hebben:
 je kunt dit in de loop van de tijd uitbreiden.
 Het gebruik van hardware IoT-knopen maakt het materiaal wel (veel) aantrekkelijker voor leerlingen.
 Voor de WiFi-knopen en de RFM69-gateway kan het :ref:`schoolnetwerk` een probleem vormen.
+Leerlingen kunnen deze meestal zonder problemen thuis gebruiken.
 
 Naast deze IoT-knopen zijn er nog nodig:
 
@@ -35,10 +36,6 @@ Naast deze IoT-knopen zijn er nog nodig:
 Voor de NodeRed-opdrachten is de gratis FRED-versie voldoende.
 Voor een project heb je een NodeRed-server nodig met minder beperkingen.
 Hiervoor zijn er verschillende mogelijkheden, vraag hiernaar via een mail naar (info at infvo.nl).
-
-.. todo::
-
-  * gebruik van een lokale Raspberry Pi
 
 Een uitgebreide uitleg van de verschillende IoT-knopen is te vinden op IoT-1.
 Daar zijn de hardware-schema's te vinden, en de gegevens voor het configureren en programmeren.
@@ -60,7 +57,8 @@ IoT-knopen elders
 
 Via de MQTT-broker en de TTN-server zijn IoT-knopen die elders opgesteld staan toegankelijk.
 Je kunt deze knopen aansluiten op een eigen dashboard,
-en de LEDs op deze knopen op afstand aansturen.
+om de sensorgegevens van deze knopen te tonen,
+en de LEDs op afstand aansturen.
 
 WiFi knopen
 ===========
@@ -68,8 +66,8 @@ WiFi knopen
 Naast de elementen voor de gesimuleerde knopen:
 
 * docent: eventueel programmeren van de knopen (zie IoT-1);
-  de nieuwste software is via WiFi te configureren,
-  waardoor dit programmeren meestal niet nodig is.
+  dit is meestal niet nodig, omdat de nieuwere versies van de software
+  via WiFi te configureren zijn.
 * leerling: configureren van de eigen knoop(en); zie: :ref:`Configureren`.
   De docent kan dit ook vooraf doen.
 
@@ -92,18 +90,20 @@ Naast de elementen voor de gesimuleerde knopen heb je toegang tot TheThingsNetwo
 Bovendien moet je zeker zijn van voldoende dekking van TTN-gateways in de buurt van de school,
 of in het gebied waarin je de knopen wilt gebruiken.
 
-  Je kunt een eigen TTN-gateway in of op de school plaatsen; de kosten hiervan zijn ca. 300-400 Euro.
+  Je kunt een eigen TTN-gateway in of op de school plaatsen; de kosten hiervan zijn ca. 150-500 Euro,
+  afhankelijk van plaatsing binnen of buiten (voor groter bereik).
 
 Voorbereiding voor de docent:
 
-* aanmaken van een eigen TTN account;
+* aanmaken van een eigen (gratis) TTN account;
 * aanmaken van een TTN-applicatie, met daarin een aantal knopen (devices);
-* programmeren van de LoRa-knopen (zie IoT-1);
+* configureren van de TTN-applicatie voor de LoRaWan-knopen;
+  eventueel: programmeren van de LoRa-knopen (zie IoT-1);
 
 Leerlingen moeten toegang hebben tot de TTN-application met de actieve IoT-knopen.
-Voor de oefenopdrachten kun je met één account (gebruikersnaam/wachtwoord) per school of per klas werken.
+Voor de oefenopdrachten kun je met één TTN-account (gebruikersnaam/wachtwoord) per school of per klas werken.
 
-Voor een project is hebben leerlingen een eigen (gratis) TTN-account nodig.
+Voor een project hebben leerlingen een eigen (gratis) TTN-account nodig.
 
 .. _schoolnetwerk:
 
@@ -119,7 +119,7 @@ Enkele problemen die je kunt hebben met het schoolnetwerk:
 
 Een afdoende manier om deze problemen te omzeilen is het gebruik van een MiFi:
 een WiFi-basestation verbonden met het mobiele netwerk.
-Dit extra netwerk is alleen nodig voor de sensorknopen;
+Dit extra netwerk is alleen nodig voor de IoT-knopen;
 de computers/smartphones van de leerlingen werken gewoon via het schoolnetwerk
 met de nodige toepassingen en gesimuleerde knopen.
 
@@ -128,5 +128,5 @@ Leskisten
 
 Er wordt gewerkt aan het beschikbaar stellen van leskisten met de benodigde hardware,
 voor de IoT-knopen en voor het MiFi-netwerk.
-Als docent kun je deze dan huren, voordat je eventueel eigen hardware koopt.
+Als docent kun je deze dan lenen/huren, voordat je eventueel eigen hardware koopt.
 Informeer naar de mogelijkheden bij info `at` infvo.nl.

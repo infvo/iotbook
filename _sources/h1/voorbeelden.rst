@@ -213,10 +213,6 @@ Je kunt de lokale controller ook verbinden met andere "domotica"-controllers voo
 Voorbeelden van controller-software voor domotica-toepassingen zijn OpenHAB (https://www.openhab.org) en Home Assist (https://www.home-assistant.io).
 Via de hue-webserver kun je verbinding maken met controller-diensten als Apple Home Kit en Amazon Alexa.
 
-.. todo::
-
-  * figuur van Hue met andere controller(s)
-
 Bewaken van bijenkasten
 =======================
 

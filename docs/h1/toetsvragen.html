@@ -3,36 +3,36 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Toetsvragen &#8212; IoT-book</title>
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
     <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
     <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=50109A2C" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
     <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
-    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.6" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.5.12" />
     <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
     <script src="../_static/webglinteractive.js?v=2B768384"></script>
     <script src="../_static/FileSaver.min.js?v=8408C997"></script>
     <script src="../_static/Blob.js?v=AEC2447"></script>
-    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/html4css1.css?v=4533ACD3"></script>
     <script src="../_static/animationbase.js?v=A043C3A7"></script>
     <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
     <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
-    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="../_static/sql-wasm.js?v=D71B5933"></script>
     <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
@@ -44,7 +44,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
-    <script src="../_static/runestone.js?v=B89F6473"></script>
+    <script src="../_static/runestone.js?v=DC48DFAC"></script>
     <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
     <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
     <script src="../_static/jquery-fix.js?v=1226591B"></script>
@@ -52,7 +52,7 @@
     <script src="../_static/jquery.idle-timer.js?v=E942DAF1"></script>
     <script src="../_static/presenter_mode.js?v=2DF16FB4"></script>
     <script src="../_static/theme.js?v=D899FB97"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -69,6 +69,7 @@
     eBookConfig.course = 'iotbook';
     eBookConfig.basecourse = 'iotbook';
     eBookConfig.isLoggedIn = false;
+    eBookConfig.enableCompareMe = eBookConfig.useRunestoneServices;
   
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.logLevel = 30;
@@ -76,7 +77,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.python3 = true;
   eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
-  eBookConfig.runestone_version = '5.0.6';
+  eBookConfig.runestone_version = '5.5.12';
   eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
   eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
   eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
@@ -86,19 +87,6 @@
 </script>
 
 <!-- Ad Serving Headers Only serve ads to Anonymous Users -->
-
-
-
-<div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
 
 
 
@@ -148,8 +136,8 @@
                 <div>
                   <b>Runestone in social media:</b>
                 </div>
-                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+                <a href="https://twitter.com/iRunestone">Follow @iRunestone</a>
+                <a href="https://www.facebook.com/RunestoneInteractive">Our Facebook Page</a>
               </li>
 
               <li class="divider"></li>
@@ -275,6 +263,9 @@
 <div class="container" id="continue-reading"></div>
 
 <div class="container" id="main-content" role="main">
+<!-- Ad Serving for Runestone Campaign -->
+
+
   
   <div class="section" id="toetsvragen">
 <h1>Toetsvragen<a class="headerlink" href="#toetsvragen" title="Permalink to this headline">¶</a></h1>
@@ -282,7 +273,7 @@
 <h2>Voorkennis<a class="headerlink" href="#voorkennis" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="vraag-VK-1" >
+            <ul data-component="multiplechoice" data-question_label="1" data-multipleanswers="false"  id="vraag-VK-1"  style="visibility: hidden;">
             <p>Q-1: Als je je computer in een ander lokaal netwerk verbindt, bijvoorbeeld als je van huis naar school gaat,
 wat verandert er dan?</p>
 
@@ -299,7 +290,7 @@ wat verandert er dan?</p>
             </div>
             
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="vraag1_VK-2" >
+            <ul data-component="multiplechoice" data-question_label="2" data-multipleanswers="false"  id="vraag1_VK-2"  style="visibility: hidden;">
             <p>Q-2: Kan je laptop-computer verschillende IP-adressen tegelijk hebben?
 (Verklaar je antwoord.)</p>
 
@@ -312,7 +303,7 @@ wat verandert er dan?</p>
             </div>
             
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="true"  id="vraag-VK-3" >
+            <ul data-component="multiplechoice" data-question_label="3" data-multipleanswers="true"  id="vraag-VK-3"  style="visibility: hidden;">
             <p>Q-3: Wat is de relatie tussen het internet, het web en Facebook?</p>
 
             <li data-component="answer"  id="vraag-VK-3_opt_a">Het internet is een toepassing van het web</li><li data-component="feedback">Het web-protocol (HTTP) gebruikt TCP (en daaronder IP).</li>
@@ -334,7 +325,7 @@ wat verandert er dan?</p>
 <h2>Voorbeelden<a class="headerlink" href="#voorbeelden" title="Permalink to this headline">¶</a></h2>
 
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="vraag-VB-1" >
+            <ul data-component="multiplechoice" data-question_label="4" data-multipleanswers="false"  id="vraag-VB-1"  style="visibility: hidden;">
             <p>Q-4: Hoe heet een opnemer om een fysische grootheid, zoals de temperatuur, van een “ding” te meten?</p>
 
             <li data-component="answer"  id="vraag-VB-1_opt_a">Controller</li><li data-component="feedback">Met een controller bestuur je een IoT-toepassing</li>
@@ -350,7 +341,7 @@ wat verandert er dan?</p>
             </div>
             
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="vraag-VB-2" >
+            <ul data-component="multiplechoice" data-question_label="5" data-multipleanswers="false"  id="vraag-VB-2"  style="visibility: hidden;">
             <p>Q-5: Hoe verhouden het web, het internet en het internet of things zich?
 (Hoe verhouden de verschillende protocollen zich?)</p>
 
@@ -365,7 +356,7 @@ wat verandert er dan?</p>
             </div>
             
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="true"  id="vraag1-VB-3" >
+            <ul data-component="multiplechoice" data-question_label="6" data-multipleanswers="true"  id="vraag1-VB-3"  style="visibility: hidden;">
             <p>Q-6: Welke van de onderstaande uitspraken is waar?</p>
 
             <li data-component="answer" data-correct id="vraag1-VB-3_opt_a">een controller bestuurt de sensoren en actuatoren bij het "ding"</li><li data-component="feedback">Ja.</li>
@@ -381,7 +372,7 @@ wat verandert er dan?</p>
             </div>
             
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="vraag1-VB-4" >
+            <ul data-component="multiplechoice" data-question_label="7" data-multipleanswers="false"  id="vraag1-VB-4"  style="visibility: hidden;">
             <p>Q-7: Hoe heet de verbinding tussen een IoT-knoop en het internet?</p>
 
             <li data-component="answer"  id="vraag1-VB-4_opt_a">Controller</li><li data-component="feedback"></li>
@@ -397,7 +388,7 @@ wat verandert er dan?</p>
             </div>
             
 <div class="runestone">
-<ul data-component="dragndrop" id="dnd-ex-1" >
+<ul data-component="dragndrop" data-question_label="8" id="dnd-ex-1"  style="visibility: hidden;">
     <span data-component="question">Q-8: Plaats de termen bij hun beschrijving.</span>
 	<span data-component=feedback>Zie: xxx</span>
 
@@ -411,7 +402,7 @@ wat verandert er dan?</p>
     <li data-component="dropzone" for="dnd-ex-1_drag3"> Verbindt twee netwerken</li>
 </ul></div>
 <div class="runestone">
-<ul data-component="dragndrop" id="dnd-ex-3" >
+<ul data-component="dragndrop" data-question_label="9" id="dnd-ex-3"  style="visibility: hidden;">
     <span data-component="question">Q-9: Welke bitrate hoort (ongeveer) bij welk soort signaal?
 (Neem in het "temperatuur"-geval aan dat dit een kamerthermostaat betreft die elke 2 minuten de temperatuur meet.)</span>
 	<span data-component=feedback>Feedback that is displayed if things are incorrectly matched.</span>
@@ -428,9 +419,13 @@ wat verandert er dan?</p>
     <li data-component="draggable" id="dnd-ex-3_drag4">Spraak (telefoon) </li>
     <li data-component="dropzone" for="dnd-ex-3_drag4"> 5 kbyte/s</li>
 </ul></div>
-        <div class="runestone" style="max-width: none;">
-        <pre data-component="parsons" id="par_1_1"      data-language="english"  >
-        <span data-question>Q-10: Plaats de protocollen voor een IoT-toepassing in de juiste volgorde in de "stack".</span>IoT-toepassingsprotocol
+        <div class="runestone alert alert-warning parsons" style="max-width: none;">
+        <div class="parsons_question parsons-text" >
+    <p>Plaats de protocollen voor een IoT-toepassing in de juiste volgorde in de “stack”.</p>
+
+        </div>
+        <pre data-component="parsons" data-question_label="10" id="par_1_1"      data-language="english"   style="visibility: hidden;">
+        IoT-toepassingsprotocol
 ---
 MQTT
 ---
@@ -445,7 +440,7 @@ HTTP #distractor
         </div>
     
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="vraag1_ya" >
+            <ul data-component="multiplechoice" data-question_label="11" data-multipleanswers="false"  id="vraag1_ya"  style="visibility: hidden;">
             <p>Q-11: Je kunt berichten versleutelen op verschillende protocol-niveaus.
 In welk geval is er sprake van end-to-end encryptie?</p>
 
@@ -472,7 +467,7 @@ In welk geval is er sprake van end-to-end encryptie?</p>
 </ul>
 
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="true"  id="vraag1_xyb" >
+            <ul data-component="multiplechoice" data-question_label="12" data-multipleanswers="true"  id="vraag1_xyb"  style="visibility: hidden;">
             <p>Q-12: Welke van deze protocollen zijn <em>end-to-end</em>, en vind je alleen in de eindpunten,
 en niet in het netwerk?</p>
 
@@ -543,7 +538,7 @@ en niet in het netwerk?</p>
     </p>
     <p>
         &copy; Copyright 2020 eelco.
-      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.6.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.5.12.
     </p>
   </div>
 </footer>

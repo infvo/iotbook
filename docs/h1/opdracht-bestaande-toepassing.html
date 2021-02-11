@@ -3,36 +3,36 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1.8.1. Bestudeeer een bestaande toepassing &#8212; IoT-book</title>
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
     <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
     <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=50109A2C" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
     <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
-    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.6" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.5.12" />
     <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
     <script src="../_static/webglinteractive.js?v=2B768384"></script>
     <script src="../_static/FileSaver.min.js?v=8408C997"></script>
     <script src="../_static/Blob.js?v=AEC2447"></script>
-    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/html4css1.css?v=4533ACD3"></script>
     <script src="../_static/animationbase.js?v=A043C3A7"></script>
     <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
     <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
-    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="../_static/sql-wasm.js?v=D71B5933"></script>
     <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
@@ -44,7 +44,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
-    <script src="../_static/runestone.js?v=B89F6473"></script>
+    <script src="../_static/runestone.js?v=DC48DFAC"></script>
     <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
     <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
     <script src="../_static/jquery-fix.js?v=1226591B"></script>
@@ -52,10 +52,10 @@
     <script src="../_static/jquery.idle-timer.js?v=E942DAF1"></script>
     <script src="../_static/presenter_mode.js?v=2DF16FB4"></script>
     <script src="../_static/theme.js?v=D899FB97"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.8.2. Bedenk een eigen IoT-toepassingen" href="opdracht-eigen-toepassing.html" />
+    <link rel="next" title="1.8.2. Bedenk een eigen IoT-toepassing" href="opdracht-eigen-toepassing.html" />
     <link rel="prev" title="1.8. Vragen en opdrachten" href="opdrachten.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -71,6 +71,7 @@
     eBookConfig.course = 'iotbook';
     eBookConfig.basecourse = 'iotbook';
     eBookConfig.isLoggedIn = false;
+    eBookConfig.enableCompareMe = eBookConfig.useRunestoneServices;
   
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.logLevel = 30;
@@ -78,7 +79,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.python3 = true;
   eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
-  eBookConfig.runestone_version = '5.0.6';
+  eBookConfig.runestone_version = '5.5.12';
   eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
   eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
   eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
@@ -88,19 +89,6 @@
 </script>
 
 <!-- Ad Serving Headers Only serve ads to Anonymous Users -->
-
-
-
-<div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
 
 
 
@@ -150,8 +138,8 @@
                 <div>
                   <b>Runestone in social media:</b>
                 </div>
-                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+                <a href="https://twitter.com/iRunestone">Follow @iRunestone</a>
+                <a href="https://www.facebook.com/RunestoneInteractive">Our Facebook Page</a>
               </li>
 
               <li class="divider"></li>
@@ -251,7 +239,7 @@
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - <span class="section-number">1.8.2. </span>Bedenk een eigen IoT-toepassingen' data-toggle="tooltip" >              
+  <li id="relations-next" title='Next Chapter - <span class="section-number">1.8.2. </span>Bedenk een eigen IoT-toepassing' data-toggle="tooltip" >              
     <a href="opdracht-eigen-toepassing.html" >
         <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -289,75 +277,45 @@
 <div class="container" id="continue-reading"></div>
 
 <div class="container" id="main-content" role="main">
+<!-- Ad Serving for Runestone Campaign -->
+
+
   
   <div class="section" id="bestudeeer-een-bestaande-toepassing">
 <h1><span class="section-number">1.8.1. </span>Bestudeeer een bestaande toepassing<a class="headerlink" href="#bestudeeer-een-bestaande-toepassing" title="Permalink to this headline">¶</a></h1>
-<p>Bestudeer (in een kleine groep) een IoT-toepassing uit de bovenstaande lijst (of een zelf gevonden toepassing).
-Beantwoord daarvoor de onderstaande vragen - en presenteer deze aan de andere groepen.</p>
-<p><em>Suggestie</em>: voer deze opdracht uit met een kleine groep,
-verdeel de toepassingen over een aantal groepen in de klas,
+<p>Bestudeer in een kleine groep een IoT-toepassing uit de voorgaande lijst of een zelf gevonden toepassing.
+Beantwoord daarvoor de onderstaande vragen.</p>
+<p><em>Suggestie</em>: verdeel de toepassingen over een aantal groepen in de klas,
 maak een presentatie met een overzicht van de toepassing en de resultaten van de onderstaande vragen,
 en presenteer deze in de klas - bijv. 10 minuten per groep.</p>
-
-<div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=h1-sa-presentatie  >
-<p>Q-1: Vul hier de link (URL) in naar je presentatie.</p>
-
-</div>
-</div> <!-- end of runestone div -->
-<p>(Verdeel de IoT-toepassingen over verschillende groepen in de klas.)</p>
-<ul>
-<li><p>hoe is de toepassing opgebouwd?
-Uit welke onderdelen bestaat deze (voor zover je kunt nagaan)?</p></li>
-<li><p>welke eisen stelt de toepassing aan de communicatie tussen de “dingen” en de rest (het internet)?
-In het bijzonder, welke eisen stelt de toepassing aan de</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>bitsnelheid (geschat)?</p></li>
-<li><p>latency (geschat)?</p></li>
-<li><p>betrouwbaarheid?</p></li>
-<li><p>beveiliging (security)?</p></li>
-<li><dl class="simple">
-<dt>heeft de toepassing draadloze communicatie nodig?</dt><dd><ul>
-<li><p>zo ja, welk bereik heeft deze draadloze communicatie nodig?</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>is het “ding” altijd van stroom voorzien?</p></li>
-<li><p>wat zijn de voordelen van deze toepassing? voor wie?</p></li>
-<li><dl class="simple">
-<dt>wat zijn de nadelen en risico’s van deze toepassing? voor wie?</dt><dd><ul class="simple">
-<li><p>opmerking: de voordelen van een toepassing kunnen bij een andere groep terechtkomen dan de nadelen.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
 <p>Als je de onderstaande vragen voor een groep invult,
 vul dan de naam van de groep of jullie voornamen hieronder in:</p>
 
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=h1-sa-groep  >
-<p>Q-2: Vul hier de naam van de groep(sleden) in</p>
+<div data-component="shortanswer" data-question_label="1.8.1.1" class="journal alert alert-warning" id=h1-sa-groep  >
+<p>Q-1: Vul hier de naam van de groep(sleden) in</p>
 
 </div>
 </div> <!-- end of runestone div -->
-<p>Opmerking: als de toepassing mogelijk verschillende soorten IoT-knopen met sensoren bevat,
+
+<div class="runestone">
+<div data-component="shortanswer" data-question_label="1.8.1.2" class="journal alert alert-warning" id=h1-sa-presentatie  >
+<p>Q-2: Vul hier de link (URL) in naar je presentatie.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+<p><em>Opmerking:</em> als de toepassing mogelijk verschillende soorten IoT-knopen met sensoren bevat,
 kies dan één soort, en geef je keuze bij de eerste vraag aan.</p>
 
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=h1-sa-10  >
+<div data-component="shortanswer" data-question_label="1.8.1.3" class="journal alert alert-warning" id=h1-sa-10  >
 <p>Q-3: Welke gegevens kan/moet een IoT-knoop (IoT-device) in deze oplossing versturen naar de toepassing?</p>
 
 </div>
 </div> <!-- end of runestone div -->
 
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=h1-sa-11  >
+<div data-component="shortanswer" data-question_label="1.8.1.4" class="journal alert alert-warning" id=h1-sa-11  >
 <p>Q-4: Druk deze gegevens zo mogelijk in getallen uit: bereik (minimum, maximum),
 precisie (bijvoorbeeld aantal significante cijfers)?</p>
 
@@ -365,7 +323,7 @@ precisie (bijvoorbeeld aantal significante cijfers)?</p>
 </div> <!-- end of runestone div -->
 
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=h1-sa-12  >
+<div data-component="shortanswer" data-question_label="1.8.1.5" class="journal alert alert-warning" id=h1-sa-12  >
 <p>Q-5: Hoe vaak moeten deze gegevens verstuurd worden?
 (Hint: hoe vaak veranderen de gegevens; hoe vaak heb je ze nodig voor een beslissing?)</p>
 
@@ -373,14 +331,14 @@ precisie (bijvoorbeeld aantal significante cijfers)?</p>
 </div> <!-- end of runestone div -->
 
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=h1-sa-13  >
+<div data-component="shortanswer" data-question_label="1.8.1.6" class="journal alert alert-warning" id=h1-sa-13  >
 <p>Q-6: Geef een toelichting bij het bovenstaande antwoord.</p>
 
 </div>
 </div> <!-- end of runestone div -->
 
 <div class="runestone">
-<ul data-component="poll" id=h1-poll-14 data-comment class='alert alert-warning' data-results='instructor' >
+<ul data-component="poll" id=h1-poll-14 data-comment class='alert alert-warning' data-results='instructor' data-question_label="1.8.1.7" >
 Hoe betrouwbaar moet de communicatie zijn?
 Hoe erg is het als er een bericht gemist wordt?
 
@@ -391,15 +349,15 @@ Hoe erg is het als er een bericht gemist wordt?
 <li>3. Anders</li>
 </ul></div>
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=h1-sa-15  >
-<p>Q-7: Geef een toelichting bij het bovenstaande antwoord.</p>
+<div data-component="shortanswer" data-question_label="1.8.1.8" class="journal alert alert-warning" id=h1-sa-15  >
+<p>Q-8: Geef een toelichting bij het bovenstaande antwoord.</p>
 
 </div>
 </div> <!-- end of runestone div -->
 
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=h1-sa-16  >
-<p>Q-8: Hoe real-time moet de verwerking zijn? Met andere woorden:
+<div data-component="shortanswer" data-question_label="1.8.1.9" class="journal alert alert-warning" id=h1-sa-16  >
+<p>Q-9: Hoe real-time moet de verwerking zijn? Met andere woorden:
 als een input (sensorwaarde) verandert, hoe snel moet
 deze verandering dan door het slimme systeem verwerkt zijn tot een reactie in een output (actuator)?
 (Voorbeeld: als je een schakelaar van een slimme verlichting thuis bedient,
@@ -409,7 +367,7 @@ verwacht je binnen een halve seconde een reactie van de lamp(en).</p>
 </div> <!-- end of runestone div -->
 
 <div class="runestone">
-<ul data-component="poll" id=h1-poll-17 data-comment class='alert alert-warning' data-results='instructor' >
+<ul data-component="poll" id=h1-poll-17 data-comment class='alert alert-warning' data-results='instructor' data-question_label="1.8.1.10" >
 Hoe veilig moet de communicatie zijn?
 
 <li>1. De communicatie hoeft niet veilig te zijn.</li>
@@ -421,7 +379,7 @@ Hoe veilig moet de communicatie zijn?
 <li>4. Anders</li>
 </ul></div>
 <div class="runestone">
-<ul data-component="poll" id=h1-sa-19  class='alert alert-warning' data-results='instructor' >
+<ul data-component="poll" id=h1-sa-19  class='alert alert-warning' data-results='instructor' data-question_label="1.8.1.11" >
 Is de privacy van de oplossing van belang?
 (Kunnen de gegevens die de IoT-knoop verstuurt aan een persoon of aan een kleine groep personen gelinkt worden?)
 
@@ -434,22 +392,22 @@ Is de privacy van de oplossing van belang?
 <li>4. Anders</li>
 </ul></div>
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=h1-sa-21  >
-<p>Q-9: Welke diensten “in the cloud” zou je kunnen gebruiken voor een slimme oplossing?</p>
+<div data-component="shortanswer" data-question_label="1.8.1.12" class="journal alert alert-warning" id=h1-sa-21  >
+<p>Q-12: Welke diensten “in the cloud” zou je kunnen gebruiken voor een slimme oplossing?</p>
 
 </div>
 </div> <!-- end of runestone div -->
 
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=h1-sa-22  >
-<p>Q-10: Wat zijn de belangrijkste voordelen van de slimme oplossing, en voor wie?</p>
+<div data-component="shortanswer" data-question_label="1.8.1.13" class="journal alert alert-warning" id=h1-sa-22  >
+<p>Q-13: Wat zijn de belangrijkste voordelen van de slimme oplossing, en voor wie?</p>
 
 </div>
 </div> <!-- end of runestone div -->
 
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=h1-sa-23  >
-<p>Q-11: Wat zijn de belangrijkste nadelen van de slimme oplossing, en voor wie?</p>
+<div data-component="shortanswer" data-question_label="1.8.1.14" class="journal alert alert-warning" id=h1-sa-23  >
+<p>Q-14: Wat zijn de belangrijkste nadelen van de slimme oplossing, en voor wie?</p>
 
 </div>
 </div> <!-- end of runestone div -->
@@ -473,8 +431,8 @@ Is de privacy van de oplossing van belang?
 
   
 <ul>
-  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 1.8.2. Bedenk een eigen IoT-toepassingen' data-toggle="tooltip" >
-    <a href="opdracht-eigen-toepassing.html" aria-label="1.8.2. Bedenk een eigen IoT-toepassingen">
+  <li id="relations-next" style="opacity:0.4" onmouseover="mouseOverNext()" onmouseout="mouseOutNext()" class="navLink" title='Next Section - 1.8.2. Bedenk een eigen IoT-toepassing' data-toggle="tooltip" >
+    <a href="opdracht-eigen-toepassing.html" aria-label="1.8.2. Bedenk een eigen IoT-toepassing">
       <div style="background-color: white; border-style:solid; border-color:lightgrey; border-width:2px; width:100px; height:50px">
           <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right' style="top:50%; transform:translateY(-50%)translateX(-50%); left: 50%; color:black; "></i>
       </div>
@@ -516,7 +474,7 @@ Is de privacy van de oplossing van belang?
     </p>
     <p>
         &copy; Copyright 2020 eelco.
-      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.6.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.5.12.
     </p>
   </div>
 </footer>

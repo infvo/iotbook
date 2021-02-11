@@ -1,5 +1,5 @@
-Bedenk een eigen IoT-toepassingen
-=================================
+Bedenk een eigen IoT-toepassing
+===============================
 
 Bedenk en beschrijf een eigen IoT-toepassing.
 
@@ -9,7 +9,7 @@ Bedenk en beschrijf een eigen IoT-toepassing.
   draadloze/bedrade communicatie?
 
 Maak hiervan een presentatie of een kort document.
-Beantwoord daarin ook de vragen zoals voor bestaande oplossingen geformuleerd in de vorige opdracht.
+Beantwoord daarin ook de vragen zoals geformuleerd in de vorige opdracht voor bestaande oplossingen.
 
 .. shortanswer:: h1-sa-presentatie-2
 

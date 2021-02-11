@@ -3,36 +3,36 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Voorbereiding &#8212; IoT-book</title>
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
     <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
     <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=50109A2C" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
     <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
-    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.6" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.5.12" />
     <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
     <script src="../_static/webglinteractive.js?v=2B768384"></script>
     <script src="../_static/FileSaver.min.js?v=8408C997"></script>
     <script src="../_static/Blob.js?v=AEC2447"></script>
-    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/html4css1.css?v=4533ACD3"></script>
     <script src="../_static/animationbase.js?v=A043C3A7"></script>
     <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
     <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
-    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="../_static/sql-wasm.js?v=D71B5933"></script>
     <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
@@ -44,7 +44,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
-    <script src="../_static/runestone.js?v=B89F6473"></script>
+    <script src="../_static/runestone.js?v=DC48DFAC"></script>
     <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
     <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
     <script src="../_static/jquery-fix.js?v=1226591B"></script>
@@ -52,7 +52,7 @@
     <script src="../_static/jquery.idle-timer.js?v=E942DAF1"></script>
     <script src="../_static/presenter_mode.js?v=2DF16FB4"></script>
     <script src="../_static/theme.js?v=D899FB97"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Planning" href="planning.html" />
@@ -71,6 +71,7 @@
     eBookConfig.course = 'iotbook';
     eBookConfig.basecourse = 'iotbook';
     eBookConfig.isLoggedIn = false;
+    eBookConfig.enableCompareMe = eBookConfig.useRunestoneServices;
   
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.logLevel = 30;
@@ -78,7 +79,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.python3 = true;
   eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
-  eBookConfig.runestone_version = '5.0.6';
+  eBookConfig.runestone_version = '5.5.12';
   eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
   eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
   eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
@@ -88,19 +89,6 @@
 </script>
 
 <!-- Ad Serving Headers Only serve ads to Anonymous Users -->
-
-
-
-<div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
 
 
 
@@ -150,8 +138,8 @@
                 <div>
                   <b>Runestone in social media:</b>
                 </div>
-                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+                <a href="https://twitter.com/iRunestone">Follow @iRunestone</a>
+                <a href="https://www.facebook.com/RunestoneInteractive">Our Facebook Page</a>
               </li>
 
               <li class="divider"></li>
@@ -289,6 +277,9 @@
 <div class="container" id="continue-reading"></div>
 
 <div class="container" id="main-content" role="main">
+<!-- Ad Serving for Runestone Campaign -->
+
+
   
   <div class="section" id="voorbereiding">
 <h1>Voorbereiding<a class="headerlink" href="#voorbereiding" title="Permalink to this headline">¶</a></h1>
@@ -299,7 +290,7 @@ Als docent moet je deze van te voren beschikbaar maken voor je leerlingen.</p>
 <li><p>gesimuleerde IoT-knopen en IoT-knopen elders.</p></li>
 <li><p>(a), aangevuld met hardware IoT-knopen:</p>
 <ol class="arabic simple">
-<li><p>WiFi-knopen (ESP8266) en/of</p></li>
+<li><p>WiFi-knopen (ESP8266/ESP32) en/of</p></li>
 <li><p>RFM69-knopen met WiFi gateway en/of</p></li>
 <li><p>LoRa knopen met LoRa gateway</p></li>
 </ol>
@@ -308,7 +299,8 @@ Als docent moet je deze van te voren beschikbaar maken voor je leerlingen.</p>
 <p>Het is niet nodig om alle varianten direct beschikbaar te hebben:
 je kunt dit in de loop van de tijd uitbreiden.
 Het gebruik van hardware IoT-knopen maakt het materiaal wel (veel) aantrekkelijker voor leerlingen.
-Voor de WiFi-knopen en de RFM69-gateway kan het <a class="reference internal" href="#schoolnetwerk"><span class="std std-ref">Schoolnetwerk</span></a> een probleem vormen.</p>
+Voor de WiFi-knopen en de RFM69-gateway kan het <a class="reference internal" href="#schoolnetwerk"><span class="std std-ref">Schoolnetwerk</span></a> een probleem vormen.
+Leerlingen kunnen deze meestal zonder problemen thuis gebruiken.</p>
 <p>Naast deze IoT-knopen zijn er nog nodig:</p>
 <ol class="arabic simple">
 <li><p>NodeRed server “in the cloud”:
@@ -323,15 +315,6 @@ Als docent kun je hiervoor een account aanvragen (mail naar info <cite>at</cite>
 <p>Voor de NodeRed-opdrachten is de gratis FRED-versie voldoende.
 Voor een project heb je een NodeRed-server nodig met minder beperkingen.
 Hiervoor zijn er verschillende mogelijkheden, vraag hiernaar via een mail naar (info at infvo.nl).</p>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/Users/eelco/stack/books/iotbook/_sources/h0/voorbereiding.rst</span>, line 39)</p>
-<p>Unknown directive type “todo”.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">todo</span><span class="p">::</span>
-
-  <span class="o">*</span> <span class="n">gebruik</span> <span class="n">van</span> <span class="n">een</span> <span class="n">lokale</span> <span class="n">Raspberry</span> <span class="n">Pi</span>
-</pre></div>
-</div>
-</div>
 <p>Een uitgebreide uitleg van de verschillende IoT-knopen is te vinden op IoT-1.
 Daar zijn de hardware-schema’s te vinden, en de gegevens voor het configureren en programmeren.
 Daar is ook een uitleg van de software te vinden; de software zelf staat op GitHub.</p>
@@ -351,15 +334,16 @@ Daar is ook een uitleg van de software te vinden; de software zelf staat op GitH
 <h2>IoT-knopen elders<a class="headerlink" href="#iot-knopen-elders" title="Permalink to this headline">¶</a></h2>
 <p>Via de MQTT-broker en de TTN-server zijn IoT-knopen die elders opgesteld staan toegankelijk.
 Je kunt deze knopen aansluiten op een eigen dashboard,
-en de LEDs op deze knopen op afstand aansturen.</p>
+om de sensorgegevens van deze knopen te tonen,
+en de LEDs op afstand aansturen.</p>
 </div>
 <div class="section" id="wifi-knopen">
 <h2>WiFi knopen<a class="headerlink" href="#wifi-knopen" title="Permalink to this headline">¶</a></h2>
 <p>Naast de elementen voor de gesimuleerde knopen:</p>
 <ul class="simple">
 <li><p>docent: eventueel programmeren van de knopen (zie IoT-1);
-de nieuwste software is via WiFi te configureren,
-waardoor dit programmeren meestal niet nodig is.</p></li>
+dit is meestal niet nodig, omdat de nieuwere versies van de software
+via WiFi te configureren zijn.</p></li>
 <li><p>leerling: configureren van de eigen knoop(en); zie: <a class="reference internal" href="../configureren.html#configureren"><span class="std std-ref">Configureren</span></a>.
 De docent kan dit ook vooraf doen.</p></li>
 </ul>
@@ -386,17 +370,19 @@ De docent kan dit ook vooraf doen.</p></li>
 Bovendien moet je zeker zijn van voldoende dekking van TTN-gateways in de buurt van de school,
 of in het gebied waarin je de knopen wilt gebruiken.</p>
 <blockquote>
-<div><p>Je kunt een eigen TTN-gateway in of op de school plaatsen; de kosten hiervan zijn ca. 300-400 Euro.</p>
+<div><p>Je kunt een eigen TTN-gateway in of op de school plaatsen; de kosten hiervan zijn ca. 150-500 Euro,
+afhankelijk van plaatsing binnen of buiten (voor groter bereik).</p>
 </div></blockquote>
 <p>Voorbereiding voor de docent:</p>
 <ul class="simple">
-<li><p>aanmaken van een eigen TTN account;</p></li>
+<li><p>aanmaken van een eigen (gratis) TTN account;</p></li>
 <li><p>aanmaken van een TTN-applicatie, met daarin een aantal knopen (devices);</p></li>
-<li><p>programmeren van de LoRa-knopen (zie IoT-1);</p></li>
+<li><p>configureren van de TTN-applicatie voor de LoRaWan-knopen;
+eventueel: programmeren van de LoRa-knopen (zie IoT-1);</p></li>
 </ul>
 <p>Leerlingen moeten toegang hebben tot de TTN-application met de actieve IoT-knopen.
-Voor de oefenopdrachten kun je met één account (gebruikersnaam/wachtwoord) per school of per klas werken.</p>
-<p>Voor een project is hebben leerlingen een eigen (gratis) TTN-account nodig.</p>
+Voor de oefenopdrachten kun je met één TTN-account (gebruikersnaam/wachtwoord) per school of per klas werken.</p>
+<p>Voor een project hebben leerlingen een eigen (gratis) TTN-account nodig.</p>
 </div>
 <div class="section" id="schoolnetwerk">
 <span id="id1"></span><h2>Schoolnetwerk<a class="headerlink" href="#schoolnetwerk" title="Permalink to this headline">¶</a></h2>
@@ -409,7 +395,7 @@ De WiFi-knopen hebben alleen de mogelijkheid om een netwerk-wachtwoord voor het 
 </ul>
 <p>Een afdoende manier om deze problemen te omzeilen is het gebruik van een MiFi:
 een WiFi-basestation verbonden met het mobiele netwerk.
-Dit extra netwerk is alleen nodig voor de sensorknopen;
+Dit extra netwerk is alleen nodig voor de IoT-knopen;
 de computers/smartphones van de leerlingen werken gewoon via het schoolnetwerk
 met de nodige toepassingen en gesimuleerde knopen.</p>
 </div>
@@ -417,7 +403,7 @@ met de nodige toepassingen en gesimuleerde knopen.</p>
 <h2>Leskisten<a class="headerlink" href="#leskisten" title="Permalink to this headline">¶</a></h2>
 <p>Er wordt gewerkt aan het beschikbaar stellen van leskisten met de benodigde hardware,
 voor de IoT-knopen en voor het MiFi-netwerk.
-Als docent kun je deze dan huren, voordat je eventueel eigen hardware koopt.
+Als docent kun je deze dan lenen/huren, voordat je eventueel eigen hardware koopt.
 Informeer naar de mogelijkheden bij info <cite>at</cite> infvo.nl.</p>
 </div>
 </div>
@@ -483,7 +469,7 @@ Informeer naar de mogelijkheden bij info <cite>at</cite> infvo.nl.</p>
     </p>
     <p>
         &copy; Copyright 2020 eelco.
-      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.6.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.5.12.
     </p>
   </div>
 </footer>
