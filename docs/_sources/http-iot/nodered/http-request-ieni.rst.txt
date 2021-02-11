@@ -4,7 +4,7 @@ HTTP website-up test
 In deze opdracht maak je een NodeRed-flow waarmee je kunt testen of een website "up" is.
 Afhankelijk van het resultaat laat je op een IoT-knoop een groene of rode LED branden.
 
-.. figure:: NodeRed-http-request-ieni.png
+.. figure:: nodered-http-request-ieni.png
    :width: 700px
    :align: center
 
@@ -22,10 +22,10 @@ Deze URL kun je in de HTTP-request node zelf configureren, of via de ``msg.paylo
 | |template-node|      | template-node      |  input-output    |
 +----------------------+--------------------+------------------+
 
-.. |http-request-node| image:: NodeRed-http-request-node.png
+.. |http-request-node| image:: nodered-http-request-node.png
    :width: 150px
 
-.. |html-node| image:: NodeRed-html-node.png
+.. |html-node| image:: nodered-html-node.png
    :width: 150px
 
 .. |template-node| image:: nodered-template-node.png

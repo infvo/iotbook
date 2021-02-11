@@ -40,8 +40,8 @@ Voor het configureren van de IoT-knoop, zie REF!!
 | |mqtt-broker-node| | mqtt-broker-node |  configuration   |
 +--------------------+------------------+------------------+
 
-.. |mqtt-input-node| image:: Nodered-mqtt-input-node.png
-.. |mqtt-output-node| image:: Nodered-mqtt-output-node.png
+.. |mqtt-input-node| image:: nodered-mqtt-input-node.png
+.. |mqtt-output-node| image:: nodered-mqtt-output-node.png
 .. |mqtt-broker-node| image:: nodered-mqtt-broker-node.png
 
 In de volgende voorbeelden gebruiken we de MQTT-input- en output-nodes.

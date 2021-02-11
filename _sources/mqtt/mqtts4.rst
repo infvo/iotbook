@@ -21,14 +21,20 @@ We geven in de onderstaande voorbeelden de JavaScript-objecten en de bijbehorend
 .. code-block:: javascript
 
   {temp: 21, press: 1015, id: "e4c7"}
+  {sensors: [
+    {id: 1, type: "temperature", value: 321},
+    {id: 3, type: "humidity", value: 35}
+  ]}
 
 .. code-block:: json
 
   {"temp":123,"press":1012, "id": "e4c7"}
+  {"sensors": [
+    {"id": 1, "type": "temperature", "value": 321},
+    {"id": 3, "type": "humidity", "value": 35}
+  ]}
 
-.. todo::
-
-  * meer JSON-voorbeelden
+Zoals je ziet kun je in JSON object-waarden en array-waarden combineren.
 
 Je kunt een JSON-document eenvoudig omzetten in een JavaScript-object, en omgekeerd:
 

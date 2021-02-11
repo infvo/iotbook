@@ -3,7 +3,7 @@ Eerste flow
 
 Met deze eerste flow kun je zien of alles werkt:
 
-.. figure:: Nodered-flow1.png
+.. figure:: nodered-flow1.png
    :width: 500 px
    :align: center
 
@@ -19,8 +19,8 @@ Hiervoor gebruik je de volgende nodes:
 | |debug-node|   | debug-node    |  output          |
 +----------------+---------------+------------------+
 
-.. |inject-node| image:: NodeRed-inject-node.png
-.. |debug-node| image:: NodeRed-debug-node.png
+.. |inject-node| image:: nodered-inject-node.png
+.. |debug-node| image:: nodered-debug-node.png
 
 .. rubric:: Opdracht A
 

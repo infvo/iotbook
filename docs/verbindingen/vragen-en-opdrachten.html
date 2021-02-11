@@ -3,36 +3,36 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2.9. Vragen en opdrachten &#8212; IoT-book</title>
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css?v=58BC228F" />
     <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css?v=B36B48D" />
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css?v=910DF1E1" />
     <link rel="stylesheet" type="text/css" href="../_static/CodeChat.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=DB047029" />
+    <link rel="stylesheet" type="text/css" href="../_static/accessibility.css?v=50109A2C" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-3.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/presenter_mode.css?v=9FF1320F" />
     <link rel="stylesheet" type="text/css" href="../_static/jquery-ui-1.10.3.custom.min.css?v=97E0178A" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/user-highlights.css?v=A2326E52" />
-    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.0.6" />
+    <link rel="stylesheet" type="text/css" href="../_static/runestone-custom-sphinx-bootstrap.css?v=5.5.12" />
     <link rel="stylesheet" type="text/css" href="../_static/theme-overrides.css?v=2DAFE138" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/matrixeq.js?v=D64CFA5A"></script>
     <script src="../_static/webglinteractive.js?v=2B768384"></script>
     <script src="../_static/FileSaver.min.js?v=8408C997"></script>
     <script src="../_static/Blob.js?v=AEC2447"></script>
-    <script src="../_static/html4css1.css?v=4D8F3FB4"></script>
+    <script src="../_static/html4css1.css?v=4533ACD3"></script>
     <script src="../_static/animationbase.js?v=A043C3A7"></script>
     <script src="../_static/pytutor-embed.bundle.js?v=268B5C04"></script>
     <script src="../_static/jquery.highlight.js?v=F1C496C8"></script>
-    <script src="../_static/sql-wasm.js?v=44FE0709"></script>
+    <script src="../_static/sql-wasm.js?v=D71B5933"></script>
     <script src="https://cdn.jsdelivr.net/npm/handsontable@7.2.2/dist/handsontable.full.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.5/jquery.i18n.emitter.bidi.js"></script>
@@ -44,7 +44,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2/build/vega.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0/build/vega-lite.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
-    <script src="../_static/runestone.js?v=B89F6473"></script>
+    <script src="../_static/runestone.js?v=DC48DFAC"></script>
     <script src="../_static/jquery-ui-1.10.3.custom.min.js?v=2B07FE4F"></script>
     <script src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
     <script src="../_static/jquery-fix.js?v=1226591B"></script>
@@ -52,7 +52,7 @@
     <script src="../_static/jquery.idle-timer.js?v=E942DAF1"></script>
     <script src="../_static/presenter_mode.js?v=2DF16FB4"></script>
     <script src="../_static/theme.js?v=D899FB97"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2.10. IoT-knoop en dashboard" href="opdracht-dashboard.html" />
@@ -71,6 +71,7 @@
     eBookConfig.course = 'iotbook';
     eBookConfig.basecourse = 'iotbook';
     eBookConfig.isLoggedIn = false;
+    eBookConfig.enableCompareMe = eBookConfig.useRunestoneServices;
   
   eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
   eBookConfig.logLevel = 30;
@@ -78,7 +79,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.python3 = true;
   eBookConfig.acDefaultLanguage = 'python' ? 'python' : 'python'
-  eBookConfig.runestone_version = '5.0.6';
+  eBookConfig.runestone_version = '5.5.12';
   eBookConfig.jobehost = 'http://jobe2.cosc.canterbury.ac.nz';
   eBookConfig.proxyuri_runs = '/jobe/index.php/restapi/runs/';
   eBookConfig.proxyuri_files = '/jobe/index.php/restapi/files/';
@@ -88,19 +89,6 @@
 </script>
 
 <!-- Ad Serving Headers Only serve ads to Anonymous Users -->
-
-
-
-<div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
 
 
 
@@ -150,8 +138,8 @@
                 <div>
                   <b>Runestone in social media:</b>
                 </div>
-                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+                <a href="https://twitter.com/iRunestone">Follow @iRunestone</a>
+                <a href="https://www.facebook.com/RunestoneInteractive">Our Facebook Page</a>
               </li>
 
               <li class="divider"></li>
@@ -289,46 +277,19 @@
 <div class="container" id="continue-reading"></div>
 
 <div class="container" id="main-content" role="main">
+<!-- Ad Serving for Runestone Campaign -->
+
+
   
   <div class="section" id="vragen-en-opdrachten">
 <h1><span class="section-number">2.9. </span>Vragen en opdrachten<a class="headerlink" href="#vragen-en-opdrachten" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="subsection-2-4-1">
-<h2><span class="section-number">2.9.1. </span>Subsection 2.4.1<a class="headerlink" href="#subsection-2-4-1" title="Permalink to this headline">¶</a></h2>
-<p>Vraag: waarom heb je een server in het publieke internet, zoals een MQTT-broker,
-nodig om vanuit een app overal te kunnen communiceren met de IoT-knopen thuis?
-- de lokale gateway (router/firewall) staat geen directe communicatie van buiten naar het lokale netwerk toe;
-- de afstand tussen de app en de IoT-knopen kan te groot zijn om deze zonder een dergelijke tussenstap te overbruggen;
-- het formaat van de berichten van de IoT-knopen is niet geschikt voor de app op je smartphone;
-- (vergroot de snelheid; vergroot de veiligheid?)</p>
-
-<div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=IoT-201  >
-<p>Q-1: Waarom het je bij een toepassing zoals slimme verlichting (Hue) een server in het publieke internet nodig?</p>
-
-</div>
-</div> <!-- end of runestone div -->
-<div id='IoT-202' data-component="tabbedStuff"  class='alert alert-warning'><div data-component="tab" data-tabname="Question" >
-
-<div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=IoT-203  >
-<p>Q-2: Waarom het je bij een toepassing zoals slimme verlichting (Hue) een server in het publieke internet nodig?</p>
-
-</div>
-</div> <!-- end of runestone div -->
-</div><div data-component="tab" data-tabname="Check" >
-<p>De lokale LAN-gateway staat geen directe communicatie van buiten naar apparaten in het lokale netwerk toe.
-De lokale IoT-apparaten, bijvoorbeeld de bridge, kunnen een verbinding met een server in het publieke internet opzetten.
-Vanuit deze server is dan communicatie naar de lokale IoT-apparaten mogelijk.</p>
-</div>
-    </div>
-
 
             <div class="runestone alert alert-warning">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="IoT-204" >
-            <p>Q-3: Waarom heb je een server in het publieke internet, zoals een MQTT-broker,
+            <ul data-component="multiplechoice" data-question_label="2.9.1" data-multipleanswers="false"  id="IoT-204"  style="visibility: hidden;">
+            <p>Q-1: Waarom heb je een server in het publieke internet, zoals een MQTT-broker,
 nodig om vanuit een app overal te kunnen communiceren met de IoT-apparaten thuis?</p>
 
-            <li data-component="answer" data-correct id="IoT-204_opt_a">de lokale LAN-gateway staat geen directe communicatie van buiten naar de apparaten in het lokale netwerk toe.</li><li data-component="feedback">OK.</li>
+            <li data-component="answer" data-correct id="IoT-204_opt_a">de lokale LAN-gateway staat geen directe communicatie toe van buiten naar de apparaten in het lokale netwerk.</li><li data-component="feedback">OK.</li>
             
             <li data-component="answer"  id="IoT-204_opt_b">de afstand tussen de app en de IoT-apparaten is soms te groot om deze zonder een server-tussenstap te overbruggen.</li><li data-component="feedback">Het internet zorgt voor het overbruggen van de afstand - als je een verbinding kunt maken.
 Helaas blokkeert de lokale LAN-gateway binnenkomende berichten.</li>
@@ -341,8 +302,8 @@ Daarvoor heb je geen server nodig.</li>
             </div>
             
 <div class="runestone">
-<div data-component="shortanswer" class="journal alert alert-warning" id=IoT-205  >
-<p>Q-4: Een IoT-radio heeft meestal een vast maximaal vermogen.
+<div data-component="shortanswer" data-question_label="2.9.2" class="journal alert alert-warning" id=IoT-205  >
+<p>Q-2: Een IoT-radio heeft meestal een vast maximaal vermogen.
 Verklaar met behulp van <code class="code docutils literal notranslate"><span class="pre">energie</span> <span class="pre">=</span> <span class="pre">vermogen</span> <span class="pre">*</span> <span class="pre">tijd</span></code> dat je met een lagere bitrate
 een grotere afstand kunt overbruggen.</p>
 
@@ -350,8 +311,8 @@ een grotere afstand kunt overbruggen.</p>
 </div> <!-- end of runestone div -->
 
 <div class="runestone">
-<ul data-component="dragndrop" id="IoT-206" >
-    <span data-component="question">Q-5: Plaats de termen bij hun omschrijving.</span>
+<ul data-component="dragndrop" data-question_label="2.9.3" id="IoT-206"  style="visibility: hidden;">
+    <span data-component="question">Q-3: Plaats de termen bij hun omschrijving.</span>
 	<span data-component=feedback>Feedback that is displayed if things are incorrectly matched.</span>
 
     <li data-component="draggable" id="IoT-206_drag1">IoT-gateway</li>
@@ -364,14 +325,13 @@ een grotere afstand kunt overbruggen.</p>
     <li data-component="dropzone" for="IoT-206_drag3">Verbindt de IoT-knoop met de IoT-gateway</li>
 
     <li data-component="draggable" id="IoT-206_drag4">MQTT-broker</li>
-    <li data-component="dropzone" for="IoT-206_drag4">Verbindt de IoT-knopen met de IoT-controllers, apps en diensten in het publieke internet,</li>
+    <li data-component="dropzone" for="IoT-206_drag4">Verbindt de IoT-knopen met de IoT-controllers, apps en diensten in het publieke internet</li>
 </ul></div><p><strong>Opdracht</strong></p>
 <ol class="arabic simple">
 <li><p>Ga na wat het IP-adres (internetadres) is van je computer, via de netwerkinstellingen van je computer.</p></li>
 <li><p>Ga na wat het (publieke) IP-adres is van je computer, via een website als <a class="reference external" href="https://www.whatismyip.com">https://www.whatismyip.com</a>.</p></li>
 <li><p>Als deze twee verschillen, wat kun je dan zeggen over het lokale netwerk (LAN) en de bijbehorende LAN/WAN gateway/router?</p></li>
 </ol>
-</div>
 </div>
 
 
@@ -435,7 +395,7 @@ een grotere afstand kunt overbruggen.</p>
     </p>
     <p>
         &copy; Copyright 2020 eelco.
-      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.0.6.
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 5.5.12.
     </p>
   </div>
 </footer>
